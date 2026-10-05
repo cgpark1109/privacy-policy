@@ -3,217 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://kysystemstudio.com/privacy-policy">
-  <title>Privacy Policy - kysystem studio</title>
+  <title>ggook's studio – mobile games</title>
+  <meta name="description" content="Small, friendly mobile games by ggook's studio: Hilltop Roll, Updraft, Korean Word Quiz, Learn Korean and World History Quiz. Free on Google Play.">
+  <link rel="canonical" href="https://kysystemstudio.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kysystemstudio.com/">
+  <meta property="og:title" content="ggook's studio – mobile games">
+  <meta property="og:description" content="Small, friendly mobile games. Free on Google Play.">
+  <meta property="og:image" content="https://kysystemstudio.com/assets/logo.png">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --navy: #2B3155;
+      --coral: #FF6B5B;
+      --sky-top: #7FA6E6;
+      --sky-bottom: #FDE3EC;
+      --card: rgba(255, 255, 255, 0.92);
+      --muted: #6B7192;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F5F0E8;
-      color: #3D2B1A;
-      line-height: 1.7;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--navy);
+      background: linear-gradient(180deg, var(--sky-top) 0%, #C9C7F0 45%, var(--sky-bottom) 100%) fixed;
+      min-height: 100vh;
+      line-height: 1.5;
     }
-    header {
-      background: #3D2B1A;
-      color: #F5E6C0;
-      padding: 40px 20px;
-      text-align: center;
+    .wrap { max-width: 640px; margin: 0 auto; padding: 48px 16px 32px; }
+
+    header { text-align: center; color: #fff; }
+    .logo {
+      width: 112px; height: 112px; border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(43, 49, 85, 0.35);
     }
-    .studio-name {
-      font-size: 14px;
-      color: #C8A855;
-      margin-bottom: 8px;
-      letter-spacing: 0.1em;
+    h1 { font-size: 28px; font-weight: 700; margin-top: 16px; text-shadow: 0 2px 10px rgba(43, 49, 85, 0.25); }
+    .tagline { font-size: 15px; font-weight: 500; opacity: 0.95; margin-top: 4px; }
+
+    .social { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+    .social a {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22); color: #fff;
+      font-size: 14px; font-weight: 500; text-decoration: none;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     }
-    h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 8px;
+    .social a:hover { background: rgba(255, 255, 255, 0.35); }
+    .social svg { width: 18px; height: 18px; fill: currentColor; }
+
+    h2 { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; margin: 40px 4px 12px; }
+
+    .games { display: grid; gap: 12px; }
+    .game {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px; border-radius: 22px;
+      background: var(--card);
+      box-shadow: 0 6px 20px rgba(43, 49, 85, 0.12);
+      text-decoration: none; color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .updated {
-      font-size: 13px;
-      color: #C8B89A;
+    .game:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(43, 49, 85, 0.18); }
+    .game img { width: 72px; height: 72px; border-radius: 18px; flex-shrink: 0; background: #E6E9F4; }
+    .info { flex: 1; min-width: 0; }
+    .title { font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+      color: #fff; background: var(--coral); padding: 2px 8px; border-radius: 999px;
     }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 40px 20px;
+    .desc { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+    .get {
+      display: inline-block; margin-top: 8px;
+      font-size: 12px; font-weight: 700; color: #fff;
+      background: var(--navy); padding: 5px 12px; border-radius: 999px; white-space: nowrap;
     }
-    section {
-      margin-bottom: 36px;
-    }
-    h2 {
-      font-size: 18px;
-      color: #3D2B1A;
-      border-left: 4px solid #8B6914;
-      padding-left: 12px;
-      margin-bottom: 12px;
-    }
-    p { margin-bottom: 12px; color: #5C4A2A; }
-    ul { padding-left: 20px; color: #5C4A2A; }
-    li { margin-bottom: 6px; }
-    a { color: #8B6914; word-break: break-all; }
-    a:hover, a:focus { text-decoration: underline; }
-    .sub-list { margin-top: 8px; }
-    .contact-box {
-      background: #EDE4D3;
-      border: 1px solid #C8B89A;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
-    .contact-box a { font-weight: 500; }
-    .contact-box p:last-child { margin-bottom: 0; }
-    footer {
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 12px;
-      color: #8B7355;
-      border-top: 1px solid #C8B89A;
-    }
-    @media (max-width: 480px) {
-      header { padding: 32px 16px; }
-      h1 { font-size: 24px; }
-      main { padding: 28px 16px; }
-      h2 { font-size: 17px; }
+
+    footer { text-align: center; margin-top: 44px; font-size: 13px; color: var(--muted); }
+    footer a { color: var(--navy); font-weight: 500; }
+    footer p + p { margin-top: 6px; }
+
+    @media (max-width: 420px) {
+      .game { gap: 12px; padding: 12px; }
+      .game img { width: 60px; height: 60px; border-radius: 15px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <p class="studio-name">kysystem studio</p>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 25, 2025 (initial app release)</p>
-  </header>
+  <div class="wrap">
+    <header>
+      <img class="logo" src="/assets/logo-256.png" alt="ggook's studio logo" width="112" height="112">
+      <h1>ggook's studio</h1>
+      <p class="tagline">Small, friendly mobile games</p>
+      <nav class="social" aria-label="Social">
+        <a href="https://www.youtube.com/@ggooksstudio" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          YouTube
+        </a>
+        <a href="https://www.instagram.com/ggooksstudio/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 8.4a3.3 3.3 0 1 1 0-6.6 3.3 3.3 0 0 1 0 6.6zm5.3-9.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>
+          Instagram
+        </a>
+      </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>Introduction</h2>
-      <p>
-        This Privacy Policy applies to all applications by kysystem studio (referred to as "we", "us", or "our"), including any
-        future updates, on mobile and other supported platforms, unless a separate
-        policy is provided for a specific app.
-      </p>
+    <h2>Games</h2>
+    <section class="games">
+      <a class="game" href="https://play.google.com/store/apps/details?id=com.kysystemstudio.hilltoproll" target="_blank" rel="noopener">
+        <img src="https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192" alt="" width="72" height="72" loading="lazy">
+        <div class="info">
+          <div class="title">Hilltop Roll <span class="badge">NEW</span></div>
+          <div class="desc">Roll, steer and fly over the gaps. How far can you go?</div>
+          <span class="get">▶ Google Play</span>
+        </div>
+      </a>
+      <a class="game" href="https://play.google.com/store/apps/details?id=com.kysystemstudio.paperplane" target="_blank" rel="noopener">
+        <img src="https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192" alt="" width="72" height="72" loading="lazy">
+        <div class="info">
+          <div class="title">Updraft: Paper Plane Launch</div>
+          <div class="desc">Aim, power up and launch your paper plane. Ride the updrafts and fly far!</div>
+          <span class="get">▶ Google Play</span>
+        </div>
+      </a>
+      <a class="game" href="https://play.google.com/store/apps/details?id=com.kysystemstudio.hangulchallenge" target="_blank" rel="noopener">
+        <img src="https://play-lh.googleusercontent.com/OPmno-V_8ryax5CUibl9EYw1V6tTqOw7YRNOIAB41WWqi5b8oY-Zr7z808zizjmb5DB-_4JcLFATxjZ5WclaJg=s192" alt="" width="72" height="72" loading="lazy">
+        <div class="info">
+          <div class="title">Korean Word Quiz</div>
+          <div class="desc">Build Korean vocabulary with 4,500 words. Nouns, verbs &amp; adjectives.</div>
+          <span class="get">▶ Google Play</span>
+        </div>
+      </a>
+      <a class="game" href="https://play.google.com/store/apps/details?id=com.kysystemstudio.learnkorean" target="_blank" rel="noopener">
+        <img src="https://play-lh.googleusercontent.com/zMJ0vnl5zQoDtV_pIpN-GNOc-t8LlfgGgNXo8uX6yzVLtIzQ6pp8fEJQIgJ-j2gQB0_-iayqivpCyCNAkbUziw=s192" alt="" width="72" height="72" loading="lazy">
+        <div class="info">
+          <div class="title">Learn Korean – Hangul</div>
+          <div class="desc">Learn the Korean alphabet with audio pronunciation and stroke order.</div>
+          <span class="get">▶ Google Play</span>
+        </div>
+      </a>
+      <a class="game" href="https://play.google.com/store/apps/details?id=com.kysystemstudio.historychallenge" target="_blank" rel="noopener">
+        <img src="https://play-lh.googleusercontent.com/4y95jsn1q0i6blLn5Dk-H2jnbJ_n-1V7V1mrfWJrduzq3dWT7K3MxvRskUD0NPoNsmoO1qqLaNXRSWxTxwjz=s192" alt="" width="72" height="72" loading="lazy">
+        <div class="info">
+          <div class="title">World History Quiz</div>
+          <div class="desc">Test your world history knowledge through fun quizzes.</div>
+          <span class="get">▶ Google Play</span>
+        </div>
+      </a>
     </section>
 
-    <section>
-      <h2>Information We Collect</h2>
-      <p>Depending on the app and your device settings, we may process the following types of information:</p>
-      <ul>
-        <li>
-          <strong>Automatically collected data for advertising</strong> — We use Google AdMob, which
-          may collect and use device advertising identifiers and related data to show personalized or
-          non-personalized ads, measure ad performance, and prevent fraud, in line with your choices
-          and platform settings.
-        </li>
-        <li>
-          <strong>Data collected by Google AdMob</strong> — AdMob may process technical and usage
-          data such as device type, operating system, ad interactions, and approximate location
-          (when permitted) as described in Google's policies.
-        </li>
-        <li>
-          <strong>Locally stored app data</strong> — Some apps may save preferences, progress, or
-          game-related statistics (for example, scores or levels) on your device only. This data
-          remains on your device unless you clear app data or uninstall the app.
-        </li>
-        <li>
-          <strong>We do not require accounts</strong> — Our apps are designed without a mandatory
-          login. We do not ask you to provide your name, email address, or phone number for basic use
-          of the apps, unless you choose to contact us directly (for example, by email).
-        </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>How We Use Information</h2>
-      <p>We use the information described above to:</p>
-      <ul>
-        <li>Provide and display advertisements through Google AdMob.</li>
-        <li>Understand aggregate usage to maintain, secure, and improve our apps and user experience.</li>
-        <li>Store your local preferences and in-app progress on your device where applicable.</li>
-      </ul>
-      <p>
-        <strong>Accounts:</strong> Our apps do not require registration, login, or sign-up to use
-        core features. There is no member account system operated by kysystem studio for these apps
-        in connection with this policy.
-      </p>
-    </section>
-
-    <section>
-      <h2>Third-Party Services</h2>
-      <p>Our apps may rely on services provided by third parties, including:</p>
-      <ul>
-        <li>
-          <strong>Google AdMob</strong> — for advertising. Privacy information:
-          <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">https://policies.google.com/privacy</a>
-        </li>
-        <li>
-          <strong>Google Play Services</strong> (on Android) — may be used for functionality such as
-          ads, analytics, or security, subject to Google’s terms and your device settings.
-        </li>
-        <li>
-          <strong>Apple App Store and Apple frameworks</strong> (on iOS) — app distribution and
-          system services are subject to
-          <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apple’s Privacy Policy</a>
-          and your device settings.
-        </li>
-      </ul>
-      <p>These providers process data under their own policies. We encourage you to review their documents.</p>
-    </section>
-
-    <section>
-      <h2>Data Retention</h2>
-      <p>
-        Data stored only on your device (such as local game stats or settings) is removed when you
-        uninstall the app or clear the app’s data from your device settings, unless a small amount
-        of residual data remains until overwritten by the operating system.
-      </p>
-      <p>
-        Data processed by Google AdMob and other Google services is retained according to
-        <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google’s policies</a>
-        and your ad personalization choices. We do not control Google’s retention periods.
-      </p>
-    </section>
-
-    <section>
-      <h2>Children's Privacy</h2>
-      <p>
-        Our services are not directed to children under 13 (or the applicable age in your
-        jurisdiction). We do not knowingly collect personal information from children under 13. If
-        you believe a child has provided us with personal information, please contact us and we will
-        take appropriate steps. Where required, we follow practices consistent with the U.S. Children’s
-        Online Privacy Protection Act (COPPA) and similar rules, including limiting data collection
-        from child-directed services as appropriate to the app’s audience and store policies.
-      </p>
-    </section>
-
-    <section>
-      <h2>Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. The revised version will be posted on
-        this page with an updated "Last updated" date. We encourage you to review this page
-        periodically. Continued use of our apps after changes means you accept the updated policy
-        to the extent permitted by law.
-      </p>
-    </section>
-
-    <section>
-      <h2>Contact Us</h2>
-      <div class="contact-box">
-        <p>
-          If you have questions about this Privacy Policy or our practices, contact us at:<br>
-          <a href="mailto:admin@kysystemstudio.com">admin@kysystemstudio.com</a>
-        </p>
-        <p>
-          This page is available at
-          <a href="https://kysystemstudio.com/" rel="noopener noreferrer" target="_blank">https://kysystemstudio.com/</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© kysystem studio. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p><a href="/privacy.html">Privacy Policy</a> · <a href="mailto:admin@kysystemstudio.com">Contact</a></p>
+      <p>© 2026 ggook's studio</p>
+    </footer>
+  </div>
 </body>
 </html>
