@@ -94,7 +94,8 @@ GAMES = [
         "new": True,
         "icon": "https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA",
         "shots_key": "hilltoproll",
-        "youtube": "ayEe_S9SKBk",
+        "youtube": "ppqi-XRWFIk",  # 16:9 trailer (the vertical Short is ayEe_S9SKBk)
+        "video_wide": True,
         "en": {
             "name": "Hilltop Roll",
             "short": "Roll, steer and fly over the gaps. How far can you go?",

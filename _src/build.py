@@ -165,7 +165,7 @@ def build_game(lang, g):
     if g.get("youtube"):
         video = f"""<section class="section container">
   <div class="section-head"><h2>{e(t['trailer'])}</h2></div>
-  <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{g['youtube']}" title="{e(c['name'])}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <div class="video{" wide" if g.get("video_wide") else ""}"><iframe src="https://www.youtube-nocookie.com/embed/{g['youtube']}" title="{e(c['name'])}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>"""
     others = "\n".join(game_card(lang, o) for o in GAMES if o is not g)
     body = f"""<section class="container">
