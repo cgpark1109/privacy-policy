@@ -248,7 +248,6 @@ NEWS = [
     {
         "date": "2026-10-05",
         "game": "hilltop-roll",
-        "draft": True,  # turn on once 1.0.1 is live on Google Play
         "en": {"title": "Hilltop Roll 1.0.1: music and sound",
                "body": "Hilltop Roll now has music and sound effects: whooshes, touchdowns, rising chimes for perfect combos and more. Turn music and sound on or off separately in Settings."},
         "ko": {"title": "Hilltop Roll 1.0.1: 음악과 효과음 추가",
