@@ -150,7 +150,7 @@ GAMES = [
         "slug": "hilltop-roll",
         "package": "com.kysystemstudio.hilltoproll",
         "kind": "game",
-        "new": True,
+        "new": False,
         "icon": "https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA",
         "shots_key": "hilltoproll",
         "youtube": "ppqi-XRWFIk",  # 16:9 trailer (the vertical Short is ayEe_S9SKBk)
