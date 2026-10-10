@@ -299,6 +299,14 @@ GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-10-07",
+        "game": "pass-or-splash",
+        "en": {"title": "Pass or Splash is out on Google Play",
+               "body": "Our new one-finger puzzle game is here. A wall full of holes is rushing toward you: solve the puzzle, slide into the right hole and stay dry through 100 stages in five worlds."},
+        "ko": {"title": "Pass or Splash 출시",
+               "body": "손가락 하나로 즐기는 새 퍼즐 게임이 나왔습니다. 다가오는 벽 위의 문제를 풀고 정답 구멍으로 쏙! 틀리면 풍덩! 5개 월드, 100개 스테이지가 기다립니다."},
+    },
+    {
         "date": "2026-10-05",
         "game": None,
         "en": {"title": "Our new website",
@@ -315,6 +323,14 @@ NEWS = [
                "body": "Hilltop Roll에 음악과 효과음이 생겼습니다. 점프, 착지, 콤보마다 높아지는 PERFECT 소리 등을 들어 보세요. 설정에서 음악과 효과음을 따로 켜고 끌 수 있습니다."},
     },
     {
+        "date": "2026-10-03",
+        "game": "bust-below",
+        "en": {"title": "Bust Below: Idle Cop Tycoon is out on Google Play",
+               "body": "Our new idle game is here. A crime ring has taken over an underground mall, and your cops head in on their own to bust the crooks and bring the bounty home, even while you're away."},
+        "ko": {"title": "Bust Below: Idle Cop Tycoon 출시",
+               "body": "새 방치형 게임이 나왔습니다. 범죄 조직이 점령한 지하 쇼핑몰로 경찰들이 출동해 알아서 범죄자를 잡아 옵니다. 게임을 꺼 두어도 현상금은 계속 쌓입니다."},
+    },
+    {
         "date": "2026-09-25",
         "game": "hilltop-roll",
         "en": {"title": "Hilltop Roll is out on Google Play",
@@ -327,13 +343,13 @@ NEWS = [
 ABOUT = {
     "en": [
         "ggook's studio is a small independent studio in Seoul, Korea.",
-        "We make simple, friendly mobile games and learning apps: the kind you can pick up in a minute, understand without a tutorial and come back to every day. Some are quick arcade games like Hilltop Roll and Updraft; others help you learn, like our Korean and world history quizzes.",
+        "We make simple, friendly mobile games and learning apps: the kind you can pick up in a minute, understand without a tutorial and come back to every day. Some are quick arcade games like Hilltop Roll and Updraft, a puzzle game like Pass or Splash or an idle game like Bust Below; others help you learn, like our Korean and world history quizzes.",
         "Our games are free to play and supported by ads. We keep things light: no accounts, no sign-ups, and your progress stays on your device.",
         "Thanks for playing. If you have an idea or find a bug, we'd love to hear from you.",
     ],
     "ko": [
         "ggook's studio는 서울에 있는 작은 독립 스튜디오입니다.",
-        "잠깐이면 시작할 수 있고, 설명 없이도 이해되고, 매일 다시 찾게 되는 간단하고 친근한 모바일 게임과 학습 앱을 만듭니다. Hilltop Roll, Updraft 같은 짧은 아케이드 게임도 있고, 한국어와 세계사 퀴즈처럼 배움을 돕는 앱도 있습니다.",
+        "잠깐이면 시작할 수 있고, 설명 없이도 이해되고, 매일 다시 찾게 되는 간단하고 친근한 모바일 게임과 학습 앱을 만듭니다. Hilltop Roll, Updraft 같은 짧은 아케이드 게임, Pass or Splash 같은 퍼즐 게임, Bust Below 같은 방치형 게임도 있고, 한국어와 세계사 퀴즈처럼 배움을 돕는 앱도 있습니다.",
         "모든 게임은 광고로 운영되는 무료 게임입니다. 계정이나 가입 없이 바로 즐길 수 있고, 기록은 기기에만 저장됩니다.",
         "플레이해 주셔서 감사합니다. 아이디어나 버그가 있다면 언제든 알려 주세요.",
     ],
