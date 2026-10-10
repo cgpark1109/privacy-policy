@@ -88,6 +88,65 @@ UI = {
 
 GAMES = [
     {
+        "slug": "pass-or-splash",
+        "package": "com.kysystemstudio.wallgame",
+        "kind": "game",
+        "new": True,
+        "icon": "https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g",
+        "shots_key": "wallgame",
+        "youtube": None,
+        "en": {
+            "name": "Pass or Splash",
+            "short": "Slide through the right hole before the wall hits. Wrong answer? Splash!",
+            "body": [
+                "A wall full of holes is rushing toward you. Read the puzzle at the top and slide your buddy in front of the right answer. Pick the wrong hole and the wall pushes you in: splash!",
+                "Solve sums from addition to order of operations, find the biggest or smallest number, match shapes, count dots and follow the shuffling discs. Play 100 stages across five worlds, from the pool and the mud to cream, a ball pit and springs, each with its own silly penalty.",
+            ],
+            "features": ["Drag left and right with one finger", "No text to read: every rule is clear at a glance",
+                         "Math, shape, counting and memory walls", "100 stages in 5 worlds", "About 40 seconds per stage"],
+        },
+        "ko": {
+            "name": "Pass or Splash: 통과냐 풍덩이냐",
+            "short": "벽이 닥치기 전에 정답 구멍으로! 틀리면 풍덩!",
+            "body": [
+                "구멍 뚫린 벽이 점점 다가옵니다. 화면 위 문제를 보고 정답이 적힌 구멍 앞으로 캐릭터를 옮기세요. 틀린 구멍을 고르면 벽에 밀려 풍덩!",
+                "덧셈부터 복합 연산까지 계산 문제, 가장 큰 수와 작은 수 찾기, 같은 도형 찾기, 점 개수 세기, 섞이는 원판 따라가기까지 다양한 벽이 나옵니다. 물웅덩이, 진흙탕, 크림, 볼풀, 스프링으로 이어지는 5개 월드, 100개 스테이지에서 월드마다 웃긴 벌칙이 기다립니다.",
+            ],
+            "features": ["손가락 하나로 좌우 드래그", "읽을 필요 없이 한눈에 보이는 규칙", "계산, 도형, 개수, 기억력 벽",
+                         "5개 월드, 100개 스테이지", "한 판 약 40초"],
+        },
+    },
+    {
+        "slug": "bust-below",
+        "package": "com.kysystemstudio.bustbelow",
+        "kind": "game",
+        "new": True,
+        "icon": "https://play-lh.googleusercontent.com/cunXHDmOAa_WUuArWOq4gl_Bhx4a2B2DvFXDTWlBt0UyAqruDFkqbYIJw3t8D3yKp9PqJi5Ii0VZTkWmbUfD5g",
+        "shots_key": "bustbelow",
+        "youtube": "9Hveia4oqBU",  # 16:9 trailer (the vertical Short is O5LQoBoKOjA)
+        "video_wide": True,
+        "en": {
+            "name": "Bust Below: Idle Cop Tycoon",
+            "short": "Send your cops into a crook-filled underground mall and watch the bounty roll in.",
+            "body": [
+                "A crime ring has taken over an abandoned underground mall. From a tiny police station in the corner, your cops head out on their own: they chase down crooks, cuff them and walk them back to the holding cell while the bounty rolls in.",
+                "Clear three hideouts: an ice cream shop, a museum full of stolen goods and an underground casino. The deeper you go, the tougher the crooks and the bigger the bounty. Bosses take the whole squad to bring down, and they go straight to the prosecutors. Your cops keep working even while the game is closed.",
+            ],
+            "features": ["Cops that work on their own", "Three hideouts, each with a boss", "Promotions from Cadet to Captain",
+                         "Station upgrades and material collectors", "Offline rewards, no forced ads"],
+        },
+        "ko": {
+            "name": "Bust Below: Idle Cop Tycoon",
+            "short": "지하 쇼핑몰에 숨은 범죄자들을 경찰들이 알아서 잡아 옵니다. 쌓이는 현상금을 모아 보세요.",
+            "body": [
+                "범죄 조직이 버려진 지하 쇼핑몰을 점령했습니다. 구석의 작은 경찰서에서 출동한 경찰들이 스스로 범죄자를 쫓아 체포하고 유치장으로 데려옵니다. 쌓이는 현상금을 지켜보세요.",
+                "아이스크림 가게, 도난품으로 가득한 박물관, 지하 카지노까지 세 은신처를 소탕하세요. 깊이 들어갈수록 범죄자는 강해지고 현상금은 커집니다. 두목은 팀 전체가 힘을 모아야 잡을 수 있고, 잡으면 검찰로 넘깁니다. 게임을 꺼 두어도 경찰들은 계속 일합니다.",
+            ],
+            "features": ["알아서 일하는 경찰들", "두목이 있는 세 은신처", "신병부터 경감까지 승진",
+                         "경찰서 시설 업그레이드와 수집가 고용", "오프라인 보상, 강제 광고 없음"],
+        },
+    },
+    {
         "slug": "hilltop-roll",
         "package": "com.kysystemstudio.hilltoproll",
         "kind": "game",
@@ -124,7 +183,8 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg",
         "shots_key": "paperplane",
-        "youtube": None,
+        "youtube": "Sd4F3XZtObY",  # 16:9 trailer (the vertical Short is jwLs-Ii4w5E)
+        "video_wide": True,
         "en": {
             "name": "Updraft: Paper Plane Launch",
             "short": "Aim, power up and launch your paper plane. Ride the updrafts and fly far!",
