@@ -212,29 +212,29 @@ GAMES = [
         "package": "com.kysystemstudio.hangulchallenge",
         "kind": "learning",
         "new": False,
-        "icon": "https://play-lh.googleusercontent.com/OPmno-V_8ryax5CUibl9EYw1V6tTqOw7YRNOIAB41WWqi5b8oY-Zr7z808zizjmb5DB-_4JcLFATxjZ5WclaJg",
+        "icon": "https://play-lh.googleusercontent.com/AmFiq2sLfUjl2qCMfJov8JXxs0sVrfp2mDCH-PllkmFIoH0gSvHuRHL6SX52uEqNTj6s-yC4Mr389z8nIQZleg",
         "shots_key": "hangulchallenge",
         "youtube": None,
         "en": {
             "name": "Korean Word Quiz",
-            "short": "Build Korean vocabulary with 4,500 words. Nouns, verbs and adjectives.",
+            "short": "Learn Korean vocabulary ten words a day, from 30,000+ nouns, verbs and adjectives.",
             "body": [
-                "Whether you're just starting Korean or brushing up for travel, TOPIK or daily conversation, Korean Word Quiz turns vocabulary practice into a quick, satisfying daily habit.",
-                "Practice 1,500 nouns, 1,500 verbs and 1,500 adjectives in short 10-question sessions, with native pronunciation and automatic review of the words you missed.",
+                "Whether you're just starting Korean or brushing up for travel, TOPIK or your favorite dramas, Korean Word Quiz turns vocabulary practice into a short daily habit: ten words a day, real example sentences and progress you can see.",
+                "Choose from more than 30,000 words: 13,350 nouns, 11,868 verbs and 5,024 adjectives, each with a clear English meaning. Hear the Korean pronunciation, see an example sentence after every answer and review the words you missed. Daily streaks, weekly goals and reminders help you keep going.",
             ],
-            "features": ["4,500 essential words", "Korean to English and English to Korean questions",
+            "features": ["30,000+ words with example sentences", "Korean to English and English to Korean questions",
                          "Native pronunciation (text-to-speech)", "Review your wrong answers and learned words",
-                         "No account needed, works offline"],
+                         "Dark mode, works offline"],
         },
         "ko": {
             "name": "Korean Word Quiz",
-            "short": "필수 한국어 단어 4,500개로 어휘력을 키우세요. 명사, 동사, 형용사.",
+            "short": "하루 10단어씩, 명사·동사·형용사 30,000개 이상의 한국어 단어를 익혀 보세요.",
             "body": [
-                "한국어를 막 시작했든, 여행이나 TOPIK, 일상 회화를 위해 복습하든, 단어 공부를 짧고 꾸준한 습관으로 만들어 줍니다.",
-                "명사, 동사, 형용사 각 1,500개를 10문제씩 짧게 풀고, 원어민 발음을 듣고, 틀린 단어는 자동으로 모아 복습할 수 있습니다.",
+                "한국어를 막 시작했든, 여행이나 TOPIK, 좋아하는 드라마를 위해 복습하든, 단어 공부를 짧고 꾸준한 습관으로 만들어 줍니다. 하루 10단어, 실제 예문, 눈에 보이는 학습 기록으로 공부해 보세요.",
+                "명사 13,350개, 동사 11,868개, 형용사 5,024개, 모두 30,000개가 넘는 단어에 간결한 영어 뜻이 붙어 있습니다. 한국어 발음을 듣고, 답할 때마다 예문을 확인하고, 틀린 단어는 다시 복습하세요. 연속 학습 기록, 주간 목표, 알림이 꾸준한 공부를 돕습니다.",
             ],
-            "features": ["필수 단어 4,500개", "한국어 → 영어, 영어 → 한국어 문제", "원어민 발음(TTS)",
-                         "오답과 학습한 단어 복습", "계정 없이, 오프라인에서도 학습"],
+            "features": ["예문이 있는 30,000개 이상의 단어", "한국어 → 영어, 영어 → 한국어 문제", "원어민 발음(TTS)",
+                         "오답과 학습한 단어 복습", "다크 모드, 오프라인 학습"],
         },
     },
     {
@@ -242,7 +242,7 @@ GAMES = [
         "package": "com.kysystemstudio.learnkorean",
         "kind": "learning",
         "new": False,
-        "icon": "https://play-lh.googleusercontent.com/zMJ0vnl5zQoDtV_pIpN-GNOc-t8LlfgGgNXo8uX6yzVLtIzQ6pp8fEJQIgJ-j2gQB0_-iayqivpCyCNAkbUziw",
+        "icon": "https://play-lh.googleusercontent.com/TuC7Vxs38vg6m7UVCqVxTrSj5w-AEeXTS-VIPdR9PrC9Py9jXItkD1TuryYZpEqQ_9_8N7nBoaygpu4UJRs-XA",
         "shots_key": "learnkorean",
         "youtube": None,
         "en": {
@@ -250,19 +250,19 @@ GAMES = [
             "short": "Learn the Korean alphabet with audio pronunciation and stroke order.",
             "body": [
                 "The perfect start for absolute beginners: learn the Korean alphabet, Hangul, from scratch.",
-                "Go through 14 consonants, 5 double consonants, 10 vowels, 11 compound vowels and 30 essential words, each with audio pronunciation and stroke order practice.",
+                "Learn 14 consonants, 5 double consonants, 10 vowels and 11 compound vowels with audio pronunciation and stroke order practice, then build your vocabulary with 2,400 basic words.",
             ],
-            "features": ["Audio for every letter and word", "Stroke order practice", "Clean, easy interface",
-                         "No login required", "Completely free"],
+            "features": ["Audio for every letter and word", "Stroke order practice", "2,400 basic words",
+                         "Dark mode, works offline", "No login required, completely free"],
         },
         "ko": {
             "name": "Learn Korean – Hangul",
             "short": "음성 발음과 획순으로 한국어 알파벳, 한글을 배워 보세요.",
             "body": [
                 "한국어를 처음 배우는 분이 한글을 기초부터 익힐 수 있는 앱입니다.",
-                "자음 14개, 쌍자음 5개, 모음 10개, 복합모음 11개, 기본 단어 30개를 발음 듣기와 획순 연습으로 배웁니다.",
+                "자음 14개, 쌍자음 5개, 모음 10개, 복합모음 11개를 발음 듣기와 획순 연습으로 익히고, 기본 단어 2,400개로 어휘를 넓혀 보세요.",
             ],
-            "features": ["모든 글자와 단어의 발음", "획순 연습", "깔끔하고 쉬운 화면", "로그인 필요 없음", "완전 무료"],
+            "features": ["모든 글자와 단어의 발음", "획순 연습", "기본 단어 2,400개", "다크 모드, 오프라인 학습", "로그인 필요 없음, 완전 무료"],
         },
     },
     {
@@ -270,7 +270,7 @@ GAMES = [
         "package": "com.kysystemstudio.historychallenge",
         "kind": "learning",
         "new": False,
-        "icon": "https://play-lh.googleusercontent.com/4y95jsn1q0i6blLn5Dk-H2jnbJ_n-1V7V1mrfWJrduzq3dWT7K3MxvRskUD0NPoNsmoO1qqLaNXRSWxTxwjz",
+        "icon": "https://play-lh.googleusercontent.com/ophYn6TYAePAphxGpziA5mKIXHBm1BxTsOXb9x1LHwlCF0EHNDU3teC9-OBKPkeUQSYQ0w6ARZUpSvMmyjtuelk",
         "shots_key": "historychallenge",
         "youtube": None,
         "en": {
@@ -298,6 +298,30 @@ GAMES = [
 
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
+    {
+        "date": "2026-10-11",
+        "game": "korean-word-quiz",
+        "en": {"title": "Korean Word Quiz 1.6.0: a fresh look and 30,000+ words",
+               "body": "Korean Word Quiz has a cleaner home screen, a calmer quiz screen, dark mode and a new icon. We also added 2,233 new reviewed words, for 30,242 words in total."},
+        "ko": {"title": "Korean Word Quiz 1.6.0: 새 디자인과 30,000개 이상의 단어",
+               "body": "홈 화면과 퀴즈 화면이 더 깔끔해지고, 다크 모드와 새 아이콘이 생겼습니다. 검수한 단어 2,233개를 새로 더해 모두 30,242개가 되었습니다."},
+    },
+    {
+        "date": "2026-10-11",
+        "game": "learn-korean-hangul",
+        "en": {"title": "Learn Korean – Hangul 2.0: rebuilt from the ground up",
+               "body": "The app has been rebuilt to be faster and smoother, and it works fully offline. It now has 2,400 basic words, dark mode, a new look on phones and tablets and a new icon. Your quiz stars carry over."},
+        "ko": {"title": "Learn Korean – Hangul 2.0: 완전히 새로워졌습니다",
+               "body": "앱을 처음부터 다시 만들어 더 빠르고 부드러워졌고, 오프라인에서도 모두 이용할 수 있습니다. 기본 단어가 2,400개로 늘었고, 다크 모드와 새 디자인, 새 아이콘이 생겼습니다. 퀴즈 별은 그대로 이어집니다."},
+    },
+    {
+        "date": "2026-10-11",
+        "game": "world-history-quiz",
+        "en": {"title": "World History Quiz 1.2.0: a new look",
+               "body": "World History Quiz has a new icon and a redesigned look: color-coded era menus, numbered stage tiles, overall progress on the home screen and a 3-star rating on the result screen."},
+        "ko": {"title": "World History Quiz 1.2.0: 새 디자인",
+               "body": "새 아이콘과 함께 화면이 새로워졌습니다. 시대마다 색이 다른 메뉴, 번호가 보이는 단계 타일, 홈 화면의 전체 진행도, 결과 화면의 별 3개 평가를 확인해 보세요."},
+    },
     {
         "date": "2026-10-07",
         "game": "pass-or-splash",
