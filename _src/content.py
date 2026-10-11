@@ -278,19 +278,19 @@ GAMES = [
             "short": "Test your world history knowledge through fun quizzes.",
             "body": [
                 "How well do you know world history? A multiple-choice quiz game that helps you learn and review history in a fun, engaging way.",
-                "Choose from five eras and three quiz types, and work through six stages that get harder as you go. Your progress is saved automatically.",
+                "Choose from five eras and three quiz types, and work your way through 150 stages that get harder as you go. Your progress is saved automatically.",
             ],
             "features": ["5 eras: Ancient to Contemporary", "3 quiz types: Person, Year and Event",
-                         "6 stages of rising difficulty", "10 questions per session", "English and Korean"],
+                         "150 stages of rising difficulty", "10 questions per session", "English and Korean"],
         },
         "ko": {
             "name": "World History Quiz",
             "short": "재미있는 퀴즈로 세계사 지식을 시험해 보세요.",
             "body": [
                 "세계사를 얼마나 알고 있나요? 객관식 퀴즈로 세계사를 재미있게 배우고 복습할 수 있는 게임입니다.",
-                "다섯 시대와 세 가지 퀴즈 유형 중에서 고르고, 점점 어려워지는 여섯 단계를 풀어 보세요. 진행 상황은 자동으로 저장됩니다.",
+                "다섯 시대와 세 가지 퀴즈 유형 중에서 고르고, 점점 어려워지는 150개 스테이지를 풀어 보세요. 진행 상황은 자동으로 저장됩니다.",
             ],
-            "features": ["고대부터 현대까지 5개 시대", "인물, 연도, 사건 3가지 유형", "점점 어려워지는 6단계",
+            "features": ["고대부터 현대까지 5개 시대", "인물, 연도, 사건 3가지 유형", "점점 어려워지는 150개 스테이지",
                          "한 번에 10문제", "영어와 한국어 지원"],
         },
     },
