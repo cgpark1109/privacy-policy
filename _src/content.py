@@ -46,6 +46,9 @@ UI = {
         "not_found_text": "The page you're looking for doesn't exist.",
         "back_home": "Back to home",
         "rights": "All rights reserved.",
+        "scan_qr": "Scan with your phone to install",
+        "qr_label": "QR code for Google Play",
+        "privacy_desc": "How our apps handle your data: ads through Google AdMob, no accounts, and progress saved only on your device.",
     },
     "ko": {
         "lang_name": "한국어",
@@ -83,6 +86,9 @@ UI = {
         "not_found_text": "요청하신 페이지가 없습니다.",
         "back_home": "홈으로",
         "rights": "All rights reserved.",
+        "scan_qr": "휴대폰 카메라로 스캔해서 설치하세요",
+        "qr_label": "Google Play QR 코드",
+        "privacy_desc": "광고는 Google AdMob으로 제공하고, 계정이 없으며, 기록은 기기에만 저장됩니다.",
     },
 }
 

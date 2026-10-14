@@ -4,10 +4,12 @@
 import html
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI  # noqa: E402
+from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHOTS = json.load(open(os.path.join(os.path.dirname(__file__), "screenshots.json"), encoding="utf-8"))
@@ -29,6 +31,12 @@ def play_url(game):
     return f"https://play.google.com/store/apps/details?id={game['package']}"
 
 
+def ld_json(data):
+    """A JSON-LD <script> block (structured data for search engines)."""
+    text = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    return f'<script type="application/ld+json">{text}</script>'
+
+
 def published_news():
     return [n for n in NEWS if not n.get("draft")]
 
@@ -37,18 +45,22 @@ def game_by_slug(slug):
     return next(g for g in GAMES if g["slug"] == slug)
 
 
-def page(lang, path, title, description, body, active=None):
-    """Wraps a page body in the shared head, header and footer and writes it."""
+def page(lang, path, title, description, body, active=None, head_extra="", og_image=None, translated=True):
+    """Wraps a page body in the shared head, header and footer and writes it.
+    translated=False is for pages that exist in one language only: the language switch goes to the other home."""
     t = UI[lang]
     other = "ko" if lang == "en" else "en"
     full_title = f"{title} – {STUDIO['name']}" if title else f"{STUDIO['name']} – {t['tagline']}"
-    alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{STUDIO["domain"]}{url(l, path)}">' for l in LANGS)
-    alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
+    alt = ""
+    if translated:
+        alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{STUDIO["domain"]}{url(l, path)}">' for l in LANGS)
+        alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
+    image = og_image or f"{STUDIO['domain']}/assets/logo.png"
     nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("news", t["nav_news"], url(lang, "news/")),
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
     nav = "".join(f'<a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{e(label)}</a>'
                   for key, label, href in nav_items)
-    nav += f'<a class="lang" href="{url(other, path)}" hreflang="{other}" lang="{other}">{UI[other]["lang_name"]}</a>'
+    nav += f'<a class="lang" href="{url(other, path) if translated else url(other)}" hreflang="{other}" lang="{other}">{UI[other]["lang_name"]}</a>'
     doc = f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -63,13 +75,15 @@ def page(lang, path, title, description, body, active=None):
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{STUDIO['domain']}{url(lang, path)}">
-<meta property="og:image" content="{STUDIO['domain']}/assets/logo.png">
+<meta property="og:image" content="{image}">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+{head_extra}
 </head>
 <body>
 <header class="site-header">
@@ -152,7 +166,12 @@ def build_home(lang):
 {news}
   </div>
 </section>"""
-    page(lang, "", None, t["hero_text"], body, active=None)
+    org = {"@context": "https://schema.org", "@type": "Organization", "name": STUDIO["name"],
+           "url": STUDIO["domain"] + "/", "logo": f"{STUDIO['domain']}/assets/logo-256.png",
+           "email": STUDIO["email"], "sameAs": [STUDIO["youtube"], STUDIO["instagram"]]}
+    site = {"@context": "https://schema.org", "@type": "WebSite", "name": STUDIO["name"],
+            "url": STUDIO["domain"] + url(lang), "inLanguage": lang}
+    page(lang, "", None, t["hero_text"], body, active=None, head_extra=ld_json(org) + ld_json(site))
 
 
 def build_game(lang, g):
@@ -173,6 +192,7 @@ def build_game(lang, g):
     <img src="{g['icon']}=s256" alt="{e(c['name'])} icon" width="120" height="120">
     <div><h1>{e(c['name'])}</h1><p>{e(c['short'])}</p>
     <a class="btn" href="{play_url(g)}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div>
+    <div class="qr">{qr_svg(play_url(g), e(t['qr_label']))}<span>{e(t['scan_qr'])}</span></div>
   </div>
 </section>
 <section class="section container">
@@ -195,7 +215,15 @@ def build_game(lang, g):
 {others}
   </div>
 </section>"""
-    page(lang, path, c["name"], c["short"], body, active="games")
+    app = {"@context": "https://schema.org", "@type": "MobileApplication", "name": c["name"],
+           "description": c["short"], "url": STUDIO["domain"] + url(lang, path), "inLanguage": lang,
+           "operatingSystem": "Android",
+           "applicationCategory": "GameApplication" if g["kind"] == "game" else "EducationalApplication",
+           "image": f"{g['icon']}=s512", "screenshot": [f"{s}=h720" for s in SHOTS.get(g["shots_key"], [])],
+           "installUrl": play_url(g), "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+           "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
+    page(lang, path, c["name"], c["short"], body, active="games", head_extra=ld_json(app),
+         og_image=f"{g['icon']}=s512")
 
 
 def build_news(lang):
@@ -242,6 +270,30 @@ def build_404():
     page("en", "404.html", t["not_found_title"], t["not_found_text"], body)
 
 
+POLICY_START, POLICY_END = "<!-- policy:start -->", "<!-- policy:end -->"
+
+
+def build_privacy():
+    """privacy.html keeps its policy text between the policy markers (edit it there by hand);
+    everything around it (header, footer, game list) is regenerated from the site layout."""
+    t = UI["en"]
+    path = os.path.join(ROOT, "privacy.html")
+    m = re.search(re.escape(POLICY_START) + r"(.*?)" + re.escape(POLICY_END),
+                  open(path, encoding="utf-8").read(), re.S)
+    if not m:
+        sys.exit(f"privacy.html has no {POLICY_START} ... {POLICY_END} section")
+    cards = "\n".join(game_card("en", g) for g in GAMES)
+    body = f"""<section class="container"><h1 class="page-title">{e(t['privacy'])}</h1></section>
+<section class="section container"><div class="card policy">{POLICY_START}{m.group(1)}{POLICY_END}</div></section>
+<section class="section container">
+  <div class="section-head"><h2>{e(t['games_title'])}</h2><p>{e(t['games_lead'])}</p></div>
+  <div class="games">
+{cards}
+  </div>
+</section>"""
+    page("en", "privacy.html", t["privacy"], t["privacy_desc"], body, translated=False)
+
+
 def build_sitemap(urls):
     entries = "".join(f"<url><loc>{STUDIO['domain']}{u}</loc></url>" for u in urls)
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
@@ -262,6 +314,7 @@ def main():
             fn(lang)
             urls.append(url(lang, path))
     build_404()
+    build_privacy()
     urls.append("/privacy.html")
     build_sitemap(urls)
     print(f"built {len(urls) - 1} pages + 404, sitemap, robots")
