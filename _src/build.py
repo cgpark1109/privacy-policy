@@ -7,6 +7,7 @@ import json
 import os
 import re
 import sys
+from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
 from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI  # noqa: E402
@@ -29,8 +30,21 @@ def url(lang, path=""):
     return f"{PREFIX[lang]}/{path}" if path else f"{PREFIX[lang]}/"
 
 
-def play_url(game):
-    return f"https://play.google.com/store/apps/details?id={game['package']}"
+def play_url(game, medium=None, content=None):
+    """Google Play link. With a medium, it carries UTM tags in the install referrer, so Play Console
+    (Store listing acquisition > tracked channels) shows installs that came from this site."""
+    link = f"https://play.google.com/store/apps/details?id={game['package']}"
+    if medium:
+        utm = f"utm_source=kysystemstudio&utm_medium={medium}&utm_campaign=game_page"
+        if content:
+            utm += f"&utm_content={content}"
+        link += "&referrer=" + quote(utm, safe="")
+    return link
+
+
+def go_url(game):
+    """Short link on this site for the QR code; it forwards to Google Play (see build_go)."""
+    return f"{STUDIO['domain']}/go/{game['slug']}/"
 
 
 def ld_json(data):
@@ -193,8 +207,8 @@ def build_game(lang, g):
   <div class="game-hero">
     <img src="{g['icon']}=s256" alt="{e(c['name'])} icon" width="120" height="120">
     <div><h1>{e(c['name'])}</h1><p>{e(c['short'])}</p>
-    <a class="btn" href="{play_url(g)}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div>
-    <div class="qr">{qr_svg(play_url(g), e(t['qr_label']))}<span>{e(t['scan_qr'])}</span></div>
+    <a class="btn" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div>
+    <div class="qr">{qr_svg(go_url(g), e(t['qr_label']))}<span>{e(t['scan_qr'])}</span></div>
   </div>
 </section>
 <section class="section container">
@@ -296,6 +310,31 @@ def build_privacy():
     page("en", "privacy.html", t["privacy"], t["privacy_desc"], body, translated=False)
 
 
+def build_go(g):
+    """/go/<slug>/ forwards a scanned QR code to Google Play, tagged utm_medium=qr. Not in the sitemap."""
+    target = play_url(g, "qr")
+    doc = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>{e(g['en']['name'])} – Google Play</title>
+<meta http-equiv="refresh" content="0; url={e(target)}">
+<link rel="canonical" href="{STUDIO['domain']}{url('en', f"games/{g['slug']}/")}">
+</head>
+<body>
+<p><a href="{e(target)}">{e(g['en']['name'])} on Google Play</a></p>
+<script>location.replace({json.dumps(target)})</script>
+</body>
+</html>
+"""
+    out = os.path.join(ROOT, "go", g["slug"], "index.html")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write(doc)
+
+
 def build_sitemap(urls):
     entries = "".join(f"<url><loc>{STUDIO['domain']}{u}</loc></url>" for u in urls)
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
@@ -317,6 +356,8 @@ def main():
             urls.append(url(lang, path))
     build_404()
     build_privacy()
+    for g in GAMES:
+        build_go(g)
     urls.append("/privacy.html")
     build_sitemap(urls)
     print(f"built {len(urls) - 1} pages + 404, sitemap, robots")
