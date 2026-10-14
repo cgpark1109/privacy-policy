@@ -1,5 +1,6 @@
 # Site content in English and Korean. Edit here, then run: python _src/build.py
 # To add a game: add an entry to GAMES (and its screenshots to screenshots.json).
+# A game with a browser version sets "web" to its URL; it is then listed on the /play/ page.
 
 STUDIO = {
     "name": "ggook's studio",
@@ -24,6 +25,13 @@ UI = {
         "news_latest": "Latest news",
         "news_all": "All news",
         "get_play": "Get it on Google Play",
+        "play_title": "Play in your browser",
+        "play_lead": "Some of our learning games also run in your web browser, with the same content as the apps. No install needed.",
+        "play_now": "Play now",
+        "play_get_app": "Get the app",
+        "play_note": "Browser progress is saved on this device only. On your phone, the Android app is the easiest way to play.",
+        "play_teaser": "Try some of our learning games right in your web browser.",
+        "play_teaser_cta": "Browser games",
         "play_short": "Google Play",
         "screenshots": "Screenshots",
         "trailer": "Watch",
@@ -64,6 +72,13 @@ UI = {
         "news_latest": "최근 소식",
         "news_all": "전체 소식",
         "get_play": "Google Play에서 받기",
+        "play_title": "브라우저에서 바로 하기",
+        "play_lead": "일부 학습 게임은 설치 없이 웹 브라우저에서도 즐길 수 있어요. 내용은 앱과 같아요.",
+        "play_now": "바로 하기",
+        "play_get_app": "앱 받기",
+        "play_note": "브라우저 기록은 이 기기에만 저장돼요. 휴대폰에서는 Android 앱으로 더 편하게 즐길 수 있어요.",
+        "play_teaser": "일부 학습 게임은 웹 브라우저에서 바로 해볼 수 있어요.",
+        "play_teaser_cta": "웹에서 하기",
         "play_short": "Google Play",
         "screenshots": "스크린샷",
         "trailer": "영상",
@@ -220,6 +235,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/AmFiq2sLfUjl2qCMfJov8JXxs0sVrfp2mDCH-PllkmFIoH0gSvHuRHL6SX52uEqNTj6s-yC4Mr389z8nIQZleg",
         "shots_key": "hangulchallenge",
+        "web": "https://cgpark1109.github.io/korean_word_quiz_web/",  # browser version (same content as the app)
         "youtube": None,
         "en": {
             "name": "Korean Word Quiz",
@@ -250,6 +266,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/TuC7Vxs38vg6m7UVCqVxTrSj5w-AEeXTS-VIPdR9PrC9Py9jXItkD1TuryYZpEqQ_9_8N7nBoaygpu4UJRs-XA",
         "shots_key": "learnkorean",
+        "web": "https://cgpark1109.github.io/korean_challenge_web/",  # browser version (same content as the app)
         "youtube": None,
         "en": {
             "name": "Learn Korean – Hangul",
@@ -278,6 +295,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/ophYn6TYAePAphxGpziA5mKIXHBm1BxTsOXb9x1LHwlCF0EHNDU3teC9-OBKPkeUQSYQ0w6ARZUpSvMmyjtuelk",
         "shots_key": "historychallenge",
+        "web": "https://cgpark1109.github.io/world_history_quiz_web/",  # browser version (same content as the app)
         "youtube": None,
         "en": {
             "name": "World History Quiz",

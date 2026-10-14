@@ -23,6 +23,7 @@ e = html.escape
 ICON_YT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>'
 ICON_IG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.7a5.1 5.1 0 1 0 0 10.2 5.1 5.1 0 0 0 0-10.2zm0 8.4a3.3 3.3 0 1 1 0-6.6 3.3 3.3 0 0 1 0 6.6zm5.3-9.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg>'
 ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 14 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1zm11.5 11.3 2.6 2.6-12 6.9 9.4-9.5zm3.6-3.6 3 1.7c.8.5.8 1.6 0 2.1l-3 1.7-2.8-2.9 2.8-2.6zM5.7 1.4l12 6.9-2.6 2.6-9.4-9.5z"/></svg>'
+ICON_WEB = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h2.9c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.3 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg>'
 ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
 
 
@@ -116,6 +117,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
   <div class="container">
     <nav>
       <a href="/privacy.html">{e(t['privacy'])}</a>
+      <a href="{url(lang, 'play/')}">{e(t['play_title'])}</a>
       <a href="{url(lang, 'support/')}">{e(t['support'])}</a>
       <a href="mailto:{STUDIO['email']}">{e(t['contact'])}</a>
       <a href="{STUDIO['youtube']}" target="_blank" rel="noopener">YouTube</a>
@@ -160,6 +162,12 @@ def build_home(lang):
     t = UI[lang]
     cards = "\n".join(game_card(lang, g) for g in GAMES)
     news = "\n".join(news_item(lang, n) for n in published_news()[:2])
+    play_teaser = ""
+    if any(g.get("web") for g in GAMES):
+        play_teaser = f"""<section class="section container"><div class="card play-teaser">
+  <p>{ICON_WEB} {e(t['play_teaser'])}</p>
+  <a class="btn light" href="{url(lang, 'play/')}">{e(t['play_teaser_cta'])} →</a>
+</div></section>"""
     body = f"""<section class="hero container">
   <img class="logo" src="/assets/logo-256.png" alt="{e(STUDIO['name'])} logo" width="116" height="116">
   <h1>{e(STUDIO['name'])}</h1>
@@ -176,6 +184,7 @@ def build_home(lang):
 {cards}
   </div>
 </section>
+{play_teaser}
 <section class="section container">
   <div class="section-head"><h2>{e(t['news_latest'])}</h2><a href="{url(lang, 'news/')}">{e(t['news_all'])} →</a></div>
   <div class="news-list">
@@ -207,7 +216,7 @@ def build_game(lang, g):
   <div class="game-hero">
     <img src="{g['icon']}=s256" alt="{e(c['name'])} icon" width="120" height="120">
     <div><h1>{e(c['name'])}</h1><p>{e(c['short'])}</p>
-    <a class="btn" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div>
+    <div class="hero-actions"><a class="btn" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div></div>
     <div class="qr">{qr_svg(go_url(g), e(t['qr_label']))}<span>{e(t['scan_qr'])}</span></div>
   </div>
 </section>
@@ -240,6 +249,26 @@ def build_game(lang, g):
            "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
     page(lang, path, c["name"], c["short"], body, active="games", head_extra=ld_json(app),
          og_image=f"{g['icon']}=s512")
+
+
+def build_play(lang):
+    """Browser versions, kept on their own page so game pages lead with the app."""
+    t = UI[lang]
+    cards = ""
+    for g in (g for g in GAMES if g.get("web")):
+        c = g[lang]
+        cards += f"""<div class="card play-card">
+  <img src="{g['icon']}=s192" alt="" width="76" height="76" loading="lazy">
+  <div><a class="title" href="{url(lang, f'games/{g["slug"]}/')}">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>
+  <div class="play-actions"><a class="btn" href="{e(g['web'])}" target="_blank" rel="noopener">{ICON_WEB} {e(t['play_now'])}</a>
+  <a class="text-link" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['play_get_app'])}</a></div></div>
+</div>
+"""
+    body = f"""<section class="container"><h1 class="page-title">{e(t['play_title'])}</h1><p class="page-lead">{e(t['play_lead'])}</p></section>
+<section class="section container"><div class="games">
+{cards}</div>
+<p class="play-note">{e(t['play_note'])}</p></section>"""
+    page(lang, "play/", t["play_title"], t["play_lead"], body)
 
 
 def build_news(lang):
@@ -351,7 +380,7 @@ def main():
         for g in GAMES:
             build_game(lang, g)
             urls.append(url(lang, f"games/{g['slug']}/"))
-        for fn, path in [(build_news, "news/"), (build_about, "about/"), (build_support, "support/")]:
+        for fn, path in [(build_play, "play/"), (build_news, "news/"), (build_about, "about/"), (build_support, "support/")]:
             fn(lang)
             urls.append(url(lang, path))
     build_404()
