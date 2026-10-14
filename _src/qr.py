@@ -243,6 +243,6 @@ def qr_svg(text, label="QR code"):
     n, quiet = len(dark), 4
     path = "".join(f"M{x + quiet},{y + quiet}h1v1h-1z" for y in range(n) for x in range(n) if dark[y][x])
     size = n + 2 * quiet
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" role="img" aria-label="{label}" '
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {size} {size}" width="132" height="132" role="img" aria-label="{label}" '
             f'shape-rendering="crispEdges"><rect width="{size}" height="{size}" fill="#fff"/>'
             f'<path d="{path}" fill="#2B3155"/></svg>')

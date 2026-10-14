@@ -1,6 +1,7 @@
 # Builds the studio site (English at /, Korean at /ko/) from content.py.
 # Run from the repository root: python _src/build.py
 # Jekyll on GitHub Pages skips folders starting with "_", so _src stays private.
+import hashlib
 import html
 import json
 import os
@@ -12,6 +13,7 @@ from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CSS_VERSION = hashlib.sha1(open(os.path.join(ROOT, "assets", "site.css"), "rb").read()).hexdigest()[:10]
 SHOTS = json.load(open(os.path.join(os.path.dirname(__file__), "screenshots.json"), encoding="utf-8"))
 LANGS = ["en", "ko"]
 PREFIX = {"en": "", "ko": "/ko"}
@@ -82,7 +84,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={CSS_VERSION}">
 {head_extra}
 </head>
 <body>
