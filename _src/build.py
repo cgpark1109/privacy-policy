@@ -10,7 +10,7 @@ import sys
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI  # noqa: E402
+from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -265,6 +265,14 @@ def build_play(lang):
   <a class="text-link" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['play_get_app'])}</a></div></div>
 </div>
 """
+    for g in WEB_GAMES:
+        c = g[lang]
+        cards += f"""<div class="card play-card">
+  <img src="{g['icon']}" alt="" width="76" height="76" loading="lazy">
+  <div><a class="title" href="/play/{g['slug']}/">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>
+  <div class="play-actions"><a class="btn" href="/play/{g['slug']}/">{ICON_WEB} {e(t['play_now'])}</a></div></div>
+</div>
+"""
     body = f"""<section class="container"><h1 class="page-title">{e(t['play_title'])}</h1><p class="page-lead">{e(t['play_lead'])}</p></section>
 <section class="section container"><div class="games">
 {cards}</div>
@@ -385,6 +393,8 @@ def main():
             fn(lang)
             urls.append(url(lang, path))
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
+    for g in WEB_GAMES:
+        urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_404()
     build_privacy()
     for g in GAMES:
