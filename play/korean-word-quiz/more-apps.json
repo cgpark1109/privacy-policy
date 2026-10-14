@@ -1,0 +1,24 @@
+{
+  "studioName": "GGOOK's Studio",
+  "intro": "More apps for learning and practicing Korean.",
+  "apps": [
+    {
+      "id": "learn-korean-hangul",
+      "revision": 1,
+      "active": true,
+      "name": "Learn Korean - Hangul",
+      "subtitle": "Learn the Korean alphabet with audio and stroke order",
+      "icon": "🇰🇷",
+      "packageId": "com.kysystemstudio.learnkorean"
+    },
+    {
+      "id": "world-history-quiz",
+      "revision": 1,
+      "active": true,
+      "name": "World History Quiz",
+      "subtitle": "Quiz across 5 eras with 3 quiz types · English & Korean",
+      "icon": "🏛️",
+      "packageId": "com.kysystemstudio.historychallenge"
+    }
+  ]
+}

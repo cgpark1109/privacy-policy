@@ -1,6 +1,7 @@
 # Site content in English and Korean. Edit here, then run: python _src/build.py
 # To add a game: add an entry to GAMES (and its screenshots to screenshots.json).
-# A game with a browser version sets "web" to its URL; it is then listed on the /play/ page.
+# A game with a browser version sets "web" to its path (/play/<slug>/, filled by _src/sync_webapps.py);
+# it is then listed on the /play/ page.
 
 STUDIO = {
     "name": "ggook's studio",
@@ -235,7 +236,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/AmFiq2sLfUjl2qCMfJov8JXxs0sVrfp2mDCH-PllkmFIoH0gSvHuRHL6SX52uEqNTj6s-yC4Mr389z8nIQZleg",
         "shots_key": "hangulchallenge",
-        "web": "https://cgpark1109.github.io/korean_word_quiz_web/",  # browser version (same content as the app)
+        "web": "/play/korean-word-quiz/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "Korean Word Quiz",
@@ -266,7 +267,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/TuC7Vxs38vg6m7UVCqVxTrSj5w-AEeXTS-VIPdR9PrC9Py9jXItkD1TuryYZpEqQ_9_8N7nBoaygpu4UJRs-XA",
         "shots_key": "learnkorean",
-        "web": "https://cgpark1109.github.io/korean_challenge_web/",  # browser version (same content as the app)
+        "web": "/play/learn-korean-hangul/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "Learn Korean – Hangul",
@@ -295,7 +296,7 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/ophYn6TYAePAphxGpziA5mKIXHBm1BxTsOXb9x1LHwlCF0EHNDU3teC9-OBKPkeUQSYQ0w6ARZUpSvMmyjtuelk",
         "shots_key": "historychallenge",
-        "web": "https://cgpark1109.github.io/world_history_quiz_web/",  # browser version (same content as the app)
+        "web": "/play/world-history-quiz/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "World History Quiz",

@@ -1,0 +1,17 @@
+{
+  "korean-word-quiz": {
+    "repo": "cgpark1109/korean_word_quiz_web",
+    "branch": "main",
+    "commit": "14e292b0f35334ec979d6bc4f5dfff856e70c3de"
+  },
+  "learn-korean-hangul": {
+    "repo": "cgpark1109/korean_challenge_web",
+    "branch": "master",
+    "commit": "389b6f0ec2bb7638d26f34a7cb9fa24e11db58ee"
+  },
+  "world-history-quiz": {
+    "repo": "cgpark1109/world_history_quiz_web",
+    "branch": "main",
+    "commit": "60af0f57b3418ca50d00e9720429585bbc149790"
+  }
+}

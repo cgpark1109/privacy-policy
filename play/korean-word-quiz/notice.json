@@ -1,0 +1,177 @@
+{
+  "popup": {
+    "active": false,
+    "title": "Expert · +140 words",
+    "message": "Expert · +140 words",
+    "button": "OK",
+    "version": "2026-06-23-expert"
+  },
+  "banner": {
+    "active": true,
+    "message": "30,242 words — nouns, verbs & adjectives · tap the speaker for Korean"
+  },
+  "notices": [
+    {
+      "id": "2026-10-redesign-1.6.0",
+      "revision": 1,
+      "active": true,
+      "title": "A fresh new look",
+      "message": "Korean Word Quiz has a new design: a cleaner home screen with today's practice up front, a calmer quiz screen, and a new app icon. Prefer dark screens? Turn on dark mode in Settings → Appearance.",
+      "date": "2026-10-11",
+      "button": "OK"
+    },
+    {
+      "id": "2026-10-vocabulary-1.6.0",
+      "revision": 1,
+      "active": true,
+      "title": "2,233 new words",
+      "message": "Since the last update we added 2,233 reviewed words: 1,850 nouns such as 맞선, 접수처, and 방울토마토, 371 verbs such as 친해지다, 쾌척하다, and 물구나무서다, and 12 adjectives such as 탱글탱글하다. The bank now has 30,242 words: 13,350 nouns, 11,868 verbs, and 5,024 adjectives.",
+      "date": "2026-10-11",
+      "button": "OK"
+    },
+    {
+      "id": "2026-10-11-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "1,000 new words",
+      "message": "We added 1,000 reviewed words: 850 nouns such as 은하수, 청첩장, and 월요병, and 150 verbs such as 친해지다, 장보다, and 속상해하다. The bank now has 29,009 words: 12,350 nouns, 11,647 verbs, and 5,012 adjectives.",
+      "date": "2026-10-11",
+      "button": "OK"
+    },
+    {
+      "id": "2026-09-23-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "Cleaner, more accurate word bank",
+      "message": "We removed about 3,100 entries that were not real Korean words, took out duplicate verbs that were listed as adjectives, and added about 2,900 reviewed words such as 아들, 소리, and 설렘. The bank now has 28,009 words: 11,500 nouns, 11,497 verbs, and 5,012 adjectives.",
+      "date": "2026-09-23",
+      "button": "OK"
+    },
+    {
+      "id": "2026-08-31-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "10,500 words per category",
+      "message": "The word bank now has 31,500 entries — 10,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-08-31",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-30-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "9,500 words per category",
+      "message": "The word bank now has 28,500 entries — 9,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-30",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-24-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "8,500 words per category",
+      "message": "The word bank now has 25,500 entries — 8,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-24",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-19-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "7,500 words per category",
+      "message": "The word bank now has 22,500 entries — 7,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-19",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-15-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "6,500 words per category",
+      "message": "The word bank now has 19,500 entries — 6,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-15",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-10-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "5,500 words per category",
+      "message": "The word bank now has 16,500 entries — 5,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-10",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-08-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "4,500 words per category",
+      "message": "The word bank now has 13,500 entries — 4,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-08",
+      "button": "OK"
+    },
+    {
+      "id": "2026-07-07-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "3,500 words per category",
+      "message": "The word bank now has 10,500 entries — 3,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-07-07",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-29-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "2,500 words per category",
+      "message": "The word bank now has 7,500 entries — 2,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-06-29",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-26-vocabulary",
+      "revision": 1,
+      "active": false,
+      "title": "1,500 words per category",
+      "message": "The word bank now has 4,500 entries — 1,500 nouns, verbs, and adjectives for richer daily quizzes.",
+      "date": "2026-06-26",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-24-native",
+      "revision": 3,
+      "active": false,
+      "title": "Native app · 4,500 words",
+      "message": "Quiz with 10 random words from nouns, verbs, and adjectives. Tap the speaker icon to hear Korean pronunciation.",
+      "date": "2026-06-24",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-24-random-quiz",
+      "revision": 1,
+      "active": false,
+      "title": "Quiz · 10 random words",
+      "message": "Each quiz picks 10 random words from all three parts of speech.",
+      "date": "2026-06-24",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-24-word-list",
+      "revision": 1,
+      "active": false,
+      "title": "Saved words · wrong & learned",
+      "message": "Wrong and learned words are saved automatically. Review them anytime from the home screen.",
+      "date": "2026-06-24",
+      "button": "OK"
+    },
+    {
+      "id": "2026-06-retention",
+      "revision": 3,
+      "active": false,
+      "title": "Wrong answers saved automatically",
+      "message": "Words you miss are added to Wrong Answers so you can review them later.",
+      "date": "2026-06-02",
+      "button": "OK"
+    }
+  ]
+}

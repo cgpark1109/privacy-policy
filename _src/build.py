@@ -260,7 +260,7 @@ def build_play(lang):
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}=s192" alt="" width="76" height="76" loading="lazy">
   <div><a class="title" href="{url(lang, f'games/{g["slug"]}/')}">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>
-  <div class="play-actions"><a class="btn" href="{e(g['web'])}" target="_blank" rel="noopener">{ICON_WEB} {e(t['play_now'])}</a>
+  <div class="play-actions"><a class="btn" href="{e(g['web'])}">{ICON_WEB} {e(t['play_now'])}</a>
   <a class="text-link" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['play_get_app'])}</a></div></div>
 </div>
 """
@@ -383,6 +383,7 @@ def main():
         for fn, path in [(build_play, "play/"), (build_news, "news/"), (build_about, "about/"), (build_support, "support/")]:
             fn(lang)
             urls.append(url(lang, path))
+    urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     build_404()
     build_privacy()
     for g in GAMES:

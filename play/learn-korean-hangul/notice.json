@@ -1,0 +1,21 @@
+{
+  "_usage": {
+    "popup.active_true": "Show popup on load (if user has not seen this version)",
+    "popup.active_false": "Hide popup",
+    "popup.version": "Change version to show popup again to users who already dismissed it",
+    "banner.active_true": "Show top banner on home",
+    "banner.active_false": "Hide banner"
+  },
+  "popup": {
+    "active": true,
+    "title": "1,000 New Words — 2,400 Total!",
+    "message": "We added 1,000 new basic words!\nBasic Words now has 2,400 words in total.\nUse the consonant jump in the word list to find words quickly.",
+    "button": "Check them out!",
+    "version": "4.0"
+  },
+  "banner": {
+    "active": true,
+    "message": "🎉 Update — 2,400 words reached! 1,000 new words added!",
+    "link": "words.html"
+  }
+}

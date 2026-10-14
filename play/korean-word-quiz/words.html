@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saved words · Korean Word Quiz</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://kysystemstudio.com/play/korean-word-quiz/">
+  <noscript><meta http-equiv="refresh" content="0; url=./#/words/wrong"></noscript>
+  <script>
+    // Old URL: words.html?type=wrong|learned
+    location.replace(new URLSearchParams(location.search).get('type') === 'learned' ? './#/words/learned' : './#/words/wrong');
+  </script>
+</head>
+<body>
+  <p><a href="./#/words/wrong">Wrong answers</a> · <a href="./#/words/learned">Learned words</a></p>
+</body>
+</html>
