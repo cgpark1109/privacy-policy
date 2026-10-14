@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en" data-game="flag">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All flags of the world – Flag Quiz</title>
+<meta name="description" content="The flags of all 195 countries (193 UN member states plus Vatican City and Palestine) with their names in English and Korean. Search, filter by region and see which flags look alike.">
+<meta name="google-adsense-account" content="ca-pub-4148553154486992">
+<link rel="canonical" href="https://kysystemstudio.com/play/flag-quiz/all-flags.html">
+<meta name="theme-color" content="#1F5FC4">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ggook's studio">
+<meta property="og:title" content="All flags of the world – Flag Quiz">
+<meta property="og:description" content="The flags of all 195 countries (193 UN member states plus Vatican City and Palestine) with their names in English and Korean. Search, filter by region and see which flags look alike.">
+<meta property="og:url" content="https://kysystemstudio.com/play/flag-quiz/all-flags.html">
+<meta property="og:image" content="https://kysystemstudio.com/play/flag-quiz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Flag Quiz: Guess the flags of 195 countries">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All flags of the world – Flag Quiz">
+<meta name="twitter:description" content="The flags of all 195 countries (193 UN member states plus Vatican City and Palestine) with their names in English and Korean. Search, filter by region and see which flags look alike.">
+<meta name="twitter:image" content="https://kysystemstudio.com/play/flag-quiz/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css?v=a9db4477f9">
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('kys_flag_settings')||'{}');var d=document.documentElement;if(s.theme==='light'||s.theme==='dark')d.setAttribute('data-theme',s.theme);var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
+<script src="logic.js?v=af4ef35bc5" defer></script>
+<script src="data.js?v=370c60b6e8" defer></script>
+<script src="game.js?v=1706d0c048" defer></script>
+<script src="app.js?v=ecee5f53bb" defer></script>
+</head>
+<body data-page="list">
+<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./#/"><img src="favicon.svg" alt="" width="32" height="32"><span data-t="title">Flag Quiz</span></a>
+    <nav class="top-links" aria-label="Game">
+      <a class="top-link" href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-t="play">Play</span></a>
+      <button class="top-link lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button>
+      
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/" data-t="studio">ggook's studio</a><span aria-hidden="true">›</span><a href="/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">Flag Quiz</a></nav>
+    <div class="list-head">
+      <h1 data-t="list_title">All flags of the world</h1>
+      <p class="lang-en">The flags of all 195 countries: the 193 UN member states plus the two observer states, Vatican City and Palestine. Search in English or Korean, filter by region, and check which flags are easy to mix up.</p><p class="lang-ko">유엔 회원국 193개국과 옵서버 국가인 바티칸 시국, 팔레스타인까지 195개국의 국기예요. 영어나 한국어로 검색하고, 지역별로 보고, 헷갈리기 쉬운 국기도 확인해 보세요.</p>
+      <p style="margin-top:12px"><a class="btn primary" href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-t="list_play">Play the Flag Quiz</span></a></p>
+    </div>
+    <div class="card filters" role="search">
+      <label class="search"><span class="visually-hidden" data-t="search">Search</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search countries…" data-t-attr="placeholder:search_ph"></label>
+      <div class="chips" id="regions" role="group" data-t-attr="aria-label:region" aria-label="Region"><button type="button" data-region="all" aria-pressed="true"><span class="lang-en">All</span><span class="lang-ko">전체</span></button><button type="button" data-region="africa" aria-pressed="false"><span class="lang-en">Africa</span><span class="lang-ko">아프리카</span></button><button type="button" data-region="asia" aria-pressed="false"><span class="lang-en">Asia</span><span class="lang-ko">아시아</span></button><button type="button" data-region="europe" aria-pressed="false"><span class="lang-en">Europe</span><span class="lang-ko">유럽</span></button><button type="button" data-region="north-america" aria-pressed="false"><span class="lang-en">North America</span><span class="lang-ko">북아메리카</span></button><button type="button" data-region="south-america" aria-pressed="false"><span class="lang-en">South America</span><span class="lang-ko">남아메리카</span></button><button type="button" data-region="oceania" aria-pressed="false"><span class="lang-en">Oceania</span><span class="lang-ko">오세아니아</span></button></div>
+      <p class="count" id="count" aria-live="polite">195 countries</p>
+    </div>
+    <ul class="grid" id="list">
+<li id="af" data-en="Afghanistan" data-ko="아프가니스탄" data-region="asia" data-search="AF Afghanistan 아프가니스탄"><article class="entry">
+<div class="eflag"><img src="flags/af.svg" alt="Flag of Afghanistan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Afghanistan</span><span class="n-ko" lang="ko">아프가니스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 20</span><span class="lang-ko">아시아 · 레벨 20</span></p></div>
+</article></li>
+<li id="al" data-en="Albania" data-ko="알바니아" data-region="europe" data-search="AL Albania 알바니아"><article class="entry">
+<div class="eflag"><img src="flags/al.svg" alt="Flag of Albania" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Albania</span><span class="n-ko" lang="ko">알바니아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#me">Montenegro</a></span><span class="lang-ko">비슷한 국기: <a href="#me">몬테네그로</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 22</span><span class="lang-ko">유럽 · 레벨 22</span></p></div>
+</article></li>
+<li id="dz" data-en="Algeria" data-ko="알제리" data-region="africa" data-search="DZ Algeria 알제리"><article class="entry">
+<div class="eflag"><img src="flags/dz.svg" alt="Flag of Algeria" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Algeria</span><span class="n-ko" lang="ko">알제리</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 18</span><span class="lang-ko">아프리카 · 레벨 18</span></p></div>
+</article></li>
+<li id="ad" data-en="Andorra" data-ko="안도라" data-region="europe" data-search="AD Andorra 안도라"><article class="entry">
+<div class="eflag"><img src="flags/ad.svg" alt="Flag of Andorra" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Andorra</span><span class="n-ko" lang="ko">안도라</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#td">Chad</a>, <a href="#ro">Romania</a>, <a href="#md">Moldova</a></span><span class="lang-ko">비슷한 국기: <a href="#td">차드</a>, <a href="#ro">루마니아</a>, <a href="#md">몰도바</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 15</span><span class="lang-ko">유럽 · 레벨 15</span></p></div>
+</article></li>
+<li id="ao" data-en="Angola" data-ko="앙골라" data-region="africa" data-search="AO Angola 앙골라"><article class="entry">
+<div class="eflag"><img src="flags/ao.svg" alt="Flag of Angola" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Angola</span><span class="n-ko" lang="ko">앙골라</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 28</span><span class="lang-ko">아프리카 · 레벨 28</span></p></div>
+</article></li>
+<li id="ag" data-en="Antigua and Barbuda" data-ko="앤티가 바부다" data-region="north-america" data-search="AG Antigua and Barbuda 앤티가 바부다"><article class="entry">
+<div class="eflag"><img src="flags/ag.svg" alt="Flag of Antigua and Barbuda" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Antigua and Barbuda</span><span class="n-ko" lang="ko">앤티가 바부다</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 37</span><span class="lang-ko">북아메리카 · 레벨 37</span></p></div>
+</article></li>
+<li id="ar" data-en="Argentina" data-ko="아르헨티나" data-region="south-america" data-search="AR Argentina 아르헨티나"><article class="entry">
+<div class="eflag"><img src="flags/ar.svg" alt="Flag of Argentina" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Argentina</span><span class="n-ko" lang="ko">아르헨티나</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hn">Honduras</a>, <a href="#ni">Nicaragua</a>, <a href="#sv">El Salvador</a>, <a href="#gt">Guatemala</a></span><span class="lang-ko">비슷한 국기: <a href="#hn">온두라스</a>, <a href="#ni">니카라과</a>, <a href="#sv">엘살바도르</a>, <a href="#gt">과테말라</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 4</span><span class="lang-ko">남아메리카 · 레벨 4</span></p></div>
+</article></li>
+<li id="am" data-en="Armenia" data-ko="아르메니아" data-region="asia" data-search="AM Armenia 아르메니아"><article class="entry">
+<div class="eflag"><img src="flags/am.svg" alt="Flag of Armenia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Armenia</span><span class="n-ko" lang="ko">아르메니아</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 25</span><span class="lang-ko">아시아 · 레벨 25</span></p></div>
+</article></li>
+<li id="au" data-en="Australia" data-ko="호주" data-region="oceania" data-search="AU Australia 호주 오스트레일리아"><article class="entry">
+<div class="eflag"><img src="flags/au.svg" alt="Flag of Australia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Australia</span><span class="n-ko" lang="ko">호주</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#nz">New Zealand</a></span><span class="lang-ko">비슷한 국기: <a href="#nz">뉴질랜드</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 2</span><span class="lang-ko">오세아니아 · 레벨 2</span></p></div>
+</article></li>
+<li id="at" data-en="Austria" data-ko="오스트리아" data-region="europe" data-search="AT Austria 오스트리아"><article class="entry">
+<div class="eflag"><img src="flags/at.svg" alt="Flag of Austria" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Austria</span><span class="n-ko" lang="ko">오스트리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#lv">Latvia</a>, <a href="#lb">Lebanon</a></span><span class="lang-ko">비슷한 국기: <a href="#lv">라트비아</a>, <a href="#lb">레바논</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 6</span><span class="lang-ko">유럽 · 레벨 6</span></p></div>
+</article></li>
+<li id="az" data-en="Azerbaijan" data-ko="아제르바이잔" data-region="asia" data-search="AZ Azerbaijan 아제르바이잔"><article class="entry">
+<div class="eflag"><img src="flags/az.svg" alt="Flag of Azerbaijan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Azerbaijan</span><span class="n-ko" lang="ko">아제르바이잔</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 25</span><span class="lang-ko">아시아 · 레벨 25</span></p></div>
+</article></li>
+<li id="bs" data-en="Bahamas" data-ko="바하마" data-region="north-america" data-search="BS Bahamas 바하마 The Bahamas"><article class="entry">
+<div class="eflag"><img src="flags/bs.svg" alt="Flag of Bahamas" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bahamas</span><span class="n-ko" lang="ko">바하마</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 21</span><span class="lang-ko">북아메리카 · 레벨 21</span></p></div>
+</article></li>
+<li id="bh" data-en="Bahrain" data-ko="바레인" data-region="asia" data-search="BH Bahrain 바레인"><article class="entry">
+<div class="eflag"><img src="flags/bh.svg" alt="Flag of Bahrain" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bahrain</span><span class="n-ko" lang="ko">바레인</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#qa">Qatar</a></span><span class="lang-ko">비슷한 국기: <a href="#qa">카타르</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 26</span><span class="lang-ko">아시아 · 레벨 26</span></p></div>
+</article></li>
+<li id="bd" data-en="Bangladesh" data-ko="방글라데시" data-region="asia" data-search="BD Bangladesh 방글라데시"><article class="entry">
+<div class="eflag"><img src="flags/bd.svg" alt="Flag of Bangladesh" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bangladesh</span><span class="n-ko" lang="ko">방글라데시</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#jp">Japan</a>, <a href="#pw">Palau</a></span><span class="lang-ko">비슷한 국기: <a href="#jp">일본</a>, <a href="#pw">팔라우</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 17</span><span class="lang-ko">아시아 · 레벨 17</span></p></div>
+</article></li>
+<li id="bb" data-en="Barbados" data-ko="바베이도스" data-region="north-america" data-search="BB Barbados 바베이도스"><article class="entry">
+<div class="eflag"><img src="flags/bb.svg" alt="Flag of Barbados" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Barbados</span><span class="n-ko" lang="ko">바베이도스</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 36</span><span class="lang-ko">북아메리카 · 레벨 36</span></p></div>
+</article></li>
+<li id="by" data-en="Belarus" data-ko="벨라루스" data-region="europe" data-search="BY Belarus 벨라루스"><article class="entry">
+<div class="eflag"><img src="flags/by.svg" alt="Flag of Belarus" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Belarus</span><span class="n-ko" lang="ko">벨라루스</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 13</span><span class="lang-ko">유럽 · 레벨 13</span></p></div>
+</article></li>
+<li id="be" data-en="Belgium" data-ko="벨기에" data-region="europe" data-search="BE Belgium 벨기에"><article class="entry">
+<div class="eflag"><img src="flags/be.svg" alt="Flag of Belgium" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Belgium</span><span class="n-ko" lang="ko">벨기에</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#de">Germany</a></span><span class="lang-ko">비슷한 국기: <a href="#de">독일</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 5</span><span class="lang-ko">유럽 · 레벨 5</span></p></div>
+</article></li>
+<li id="bz" data-en="Belize" data-ko="벨리즈" data-region="north-america" data-search="BZ Belize 벨리즈"><article class="entry">
+<div class="eflag"><img src="flags/bz.svg" alt="Flag of Belize" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Belize</span><span class="n-ko" lang="ko">벨리즈</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 35</span><span class="lang-ko">북아메리카 · 레벨 35</span></p></div>
+</article></li>
+<li id="bj" data-en="Benin" data-ko="베냉" data-region="africa" data-search="BJ Benin 베냉"><article class="entry">
+<div class="eflag"><img src="flags/bj.svg" alt="Flag of Benin" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Benin</span><span class="n-ko" lang="ko">베냉</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 32</span><span class="lang-ko">아프리카 · 레벨 32</span></p></div>
+</article></li>
+<li id="bt" data-en="Bhutan" data-ko="부탄" data-region="asia" data-search="BT Bhutan 부탄"><article class="entry">
+<div class="eflag"><img src="flags/bt.svg" alt="Flag of Bhutan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bhutan</span><span class="n-ko" lang="ko">부탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 30</span><span class="lang-ko">아시아 · 레벨 30</span></p></div>
+</article></li>
+<li id="bo" data-en="Bolivia" data-ko="볼리비아" data-region="south-america" data-search="BO Bolivia 볼리비아"><article class="entry">
+<div class="eflag"><img src="flags/bo.svg" alt="Flag of Bolivia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bolivia</span><span class="n-ko" lang="ko">볼리비아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#gh">Ghana</a>, <a href="#lt">Lithuania</a>, <a href="#et">Ethiopia</a></span><span class="lang-ko">비슷한 국기: <a href="#gh">가나</a>, <a href="#lt">리투아니아</a>, <a href="#et">에티오피아</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 23</span><span class="lang-ko">남아메리카 · 레벨 23</span></p></div>
+</article></li>
+<li id="ba" data-en="Bosnia and Herzegovina" data-ko="보스니아 헤르체고비나" data-region="europe" data-search="BA Bosnia and Herzegovina 보스니아 헤르체고비나 Bosnia 보스니아"><article class="entry">
+<div class="eflag"><img src="flags/ba.svg" alt="Flag of Bosnia and Herzegovina" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bosnia and Herzegovina</span><span class="n-ko" lang="ko">보스니아 헤르체고비나</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 12</span><span class="lang-ko">유럽 · 레벨 12</span></p></div>
+</article></li>
+<li id="bw" data-en="Botswana" data-ko="보츠와나" data-region="africa" data-search="BW Botswana 보츠와나"><article class="entry">
+<div class="eflag"><img src="flags/bw.svg" alt="Flag of Botswana" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Botswana</span><span class="n-ko" lang="ko">보츠와나</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 31</span><span class="lang-ko">아프리카 · 레벨 31</span></p></div>
+</article></li>
+<li id="br" data-en="Brazil" data-ko="브라질" data-region="south-america" data-search="BR Brazil 브라질"><article class="entry">
+<div class="eflag"><img src="flags/br.svg" alt="Flag of Brazil" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Brazil</span><span class="n-ko" lang="ko">브라질</span></h2>
+<p class="meta"><span class="lang-en">South America · Level 2</span><span class="lang-ko">남아메리카 · 레벨 2</span></p></div>
+</article></li>
+<li id="bn" data-en="Brunei" data-ko="브루나이" data-region="asia" data-search="BN Brunei 브루나이 Brunei Darussalam"><article class="entry">
+<div class="eflag"><img src="flags/bn.svg" alt="Flag of Brunei" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Brunei</span><span class="n-ko" lang="ko">브루나이</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 30</span><span class="lang-ko">아시아 · 레벨 30</span></p></div>
+</article></li>
+<li id="bg" data-en="Bulgaria" data-ko="불가리아" data-region="europe" data-search="BG Bulgaria 불가리아"><article class="entry">
+<div class="eflag"><img src="flags/bg.svg" alt="Flag of Bulgaria" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Bulgaria</span><span class="n-ko" lang="ko">불가리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hu">Hungary</a>, <a href="#tj">Tajikistan</a>, <a href="#ir">Iran</a></span><span class="lang-ko">비슷한 국기: <a href="#hu">헝가리</a>, <a href="#tj">타지키스탄</a>, <a href="#ir">이란</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 22</span><span class="lang-ko">유럽 · 레벨 22</span></p></div>
+</article></li>
+<li id="bf" data-en="Burkina Faso" data-ko="부르키나파소" data-region="africa" data-search="BF Burkina Faso 부르키나파소"><article class="entry">
+<div class="eflag"><img src="flags/bf.svg" alt="Flag of Burkina Faso" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Burkina Faso</span><span class="n-ko" lang="ko">부르키나파소</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 32</span><span class="lang-ko">아프리카 · 레벨 32</span></p></div>
+</article></li>
+<li id="bi" data-en="Burundi" data-ko="부룬디" data-region="africa" data-search="BI Burundi 부룬디"><article class="entry">
+<div class="eflag"><img src="flags/bi.svg" alt="Flag of Burundi" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Burundi</span><span class="n-ko" lang="ko">부룬디</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 33</span><span class="lang-ko">아프리카 · 레벨 33</span></p></div>
+</article></li>
+<li id="cv" data-en="Cabo Verde" data-ko="카보베르데" data-region="africa" data-search="CV Cabo Verde 카보베르데 Cape Verde"><article class="entry">
+<div class="eflag"><img src="flags/cv.svg" alt="Flag of Cabo Verde" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Cabo Verde</span><span class="n-ko" lang="ko">카보베르데</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 34</span><span class="lang-ko">아프리카 · 레벨 34</span></p></div>
+</article></li>
+<li id="kh" data-en="Cambodia" data-ko="캄보디아" data-region="asia" data-search="KH Cambodia 캄보디아"><article class="entry">
+<div class="eflag"><img src="flags/kh.svg" alt="Flag of Cambodia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Cambodia</span><span class="n-ko" lang="ko">캄보디아</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 20</span><span class="lang-ko">아시아 · 레벨 20</span></p></div>
+</article></li>
+<li id="cm" data-en="Cameroon" data-ko="카메룬" data-region="africa" data-search="CM Cameroon 카메룬"><article class="entry">
+<div class="eflag"><img src="flags/cm.svg" alt="Flag of Cameroon" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Cameroon</span><span class="n-ko" lang="ko">카메룬</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#sn">Senegal</a>, <a href="#ml">Mali</a>, <a href="#gn">Guinea</a></span><span class="lang-ko">비슷한 국기: <a href="#sn">세네갈</a>, <a href="#ml">말리</a>, <a href="#gn">기니</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 29</span><span class="lang-ko">아프리카 · 레벨 29</span></p></div>
+</article></li>
+<li id="ca" data-en="Canada" data-ko="캐나다" data-region="north-america" data-search="CA Canada 캐나다"><article class="entry">
+<div class="eflag"><img src="flags/ca.svg" alt="Flag of Canada" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Canada</span><span class="n-ko" lang="ko">캐나다</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 2</span><span class="lang-ko">북아메리카 · 레벨 2</span></p></div>
+</article></li>
+<li id="cf" data-en="Central African Republic" data-ko="중앙아프리카 공화국" data-region="africa" data-search="CF Central African Republic 중앙아프리카 공화국 CAR 중앙 아프리카 공화국"><article class="entry">
+<div class="eflag"><img src="flags/cf.svg" alt="Flag of Central African Republic" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Central African Republic</span><span class="n-ko" lang="ko">중앙아프리카 공화국</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 33</span><span class="lang-ko">아프리카 · 레벨 33</span></p></div>
+</article></li>
+<li id="td" data-en="Chad" data-ko="차드" data-region="africa" data-search="TD Chad 차드"><article class="entry">
+<div class="eflag"><img src="flags/td.svg" alt="Flag of Chad" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Chad</span><span class="n-ko" lang="ko">차드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ro">Romania</a>, <a href="#ad">Andorra</a>, <a href="#md">Moldova</a></span><span class="lang-ko">비슷한 국기: <a href="#ro">루마니아</a>, <a href="#ad">안도라</a>, <a href="#md">몰도바</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 11</span><span class="lang-ko">아프리카 · 레벨 11</span></p></div>
+</article></li>
+<li id="cl" data-en="Chile" data-ko="칠레" data-region="south-america" data-search="CL Chile 칠레"><article class="entry">
+<div class="eflag"><img src="flags/cl.svg" alt="Flag of Chile" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Chile</span><span class="n-ko" lang="ko">칠레</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#cu">Cuba</a></span><span class="lang-ko">비슷한 국기: <a href="#cu">쿠바</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 16</span><span class="lang-ko">남아메리카 · 레벨 16</span></p></div>
+</article></li>
+<li id="cn" data-en="China" data-ko="중국" data-region="asia" data-search="CN China 중국"><article class="entry">
+<div class="eflag"><img src="flags/cn.svg" alt="Flag of China" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">China</span><span class="n-ko" lang="ko">중국</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#vn">Vietnam</a></span><span class="lang-ko">비슷한 국기: <a href="#vn">베트남</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 3</span><span class="lang-ko">아시아 · 레벨 3</span></p></div>
+</article></li>
+<li id="co" data-en="Colombia" data-ko="콜롬비아" data-region="south-america" data-search="CO Colombia 콜롬비아"><article class="entry">
+<div class="eflag"><img src="flags/co.svg" alt="Flag of Colombia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Colombia</span><span class="n-ko" lang="ko">콜롬비아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ec">Ecuador</a>, <a href="#ve">Venezuela</a></span><span class="lang-ko">비슷한 국기: <a href="#ec">에콰도르</a>, <a href="#ve">베네수엘라</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 16</span><span class="lang-ko">남아메리카 · 레벨 16</span></p></div>
+</article></li>
+<li id="km" data-en="Comoros" data-ko="코모로" data-region="africa" data-search="KM Comoros 코모로"><article class="entry">
+<div class="eflag"><img src="flags/km.svg" alt="Flag of Comoros" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Comoros</span><span class="n-ko" lang="ko">코모로</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 35</span><span class="lang-ko">아프리카 · 레벨 35</span></p></div>
+</article></li>
+<li id="cr" data-en="Costa Rica" data-ko="코스타리카" data-region="north-america" data-search="CR Costa Rica 코스타리카"><article class="entry">
+<div class="eflag"><img src="flags/cr.svg" alt="Flag of Costa Rica" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Costa Rica</span><span class="n-ko" lang="ko">코스타리카</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#th">Thailand</a></span><span class="lang-ko">비슷한 국기: <a href="#th">태국</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 23</span><span class="lang-ko">북아메리카 · 레벨 23</span></p></div>
+</article></li>
+<li id="ci" data-en="Côte d&#39;Ivoire" data-ko="코트디부아르" data-region="africa" data-search="CI Côte d&#39;Ivoire 코트디부아르 Ivory Coast Cote dIvoire 아이보리코스트"><article class="entry">
+<div class="eflag"><img src="flags/ci.svg" alt="Flag of Côte d&#39;Ivoire" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Côte d&#39;Ivoire</span><span class="n-ko" lang="ko">코트디부아르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ie">Ireland</a>, <a href="#it">Italy</a></span><span class="lang-ko">비슷한 국기: <a href="#ie">아일랜드</a>, <a href="#it">이탈리아</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 11</span><span class="lang-ko">아프리카 · 레벨 11</span></p></div>
+</article></li>
+<li id="hr" data-en="Croatia" data-ko="크로아티아" data-region="europe" data-search="HR Croatia 크로아티아"><article class="entry">
+<div class="eflag"><img src="flags/hr.svg" alt="Flag of Croatia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Croatia</span><span class="n-ko" lang="ko">크로아티아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ru">Russia</a>, <a href="#si">Slovenia</a>, <a href="#sk">Slovakia</a>, <a href="#rs">Serbia</a></span><span class="lang-ko">비슷한 국기: <a href="#ru">러시아</a>, <a href="#si">슬로베니아</a>, <a href="#sk">슬로바키아</a>, <a href="#rs">세르비아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 12</span><span class="lang-ko">유럽 · 레벨 12</span></p></div>
+</article></li>
+<li id="cu" data-en="Cuba" data-ko="쿠바" data-region="north-america" data-search="CU Cuba 쿠바"><article class="entry">
+<div class="eflag"><img src="flags/cu.svg" alt="Flag of Cuba" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Cuba</span><span class="n-ko" lang="ko">쿠바</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#cl">Chile</a></span><span class="lang-ko">비슷한 국기: <a href="#cl">칠레</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 16</span><span class="lang-ko">북아메리카 · 레벨 16</span></p></div>
+</article></li>
+<li id="cy" data-en="Cyprus" data-ko="키프로스" data-region="asia" data-search="CY Cyprus 키프로스 사이프러스"><article class="entry">
+<div class="eflag"><img src="flags/cy.svg" alt="Flag of Cyprus" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Cyprus</span><span class="n-ko" lang="ko">키프로스</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 22</span><span class="lang-ko">아시아 · 레벨 22</span></p></div>
+</article></li>
+<li id="cz" data-en="Czechia" data-ko="체코" data-region="europe" data-search="CZ Czechia 체코 Czech Republic 체코 공화국"><article class="entry">
+<div class="eflag"><img src="flags/cz.svg" alt="Flag of Czechia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Czechia</span><span class="n-ko" lang="ko">체코</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 10</span><span class="lang-ko">유럽 · 레벨 10</span></p></div>
+</article></li>
+<li id="dk" data-en="Denmark" data-ko="덴마크" data-region="europe" data-search="DK Denmark 덴마크"><article class="entry">
+<div class="eflag"><img src="flags/dk.svg" alt="Flag of Denmark" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Denmark</span><span class="n-ko" lang="ko">덴마크</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#no">Norway</a>, <a href="#is">Iceland</a>, <a href="#se">Sweden</a>, <a href="#fi">Finland</a></span><span class="lang-ko">비슷한 국기: <a href="#no">노르웨이</a>, <a href="#is">아이슬란드</a>, <a href="#se">스웨덴</a>, <a href="#fi">핀란드</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 6</span><span class="lang-ko">유럽 · 레벨 6</span></p></div>
+</article></li>
+<li id="dj" data-en="Djibouti" data-ko="지부티" data-region="africa" data-search="DJ Djibouti 지부티"><article class="entry">
+<div class="eflag"><img src="flags/dj.svg" alt="Flag of Djibouti" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Djibouti</span><span class="n-ko" lang="ko">지부티</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 33</span><span class="lang-ko">아프리카 · 레벨 33</span></p></div>
+</article></li>
+<li id="dm" data-en="Dominica" data-ko="도미니카 연방" data-region="north-america" data-search="DM Dominica 도미니카 연방 도미니카"><article class="entry">
+<div class="eflag"><img src="flags/dm.svg" alt="Flag of Dominica" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Dominica</span><span class="n-ko" lang="ko">도미니카 연방</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 37</span><span class="lang-ko">북아메리카 · 레벨 37</span></p></div>
+</article></li>
+<li id="do" data-en="Dominican Republic" data-ko="도미니카 공화국" data-region="north-america" data-search="DO Dominican Republic 도미니카 공화국"><article class="entry">
+<div class="eflag"><img src="flags/do.svg" alt="Flag of Dominican Republic" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Dominican Republic</span><span class="n-ko" lang="ko">도미니카 공화국</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 21</span><span class="lang-ko">북아메리카 · 레벨 21</span></p></div>
+</article></li>
+<li id="cd" data-en="DR Congo" data-ko="콩고 민주 공화국" data-region="africa" data-search="CD DR Congo 콩고 민주 공화국 Democratic Republic of the Congo DRC Congo-Kinshasa 콩고-킨샤사 민주콩고"><article class="entry">
+<div class="eflag"><img src="flags/cd.svg" alt="Flag of DR Congo" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">DR Congo</span><span class="n-ko" lang="ko">콩고 민주 공화국</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 27</span><span class="lang-ko">아프리카 · 레벨 27</span></p></div>
+</article></li>
+<li id="ec" data-en="Ecuador" data-ko="에콰도르" data-region="south-america" data-search="EC Ecuador 에콰도르"><article class="entry">
+<div class="eflag"><img src="flags/ec.svg" alt="Flag of Ecuador" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Ecuador</span><span class="n-ko" lang="ko">에콰도르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#co">Colombia</a>, <a href="#ve">Venezuela</a></span><span class="lang-ko">비슷한 국기: <a href="#co">콜롬비아</a>, <a href="#ve">베네수엘라</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 23</span><span class="lang-ko">남아메리카 · 레벨 23</span></p></div>
+</article></li>
+<li id="eg" data-en="Egypt" data-ko="이집트" data-region="africa" data-search="EG Egypt 이집트"><article class="entry">
+<div class="eflag"><img src="flags/eg.svg" alt="Flag of Egypt" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Egypt</span><span class="n-ko" lang="ko">이집트</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#iq">Iraq</a>, <a href="#sy">Syria</a>, <a href="#ye">Yemen</a></span><span class="lang-ko">비슷한 국기: <a href="#iq">이라크</a>, <a href="#sy">시리아</a>, <a href="#ye">예멘</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 8</span><span class="lang-ko">아프리카 · 레벨 8</span></p></div>
+</article></li>
+<li id="sv" data-en="El Salvador" data-ko="엘살바도르" data-region="north-america" data-search="SV El Salvador 엘살바도르"><article class="entry">
+<div class="eflag"><img src="flags/sv.svg" alt="Flag of El Salvador" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">El Salvador</span><span class="n-ko" lang="ko">엘살바도르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hn">Honduras</a>, <a href="#ni">Nicaragua</a>, <a href="#gt">Guatemala</a>, <a href="#ar">Argentina</a></span><span class="lang-ko">비슷한 국기: <a href="#hn">온두라스</a>, <a href="#ni">니카라과</a>, <a href="#gt">과테말라</a>, <a href="#ar">아르헨티나</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 24</span><span class="lang-ko">북아메리카 · 레벨 24</span></p></div>
+</article></li>
+<li id="gq" data-en="Equatorial Guinea" data-ko="적도 기니" data-region="africa" data-search="GQ Equatorial Guinea 적도 기니"><article class="entry">
+<div class="eflag"><img src="flags/gq.svg" alt="Flag of Equatorial Guinea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Equatorial Guinea</span><span class="n-ko" lang="ko">적도 기니</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 34</span><span class="lang-ko">아프리카 · 레벨 34</span></p></div>
+</article></li>
+<li id="er" data-en="Eritrea" data-ko="에리트리아" data-region="africa" data-search="ER Eritrea 에리트리아"><article class="entry">
+<div class="eflag"><img src="flags/er.svg" alt="Flag of Eritrea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Eritrea</span><span class="n-ko" lang="ko">에리트리아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 33</span><span class="lang-ko">아프리카 · 레벨 33</span></p></div>
+</article></li>
+<li id="ee" data-en="Estonia" data-ko="에스토니아" data-region="europe" data-search="EE Estonia 에스토니아"><article class="entry">
+<div class="eflag"><img src="flags/ee.svg" alt="Flag of Estonia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Estonia</span><span class="n-ko" lang="ko">에스토니아</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 13</span><span class="lang-ko">유럽 · 레벨 13</span></p></div>
+</article></li>
+<li id="sz" data-en="Eswatini" data-ko="에스와티니" data-region="africa" data-search="SZ Eswatini 에스와티니 Swaziland 스와질란드"><article class="entry">
+<div class="eflag"><img src="flags/sz.svg" alt="Flag of Eswatini" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Eswatini</span><span class="n-ko" lang="ko">에스와티니</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 31</span><span class="lang-ko">아프리카 · 레벨 31</span></p></div>
+</article></li>
+<li id="et" data-en="Ethiopia" data-ko="에티오피아" data-region="africa" data-search="ET Ethiopia 에티오피아"><article class="entry">
+<div class="eflag"><img src="flags/et.svg" alt="Flag of Ethiopia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Ethiopia</span><span class="n-ko" lang="ko">에티오피아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#gh">Ghana</a>, <a href="#bo">Bolivia</a>, <a href="#lt">Lithuania</a></span><span class="lang-ko">비슷한 국기: <a href="#gh">가나</a>, <a href="#bo">볼리비아</a>, <a href="#lt">리투아니아</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 8</span><span class="lang-ko">아프리카 · 레벨 8</span></p></div>
+</article></li>
+<li id="fj" data-en="Fiji" data-ko="피지" data-region="oceania" data-search="FJ Fiji 피지"><article class="entry">
+<div class="eflag"><img src="flags/fj.svg" alt="Flag of Fiji" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Fiji</span><span class="n-ko" lang="ko">피지</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#tv">Tuvalu</a></span><span class="lang-ko">비슷한 국기: <a href="#tv">투발루</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 30</span><span class="lang-ko">오세아니아 · 레벨 30</span></p></div>
+</article></li>
+<li id="fi" data-en="Finland" data-ko="핀란드" data-region="europe" data-search="FI Finland 핀란드"><article class="entry">
+<div class="eflag"><img src="flags/fi.svg" alt="Flag of Finland" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Finland</span><span class="n-ko" lang="ko">핀란드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#no">Norway</a>, <a href="#is">Iceland</a>, <a href="#dk">Denmark</a>, <a href="#se">Sweden</a></span><span class="lang-ko">비슷한 국기: <a href="#no">노르웨이</a>, <a href="#is">아이슬란드</a>, <a href="#dk">덴마크</a>, <a href="#se">스웨덴</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 6</span><span class="lang-ko">유럽 · 레벨 6</span></p></div>
+</article></li>
+<li id="fr" data-en="France" data-ko="프랑스" data-region="europe" data-search="FR France 프랑스"><article class="entry">
+<div class="eflag"><img src="flags/fr.svg" alt="Flag of France" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">France</span><span class="n-ko" lang="ko">프랑스</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 1</span><span class="lang-ko">유럽 · 레벨 1</span></p></div>
+</article></li>
+<li id="ga" data-en="Gabon" data-ko="가봉" data-region="africa" data-search="GA Gabon 가봉"><article class="entry">
+<div class="eflag"><img src="flags/ga.svg" alt="Flag of Gabon" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Gabon</span><span class="n-ko" lang="ko">가봉</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 32</span><span class="lang-ko">아프리카 · 레벨 32</span></p></div>
+</article></li>
+<li id="gm" data-en="Gambia" data-ko="감비아" data-region="africa" data-search="GM Gambia 감비아 The Gambia"><article class="entry">
+<div class="eflag"><img src="flags/gm.svg" alt="Flag of Gambia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Gambia</span><span class="n-ko" lang="ko">감비아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 34</span><span class="lang-ko">아프리카 · 레벨 34</span></p></div>
+</article></li>
+<li id="ge" data-en="Georgia" data-ko="조지아" data-region="asia" data-search="GE Georgia 조지아 그루지야"><article class="entry">
+<div class="eflag"><img src="flags/ge.svg" alt="Flag of Georgia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Georgia</span><span class="n-ko" lang="ko">조지아</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 25</span><span class="lang-ko">아시아 · 레벨 25</span></p></div>
+</article></li>
+<li id="de" data-en="Germany" data-ko="독일" data-region="europe" data-search="DE Germany 독일"><article class="entry">
+<div class="eflag"><img src="flags/de.svg" alt="Flag of Germany" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Germany</span><span class="n-ko" lang="ko">독일</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#be">Belgium</a></span><span class="lang-ko">비슷한 국기: <a href="#be">벨기에</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 1</span><span class="lang-ko">유럽 · 레벨 1</span></p></div>
+</article></li>
+<li id="gh" data-en="Ghana" data-ko="가나" data-region="africa" data-search="GH Ghana 가나"><article class="entry">
+<div class="eflag"><img src="flags/gh.svg" alt="Flag of Ghana" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Ghana</span><span class="n-ko" lang="ko">가나</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#bo">Bolivia</a>, <a href="#lt">Lithuania</a>, <a href="#et">Ethiopia</a></span><span class="lang-ko">비슷한 국기: <a href="#bo">볼리비아</a>, <a href="#lt">리투아니아</a>, <a href="#et">에티오피아</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 8</span><span class="lang-ko">아프리카 · 레벨 8</span></p></div>
+</article></li>
+<li id="gr" data-en="Greece" data-ko="그리스" data-region="europe" data-search="GR Greece 그리스"><article class="entry">
+<div class="eflag"><img src="flags/gr.svg" alt="Flag of Greece" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Greece</span><span class="n-ko" lang="ko">그리스</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#uy">Uruguay</a></span><span class="lang-ko">비슷한 국기: <a href="#uy">우루과이</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 5</span><span class="lang-ko">유럽 · 레벨 5</span></p></div>
+</article></li>
+<li id="gd" data-en="Grenada" data-ko="그레나다" data-region="north-america" data-search="GD Grenada 그레나다"><article class="entry">
+<div class="eflag"><img src="flags/gd.svg" alt="Flag of Grenada" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Grenada</span><span class="n-ko" lang="ko">그레나다</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 36</span><span class="lang-ko">북아메리카 · 레벨 36</span></p></div>
+</article></li>
+<li id="gt" data-en="Guatemala" data-ko="과테말라" data-region="north-america" data-search="GT Guatemala 과테말라"><article class="entry">
+<div class="eflag"><img src="flags/gt.svg" alt="Flag of Guatemala" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Guatemala</span><span class="n-ko" lang="ko">과테말라</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hn">Honduras</a>, <a href="#ni">Nicaragua</a>, <a href="#sv">El Salvador</a>, <a href="#ar">Argentina</a></span><span class="lang-ko">비슷한 국기: <a href="#hn">온두라스</a>, <a href="#ni">니카라과</a>, <a href="#sv">엘살바도르</a>, <a href="#ar">아르헨티나</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 24</span><span class="lang-ko">북아메리카 · 레벨 24</span></p></div>
+</article></li>
+<li id="gn" data-en="Guinea" data-ko="기니" data-region="africa" data-search="GN Guinea 기니"><article class="entry">
+<div class="eflag"><img src="flags/gn.svg" alt="Flag of Guinea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Guinea</span><span class="n-ko" lang="ko">기니</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#sn">Senegal</a>, <a href="#ml">Mali</a>, <a href="#cm">Cameroon</a></span><span class="lang-ko">비슷한 국기: <a href="#sn">세네갈</a>, <a href="#ml">말리</a>, <a href="#cm">카메룬</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 11</span><span class="lang-ko">아프리카 · 레벨 11</span></p></div>
+</article></li>
+<li id="gw" data-en="Guinea-Bissau" data-ko="기니비사우" data-region="africa" data-search="GW Guinea-Bissau 기니비사우"><article class="entry">
+<div class="eflag"><img src="flags/gw.svg" alt="Flag of Guinea-Bissau" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Guinea-Bissau</span><span class="n-ko" lang="ko">기니비사우</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 34</span><span class="lang-ko">아프리카 · 레벨 34</span></p></div>
+</article></li>
+<li id="gy" data-en="Guyana" data-ko="가이아나" data-region="south-america" data-search="GY Guyana 가이아나"><article class="entry">
+<div class="eflag"><img src="flags/gy.svg" alt="Flag of Guyana" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Guyana</span><span class="n-ko" lang="ko">가이아나</span></h2>
+<p class="meta"><span class="lang-en">South America · Level 36</span><span class="lang-ko">남아메리카 · 레벨 36</span></p></div>
+</article></li>
+<li id="ht" data-en="Haiti" data-ko="아이티" data-region="north-america" data-search="HT Haiti 아이티"><article class="entry">
+<div class="eflag"><img src="flags/ht.svg" alt="Flag of Haiti" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Haiti</span><span class="n-ko" lang="ko">아이티</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#li">Liechtenstein</a></span><span class="lang-ko">비슷한 국기: <a href="#li">리히텐슈타인</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 21</span><span class="lang-ko">북아메리카 · 레벨 21</span></p></div>
+</article></li>
+<li id="hn" data-en="Honduras" data-ko="온두라스" data-region="north-america" data-search="HN Honduras 온두라스"><article class="entry">
+<div class="eflag"><img src="flags/hn.svg" alt="Flag of Honduras" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Honduras</span><span class="n-ko" lang="ko">온두라스</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ni">Nicaragua</a>, <a href="#sv">El Salvador</a>, <a href="#gt">Guatemala</a>, <a href="#ar">Argentina</a></span><span class="lang-ko">비슷한 국기: <a href="#ni">니카라과</a>, <a href="#sv">엘살바도르</a>, <a href="#gt">과테말라</a>, <a href="#ar">아르헨티나</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 24</span><span class="lang-ko">북아메리카 · 레벨 24</span></p></div>
+</article></li>
+<li id="hu" data-en="Hungary" data-ko="헝가리" data-region="europe" data-search="HU Hungary 헝가리"><article class="entry">
+<div class="eflag"><img src="flags/hu.svg" alt="Flag of Hungary" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Hungary</span><span class="n-ko" lang="ko">헝가리</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#bg">Bulgaria</a>, <a href="#tj">Tajikistan</a>, <a href="#ir">Iran</a></span><span class="lang-ko">비슷한 국기: <a href="#bg">불가리아</a>, <a href="#tj">타지키스탄</a>, <a href="#ir">이란</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 10</span><span class="lang-ko">유럽 · 레벨 10</span></p></div>
+</article></li>
+<li id="is" data-en="Iceland" data-ko="아이슬란드" data-region="europe" data-search="IS Iceland 아이슬란드"><article class="entry">
+<div class="eflag"><img src="flags/is.svg" alt="Flag of Iceland" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Iceland</span><span class="n-ko" lang="ko">아이슬란드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#no">Norway</a>, <a href="#dk">Denmark</a>, <a href="#se">Sweden</a>, <a href="#fi">Finland</a></span><span class="lang-ko">비슷한 국기: <a href="#no">노르웨이</a>, <a href="#dk">덴마크</a>, <a href="#se">스웨덴</a>, <a href="#fi">핀란드</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 13</span><span class="lang-ko">유럽 · 레벨 13</span></p></div>
+</article></li>
+<li id="in" data-en="India" data-ko="인도" data-region="asia" data-search="IN India 인도"><article class="entry">
+<div class="eflag"><img src="flags/in.svg" alt="Flag of India" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">India</span><span class="n-ko" lang="ko">인도</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ne">Niger</a></span><span class="lang-ko">비슷한 국기: <a href="#ne">니제르</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 3</span><span class="lang-ko">아시아 · 레벨 3</span></p></div>
+</article></li>
+<li id="id" data-en="Indonesia" data-ko="인도네시아" data-region="asia" data-search="ID Indonesia 인도네시아"><article class="entry">
+<div class="eflag"><img src="flags/id.svg" alt="Flag of Indonesia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Indonesia</span><span class="n-ko" lang="ko">인도네시아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#mc">Monaco</a>, <a href="#pl">Poland</a>, <a href="#sg">Singapore</a></span><span class="lang-ko">비슷한 국기: <a href="#mc">모나코</a>, <a href="#pl">폴란드</a>, <a href="#sg">싱가포르</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 7</span><span class="lang-ko">아시아 · 레벨 7</span></p></div>
+</article></li>
+<li id="ir" data-en="Iran" data-ko="이란" data-region="asia" data-search="IR Iran 이란"><article class="entry">
+<div class="eflag"><img src="flags/ir.svg" alt="Flag of Iran" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Iran</span><span class="n-ko" lang="ko">이란</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hu">Hungary</a>, <a href="#bg">Bulgaria</a>, <a href="#tj">Tajikistan</a></span><span class="lang-ko">비슷한 국기: <a href="#hu">헝가리</a>, <a href="#bg">불가리아</a>, <a href="#tj">타지키스탄</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 9</span><span class="lang-ko">아시아 · 레벨 9</span></p></div>
+</article></li>
+<li id="iq" data-en="Iraq" data-ko="이라크" data-region="asia" data-search="IQ Iraq 이라크"><article class="entry">
+<div class="eflag"><img src="flags/iq.svg" alt="Flag of Iraq" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Iraq</span><span class="n-ko" lang="ko">이라크</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#eg">Egypt</a>, <a href="#sy">Syria</a>, <a href="#ye">Yemen</a></span><span class="lang-ko">비슷한 국기: <a href="#eg">이집트</a>, <a href="#sy">시리아</a>, <a href="#ye">예멘</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 9</span><span class="lang-ko">아시아 · 레벨 9</span></p></div>
+</article></li>
+<li id="ie" data-en="Ireland" data-ko="아일랜드" data-region="europe" data-search="IE Ireland 아일랜드"><article class="entry">
+<div class="eflag"><img src="flags/ie.svg" alt="Flag of Ireland" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Ireland</span><span class="n-ko" lang="ko">아일랜드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ci">Côte d&#39;Ivoire</a>, <a href="#it">Italy</a></span><span class="lang-ko">비슷한 국기: <a href="#ci">코트디부아르</a>, <a href="#it">이탈리아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 11</span><span class="lang-ko">유럽 · 레벨 11</span></p></div>
+</article></li>
+<li id="il" data-en="Israel" data-ko="이스라엘" data-region="asia" data-search="IL Israel 이스라엘"><article class="entry">
+<div class="eflag"><img src="flags/il.svg" alt="Flag of Israel" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Israel</span><span class="n-ko" lang="ko">이스라엘</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 9</span><span class="lang-ko">아시아 · 레벨 9</span></p></div>
+</article></li>
+<li id="it" data-en="Italy" data-ko="이탈리아" data-region="europe" data-search="IT Italy 이탈리아"><article class="entry">
+<div class="eflag"><img src="flags/it.svg" alt="Flag of Italy" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Italy</span><span class="n-ko" lang="ko">이탈리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ie">Ireland</a>, <a href="#ci">Côte d&#39;Ivoire</a>, <a href="#mx">Mexico</a></span><span class="lang-ko">비슷한 국기: <a href="#ie">아일랜드</a>, <a href="#ci">코트디부아르</a>, <a href="#mx">멕시코</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 2</span><span class="lang-ko">유럽 · 레벨 2</span></p></div>
+</article></li>
+<li id="jm" data-en="Jamaica" data-ko="자메이카" data-region="north-america" data-search="JM Jamaica 자메이카"><article class="entry">
+<div class="eflag"><img src="flags/jm.svg" alt="Flag of Jamaica" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Jamaica</span><span class="n-ko" lang="ko">자메이카</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 21</span><span class="lang-ko">북아메리카 · 레벨 21</span></p></div>
+</article></li>
+<li id="jp" data-en="Japan" data-ko="일본" data-region="asia" data-search="JP Japan 일본"><article class="entry">
+<div class="eflag"><img src="flags/jp.svg" alt="Flag of Japan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Japan</span><span class="n-ko" lang="ko">일본</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#bd">Bangladesh</a>, <a href="#pw">Palau</a></span><span class="lang-ko">비슷한 국기: <a href="#bd">방글라데시</a>, <a href="#pw">팔라우</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 1</span><span class="lang-ko">아시아 · 레벨 1</span></p></div>
+</article></li>
+<li id="jo" data-en="Jordan" data-ko="요르단" data-region="asia" data-search="JO Jordan 요르단"><article class="entry">
+<div class="eflag"><img src="flags/jo.svg" alt="Flag of Jordan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Jordan</span><span class="n-ko" lang="ko">요르단</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ae">United Arab Emirates</a>, <a href="#kw">Kuwait</a>, <a href="#ps">Palestine</a>, <a href="#sd">Sudan</a></span><span class="lang-ko">비슷한 국기: <a href="#ae">아랍에미리트</a>, <a href="#kw">쿠웨이트</a>, <a href="#ps">팔레스타인</a>, <a href="#sd">수단</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 19</span><span class="lang-ko">아시아 · 레벨 19</span></p></div>
+</article></li>
+<li id="kz" data-en="Kazakhstan" data-ko="카자흐스탄" data-region="asia" data-search="KZ Kazakhstan 카자흐스탄"><article class="entry">
+<div class="eflag"><img src="flags/kz.svg" alt="Flag of Kazakhstan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Kazakhstan</span><span class="n-ko" lang="ko">카자흐스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 14</span><span class="lang-ko">아시아 · 레벨 14</span></p></div>
+</article></li>
+<li id="ke" data-en="Kenya" data-ko="케냐" data-region="africa" data-search="KE Kenya 케냐"><article class="entry">
+<div class="eflag"><img src="flags/ke.svg" alt="Flag of Kenya" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Kenya</span><span class="n-ko" lang="ko">케냐</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ss">South Sudan</a>, <a href="#mw">Malawi</a></span><span class="lang-ko">비슷한 국기: <a href="#ss">남수단</a>, <a href="#mw">말라위</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 8</span><span class="lang-ko">아프리카 · 레벨 8</span></p></div>
+</article></li>
+<li id="ki" data-en="Kiribati" data-ko="키리바시" data-region="oceania" data-search="KI Kiribati 키리바시"><article class="entry">
+<div class="eflag"><img src="flags/ki.svg" alt="Flag of Kiribati" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Kiribati</span><span class="n-ko" lang="ko">키리바시</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 38</span><span class="lang-ko">오세아니아 · 레벨 38</span></p></div>
+</article></li>
+<li id="kw" data-en="Kuwait" data-ko="쿠웨이트" data-region="asia" data-search="KW Kuwait 쿠웨이트"><article class="entry">
+<div class="eflag"><img src="flags/kw.svg" alt="Flag of Kuwait" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Kuwait</span><span class="n-ko" lang="ko">쿠웨이트</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ae">United Arab Emirates</a>, <a href="#jo">Jordan</a>, <a href="#ps">Palestine</a>, <a href="#sd">Sudan</a></span><span class="lang-ko">비슷한 국기: <a href="#ae">아랍에미리트</a>, <a href="#jo">요르단</a>, <a href="#ps">팔레스타인</a>, <a href="#sd">수단</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 19</span><span class="lang-ko">아시아 · 레벨 19</span></p></div>
+</article></li>
+<li id="kg" data-en="Kyrgyzstan" data-ko="키르기스스탄" data-region="asia" data-search="KG Kyrgyzstan 키르기스스탄"><article class="entry">
+<div class="eflag"><img src="flags/kg.svg" alt="Flag of Kyrgyzstan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Kyrgyzstan</span><span class="n-ko" lang="ko">키르기스스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 14</span><span class="lang-ko">아시아 · 레벨 14</span></p></div>
+</article></li>
+<li id="la" data-en="Laos" data-ko="라오스" data-region="asia" data-search="LA Laos 라오스"><article class="entry">
+<div class="eflag"><img src="flags/la.svg" alt="Flag of Laos" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Laos</span><span class="n-ko" lang="ko">라오스</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 20</span><span class="lang-ko">아시아 · 레벨 20</span></p></div>
+</article></li>
+<li id="lv" data-en="Latvia" data-ko="라트비아" data-region="europe" data-search="LV Latvia 라트비아"><article class="entry">
+<div class="eflag"><img src="flags/lv.svg" alt="Flag of Latvia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Latvia</span><span class="n-ko" lang="ko">라트비아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#at">Austria</a>, <a href="#lb">Lebanon</a></span><span class="lang-ko">비슷한 국기: <a href="#at">오스트리아</a>, <a href="#lb">레바논</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 13</span><span class="lang-ko">유럽 · 레벨 13</span></p></div>
+</article></li>
+<li id="lb" data-en="Lebanon" data-ko="레바논" data-region="asia" data-search="LB Lebanon 레바논"><article class="entry">
+<div class="eflag"><img src="flags/lb.svg" alt="Flag of Lebanon" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Lebanon</span><span class="n-ko" lang="ko">레바논</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#at">Austria</a>, <a href="#lv">Latvia</a></span><span class="lang-ko">비슷한 국기: <a href="#at">오스트리아</a>, <a href="#lv">라트비아</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 19</span><span class="lang-ko">아시아 · 레벨 19</span></p></div>
+</article></li>
+<li id="ls" data-en="Lesotho" data-ko="레소토" data-region="africa" data-search="LS Lesotho 레소토"><article class="entry">
+<div class="eflag"><img src="flags/ls.svg" alt="Flag of Lesotho" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Lesotho</span><span class="n-ko" lang="ko">레소토</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 31</span><span class="lang-ko">아프리카 · 레벨 31</span></p></div>
+</article></li>
+<li id="lr" data-en="Liberia" data-ko="라이베리아" data-region="africa" data-search="LR Liberia 라이베리아"><article class="entry">
+<div class="eflag"><img src="flags/lr.svg" alt="Flag of Liberia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Liberia</span><span class="n-ko" lang="ko">라이베리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#us">United States</a>, <a href="#my">Malaysia</a></span><span class="lang-ko">비슷한 국기: <a href="#us">미국</a>, <a href="#my">말레이시아</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 32</span><span class="lang-ko">아프리카 · 레벨 32</span></p></div>
+</article></li>
+<li id="ly" data-en="Libya" data-ko="리비아" data-region="africa" data-search="LY Libya 리비아"><article class="entry">
+<div class="eflag"><img src="flags/ly.svg" alt="Flag of Libya" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Libya</span><span class="n-ko" lang="ko">리비아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 18</span><span class="lang-ko">아프리카 · 레벨 18</span></p></div>
+</article></li>
+<li id="li" data-en="Liechtenstein" data-ko="리히텐슈타인" data-region="europe" data-search="LI Liechtenstein 리히텐슈타인"><article class="entry">
+<div class="eflag"><img src="flags/li.svg" alt="Flag of Liechtenstein" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Liechtenstein</span><span class="n-ko" lang="ko">리히텐슈타인</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ht">Haiti</a></span><span class="lang-ko">비슷한 국기: <a href="#ht">아이티</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 15</span><span class="lang-ko">유럽 · 레벨 15</span></p></div>
+</article></li>
+<li id="lt" data-en="Lithuania" data-ko="리투아니아" data-region="europe" data-search="LT Lithuania 리투아니아"><article class="entry">
+<div class="eflag"><img src="flags/lt.svg" alt="Flag of Lithuania" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Lithuania</span><span class="n-ko" lang="ko">리투아니아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#gh">Ghana</a>, <a href="#bo">Bolivia</a>, <a href="#et">Ethiopia</a></span><span class="lang-ko">비슷한 국기: <a href="#gh">가나</a>, <a href="#bo">볼리비아</a>, <a href="#et">에티오피아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 13</span><span class="lang-ko">유럽 · 레벨 13</span></p></div>
+</article></li>
+<li id="lu" data-en="Luxembourg" data-ko="룩셈부르크" data-region="europe" data-search="LU Luxembourg 룩셈부르크"><article class="entry">
+<div class="eflag"><img src="flags/lu.svg" alt="Flag of Luxembourg" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Luxembourg</span><span class="n-ko" lang="ko">룩셈부르크</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#nl">Netherlands</a>, <a href="#py">Paraguay</a></span><span class="lang-ko">비슷한 국기: <a href="#nl">네덜란드</a>, <a href="#py">파라과이</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 12</span><span class="lang-ko">유럽 · 레벨 12</span></p></div>
+</article></li>
+<li id="mg" data-en="Madagascar" data-ko="마다가스카르" data-region="africa" data-search="MG Madagascar 마다가스카르"><article class="entry">
+<div class="eflag"><img src="flags/mg.svg" alt="Flag of Madagascar" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Madagascar</span><span class="n-ko" lang="ko">마다가스카르</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 28</span><span class="lang-ko">아프리카 · 레벨 28</span></p></div>
+</article></li>
+<li id="mw" data-en="Malawi" data-ko="말라위" data-region="africa" data-search="MW Malawi 말라위"><article class="entry">
+<div class="eflag"><img src="flags/mw.svg" alt="Flag of Malawi" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Malawi</span><span class="n-ko" lang="ko">말라위</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ke">Kenya</a>, <a href="#ss">South Sudan</a></span><span class="lang-ko">비슷한 국기: <a href="#ke">케냐</a>, <a href="#ss">남수단</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 31</span><span class="lang-ko">아프리카 · 레벨 31</span></p></div>
+</article></li>
+<li id="my" data-en="Malaysia" data-ko="말레이시아" data-region="asia" data-search="MY Malaysia 말레이시아"><article class="entry">
+<div class="eflag"><img src="flags/my.svg" alt="Flag of Malaysia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Malaysia</span><span class="n-ko" lang="ko">말레이시아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#us">United States</a>, <a href="#lr">Liberia</a></span><span class="lang-ko">비슷한 국기: <a href="#us">미국</a>, <a href="#lr">라이베리아</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 7</span><span class="lang-ko">아시아 · 레벨 7</span></p></div>
+</article></li>
+<li id="mv" data-en="Maldives" data-ko="몰디브" data-region="asia" data-search="MV Maldives 몰디브"><article class="entry">
+<div class="eflag"><img src="flags/mv.svg" alt="Flag of Maldives" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Maldives</span><span class="n-ko" lang="ko">몰디브</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 30</span><span class="lang-ko">아시아 · 레벨 30</span></p></div>
+</article></li>
+<li id="ml" data-en="Mali" data-ko="말리" data-region="africa" data-search="ML Mali 말리"><article class="entry">
+<div class="eflag"><img src="flags/ml.svg" alt="Flag of Mali" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mali</span><span class="n-ko" lang="ko">말리</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#sn">Senegal</a>, <a href="#gn">Guinea</a>, <a href="#cm">Cameroon</a></span><span class="lang-ko">비슷한 국기: <a href="#sn">세네갈</a>, <a href="#gn">기니</a>, <a href="#cm">카메룬</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 29</span><span class="lang-ko">아프리카 · 레벨 29</span></p></div>
+</article></li>
+<li id="mt" data-en="Malta" data-ko="몰타" data-region="europe" data-search="MT Malta 몰타"><article class="entry">
+<div class="eflag"><img src="flags/mt.svg" alt="Flag of Malta" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Malta</span><span class="n-ko" lang="ko">몰타</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 15</span><span class="lang-ko">유럽 · 레벨 15</span></p></div>
+</article></li>
+<li id="mh" data-en="Marshall Islands" data-ko="마셜 제도" data-region="oceania" data-search="MH Marshall Islands 마셜 제도"><article class="entry">
+<div class="eflag"><img src="flags/mh.svg" alt="Flag of Marshall Islands" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Marshall Islands</span><span class="n-ko" lang="ko">마셜 제도</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 39</span><span class="lang-ko">오세아니아 · 레벨 39</span></p></div>
+</article></li>
+<li id="mr" data-en="Mauritania" data-ko="모리타니" data-region="africa" data-search="MR Mauritania 모리타니"><article class="entry">
+<div class="eflag"><img src="flags/mr.svg" alt="Flag of Mauritania" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mauritania</span><span class="n-ko" lang="ko">모리타니</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 34</span><span class="lang-ko">아프리카 · 레벨 34</span></p></div>
+</article></li>
+<li id="mu" data-en="Mauritius" data-ko="모리셔스" data-region="africa" data-search="MU Mauritius 모리셔스"><article class="entry">
+<div class="eflag"><img src="flags/mu.svg" alt="Flag of Mauritius" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mauritius</span><span class="n-ko" lang="ko">모리셔스</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 35</span><span class="lang-ko">아프리카 · 레벨 35</span></p></div>
+</article></li>
+<li id="mx" data-en="Mexico" data-ko="멕시코" data-region="north-america" data-search="MX Mexico 멕시코"><article class="entry">
+<div class="eflag"><img src="flags/mx.svg" alt="Flag of Mexico" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mexico</span><span class="n-ko" lang="ko">멕시코</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#it">Italy</a></span><span class="lang-ko">비슷한 국기: <a href="#it">이탈리아</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 3</span><span class="lang-ko">북아메리카 · 레벨 3</span></p></div>
+</article></li>
+<li id="fm" data-en="Micronesia" data-ko="미크로네시아 연방" data-region="oceania" data-search="FM Micronesia 미크로네시아 연방 Federated States of Micronesia 미크로네시아"><article class="entry">
+<div class="eflag"><img src="flags/fm.svg" alt="Flag of Micronesia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Micronesia</span><span class="n-ko" lang="ko">미크로네시아 연방</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#so">Somalia</a></span><span class="lang-ko">비슷한 국기: <a href="#so">소말리아</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 39</span><span class="lang-ko">오세아니아 · 레벨 39</span></p></div>
+</article></li>
+<li id="md" data-en="Moldova" data-ko="몰도바" data-region="europe" data-search="MD Moldova 몰도바"><article class="entry">
+<div class="eflag"><img src="flags/md.svg" alt="Flag of Moldova" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Moldova</span><span class="n-ko" lang="ko">몰도바</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#td">Chad</a>, <a href="#ro">Romania</a>, <a href="#ad">Andorra</a></span><span class="lang-ko">비슷한 국기: <a href="#td">차드</a>, <a href="#ro">루마니아</a>, <a href="#ad">안도라</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 25</span><span class="lang-ko">유럽 · 레벨 25</span></p></div>
+</article></li>
+<li id="mc" data-en="Monaco" data-ko="모나코" data-region="europe" data-search="MC Monaco 모나코"><article class="entry">
+<div class="eflag"><img src="flags/mc.svg" alt="Flag of Monaco" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Monaco</span><span class="n-ko" lang="ko">모나코</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#id">Indonesia</a>, <a href="#pl">Poland</a>, <a href="#sg">Singapore</a></span><span class="lang-ko">비슷한 국기: <a href="#id">인도네시아</a>, <a href="#pl">폴란드</a>, <a href="#sg">싱가포르</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 15</span><span class="lang-ko">유럽 · 레벨 15</span></p></div>
+</article></li>
+<li id="mn" data-en="Mongolia" data-ko="몽골" data-region="asia" data-search="MN Mongolia 몽골"><article class="entry">
+<div class="eflag"><img src="flags/mn.svg" alt="Flag of Mongolia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mongolia</span><span class="n-ko" lang="ko">몽골</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 14</span><span class="lang-ko">아시아 · 레벨 14</span></p></div>
+</article></li>
+<li id="me" data-en="Montenegro" data-ko="몬테네그로" data-region="europe" data-search="ME Montenegro 몬테네그로"><article class="entry">
+<div class="eflag"><img src="flags/me.svg" alt="Flag of Montenegro" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Montenegro</span><span class="n-ko" lang="ko">몬테네그로</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#al">Albania</a></span><span class="lang-ko">비슷한 국기: <a href="#al">알바니아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 22</span><span class="lang-ko">유럽 · 레벨 22</span></p></div>
+</article></li>
+<li id="ma" data-en="Morocco" data-ko="모로코" data-region="africa" data-search="MA Morocco 모로코"><article class="entry">
+<div class="eflag"><img src="flags/ma.svg" alt="Flag of Morocco" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Morocco</span><span class="n-ko" lang="ko">모로코</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 18</span><span class="lang-ko">아프리카 · 레벨 18</span></p></div>
+</article></li>
+<li id="mz" data-en="Mozambique" data-ko="모잠비크" data-region="africa" data-search="MZ Mozambique 모잠비크"><article class="entry">
+<div class="eflag"><img src="flags/mz.svg" alt="Flag of Mozambique" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Mozambique</span><span class="n-ko" lang="ko">모잠비크</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 28</span><span class="lang-ko">아프리카 · 레벨 28</span></p></div>
+</article></li>
+<li id="mm" data-en="Myanmar" data-ko="미얀마" data-region="asia" data-search="MM Myanmar 미얀마 Burma 버마"><article class="entry">
+<div class="eflag"><img src="flags/mm.svg" alt="Flag of Myanmar" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Myanmar</span><span class="n-ko" lang="ko">미얀마</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 20</span><span class="lang-ko">아시아 · 레벨 20</span></p></div>
+</article></li>
+<li id="na" data-en="Namibia" data-ko="나미비아" data-region="africa" data-search="NA Namibia 나미비아"><article class="entry">
+<div class="eflag"><img src="flags/na.svg" alt="Flag of Namibia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Namibia</span><span class="n-ko" lang="ko">나미비아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 31</span><span class="lang-ko">아프리카 · 레벨 31</span></p></div>
+</article></li>
+<li id="nr" data-en="Nauru" data-ko="나우루" data-region="oceania" data-search="NR Nauru 나우루"><article class="entry">
+<div class="eflag"><img src="flags/nr.svg" alt="Flag of Nauru" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Nauru</span><span class="n-ko" lang="ko">나우루</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 39</span><span class="lang-ko">오세아니아 · 레벨 39</span></p></div>
+</article></li>
+<li id="np" data-en="Nepal" data-ko="네팔" data-region="asia" data-search="NP Nepal 네팔"><article class="entry">
+<div class="eflag"><img src="flags/np.svg" alt="Flag of Nepal" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Nepal</span><span class="n-ko" lang="ko">네팔</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 17</span><span class="lang-ko">아시아 · 레벨 17</span></p></div>
+</article></li>
+<li id="nl" data-en="Netherlands" data-ko="네덜란드" data-region="europe" data-search="NL Netherlands 네덜란드 Holland 홀란드"><article class="entry">
+<div class="eflag"><img src="flags/nl.svg" alt="Flag of Netherlands" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Netherlands</span><span class="n-ko" lang="ko">네덜란드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#lu">Luxembourg</a>, <a href="#py">Paraguay</a></span><span class="lang-ko">비슷한 국기: <a href="#lu">룩셈부르크</a>, <a href="#py">파라과이</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 5</span><span class="lang-ko">유럽 · 레벨 5</span></p></div>
+</article></li>
+<li id="nz" data-en="New Zealand" data-ko="뉴질랜드" data-region="oceania" data-search="NZ New Zealand 뉴질랜드"><article class="entry">
+<div class="eflag"><img src="flags/nz.svg" alt="Flag of New Zealand" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">New Zealand</span><span class="n-ko" lang="ko">뉴질랜드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#au">Australia</a></span><span class="lang-ko">비슷한 국기: <a href="#au">호주</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 6</span><span class="lang-ko">오세아니아 · 레벨 6</span></p></div>
+</article></li>
+<li id="ni" data-en="Nicaragua" data-ko="니카라과" data-region="north-america" data-search="NI Nicaragua 니카라과"><article class="entry">
+<div class="eflag"><img src="flags/ni.svg" alt="Flag of Nicaragua" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Nicaragua</span><span class="n-ko" lang="ko">니카라과</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hn">Honduras</a>, <a href="#sv">El Salvador</a>, <a href="#gt">Guatemala</a>, <a href="#ar">Argentina</a></span><span class="lang-ko">비슷한 국기: <a href="#hn">온두라스</a>, <a href="#sv">엘살바도르</a>, <a href="#gt">과테말라</a>, <a href="#ar">아르헨티나</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 24</span><span class="lang-ko">북아메리카 · 레벨 24</span></p></div>
+</article></li>
+<li id="ne" data-en="Niger" data-ko="니제르" data-region="africa" data-search="NE Niger 니제르"><article class="entry">
+<div class="eflag"><img src="flags/ne.svg" alt="Flag of Niger" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Niger</span><span class="n-ko" lang="ko">니제르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#in">India</a></span><span class="lang-ko">비슷한 국기: <a href="#in">인도</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 29</span><span class="lang-ko">아프리카 · 레벨 29</span></p></div>
+</article></li>
+<li id="ng" data-en="Nigeria" data-ko="나이지리아" data-region="africa" data-search="NG Nigeria 나이지리아"><article class="entry">
+<div class="eflag"><img src="flags/ng.svg" alt="Flag of Nigeria" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Nigeria</span><span class="n-ko" lang="ko">나이지리아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 8</span><span class="lang-ko">아프리카 · 레벨 8</span></p></div>
+</article></li>
+<li id="kp" data-en="North Korea" data-ko="북한" data-region="asia" data-search="KP North Korea 북한 DPRK Democratic People&#39;s Republic of Korea 조선민주주의인민공화국"><article class="entry">
+<div class="eflag"><img src="flags/kp.svg" alt="Flag of North Korea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">North Korea</span><span class="n-ko" lang="ko">북한</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 17</span><span class="lang-ko">아시아 · 레벨 17</span></p></div>
+</article></li>
+<li id="mk" data-en="North Macedonia" data-ko="북마케도니아" data-region="europe" data-search="MK North Macedonia 북마케도니아 Macedonia 마케도니아"><article class="entry">
+<div class="eflag"><img src="flags/mk.svg" alt="Flag of North Macedonia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">North Macedonia</span><span class="n-ko" lang="ko">북마케도니아</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 22</span><span class="lang-ko">유럽 · 레벨 22</span></p></div>
+</article></li>
+<li id="no" data-en="Norway" data-ko="노르웨이" data-region="europe" data-search="NO Norway 노르웨이"><article class="entry">
+<div class="eflag"><img src="flags/no.svg" alt="Flag of Norway" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Norway</span><span class="n-ko" lang="ko">노르웨이</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#is">Iceland</a>, <a href="#dk">Denmark</a>, <a href="#se">Sweden</a>, <a href="#fi">Finland</a></span><span class="lang-ko">비슷한 국기: <a href="#is">아이슬란드</a>, <a href="#dk">덴마크</a>, <a href="#se">스웨덴</a>, <a href="#fi">핀란드</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 4</span><span class="lang-ko">유럽 · 레벨 4</span></p></div>
+</article></li>
+<li id="om" data-en="Oman" data-ko="오만" data-region="asia" data-search="OM Oman 오만"><article class="entry">
+<div class="eflag"><img src="flags/om.svg" alt="Flag of Oman" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Oman</span><span class="n-ko" lang="ko">오만</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 26</span><span class="lang-ko">아시아 · 레벨 26</span></p></div>
+</article></li>
+<li id="pk" data-en="Pakistan" data-ko="파키스탄" data-region="asia" data-search="PK Pakistan 파키스탄"><article class="entry">
+<div class="eflag"><img src="flags/pk.svg" alt="Flag of Pakistan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Pakistan</span><span class="n-ko" lang="ko">파키스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 17</span><span class="lang-ko">아시아 · 레벨 17</span></p></div>
+</article></li>
+<li id="pw" data-en="Palau" data-ko="팔라우" data-region="oceania" data-search="PW Palau 팔라우"><article class="entry">
+<div class="eflag"><img src="flags/pw.svg" alt="Flag of Palau" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Palau</span><span class="n-ko" lang="ko">팔라우</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#jp">Japan</a>, <a href="#bd">Bangladesh</a></span><span class="lang-ko">비슷한 국기: <a href="#jp">일본</a>, <a href="#bd">방글라데시</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 39</span><span class="lang-ko">오세아니아 · 레벨 39</span></p></div>
+</article></li>
+<li id="ps" data-en="Palestine" data-ko="팔레스타인" data-region="asia" data-search="PS Palestine 팔레스타인 State of Palestine 팔레스타인 지구"><article class="entry">
+<div class="eflag"><img src="flags/ps.svg" alt="Flag of Palestine" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Palestine</span><span class="n-ko" lang="ko">팔레스타인</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ae">United Arab Emirates</a>, <a href="#kw">Kuwait</a>, <a href="#jo">Jordan</a>, <a href="#sd">Sudan</a></span><span class="lang-ko">비슷한 국기: <a href="#ae">아랍에미리트</a>, <a href="#kw">쿠웨이트</a>, <a href="#jo">요르단</a>, <a href="#sd">수단</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 26</span><span class="lang-ko">아시아 · 레벨 26</span></p></div>
+</article></li>
+<li id="pa" data-en="Panama" data-ko="파나마" data-region="north-america" data-search="PA Panama 파나마"><article class="entry">
+<div class="eflag"><img src="flags/pa.svg" alt="Flag of Panama" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Panama</span><span class="n-ko" lang="ko">파나마</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 24</span><span class="lang-ko">북아메리카 · 레벨 24</span></p></div>
+</article></li>
+<li id="pg" data-en="Papua New Guinea" data-ko="파푸아뉴기니" data-region="oceania" data-search="PG Papua New Guinea 파푸아뉴기니 PNG"><article class="entry">
+<div class="eflag"><img src="flags/pg.svg" alt="Flag of Papua New Guinea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Papua New Guinea</span><span class="n-ko" lang="ko">파푸아뉴기니</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 37</span><span class="lang-ko">오세아니아 · 레벨 37</span></p></div>
+</article></li>
+<li id="py" data-en="Paraguay" data-ko="파라과이" data-region="south-america" data-search="PY Paraguay 파라과이"><article class="entry">
+<div class="eflag"><img src="flags/py.svg" alt="Flag of Paraguay" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Paraguay</span><span class="n-ko" lang="ko">파라과이</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#nl">Netherlands</a>, <a href="#lu">Luxembourg</a></span><span class="lang-ko">비슷한 국기: <a href="#nl">네덜란드</a>, <a href="#lu">룩셈부르크</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 23</span><span class="lang-ko">남아메리카 · 레벨 23</span></p></div>
+</article></li>
+<li id="pe" data-en="Peru" data-ko="페루" data-region="south-america" data-search="PE Peru 페루"><article class="entry">
+<div class="eflag"><img src="flags/pe.svg" alt="Flag of Peru" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Peru</span><span class="n-ko" lang="ko">페루</span></h2>
+<p class="meta"><span class="lang-en">South America · Level 16</span><span class="lang-ko">남아메리카 · 레벨 16</span></p></div>
+</article></li>
+<li id="ph" data-en="Philippines" data-ko="필리핀" data-region="asia" data-search="PH Philippines 필리핀"><article class="entry">
+<div class="eflag"><img src="flags/ph.svg" alt="Flag of Philippines" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Philippines</span><span class="n-ko" lang="ko">필리핀</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 7</span><span class="lang-ko">아시아 · 레벨 7</span></p></div>
+</article></li>
+<li id="pl" data-en="Poland" data-ko="폴란드" data-region="europe" data-search="PL Poland 폴란드"><article class="entry">
+<div class="eflag"><img src="flags/pl.svg" alt="Flag of Poland" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Poland</span><span class="n-ko" lang="ko">폴란드</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#id">Indonesia</a>, <a href="#mc">Monaco</a>, <a href="#sg">Singapore</a></span><span class="lang-ko">비슷한 국기: <a href="#id">인도네시아</a>, <a href="#mc">모나코</a>, <a href="#sg">싱가포르</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 6</span><span class="lang-ko">유럽 · 레벨 6</span></p></div>
+</article></li>
+<li id="pt" data-en="Portugal" data-ko="포르투갈" data-region="europe" data-search="PT Portugal 포르투갈"><article class="entry">
+<div class="eflag"><img src="flags/pt.svg" alt="Flag of Portugal" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Portugal</span><span class="n-ko" lang="ko">포르투갈</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 5</span><span class="lang-ko">유럽 · 레벨 5</span></p></div>
+</article></li>
+<li id="qa" data-en="Qatar" data-ko="카타르" data-region="asia" data-search="QA Qatar 카타르"><article class="entry">
+<div class="eflag"><img src="flags/qa.svg" alt="Flag of Qatar" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Qatar</span><span class="n-ko" lang="ko">카타르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#bh">Bahrain</a></span><span class="lang-ko">비슷한 국기: <a href="#bh">바레인</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 19</span><span class="lang-ko">아시아 · 레벨 19</span></p></div>
+</article></li>
+<li id="cg" data-en="Republic of the Congo" data-ko="콩고 공화국" data-region="africa" data-search="CG Republic of the Congo 콩고 공화국 Congo Congo-Brazzaville 콩고 콩고-브라자빌"><article class="entry">
+<div class="eflag"><img src="flags/cg.svg" alt="Flag of Republic of the Congo" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Republic of the Congo</span><span class="n-ko" lang="ko">콩고 공화국</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 29</span><span class="lang-ko">아프리카 · 레벨 29</span></p></div>
+</article></li>
+<li id="ro" data-en="Romania" data-ko="루마니아" data-region="europe" data-search="RO Romania 루마니아"><article class="entry">
+<div class="eflag"><img src="flags/ro.svg" alt="Flag of Romania" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Romania</span><span class="n-ko" lang="ko">루마니아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#td">Chad</a>, <a href="#ad">Andorra</a>, <a href="#md">Moldova</a></span><span class="lang-ko">비슷한 국기: <a href="#td">차드</a>, <a href="#ad">안도라</a>, <a href="#md">몰도바</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 10</span><span class="lang-ko">유럽 · 레벨 10</span></p></div>
+</article></li>
+<li id="ru" data-en="Russia" data-ko="러시아" data-region="europe" data-search="RU Russia 러시아 Russian Federation"><article class="entry">
+<div class="eflag"><img src="flags/ru.svg" alt="Flag of Russia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Russia</span><span class="n-ko" lang="ko">러시아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#si">Slovenia</a>, <a href="#sk">Slovakia</a>, <a href="#rs">Serbia</a>, <a href="#hr">Croatia</a></span><span class="lang-ko">비슷한 국기: <a href="#si">슬로베니아</a>, <a href="#sk">슬로바키아</a>, <a href="#rs">세르비아</a>, <a href="#hr">크로아티아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 3</span><span class="lang-ko">유럽 · 레벨 3</span></p></div>
+</article></li>
+<li id="rw" data-en="Rwanda" data-ko="르완다" data-region="africa" data-search="RW Rwanda 르완다"><article class="entry">
+<div class="eflag"><img src="flags/rw.svg" alt="Flag of Rwanda" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Rwanda</span><span class="n-ko" lang="ko">르완다</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 27</span><span class="lang-ko">아프리카 · 레벨 27</span></p></div>
+</article></li>
+<li id="kn" data-en="Saint Kitts and Nevis" data-ko="세인트키츠 네비스" data-region="north-america" data-search="KN Saint Kitts and Nevis 세인트키츠 네비스 St. Kitts and Nevis"><article class="entry">
+<div class="eflag"><img src="flags/kn.svg" alt="Flag of Saint Kitts and Nevis" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Saint Kitts and Nevis</span><span class="n-ko" lang="ko">세인트키츠 네비스</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 37</span><span class="lang-ko">북아메리카 · 레벨 37</span></p></div>
+</article></li>
+<li id="lc" data-en="Saint Lucia" data-ko="세인트루시아" data-region="north-america" data-search="LC Saint Lucia 세인트루시아 St. Lucia"><article class="entry">
+<div class="eflag"><img src="flags/lc.svg" alt="Flag of Saint Lucia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Saint Lucia</span><span class="n-ko" lang="ko">세인트루시아</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 36</span><span class="lang-ko">북아메리카 · 레벨 36</span></p></div>
+</article></li>
+<li id="vc" data-en="Saint Vincent and the Grenadines" data-ko="세인트빈센트그레나딘" data-region="north-america" data-search="VC Saint Vincent and the Grenadines 세인트빈센트그레나딘 St. Vincent and the Grenadines"><article class="entry">
+<div class="eflag"><img src="flags/vc.svg" alt="Flag of Saint Vincent and the Grenadines" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Saint Vincent and the Grenadines</span><span class="n-ko" lang="ko">세인트빈센트그레나딘</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 37</span><span class="lang-ko">북아메리카 · 레벨 37</span></p></div>
+</article></li>
+<li id="ws" data-en="Samoa" data-ko="사모아" data-region="oceania" data-search="WS Samoa 사모아"><article class="entry">
+<div class="eflag"><img src="flags/ws.svg" alt="Flag of Samoa" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Samoa</span><span class="n-ko" lang="ko">사모아</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 38</span><span class="lang-ko">오세아니아 · 레벨 38</span></p></div>
+</article></li>
+<li id="sm" data-en="San Marino" data-ko="산마리노" data-region="europe" data-search="SM San Marino 산마리노"><article class="entry">
+<div class="eflag"><img src="flags/sm.svg" alt="Flag of San Marino" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">San Marino</span><span class="n-ko" lang="ko">산마리노</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 15</span><span class="lang-ko">유럽 · 레벨 15</span></p></div>
+</article></li>
+<li id="st" data-en="São Tomé and Príncipe" data-ko="상투메 프린시페" data-region="africa" data-search="ST São Tomé and Príncipe 상투메 프린시페 Sao Tome and Principe"><article class="entry">
+<div class="eflag"><img src="flags/st.svg" alt="Flag of São Tomé and Príncipe" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">São Tomé and Príncipe</span><span class="n-ko" lang="ko">상투메 프린시페</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 35</span><span class="lang-ko">아프리카 · 레벨 35</span></p></div>
+</article></li>
+<li id="sa" data-en="Saudi Arabia" data-ko="사우디아라비아" data-region="asia" data-search="SA Saudi Arabia 사우디아라비아 사우디"><article class="entry">
+<div class="eflag"><img src="flags/sa.svg" alt="Flag of Saudi Arabia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Saudi Arabia</span><span class="n-ko" lang="ko">사우디아라비아</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 9</span><span class="lang-ko">아시아 · 레벨 9</span></p></div>
+</article></li>
+<li id="sn" data-en="Senegal" data-ko="세네갈" data-region="africa" data-search="SN Senegal 세네갈"><article class="entry">
+<div class="eflag"><img src="flags/sn.svg" alt="Flag of Senegal" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Senegal</span><span class="n-ko" lang="ko">세네갈</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ml">Mali</a>, <a href="#gn">Guinea</a>, <a href="#cm">Cameroon</a></span><span class="lang-ko">비슷한 국기: <a href="#ml">말리</a>, <a href="#gn">기니</a>, <a href="#cm">카메룬</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 29</span><span class="lang-ko">아프리카 · 레벨 29</span></p></div>
+</article></li>
+<li id="rs" data-en="Serbia" data-ko="세르비아" data-region="europe" data-search="RS Serbia 세르비아"><article class="entry">
+<div class="eflag"><img src="flags/rs.svg" alt="Flag of Serbia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Serbia</span><span class="n-ko" lang="ko">세르비아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ru">Russia</a>, <a href="#si">Slovenia</a>, <a href="#sk">Slovakia</a>, <a href="#hr">Croatia</a></span><span class="lang-ko">비슷한 국기: <a href="#ru">러시아</a>, <a href="#si">슬로베니아</a>, <a href="#sk">슬로바키아</a>, <a href="#hr">크로아티아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 12</span><span class="lang-ko">유럽 · 레벨 12</span></p></div>
+</article></li>
+<li id="sc" data-en="Seychelles" data-ko="세이셸" data-region="africa" data-search="SC Seychelles 세이셸"><article class="entry">
+<div class="eflag"><img src="flags/sc.svg" alt="Flag of Seychelles" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Seychelles</span><span class="n-ko" lang="ko">세이셸</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 35</span><span class="lang-ko">아프리카 · 레벨 35</span></p></div>
+</article></li>
+<li id="sl" data-en="Sierra Leone" data-ko="시에라리온" data-region="africa" data-search="SL Sierra Leone 시에라리온"><article class="entry">
+<div class="eflag"><img src="flags/sl.svg" alt="Flag of Sierra Leone" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Sierra Leone</span><span class="n-ko" lang="ko">시에라리온</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 11</span><span class="lang-ko">아프리카 · 레벨 11</span></p></div>
+</article></li>
+<li id="sg" data-en="Singapore" data-ko="싱가포르" data-region="asia" data-search="SG Singapore 싱가포르"><article class="entry">
+<div class="eflag"><img src="flags/sg.svg" alt="Flag of Singapore" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Singapore</span><span class="n-ko" lang="ko">싱가포르</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#id">Indonesia</a>, <a href="#mc">Monaco</a>, <a href="#pl">Poland</a></span><span class="lang-ko">비슷한 국기: <a href="#id">인도네시아</a>, <a href="#mc">모나코</a>, <a href="#pl">폴란드</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 17</span><span class="lang-ko">아시아 · 레벨 17</span></p></div>
+</article></li>
+<li id="sk" data-en="Slovakia" data-ko="슬로바키아" data-region="europe" data-search="SK Slovakia 슬로바키아"><article class="entry">
+<div class="eflag"><img src="flags/sk.svg" alt="Flag of Slovakia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Slovakia</span><span class="n-ko" lang="ko">슬로바키아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ru">Russia</a>, <a href="#si">Slovenia</a>, <a href="#rs">Serbia</a>, <a href="#hr">Croatia</a></span><span class="lang-ko">비슷한 국기: <a href="#ru">러시아</a>, <a href="#si">슬로베니아</a>, <a href="#rs">세르비아</a>, <a href="#hr">크로아티아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 10</span><span class="lang-ko">유럽 · 레벨 10</span></p></div>
+</article></li>
+<li id="si" data-en="Slovenia" data-ko="슬로베니아" data-region="europe" data-search="SI Slovenia 슬로베니아"><article class="entry">
+<div class="eflag"><img src="flags/si.svg" alt="Flag of Slovenia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Slovenia</span><span class="n-ko" lang="ko">슬로베니아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ru">Russia</a>, <a href="#sk">Slovakia</a>, <a href="#rs">Serbia</a>, <a href="#hr">Croatia</a></span><span class="lang-ko">비슷한 국기: <a href="#ru">러시아</a>, <a href="#sk">슬로바키아</a>, <a href="#rs">세르비아</a>, <a href="#hr">크로아티아</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 12</span><span class="lang-ko">유럽 · 레벨 12</span></p></div>
+</article></li>
+<li id="sb" data-en="Solomon Islands" data-ko="솔로몬 제도" data-region="oceania" data-search="SB Solomon Islands 솔로몬 제도"><article class="entry">
+<div class="eflag"><img src="flags/sb.svg" alt="Flag of Solomon Islands" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Solomon Islands</span><span class="n-ko" lang="ko">솔로몬 제도</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 38</span><span class="lang-ko">오세아니아 · 레벨 38</span></p></div>
+</article></li>
+<li id="so" data-en="Somalia" data-ko="소말리아" data-region="africa" data-search="SO Somalia 소말리아"><article class="entry">
+<div class="eflag"><img src="flags/so.svg" alt="Flag of Somalia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Somalia</span><span class="n-ko" lang="ko">소말리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#fm">Micronesia</a></span><span class="lang-ko">비슷한 국기: <a href="#fm">미크로네시아 연방</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 27</span><span class="lang-ko">아프리카 · 레벨 27</span></p></div>
+</article></li>
+<li id="za" data-en="South Africa" data-ko="남아프리카 공화국" data-region="africa" data-search="ZA South Africa 남아프리카 공화국 남아공 남아프리카"><article class="entry">
+<div class="eflag"><img src="flags/za.svg" alt="Flag of South Africa" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">South Africa</span><span class="n-ko" lang="ko">남아프리카 공화국</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 4</span><span class="lang-ko">아프리카 · 레벨 4</span></p></div>
+</article></li>
+<li id="kr" data-en="South Korea" data-ko="대한민국" data-region="asia" data-search="KR South Korea 대한민국 Korea Republic of Korea 한국 남한"><article class="entry">
+<div class="eflag"><img src="flags/kr.svg" alt="Flag of South Korea" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">South Korea</span><span class="n-ko" lang="ko">대한민국</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 2</span><span class="lang-ko">아시아 · 레벨 2</span></p></div>
+</article></li>
+<li id="ss" data-en="South Sudan" data-ko="남수단" data-region="africa" data-search="SS South Sudan 남수단"><article class="entry">
+<div class="eflag"><img src="flags/ss.svg" alt="Flag of South Sudan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">South Sudan</span><span class="n-ko" lang="ko">남수단</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ke">Kenya</a>, <a href="#mw">Malawi</a></span><span class="lang-ko">비슷한 국기: <a href="#ke">케냐</a>, <a href="#mw">말라위</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 33</span><span class="lang-ko">아프리카 · 레벨 33</span></p></div>
+</article></li>
+<li id="es" data-en="Spain" data-ko="스페인" data-region="europe" data-search="ES Spain 스페인"><article class="entry">
+<div class="eflag"><img src="flags/es.svg" alt="Flag of Spain" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Spain</span><span class="n-ko" lang="ko">스페인</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 3</span><span class="lang-ko">유럽 · 레벨 3</span></p></div>
+</article></li>
+<li id="lk" data-en="Sri Lanka" data-ko="스리랑카" data-region="asia" data-search="LK Sri Lanka 스리랑카"><article class="entry">
+<div class="eflag"><img src="flags/lk.svg" alt="Flag of Sri Lanka" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Sri Lanka</span><span class="n-ko" lang="ko">스리랑카</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 20</span><span class="lang-ko">아시아 · 레벨 20</span></p></div>
+</article></li>
+<li id="sd" data-en="Sudan" data-ko="수단" data-region="africa" data-search="SD Sudan 수단"><article class="entry">
+<div class="eflag"><img src="flags/sd.svg" alt="Flag of Sudan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Sudan</span><span class="n-ko" lang="ko">수단</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#ae">United Arab Emirates</a>, <a href="#kw">Kuwait</a>, <a href="#jo">Jordan</a>, <a href="#ps">Palestine</a></span><span class="lang-ko">비슷한 국기: <a href="#ae">아랍에미리트</a>, <a href="#kw">쿠웨이트</a>, <a href="#jo">요르단</a>, <a href="#ps">팔레스타인</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 18</span><span class="lang-ko">아프리카 · 레벨 18</span></p></div>
+</article></li>
+<li id="sr" data-en="Suriname" data-ko="수리남" data-region="south-america" data-search="SR Suriname 수리남"><article class="entry">
+<div class="eflag"><img src="flags/sr.svg" alt="Flag of Suriname" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Suriname</span><span class="n-ko" lang="ko">수리남</span></h2>
+<p class="meta"><span class="lang-en">South America · Level 36</span><span class="lang-ko">남아메리카 · 레벨 36</span></p></div>
+</article></li>
+<li id="se" data-en="Sweden" data-ko="스웨덴" data-region="europe" data-search="SE Sweden 스웨덴"><article class="entry">
+<div class="eflag"><img src="flags/se.svg" alt="Flag of Sweden" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Sweden</span><span class="n-ko" lang="ko">스웨덴</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#no">Norway</a>, <a href="#is">Iceland</a>, <a href="#dk">Denmark</a>, <a href="#fi">Finland</a></span><span class="lang-ko">비슷한 국기: <a href="#no">노르웨이</a>, <a href="#is">아이슬란드</a>, <a href="#dk">덴마크</a>, <a href="#fi">핀란드</a></span></p>
+<p class="meta"><span class="lang-en">Europe · Level 4</span><span class="lang-ko">유럽 · 레벨 4</span></p></div>
+</article></li>
+<li id="ch" data-en="Switzerland" data-ko="스위스" data-region="europe" data-search="CH Switzerland 스위스"><article class="entry">
+<div class="eflag"><img src="flags/ch.svg" alt="Flag of Switzerland" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Switzerland</span><span class="n-ko" lang="ko">스위스</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 5</span><span class="lang-ko">유럽 · 레벨 5</span></p></div>
+</article></li>
+<li id="sy" data-en="Syria" data-ko="시리아" data-region="asia" data-search="SY Syria 시리아"><article class="entry">
+<div class="eflag"><img src="flags/sy.svg" alt="Flag of Syria" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Syria</span><span class="n-ko" lang="ko">시리아</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#eg">Egypt</a>, <a href="#iq">Iraq</a>, <a href="#ye">Yemen</a></span><span class="lang-ko">비슷한 국기: <a href="#eg">이집트</a>, <a href="#iq">이라크</a>, <a href="#ye">예멘</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 19</span><span class="lang-ko">아시아 · 레벨 19</span></p></div>
+</article></li>
+<li id="tj" data-en="Tajikistan" data-ko="타지키스탄" data-region="asia" data-search="TJ Tajikistan 타지키스탄"><article class="entry">
+<div class="eflag"><img src="flags/tj.svg" alt="Flag of Tajikistan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Tajikistan</span><span class="n-ko" lang="ko">타지키스탄</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#hu">Hungary</a>, <a href="#bg">Bulgaria</a>, <a href="#ir">Iran</a></span><span class="lang-ko">비슷한 국기: <a href="#hu">헝가리</a>, <a href="#bg">불가리아</a>, <a href="#ir">이란</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 14</span><span class="lang-ko">아시아 · 레벨 14</span></p></div>
+</article></li>
+<li id="tz" data-en="Tanzania" data-ko="탄자니아" data-region="africa" data-search="TZ Tanzania 탄자니아"><article class="entry">
+<div class="eflag"><img src="flags/tz.svg" alt="Flag of Tanzania" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Tanzania</span><span class="n-ko" lang="ko">탄자니아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 27</span><span class="lang-ko">아프리카 · 레벨 27</span></p></div>
+</article></li>
+<li id="th" data-en="Thailand" data-ko="태국" data-region="asia" data-search="TH Thailand 태국 타이"><article class="entry">
+<div class="eflag"><img src="flags/th.svg" alt="Flag of Thailand" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Thailand</span><span class="n-ko" lang="ko">태국</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#cr">Costa Rica</a></span><span class="lang-ko">비슷한 국기: <a href="#cr">코스타리카</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 7</span><span class="lang-ko">아시아 · 레벨 7</span></p></div>
+</article></li>
+<li id="tl" data-en="Timor-Leste" data-ko="동티모르" data-region="asia" data-search="TL Timor-Leste 동티모르 East Timor 티모르레스테"><article class="entry">
+<div class="eflag"><img src="flags/tl.svg" alt="Flag of Timor-Leste" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Timor-Leste</span><span class="n-ko" lang="ko">동티모르</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 30</span><span class="lang-ko">아시아 · 레벨 30</span></p></div>
+</article></li>
+<li id="tg" data-en="Togo" data-ko="토고" data-region="africa" data-search="TG Togo 토고"><article class="entry">
+<div class="eflag"><img src="flags/tg.svg" alt="Flag of Togo" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Togo</span><span class="n-ko" lang="ko">토고</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 32</span><span class="lang-ko">아프리카 · 레벨 32</span></p></div>
+</article></li>
+<li id="to" data-en="Tonga" data-ko="통가" data-region="oceania" data-search="TO Tonga 통가"><article class="entry">
+<div class="eflag"><img src="flags/to.svg" alt="Flag of Tonga" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Tonga</span><span class="n-ko" lang="ko">통가</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 38</span><span class="lang-ko">오세아니아 · 레벨 38</span></p></div>
+</article></li>
+<li id="tt" data-en="Trinidad and Tobago" data-ko="트리니다드 토바고" data-region="north-america" data-search="TT Trinidad and Tobago 트리니다드 토바고"><article class="entry">
+<div class="eflag"><img src="flags/tt.svg" alt="Flag of Trinidad and Tobago" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Trinidad and Tobago</span><span class="n-ko" lang="ko">트리니다드 토바고</span></h2>
+<p class="meta"><span class="lang-en">North America · Level 21</span><span class="lang-ko">북아메리카 · 레벨 21</span></p></div>
+</article></li>
+<li id="tn" data-en="Tunisia" data-ko="튀니지" data-region="africa" data-search="TN Tunisia 튀니지"><article class="entry">
+<div class="eflag"><img src="flags/tn.svg" alt="Flag of Tunisia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Tunisia</span><span class="n-ko" lang="ko">튀니지</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#tr">Türkiye</a></span><span class="lang-ko">비슷한 국기: <a href="#tr">튀르키예</a></span></p>
+<p class="meta"><span class="lang-en">Africa · Level 18</span><span class="lang-ko">아프리카 · 레벨 18</span></p></div>
+</article></li>
+<li id="tr" data-en="Türkiye" data-ko="튀르키예" data-region="asia" data-search="TR Türkiye 튀르키예 Turkey 터키"><article class="entry">
+<div class="eflag"><img src="flags/tr.svg" alt="Flag of Türkiye" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Türkiye</span><span class="n-ko" lang="ko">튀르키예</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#tn">Tunisia</a></span><span class="lang-ko">비슷한 국기: <a href="#tn">튀니지</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 4</span><span class="lang-ko">아시아 · 레벨 4</span></p></div>
+</article></li>
+<li id="tm" data-en="Turkmenistan" data-ko="투르크메니스탄" data-region="asia" data-search="TM Turkmenistan 투르크메니스탄"><article class="entry">
+<div class="eflag"><img src="flags/tm.svg" alt="Flag of Turkmenistan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Turkmenistan</span><span class="n-ko" lang="ko">투르크메니스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 25</span><span class="lang-ko">아시아 · 레벨 25</span></p></div>
+</article></li>
+<li id="tv" data-en="Tuvalu" data-ko="투발루" data-region="oceania" data-search="TV Tuvalu 투발루"><article class="entry">
+<div class="eflag"><img src="flags/tv.svg" alt="Flag of Tuvalu" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Tuvalu</span><span class="n-ko" lang="ko">투발루</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#fj">Fiji</a></span><span class="lang-ko">비슷한 국기: <a href="#fj">피지</a></span></p>
+<p class="meta"><span class="lang-en">Oceania · Level 39</span><span class="lang-ko">오세아니아 · 레벨 39</span></p></div>
+</article></li>
+<li id="ug" data-en="Uganda" data-ko="우간다" data-region="africa" data-search="UG Uganda 우간다"><article class="entry">
+<div class="eflag"><img src="flags/ug.svg" alt="Flag of Uganda" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Uganda</span><span class="n-ko" lang="ko">우간다</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 27</span><span class="lang-ko">아프리카 · 레벨 27</span></p></div>
+</article></li>
+<li id="ua" data-en="Ukraine" data-ko="우크라이나" data-region="europe" data-search="UA Ukraine 우크라이나"><article class="entry">
+<div class="eflag"><img src="flags/ua.svg" alt="Flag of Ukraine" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Ukraine</span><span class="n-ko" lang="ko">우크라이나</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 10</span><span class="lang-ko">유럽 · 레벨 10</span></p></div>
+</article></li>
+<li id="ae" data-en="United Arab Emirates" data-ko="아랍에미리트" data-region="asia" data-search="AE United Arab Emirates 아랍에미리트 UAE UAE"><article class="entry">
+<div class="eflag"><img src="flags/ae.svg" alt="Flag of United Arab Emirates" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">United Arab Emirates</span><span class="n-ko" lang="ko">아랍에미리트</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#kw">Kuwait</a>, <a href="#jo">Jordan</a>, <a href="#ps">Palestine</a>, <a href="#sd">Sudan</a></span><span class="lang-ko">비슷한 국기: <a href="#kw">쿠웨이트</a>, <a href="#jo">요르단</a>, <a href="#ps">팔레스타인</a>, <a href="#sd">수단</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 9</span><span class="lang-ko">아시아 · 레벨 9</span></p></div>
+</article></li>
+<li id="gb" data-en="United Kingdom" data-ko="영국" data-region="europe" data-search="GB United Kingdom 영국 UK Britain Great Britain"><article class="entry">
+<div class="eflag"><img src="flags/gb.svg" alt="Flag of United Kingdom" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">United Kingdom</span><span class="n-ko" lang="ko">영국</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 1</span><span class="lang-ko">유럽 · 레벨 1</span></p></div>
+</article></li>
+<li id="us" data-en="United States" data-ko="미국" data-region="north-america" data-search="US United States 미국 USA United States of America America 미합중국"><article class="entry">
+<div class="eflag"><img src="flags/us.svg" alt="Flag of United States" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">United States</span><span class="n-ko" lang="ko">미국</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#lr">Liberia</a>, <a href="#my">Malaysia</a></span><span class="lang-ko">비슷한 국기: <a href="#lr">라이베리아</a>, <a href="#my">말레이시아</a></span></p>
+<p class="meta"><span class="lang-en">North America · Level 1</span><span class="lang-ko">북아메리카 · 레벨 1</span></p></div>
+</article></li>
+<li id="uy" data-en="Uruguay" data-ko="우루과이" data-region="south-america" data-search="UY Uruguay 우루과이"><article class="entry">
+<div class="eflag"><img src="flags/uy.svg" alt="Flag of Uruguay" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Uruguay</span><span class="n-ko" lang="ko">우루과이</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#gr">Greece</a></span><span class="lang-ko">비슷한 국기: <a href="#gr">그리스</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 23</span><span class="lang-ko">남아메리카 · 레벨 23</span></p></div>
+</article></li>
+<li id="uz" data-en="Uzbekistan" data-ko="우즈베키스탄" data-region="asia" data-search="UZ Uzbekistan 우즈베키스탄"><article class="entry">
+<div class="eflag"><img src="flags/uz.svg" alt="Flag of Uzbekistan" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Uzbekistan</span><span class="n-ko" lang="ko">우즈베키스탄</span></h2>
+<p class="meta"><span class="lang-en">Asia · Level 14</span><span class="lang-ko">아시아 · 레벨 14</span></p></div>
+</article></li>
+<li id="vu" data-en="Vanuatu" data-ko="바누아투" data-region="oceania" data-search="VU Vanuatu 바누아투"><article class="entry">
+<div class="eflag"><img src="flags/vu.svg" alt="Flag of Vanuatu" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Vanuatu</span><span class="n-ko" lang="ko">바누아투</span></h2>
+<p class="meta"><span class="lang-en">Oceania · Level 38</span><span class="lang-ko">오세아니아 · 레벨 38</span></p></div>
+</article></li>
+<li id="va" data-en="Vatican City" data-ko="바티칸 시국" data-region="europe" data-search="VA Vatican City 바티칸 시국 Holy See Vatican 바티칸 교황청"><article class="entry">
+<div class="eflag"><img src="flags/va.svg" alt="Flag of Vatican City" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Vatican City</span><span class="n-ko" lang="ko">바티칸 시국</span></h2>
+<p class="meta"><span class="lang-en">Europe · Level 26</span><span class="lang-ko">유럽 · 레벨 26</span></p></div>
+</article></li>
+<li id="ve" data-en="Venezuela" data-ko="베네수엘라" data-region="south-america" data-search="VE Venezuela 베네수엘라"><article class="entry">
+<div class="eflag"><img src="flags/ve.svg" alt="Flag of Venezuela" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Venezuela</span><span class="n-ko" lang="ko">베네수엘라</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#co">Colombia</a>, <a href="#ec">Ecuador</a></span><span class="lang-ko">비슷한 국기: <a href="#co">콜롬비아</a>, <a href="#ec">에콰도르</a></span></p>
+<p class="meta"><span class="lang-en">South America · Level 16</span><span class="lang-ko">남아메리카 · 레벨 16</span></p></div>
+</article></li>
+<li id="vn" data-en="Vietnam" data-ko="베트남" data-region="asia" data-search="VN Vietnam 베트남 Viet Nam"><article class="entry">
+<div class="eflag"><img src="flags/vn.svg" alt="Flag of Vietnam" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Vietnam</span><span class="n-ko" lang="ko">베트남</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#cn">China</a></span><span class="lang-ko">비슷한 국기: <a href="#cn">중국</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 7</span><span class="lang-ko">아시아 · 레벨 7</span></p></div>
+</article></li>
+<li id="ye" data-en="Yemen" data-ko="예멘" data-region="asia" data-search="YE Yemen 예멘"><article class="entry">
+<div class="eflag"><img src="flags/ye.svg" alt="Flag of Yemen" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Yemen</span><span class="n-ko" lang="ko">예멘</span></h2><p class="look"><span class="lang-en">Looks like: <a href="#eg">Egypt</a>, <a href="#iq">Iraq</a>, <a href="#sy">Syria</a></span><span class="lang-ko">비슷한 국기: <a href="#eg">이집트</a>, <a href="#iq">이라크</a>, <a href="#sy">시리아</a></span></p>
+<p class="meta"><span class="lang-en">Asia · Level 26</span><span class="lang-ko">아시아 · 레벨 26</span></p></div>
+</article></li>
+<li id="zm" data-en="Zambia" data-ko="잠비아" data-region="africa" data-search="ZM Zambia 잠비아"><article class="entry">
+<div class="eflag"><img src="flags/zm.svg" alt="Flag of Zambia" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Zambia</span><span class="n-ko" lang="ko">잠비아</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 28</span><span class="lang-ko">아프리카 · 레벨 28</span></p></div>
+</article></li>
+<li id="zw" data-en="Zimbabwe" data-ko="짐바브웨" data-region="africa" data-search="ZW Zimbabwe 짐바브웨"><article class="entry">
+<div class="eflag"><img src="flags/zw.svg" alt="Flag of Zimbabwe" loading="lazy" width="84" height="63"></div>
+<div class="ebody"><h2><span class="n-en" lang="en">Zimbabwe</span><span class="n-ko" lang="ko">짐바브웨</span></h2>
+<p class="meta"><span class="lang-en">Africa · Level 28</span><span class="lang-ko">아프리카 · 레벨 28</span></p></div>
+</article></li>
+    </ul>
+    <p class="empty card" id="empty" hidden data-t="none">No countries match your search.</p>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Site">
+      <a href="/" data-t="studio">ggook's studio</a>
+      <a href="/play/" data-t="games">Browser games</a>
+      <a href="/privacy.html" data-t="privacy">Privacy Policy</a>
+      <a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a>
+    </nav>
+    <p>© 2026 ggook's studio</p>
+  </div>
+</footer>
+<div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+<div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
