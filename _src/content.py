@@ -344,6 +344,22 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-10-14",
+        "game": "flag-quiz",
+        "en": {"title": "New browser game: Flag Quiz",
+               "body": "Guess the flags of all 195 countries across 39 levels, from famous flags to tricky look-alikes like Chad and Romania. Play it free in your browser, in English and Korean."},
+        "ko": {"title": "새 브라우저 게임: 국기 퀴즈",
+               "body": "세계 195개국 국기를 39개 레벨에서 맞혀 보세요. 유명한 국기부터 차드와 루마니아처럼 헷갈리는 닮은꼴까지, 브라우저에서 무료로 즐길 수 있어요."},
+    },
+    {
+        "date": "2026-10-14",
+        "game": "capital-quiz",
+        "en": {"title": "New browser game: Capital Quiz",
+               "body": "Match 193 countries with their capital cities across 38 levels, or flip it and name the country from its capital. Countries with more than one capital come with a short note."},
+        "ko": {"title": "새 브라우저 게임: 수도 퀴즈",
+               "body": "세계 193개국과 수도를 38개 레벨에서 짝지어 보세요. 수도를 보고 나라를 맞히는 거꾸로 모드도 있고, 수도가 여러 곳인 나라에는 설명을 덧붙였어요."},
+    },
+    {
         "date": "2026-10-11",
         "game": "korean-word-quiz",
         "en": {"title": "Korean Word Quiz 1.6.0: a fresh look and 30,000+ words",

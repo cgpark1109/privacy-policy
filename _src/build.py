@@ -153,8 +153,12 @@ def news_item(lang, n, link_game=True):
     t, c = UI[lang], n[lang]
     more = ""
     if link_game and n.get("game"):
-        g = game_by_slug(n["game"])
-        more = f'<a class="more" href="{url(lang, f"games/{g["slug"]}/")}">{e(g[lang]["name"])} →</a>'
+        web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
+        if web:  # browser-only game: link straight to it
+            more = f'<a class="more" href="/play/{web["slug"]}/">{e(web[lang]["name"])} →</a>'
+        else:
+            g = game_by_slug(n["game"])
+            more = f'<a class="more" href="{url(lang, f"games/{g["slug"]}/")}">{e(g[lang]["name"])} →</a>'
     return f"""<article class="card news-item"><time datetime="{n['date']}">{n['date']}</time>
   <h3>{e(c['title'])}</h3><p>{e(c['body'])}</p>{more}</article>"""
 
