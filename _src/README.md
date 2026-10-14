@@ -24,5 +24,7 @@ github.io URLs rewritten to this domain. Don't edit them here: change the web re
 (the Learn Korean app reads korean_challenge_web/notice.json there), so when that notice changes,
 re-sync so the copy on this site shows the same notice.
 
-Not generated, edit by hand: privacy-policy/, app-ads.txt, CNAME.
+Not generated, edit by hand: privacy-policy/, app-ads.txt, ads.txt, CNAME.
+AdSense: every page carries the google-adsense-account tag (STUDIO["adsense"] in content.py; sync_webapps.py
+adds it to the web games). ads.txt and app-ads.txt hold the same publisher line.
 GitHub Pages (Jekyll) does not publish folders starting with "_", so this folder stays private.

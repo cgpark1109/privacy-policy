@@ -9,6 +9,7 @@ STUDIO = {
     "youtube": "https://www.youtube.com/@ggooksstudio",
     "instagram": "https://www.instagram.com/ggooksstudio/",
     "domain": "https://kysystemstudio.com",
+    "adsense": "ca-pub-4148553154486992",  # AdSense site verification (same publisher as AdMob); ads.txt matches
 }
 
 UI = {

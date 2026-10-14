@@ -13,6 +13,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://kysystemstudio.com"
+ADSENSE_META = b'<meta name="google-adsense-account" content="ca-pub-4148553154486992">'
 OWNER = "cgpark1109"
 # (slug on this site, GitHub repo, branch)
 WEBAPPS = [
@@ -60,6 +61,8 @@ def main():
             if os.path.splitext(rel)[1].lower() in TEXT_EXT and old_url.encode() in data:
                 data = data.replace(old_url.encode(), new_url.encode())
                 rewritten += 1
+            if rel.endswith(".html") and b"</head>" in data and ADSENSE_META not in data:
+                data = data.replace(b"</head>", ADSENSE_META + b"\n</head>", 1)
             out = os.path.join(dest, *rel.split("/"))
             os.makedirs(os.path.dirname(out), exist_ok=True)
             with open(out, "wb") as f:

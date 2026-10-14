@@ -85,6 +85,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
+<meta name="google-adsense-account" content="{STUDIO['adsense']}">
 <link rel="canonical" href="{STUDIO['domain']}{url(lang, path)}">
 {alt}
 <meta property="og:type" content="website">
