@@ -10,6 +10,7 @@ STUDIO = {
     "instagram": "https://www.instagram.com/ggooksstudio/",
     "domain": "https://kysystemstudio.com",
     "adsense": "ca-pub-4148553154486992",  # AdSense site verification (same publisher as AdMob); ads.txt matches
+    "calc": "https://calc.kysystemstudio.com/",  # 계산만물상 (Korean calculators), its own repo cgpark1109/calc
 }
 
 UI = {
@@ -34,6 +35,9 @@ UI = {
         "play_note": "Browser progress is saved on this device only. On your phone, the Android app is the easiest way to play.",
         "play_teaser": "Try some of our learning games right in your web browser.",
         "play_teaser_cta": "Browser games",
+        "calc_teaser": "계산만물상: free calculators (in Korean) for take-home pay, severance, loans, units and dates.",
+        "calc_teaser_cta": "Open calculators",
+        "calc_link": "Calculators",
         "play_short": "Google Play",
         "screenshots": "Screenshots",
         "trailer": "Watch",
@@ -81,6 +85,9 @@ UI = {
         "play_note": "브라우저 기록은 이 기기에만 저장돼요. 휴대폰에서는 Android 앱으로 더 편하게 즐길 수 있어요.",
         "play_teaser": "일부 학습 게임은 웹 브라우저에서 바로 해볼 수 있어요.",
         "play_teaser_cta": "웹에서 하기",
+        "calc_teaser": "계산만물상: 연봉 실수령액, 퇴직금, 대출 이자, 단위 변환, 날짜 계산을 무료로 할 수 있어요.",
+        "calc_teaser_cta": "계산기 열기",
+        "calc_link": "계산만물상",
         "play_short": "Google Play",
         "screenshots": "스크린샷",
         "trailer": "영상",

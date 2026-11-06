@@ -178,3 +178,4 @@ main { flex: 1; padding-bottom: 48px; }
 .play-teaser p svg { width: 20px; height: 20px; flex-shrink: 0; fill: currentColor; }
 .play-teaser .btn.light { background: #E9ECF8; padding: 9px 16px; font-size: 14px; }
 .play-teaser .btn.light:hover { background: #DDE2F4; }
+.teasers { display: grid; gap: 12px; }
