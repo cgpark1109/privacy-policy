@@ -17,6 +17,7 @@ UI = {
     "en": {
         "lang_name": "English",
         "nav_games": "Games",
+        "nav_calc": "Calculators",
         "nav_news": "News",
         "nav_about": "About",
         "nav_support": "Support",
@@ -67,6 +68,7 @@ UI = {
     "ko": {
         "lang_name": "한국어",
         "nav_games": "게임",
+        "nav_calc": "계산기",
         "nav_news": "소식",
         "nav_about": "소개",
         "nav_support": "지원",

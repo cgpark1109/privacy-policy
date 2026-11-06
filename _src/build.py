@@ -75,7 +75,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
         alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{STUDIO["domain"]}{url(l, path)}">' for l in LANGS)
         alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
     image = og_image or f"{STUDIO['domain']}/assets/logo.png"
-    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("news", t["nav_news"], url(lang, "news/")),
+    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("calc", t["nav_calc"], STUDIO["calc"]),
+                 ("news", t["nav_news"], url(lang, "news/")),
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
     nav = "".join(f'<a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{e(label)}</a>'
                   for key, label, href in nav_items)
