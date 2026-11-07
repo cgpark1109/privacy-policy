@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "3dfd6c4ff508933456504b630fc536b19230e1e7"
+  "hash": "46c0bf36e4676ffebda98340402c2ed1c29d9995"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "0b8bd469e1555f91d2eef6ed5ef041276d7f8475"
+  "hash": "a58dca5cc99e3e4eb7db2c856e08ca8f3ab5192b"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "d4a33b90a491f5a07e86ea6486abc583dab4485a"
+  "hash": "beb1745e149db59c92ad8029ad0bd8966d2088dd"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -89,7 +89,7 @@
  },
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-07",
-  "hash": "03ac9ef22fa0d9bb1f316c1c72b6feb82f011a1b"
+  "hash": "12a8b55d66be8e29dff4dd5fe658550461d1fb5e"
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
@@ -103,9 +103,13 @@
   "date": "2026-11-07",
   "hash": "c6fbb4dc404be0ea660bf474bdedd1f3807d6030"
  },
+ "/ko/history/bandung-1955/": {
+  "date": "2026-11-07",
+  "hash": "0b4c655523416aa570548bbd3963b8eb0e7fb501"
+ },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-07",
-  "hash": "a8bbe65b71daec0712c5731dd9107a10c5aa06cd"
+  "hash": "c03db00bc6f6823b1abf73e27aa64c6d4bdb9800"
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
@@ -129,11 +133,11 @@
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
-  "hash": "70a575e62c415a46b6384a950e2cd7a1ef2bdccf"
+  "hash": "93a47df4a02ce49a1b5e8bb3f5e3752d916a5b97"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
-  "hash": "fc8588815b435baee7f000d6ca9c81cafc4f9424"
+  "hash": "aab30efcef7e63447da2ccdc57a05ef092be30c1"
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
@@ -165,7 +169,7 @@
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
-  "hash": "38d2e41583999d5f2f039d7aeef4cd2fb00f7e1f"
+  "hash": "50053488a0c61d7b0c6c681ef9d6f16b641566a8"
  },
  "/ko/history/giza-pyramid-2560bc/": {
   "date": "2026-11-07",
@@ -199,6 +203,10 @@
   "date": "2026-11-07",
   "hash": "a83972d96fc3d1782ba3f895edca5a6da2bef1e4"
  },
+ "/ko/history/imsul-uprising-1862/": {
+  "date": "2026-11-07",
+  "hash": "df87c53112c883298268356d1e8f34816b00c76b"
+ },
  "/ko/history/india-independence-1947/": {
   "date": "2026-11-07",
   "hash": "6362d0889677dd42976ed4d4cd359a23d4802a9b"
@@ -221,7 +229,7 @@
  },
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-07",
-  "hash": "a0e10709ac86eda8cae5a4d9196c856118a1e391"
+  "hash": "2de8d3487270c4577b6dfa886125dccad42589af"
  },
  "/ko/history/latin-american-independence-1810/": {
   "date": "2026-11-07",
@@ -229,11 +237,15 @@
  },
  "/ko/history/magna-carta-1215/": {
   "date": "2026-11-07",
-  "hash": "a86900ede1c9156a5b769d59ef3f3b373ef383c0"
+  "hash": "622f71c1c4de6b510976259b1cd729e01240c3f1"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
   "hash": "6316575398109f91cedf4278ecd67143ebcf4ff8"
+ },
+ "/ko/history/marco-polo-1271/": {
+  "date": "2026-11-07",
+  "hash": "299d8f9316a8f0726dd4ef9ab0be150255ab0aef"
  },
  "/ko/history/may-fourth-1919/": {
   "date": "2026-11-07",
@@ -261,7 +273,7 @@
  },
  "/ko/history/opium-war-1840/": {
   "date": "2026-11-07",
-  "hash": "663a9299b38aaf44e6ec9dac71941c511c76cc4e"
+  "hash": "0e6bd9cdb7eb1781ce0e7e69d115f584a9e9d65a"
  },
  "/ko/history/panama-canal-1914/": {
   "date": "2026-11-07",
@@ -325,7 +337,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "c66842d75b24d5f3968d24cf2bb90c55edef287d"
+  "hash": "c384d8be16b31ff1c2cdf7ba3b9c43a78d1b6701"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -401,7 +413,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "40932237f577d3d32f80ba757f9e769959d7e1f2"
+  "hash": "77809842ce1a3d6c56d206db75f33b1201ff63a5"
  },
  "/play/": {
   "date": "2026-11-07",
