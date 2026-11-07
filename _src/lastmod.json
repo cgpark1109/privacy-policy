@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "64e1c1e69e3a300fa77f742b45d4fd5d352c2a08"
+  "hash": "38ca5682c628ac856d3c7bd7e4def4f37a73b1ff"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "8ce19940ffb70c201c02916814103356074679ac"
+  "hash": "a29e0b5369292339099695028fb11f3b2644d304"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "1efc76e74f3c483c0cb9bd82b057b6d9493791de"
+  "hash": "3ef1db419c5a77844fa54ad322c213cd570fba95"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -81,7 +81,7 @@
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
-  "hash": "f352cd6205d36fb9a94578a96ad9a0eaae236a3e"
+  "hash": "5b70eab01fdeaee1a82798983cb05966b1fa4cb6"
  },
  "/ko/history/angkor-wat-1113/": {
   "date": "2026-11-07",
@@ -93,7 +93,7 @@
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
-  "hash": "3a1bd6f420b6307a8d57440753dde2af2405a80b"
+  "hash": "1625319960695cb7df327b4cabe110bd918303f8"
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-07",
@@ -169,7 +169,7 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "b21560c47d5385caad4bd62e928cda1f851e586f"
+  "hash": "48fb4ddacac4afb4eab24036ff76b8fe428ac73b"
  },
  "/ko/history/ganghwa-treaty-1876/": {
   "date": "2026-11-07",
@@ -211,6 +211,10 @@
   "date": "2026-11-07",
   "hash": "705830e97d1ffbd99bed5445343fe169313a3443"
  },
+ "/ko/history/hwaseong-1796/": {
+  "date": "2026-11-07",
+  "hash": "b8ac486200b46ad8e858b626e328be0bde493c69"
+ },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
   "hash": "2abd3dcbc85a9cf8fe2774bbba5e6e6019606dfa"
@@ -245,7 +249,7 @@
  },
  "/ko/history/latin-american-independence-1810/": {
   "date": "2026-11-07",
-  "hash": "fec7b5bdae9b10bc86292cca1692744287526bc8"
+  "hash": "cd1affa7788407032b123ffc119ab87d71b311a5"
  },
  "/ko/history/magna-carta-1215/": {
   "date": "2026-11-07",
@@ -277,7 +281,7 @@
  },
  "/ko/history/norman-conquest-1066/": {
   "date": "2026-11-07",
-  "hash": "2ed91301eb2d7095ea90755049c558a5d0bf1490"
+  "hash": "ea635e27e9b0e0a44891dea1e974d67e680a3602"
  },
  "/ko/history/olympics-776bc/": {
   "date": "2026-11-07",
@@ -315,13 +319,17 @@
   "date": "2026-11-07",
   "hash": "24c9ff87293fc50e0433a42acb94cb2ebba99886"
  },
+ "/ko/history/seohui-diplomacy-993/": {
+  "date": "2026-11-07",
+  "hash": "dc086a0d4e82fd2c51537dc7e4f870e794cdc6d3"
+ },
  "/ko/history/silk-road-139bc/": {
   "date": "2026-11-07",
   "hash": "1d02610c6055034f41fe2c1a8f0fe29466d837b5"
  },
  "/ko/history/silla-unification-676/": {
   "date": "2026-11-07",
-  "hash": "24e590be33962fa4238997df9bcf6ed6ba9f39b1"
+  "hash": "e43ad849172f4a2e762d783b5c5af629aeada6a9"
  },
  "/ko/history/south-africa-1994/": {
   "date": "2026-11-07",
@@ -339,6 +347,10 @@
   "date": "2026-11-07",
   "hash": "549ffbb1b0b4fbd9e196e1f2a9a6b3484c9b7004"
  },
+ "/ko/history/world-cup-2002/": {
+  "date": "2026-11-07",
+  "hash": "c66174246d766fe3cae16e3a9f77619d19bf2767"
+ },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
   "hash": "41d2234ced3e0921decc8dd719f2c4d9b6f9a7f5"
@@ -349,7 +361,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "27074eac5b5b3d86e10baa819dc5a6410f9f468f"
+  "hash": "66d8d0465411c84fccc0f4443d44492ffc9474ac"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -425,7 +437,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "29cfa1d9039926c96d175035effa1f1266c2c482"
+  "hash": "c2c2449178c6a3ad67f1bce7978bc57c355516df"
  },
  "/play/": {
   "date": "2026-11-07",
