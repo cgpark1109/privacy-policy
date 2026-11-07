@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "fe0c14d2122b32177d946445eee13fe90fbfc753"
+  "hash": "1e8df73a3f3485b464b69e5d9d9eae2e9b2fdb46"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "cb2be93d64f8c96878ab48a3f6a324b5f47595bf"
+  "hash": "d0243aaf1d7e329871dda3b003e6a5ccd2a4380d"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,11 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "296bf1058b62b4ef09047713aa4ababd0b7a066e"
+  "hash": "be1e49eb3dce9566e8625d7c575e212fd23c6740"
+ },
+ "/ko/history/alexander-334bc/": {
+  "date": "2026-11-07",
+  "hash": "e3ce8726690bb5f1a6d2f4c7450bb4b887eb2c16"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
@@ -90,6 +94,10 @@
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
   "hash": "6d703141b9d872e303dd17ecd04cb75b46c3cd77"
+ },
+ "/ko/history/emancipation-1863/": {
+  "date": "2026-11-07",
+  "hash": "d7f34f3ce880153efac5b32ad2073370ecadc606"
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
@@ -109,15 +117,19 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "53f867f532616a86a2179669e7689877f38d2c62"
+  "hash": "da6b7b8664297da17d67621b3d848c8e264052c4"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
   "hash": "c7b184bf9c9677f23515066c1ec7cded9cd105e1"
  },
+ "/ko/history/imjin-war-1592/": {
+  "date": "2026-11-07",
+  "hash": "825bd79fb6a1916a741548d3ebc376d58e245c1f"
+ },
  "/ko/history/industrial-revolution-1769/": {
   "date": "2026-11-07",
-  "hash": "bfd44efbb9f8d669b9ebf83a9459d1c90464c4e0"
+  "hash": "bbb59e594334c20c1c2094d0a6f5a4adb3ea2465"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
@@ -125,7 +137,7 @@
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-07",
-  "hash": "0caf71d8d5a9ce27aa5827ef9f9519f197f11a33"
+  "hash": "0e7b5c53fdb5d8e893e4ed023bad5171c1571461"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
@@ -133,11 +145,11 @@
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
-  "hash": "49403dfb0af900055ab1616d12212421d9b03750"
+  "hash": "de14083bd37e0d80c1f456e9c1e2dffc9899474e"
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
-  "hash": "2ddc8a2fa2231b0f7559ea90581859d16c445154"
+  "hash": "eb80d692db60e4c9fbe1a231ef087d145b8370fb"
  },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
@@ -145,7 +157,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "94f3344e8e16a9601a22ac8dd13bbbd1408114a8"
+  "hash": "930ca69ef3159137ce369b4da45d49e15967e79d"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -221,7 +233,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "8b11f14cb1dd4305e71faba9fedaba6517ff2491"
+  "hash": "a94e0ef3cdc8f5e4bf83f951a907d5c63b90f09a"
  },
  "/play/": {
   "date": "2026-11-07",
