@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "7b89a2483dc2d06e6509c02c98ad21c85d5e0bf5"
+  "hash": "fe0c14d2122b32177d946445eee13fe90fbfc753"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "18adf719dbd48cd9db603f7b5d7a971ab910cfbd"
+  "hash": "cb2be93d64f8c96878ab48a3f6a324b5f47595bf"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,11 +73,19 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "7aaa292293ae15ae8109439dd0cc89d0a2108937"
+  "hash": "296bf1058b62b4ef09047713aa4ababd0b7a066e"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
-  "hash": "fb16258cdd5a5de0b89e07c7b98a07b3af22ff09"
+  "hash": "80542aabab1430410c6bf6882f5a56c2a41a30a8"
+ },
+ "/ko/history/augustus-27bc/": {
+  "date": "2026-11-07",
+  "hash": "03bc9d597a3f61d40d7bb9e1cf80bce742a8a9fb"
+ },
+ "/ko/history/black-death-1347/": {
+  "date": "2026-11-07",
+  "hash": "98ed312126e909f06418d52ac2e1cea8019ace31"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -93,11 +101,11 @@
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
-  "hash": "271197673c5159c3c7062ee2bd14842a47d07700"
+  "hash": "9de14b0950b2a77196dc3c7d092d95833370e501"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
-  "hash": "ab0ebd3fb97ae65d4e45d511b2d36a04e4f633cb"
+  "hash": "9183fff1461e7e3e1262c37903cacef40e44a508"
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
@@ -105,7 +113,11 @@
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
-  "hash": "3ba2f9b9d1442b2fe5af2bd0f25bb6e7edcb3726"
+  "hash": "c7b184bf9c9677f23515066c1ec7cded9cd105e1"
+ },
+ "/ko/history/industrial-revolution-1769/": {
+  "date": "2026-11-07",
+  "hash": "d278e65010f449d7b0ba8d0514945360cc88c9df"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
@@ -121,11 +133,11 @@
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
-  "hash": "87813f9312fdf11f2124e1e9b49415774d619dbe"
+  "hash": "49403dfb0af900055ab1616d12212421d9b03750"
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
-  "hash": "8a8867f6f248944410493371fe6ff06be4b48ece"
+  "hash": "43a1ef64911cb66c8eb02bb3ed14d764b3f978c5"
  },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
@@ -133,7 +145,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "88714da2e80b61f94e7308b12015217219f1b855"
+  "hash": "94f3344e8e16a9601a22ac8dd13bbbd1408114a8"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -209,7 +221,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "8ea340b9d1bafba60c46d927986222e376492596"
+  "hash": "8b11f14cb1dd4305e71faba9fedaba6517ff2491"
  },
  "/play/": {
   "date": "2026-11-07",
