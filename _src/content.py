@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/fall-of-berlin-wall-1989/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: the fall of the Berlin Wall",
+               "body": "A new Korean-language article in our world history series: how Berlin was divided, the wall built overnight in 1961, the changes across Eastern Europe in 1989, and the press conference that opened the border."},
+        "ko": {"title": "세계사 읽을거리: 1989년, 베를린 장벽 붕괴",
+               "body": "하룻밤 사이에 세워진 장벽이 기자 회견의 한마디로 열리기까지, 분단된 도시 베를린의 이야기와 냉전이 끝나는 과정을 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/moon-landing-1969/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "World history reading: the 1969 Moon landing",
                "body": "A new Korean-language article in our world history series: the space race, the Apollo 11 landing with less than a minute of fuel to spare, how Korea watched it, and the evidence that still sits on the Moon."},
