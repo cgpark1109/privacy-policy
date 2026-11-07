@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "7645c83560496053a70c1193f3c77a1f1d707c60"
+  "hash": "fa4d31f516f70e8f5fa824608f00478a25583325"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "d2fea1c3cb49d6819da7a21fb2d2b75caf3aeee3"
+  "hash": "b6f688a8ada067056812bf8044d4c84d3a230ba3"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "f258978808d4e420598fa6ceb2214e84e59a89a1"
+  "hash": "8d1706ff477c60dfcbeb506c553711c18d38380a"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -89,7 +89,7 @@
  },
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-07",
-  "hash": "0e19d15d2e26ed673958ede3eb0fcb023cd8d1c4"
+  "hash": "2f6887a7bb5d92b640b716cb5dbf0fd385105004"
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
@@ -129,7 +129,7 @@
  },
  "/ko/history/civil-rights-1963/": {
   "date": "2026-11-07",
-  "hash": "95e0bc0eec4e977c1be6c2deb45a2bf9557340cd"
+  "hash": "330cf5569e18160f7c66dd5dd034cde39e442710"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -146,6 +146,10 @@
  "/ko/history/crusades-1096/": {
   "date": "2026-11-07",
   "hash": "90021a59ce7bf3745dd13eb4f76fbae811ed4fc7"
+ },
+ "/ko/history/cuban-missile-crisis-1962/": {
+  "date": "2026-11-07",
+  "hash": "6d9e03564e51347c409dc52bf4662160a516f852"
  },
  "/ko/history/daedong-law-1608/": {
   "date": "2026-11-07",
@@ -169,7 +173,7 @@
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
-  "hash": "87e5b96b6bf3816f11fe5c211f0624c3ea1784cc"
+  "hash": "d456c01291342813a5fac9d41992ab78847f01b1"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
@@ -225,7 +229,7 @@
  },
  "/ko/history/hunminjeongeum-1443/": {
   "date": "2026-11-07",
-  "hash": "705830e97d1ffbd99bed5445343fe169313a3443"
+  "hash": "ad1052fb0dcaf15da1da2713e654e36e73bdde0d"
  },
  "/ko/history/hwaseong-1796/": {
   "date": "2026-11-07",
@@ -251,9 +255,13 @@
   "date": "2026-11-07",
   "hash": "d78c2fc218331a24a3d7337ffd47138371ae8452"
  },
+ "/ko/history/joan-of-arc-1429/": {
+  "date": "2026-11-07",
+  "hash": "2612817d1930cbd2b120f6603eea4cf8b22809dd"
+ },
  "/ko/history/joseon-founding-1392/": {
   "date": "2026-11-07",
-  "hash": "b77334d4e0fca3449c1155eab03509fb3a8053c3"
+  "hash": "16c3aba71e20cd8366900a472b0b88f619fd0e1f"
  },
  "/ko/history/july4-joint-statement-1972/": {
   "date": "2026-11-07",
@@ -269,7 +277,7 @@
  },
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-07",
-  "hash": "2de8d3487270c4577b6dfa886125dccad42589af"
+  "hash": "56bf2fdf0db20e9d07b872eef116f02cb46429de"
  },
  "/ko/history/latin-american-independence-1810/": {
   "date": "2026-11-07",
@@ -327,6 +335,10 @@
   "date": "2026-11-07",
   "hash": "15dbc9adac793a573d2d695e88babce8b65001b4"
  },
+ "/ko/history/prc-founding-1949/": {
+  "date": "2026-11-07",
+  "hash": "d1a4e4e06a8ca106556ae2a2c6509a3161449aac"
+ },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
   "hash": "10cdc665131dcdb7d9e08e55b35a0d02a0c0c65b"
@@ -337,7 +349,7 @@
  },
  "/ko/history/rok-government-1948/": {
   "date": "2026-11-07",
-  "hash": "c33f0e71f079272130fff913d20742244f3ccac3"
+  "hash": "53adb7dfcfc4c87610b3410062db592849b3b614"
  },
  "/ko/history/rome-founding-753bc/": {
   "date": "2026-11-07",
@@ -397,7 +409,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "91ad903a191a206ac946f42ad92323cb8f37f441"
+  "hash": "190e2ae73100ec1795c522cbcb6499979d6d581d"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -473,7 +485,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "6d96e110c5cb77d943e445e044003aeb7d2bebdd"
+  "hash": "be066327a6357541027bdbdec31eec3cc8684e65"
  },
  "/play/": {
   "date": "2026-11-07",
