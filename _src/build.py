@@ -64,9 +64,11 @@ def game_by_slug(slug):
     return next(g for g in GAMES if g["slug"] == slug)
 
 
-def page(lang, path, title, description, body, active=None, head_extra="", og_image=None, translated=True):
+def page(lang, path, title, description, body, active=None, head_extra="", og_image=None, translated=True,
+         show_updated=True):
     """Wraps a page body in the shared head, header and footer and writes it.
-    translated=False is for pages that exist in one language only: the language switch goes to the other home."""
+    translated=False is for pages that exist in one language only: the language switch goes to the other home.
+    show_updated=False leaves out the footer's "Last updated" line (privacy.html has its own policy date)."""
     t = UI[lang]
     other = "ko" if lang == "en" else "en"
     full_title = f"{title} – {STUDIO['name']}" if title else f"{STUDIO['name']} – {t['tagline']}"
@@ -80,6 +82,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
     nav = "".join(f'<a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{e(label)}</a>'
                   for key, label, href in nav_items)
+    updated = (f'    <p class="updated">{e(t["last_updated"])}: '
+               f'<time datetime="{STUDIO["updated"]}">{STUDIO["updated"]}</time></p>\n') if show_updated else ""
     nav += f'<a class="lang" href="{url(other, path) if translated else url(other)}" hreflang="{other}" lang="{other}">{UI[other]["lang_name"]}</a>'
     doc = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -129,7 +133,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
       <a href="{STUDIO['instagram']}" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <p>© 2026 {e(STUDIO['name'])}. {e(t['rights'])}</p>
-  </div>
+{updated}  </div>
 </footer>
 </body>
 </html>
@@ -359,7 +363,7 @@ def build_privacy():
 {cards}
   </div>
 </section>"""
-    page("en", "privacy.html", t["privacy"], t["privacy_desc"], body, translated=False)
+    page("en", "privacy.html", t["privacy"], t["privacy_desc"], body, translated=False, show_updated=False)
 
 
 def build_go(g):
