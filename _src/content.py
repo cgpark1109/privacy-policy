@@ -450,6 +450,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-12-13",
+        "game": None,
+        "link": {"href": "/learn/texting-in-korean/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: texting in Korean",
+               "body": "What Koreans actually type in chats: ㅋㅋ and ㅎㅎ, ㅠㅠ, consonant abbreviations like ㅇㅇ and ㄱㅅ, shortened words, politeness in messages and emoticons."},
+        "ko": {"title": "새 한글 가이드: 채팅에서 쓰는 한국어",
+               "body": "ㅋㅋ와 ㅎㅎ, ㅠㅠ, ㅇㅇ·ㄱㅅ 같은 초성 줄임말, 맛집·알바 같은 줄임말, 메시지에서의 높임말과 이모티콘을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-12-10",
+        "game": None,
+        "link": {"href": "/learn/at-a-cafe/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: ordering at a Korean café",
+               "body": "Reading a café menu, hot or iced (and what 아아 means), sizes and extras, for here or to go, kiosks, buzzers and Korean café culture."},
+        "ko": {"title": "새 한글 가이드: 카페에서 주문하기",
+               "body": "카페 메뉴 읽기, 따뜻한 것과 아이스, 크기와 샷 추가, 매장과 포장, 키오스크와 진동벨, 한국의 카페 문화를 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-12-07",
+        "game": None,
+        "link": {"href": "/learn/future-tense/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: talking about the future",
+               "body": "Plans and predictions with -(으)ㄹ 거예요, how it differs from -(으)ㄹ게요, the present tense for fixed plans, and future time words."},
+        "ko": {"title": "새 한글 가이드: 미래 표현",
+               "body": "-(으)ㄹ 거예요로 계획과 예측 말하기, -(으)ㄹ게요와의 차이, 정해진 일정에 쓰는 현재형, 미래를 나타내는 시간 표현을 정리했습니다."},
+    },
+    {
         "date": "2026-12-04",
         "game": None,
         "link": {"href": "/learn/making-plans/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
