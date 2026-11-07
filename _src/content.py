@@ -456,7 +456,7 @@ NEWS = [
         "en": {"title": "World history reading: the 1997 financial crisis",
                "body": "A new Korean-language article in our world history series: how the Asian financial crisis began in Thailand, why Korea turned to the IMF in 1997, the gold-collecting campaign, and what the crisis changed."},
         "ko": {"title": "세계사 읽을거리: 1997년, 외환 위기",
-               "body": "태국에서 시작된 금융 위기가 아시아로 번지고 한국이 IMF의 지원을 받기까지, 금 모으기 운동과 위기가 바꾸어 놓은 한국 사회를 담았습니다."},
+               "body": "태국에서 시작된 금융 위기가 아시아 여러 나라로 번지고 한국이 IMF의 지원을 받기까지, 금 모으기 운동과 위기가 바꾸어 놓은 한국 사회를 담았습니다."},
     },
     {
         "date": "2026-11-07",
@@ -474,7 +474,7 @@ NEWS = [
         "en": {"title": "World history reading: Gojoseon and the Dangun myth",
                "body": "A new Korean-language article in our world history series: the Dangun myth, where the date 2333 BC comes from, and what records and artifacts tell us about Gojoseon."},
         "ko": {"title": "세계사 읽을거리: 고조선과 단군 신화",
-               "body": "단군 신화가 처음 기록된 책과 기원전 2333년이라는 연도의 유래, 그리고 신화 너머의 실제 고조선을 담았습니다."},
+               "body": "단군 신화가 실린 가장 오래된 책과 기원전 2333년이라는 연도의 유래, 그리고 신화 너머의 실제 고조선을 담았습니다."},
     },
     {
         "date": "2026-11-07",
