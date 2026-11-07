@@ -474,7 +474,7 @@ NEWS = [
         "en": {"title": "World history reading: the Road to Canossa",
                "body": "A new Korean-language article in our world history series: the clash between Pope Gregory VII and Henry IV over investiture, the humiliation at Canossa in 1077, and how the outcome was reversed a few years later."},
         "ko": {"title": "세계사 읽을거리: 1077년, 카노사의 굴욕",
-               "body": "성직 서임권을 두고 맞선 교황과 황제, 카노사 성 앞에서 용서를 빈 황제, 그리고 몇 년 뒤 뒤집힌 결말까지 담았습니다."},
+               "body": "성직 서임권을 두고 맞선 교황과 황제, 카노사성 앞에서 용서를 빈 왕, 그리고 몇 년 뒤 뒤집힌 결말까지 담았습니다."},
     },
     {
         "date": "2026-11-07",
