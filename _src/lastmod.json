@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "46c0bf36e4676ffebda98340402c2ed1c29d9995"
+  "hash": "64e1c1e69e3a300fa77f742b45d4fd5d352c2a08"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "a58dca5cc99e3e4eb7db2c856e08ca8f3ab5192b"
+  "hash": "8ce19940ffb70c201c02916814103356074679ac"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "beb1745e149db59c92ad8029ad0bd8966d2088dd"
+  "hash": "1efc76e74f3c483c0cb9bd82b057b6d9493791de"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -81,7 +81,7 @@
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
-  "hash": "80542aabab1430410c6bf6882f5a56c2a41a30a8"
+  "hash": "f352cd6205d36fb9a94578a96ad9a0eaae236a3e"
  },
  "/ko/history/angkor-wat-1113/": {
   "date": "2026-11-07",
@@ -89,7 +89,7 @@
  },
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-07",
-  "hash": "12a8b55d66be8e29dff4dd5fe658550461d1fb5e"
+  "hash": "0e19d15d2e26ed673958ede3eb0fcb023cd8d1c4"
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
@@ -97,7 +97,7 @@
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-07",
-  "hash": "282b38ba61c1ae5cc88f52eca4814234ac0234b9"
+  "hash": "7e5e73a18f19fa060b08f462f4a9067d67dcb52c"
  },
  "/ko/history/augustus-27bc/": {
   "date": "2026-11-07",
@@ -113,15 +113,27 @@
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
-  "hash": "83e7146fac89373d41de5e64818feba3e6441bc4"
+  "hash": "2e01ef295bca14f4d43532e7eb3b2f4980bb0aa7"
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
   "hash": "b562f89db00d9aa7757fa91259f225ff9b0feb73"
  },
+ "/ko/history/civil-rights-1963/": {
+  "date": "2026-11-07",
+  "hash": "95e0bc0eec4e977c1be6c2deb45a2bf9557340cd"
+ },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
   "hash": "4d306b3fa5e26ab89acd2fec336ab1cf13f39250"
+ },
+ "/ko/history/confucius-551bc/": {
+  "date": "2026-11-07",
+  "hash": "0f5c24f37db547b1406f1e1ba55b50f53b7fb607"
+ },
+ "/ko/history/copernicus-1543/": {
+  "date": "2026-11-07",
+  "hash": "4bd9ca63c489422586b0b16994877f119d18271b"
  },
  "/ko/history/crusades-1096/": {
   "date": "2026-11-07",
@@ -137,7 +149,7 @@
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
-  "hash": "aab30efcef7e63447da2ccdc57a05ef092be30c1"
+  "hash": "513f3a6bab7e1ceba451f3fd7472b32a5e6b645c"
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
@@ -201,7 +213,7 @@
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
-  "hash": "a83972d96fc3d1782ba3f895edca5a6da2bef1e4"
+  "hash": "2abd3dcbc85a9cf8fe2774bbba5e6e6019606dfa"
  },
  "/ko/history/imsul-uprising-1862/": {
   "date": "2026-11-07",
@@ -261,7 +273,7 @@
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
-  "hash": "294878504345b7e6446ba1315fd4f206c7b2e3c3"
+  "hash": "164d3213effce7480aac7439040b986a97a4e462"
  },
  "/ko/history/norman-conquest-1066/": {
   "date": "2026-11-07",
@@ -281,11 +293,11 @@
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
-  "hash": "17710ce08b6579d3cc7c1465eb9f4e133525fb68"
+  "hash": "10cdc665131dcdb7d9e08e55b35a0d02a0c0c65b"
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
-  "hash": "ea9cf06bfd648dfbc7074752687cfe880e89eb9e"
+  "hash": "1e7b3f2093e8cbe6d275584490cbe6d7b93e6359"
  },
  "/ko/history/rok-government-1948/": {
   "date": "2026-11-07",
@@ -337,7 +349,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "c384d8be16b31ff1c2cdf7ba3b9c43a78d1b6701"
+  "hash": "27074eac5b5b3d86e10baa819dc5a6410f9f468f"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -413,7 +425,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "77809842ce1a3d6c56d206db75f33b1201ff63a5"
+  "hash": "29cfa1d9039926c96d175035effa1f1266c2c482"
  },
  "/play/": {
   "date": "2026-11-07",
