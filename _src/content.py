@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/march-first-movement-1919/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: the March 1st Movement",
+               "body": "A new Korean-language article in our world history series: how Korea's March 1st Movement of 1919 began, how it spread at home and abroad, and what it led to, including the Provisional Government in Shanghai."},
+        "ko": {"title": "세계사 읽을거리: 1919년, 3·1 운동",
+               "body": "민족 자결주의와 2·8 독립 선언, 고종의 장례에서 탑골공원의 만세까지, 3·1 운동이 시작되고 퍼져 나간 과정과 대한민국 임시정부로 이어진 의미를 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/end-of-ww2-1945/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "World history reading: 1945",
                "body": "The fifth Korean-language article in our world history series: how the Second World War ended in Europe and Asia, Korea's liberation and the 38th parallel, and the world that began afterward."},
