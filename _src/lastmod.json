@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "38fda26ccd5b59280a572e84bfe85351476fba44"
+  "hash": "1451661fd0dfc7f75c838fdad927029663191ffc"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "66a97cf52a045a967244b534bbe99521407f8629"
+  "hash": "0fd852296f3039eb73f795660d5fa9785793f8ae"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "d95cd5a108e8482e77d38f8a2f6f378268170b3a"
+  "hash": "161b6536f81c827290ecd98dd4b969036aea71b6"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -81,7 +81,7 @@
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
-  "hash": "adc44152ecbfcbf31ddba36d63a55266aed6e28b"
+  "hash": "14a3fbdd78e1f985a2a032e47f80fc6a960edcfb"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -93,11 +93,15 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "5aada15a7b5fd0583ee34b0853e86ada0342e518"
+  "hash": "9d87ea95c71d69a53276d2ff6983bf15aad94c9b"
+ },
+ "/ko/history/march-first-movement-1919/": {
+  "date": "2026-11-07",
+  "hash": "4a70f7f4c3dfcf2709749f446c3268134abafc9b"
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "32cdf5ecf28b58e3f2a73369d46dbac1280df792"
+  "hash": "c9c798078fc0325aa723123838ef6c009ae3492a"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -173,7 +177,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "959c64de89f5c34e7c7955b613a66036c4f0a867"
+  "hash": "5e03301cbb608bf2fb3835d3ea586d0c683dbc8a"
  },
  "/play/": {
   "date": "2026-11-07",
