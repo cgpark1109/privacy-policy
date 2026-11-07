@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "ec6cce9b70203ae005001a776539330b02adfe8b"
+  "hash": "1d8f560b440ecd8a82cf6252467f22ab152b460a"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "6979590a9476339515bcd7afd0ab9b9e34dde197"
+  "hash": "e6f6e787c3aebb6b66dc29203f4ab6e34d5d944d"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "f129b9df0d9405986bd4973756cf359f62b0d704"
+  "hash": "7ef3a6b11c9fa7352a740bad2deb13b593a8001c"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -105,7 +105,7 @@
  },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-07",
-  "hash": "4f38e20985c67dd2dc8e3562a02c319b89f33e80"
+  "hash": "a8bbe65b71daec0712c5731dd9107a10c5aa06cd"
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
@@ -113,7 +113,7 @@
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
-  "hash": "4a74c7e68dfe87b97b9e0536376ab196458afdce"
+  "hash": "762519c99a4454f282f6d9f1d3d21942bc13dbfc"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -177,11 +177,11 @@
  },
  "/ko/history/hijra-622/": {
   "date": "2026-11-07",
-  "hash": "a947a31bfcb906dd402ca3233362543144e512e0"
+  "hash": "6ca044c90e9a451b2ea299a5f7f9c5cffcf2d010"
  },
  "/ko/history/hunminjeongeum-1443/": {
   "date": "2026-11-07",
-  "hash": "550d3b83697e55ee83ed5213b70c983c8529b495"
+  "hash": "705830e97d1ffbd99bed5445343fe169313a3443"
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
@@ -190,6 +190,10 @@
  "/ko/history/industrial-revolution-1769/": {
   "date": "2026-11-07",
   "hash": "89a2dc58e7e928e3a6efb55caec0a19ea974d0f7"
+ },
+ "/ko/history/joseon-founding-1392/": {
+  "date": "2026-11-07",
+  "hash": "b77334d4e0fca3449c1155eab03509fb3a8053c3"
  },
  "/ko/history/june-struggle-1987/": {
   "date": "2026-11-07",
@@ -209,7 +213,7 @@
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
-  "hash": "4f4c123118eb4a713902629084967639d69bef69"
+  "hash": "6316575398109f91cedf4278ecd67143ebcf4ff8"
  },
  "/ko/history/may-fourth-1919/": {
   "date": "2026-11-07",
@@ -233,7 +237,7 @@
  },
  "/ko/history/panama-canal-1914/": {
   "date": "2026-11-07",
-  "hash": "c2d87b9b0f2d01b096f26e5ec4fbbe99c51d1f3e"
+  "hash": "15dbc9adac793a573d2d695e88babce8b65001b4"
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
@@ -247,6 +251,10 @@
   "date": "2026-11-07",
   "hash": "7268c2eaf23081f32c48a5b0f20eb4cdf176cadf"
  },
+ "/ko/history/russian-revolution-1917/": {
+  "date": "2026-11-07",
+  "hash": "85ed6e644b17c17a725f9b39bbe3f8802417ca45"
+ },
  "/ko/history/sekigahara-1600/": {
   "date": "2026-11-07",
   "hash": "c8f519cd636a507a563746ef0496fb1b7af5ce97"
@@ -255,9 +263,13 @@
   "date": "2026-11-07",
   "hash": "1d02610c6055034f41fe2c1a8f0fe29466d837b5"
  },
+ "/ko/history/silla-unification-676/": {
+  "date": "2026-11-07",
+  "hash": "69f6338b92b7fd809998cbdf9a7447003372371e"
+ },
  "/ko/history/tang-dynasty-618/": {
   "date": "2026-11-07",
-  "hash": "33ede5b50aed304572561562f3cd7bab22068765"
+  "hash": "69daca4536c79e024f72dc7a46214687a1b99271"
  },
  "/ko/history/vasco-da-gama-1498/": {
   "date": "2026-11-07",
@@ -269,7 +281,7 @@
  },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
-  "hash": "3355868ceba9f8dfe8bfdfc942ea5d7dbbf73692"
+  "hash": "41d2234ced3e0921decc8dd719f2c4d9b6f9a7f5"
  },
  "/ko/history/xinhai-revolution-1911/": {
   "date": "2026-11-07",
@@ -277,7 +289,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "97dbd7ad1377f745c3c5ef4da5b072103ab93049"
+  "hash": "da91fa13e9214b6525623edcc75cec5d63a1a97a"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -353,7 +365,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "7b553dcb164959a2a71c906838c30632abfc5199"
+  "hash": "c593ac942beefd29aed54b1aecee902347bac395"
  },
  "/play/": {
   "date": "2026-11-07",
