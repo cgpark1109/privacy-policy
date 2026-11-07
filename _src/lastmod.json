@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "8c0a83dcc124f9808604e5fb8b81604cb25f786f"
+  "hash": "3dfd6c4ff508933456504b630fc536b19230e1e7"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "2748e31e4cca67df4e0f0af91b7eeef27fb829ef"
+  "hash": "0b8bd469e1555f91d2eef6ed5ef041276d7f8475"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "bfcb3fee8cd54cc1a851c3f18b45e320ab021d60"
+  "hash": "d4a33b90a491f5a07e86ea6486abc583dab4485a"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -93,7 +93,7 @@
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
-  "hash": "78fedeb97fd4fc3074dceb88e9223301956ff0fe"
+  "hash": "3a1bd6f420b6307a8d57440753dde2af2405a80b"
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-07",
@@ -137,11 +137,11 @@
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
-  "hash": "5da32f207fbd524a52bb57c4391331ae20abae09"
+  "hash": "300be3b984ab2db93b75f2bcfdc97b2a81f9e464"
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-07",
-  "hash": "7eb78f0e682f5944f78adf7434a921486fe72e73"
+  "hash": "1c4728f739918f713d02d9a1ec600df1cfaf1e86"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -153,7 +153,7 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "c0c6957e5ddc8c4ae7fc3d289e3c40d221235924"
+  "hash": "b21560c47d5385caad4bd62e928cda1f851e586f"
  },
  "/ko/history/ganghwa-treaty-1876/": {
   "date": "2026-11-07",
@@ -199,6 +199,10 @@
   "date": "2026-11-07",
   "hash": "a83972d96fc3d1782ba3f895edca5a6da2bef1e4"
  },
+ "/ko/history/india-independence-1947/": {
+  "date": "2026-11-07",
+  "hash": "95b5c080b3ec1952ab3368be070ee6b128703405"
+ },
  "/ko/history/industrial-revolution-1769/": {
   "date": "2026-11-07",
   "hash": "89a2dc58e7e928e3a6efb55caec0a19ea974d0f7"
@@ -218,6 +222,10 @@
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-07",
   "hash": "a0e10709ac86eda8cae5a4d9196c856118a1e391"
+ },
+ "/ko/history/latin-american-independence-1810/": {
+  "date": "2026-11-07",
+  "hash": "52ea643c0d494658db472d8182d2b1fc3e8dd75d"
  },
  "/ko/history/magna-carta-1215/": {
   "date": "2026-11-07",
@@ -269,7 +277,7 @@
  },
  "/ko/history/rok-government-1948/": {
   "date": "2026-11-07",
-  "hash": "6804073cff0acfc136209ee6b0847ad659211227"
+  "hash": "c33f0e71f079272130fff913d20742244f3ccac3"
  },
  "/ko/history/rome-founding-753bc/": {
   "date": "2026-11-07",
@@ -291,6 +299,10 @@
   "date": "2026-11-07",
   "hash": "24e590be33962fa4238997df9bcf6ed6ba9f39b1"
  },
+ "/ko/history/south-africa-1994/": {
+  "date": "2026-11-07",
+  "hash": "8a545a006fd04989874c20a0df984c0a2e7cd67d"
+ },
  "/ko/history/tang-dynasty-618/": {
   "date": "2026-11-07",
   "hash": "69daca4536c79e024f72dc7a46214687a1b99271"
@@ -301,7 +313,7 @@
  },
  "/ko/history/waterloo-1815/": {
   "date": "2026-11-07",
-  "hash": "0e24bc565f99d13613402c66a9fe38c82c420278"
+  "hash": "549ffbb1b0b4fbd9e196e1f2a9a6b3484c9b7004"
  },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
@@ -313,7 +325,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "6cfd4a76433f181effbe2ae2d6528e08eb177a22"
+  "hash": "c66842d75b24d5f3968d24cf2bb90c55edef287d"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -389,7 +401,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "ad1b4b31c9f9b1685e0b6d584c9e9249d900668b"
+  "hash": "40932237f577d3d32f80ba757f9e769959d7e1f2"
  },
  "/play/": {
   "date": "2026-11-07",
