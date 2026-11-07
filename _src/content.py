@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/days-and-dates/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: days, weeks and dates in Korean",
+               "body": "The days of the week and the elements behind their names, yesterday to the day after tomorrow, parts of the day, and how to ask and say the date."},
+        "ko": {"title": "새 한글 가이드: 요일과 날짜 표현",
+               "body": "요일 이름의 유래, 그저께부터 모레까지, 지난주·이번 주·다음 주, 오전·오후, 며칠과 무슨 요일 묻기, 매일과 마다까지 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/topic-and-subject-particles/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: 은/는 or 이/가?",
                "body": "The two Korean particles every learner mixes up: which form to use, the difference between topic and subject, and seven everyday situations that show when to choose each."},
