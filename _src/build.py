@@ -56,6 +56,40 @@ def ld_json(data):
     return f'<script type="application/ld+json">{text}</script>'
 
 
+ICON_SPEAK = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4z'
+              'M14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>')
+# Plays {{say:...}} words with the browser's Korean voice; buttons are hidden where speech isn't available.
+SAY_SCRIPT = """<script>(function(){var d=document.documentElement;
+if(!('speechSynthesis' in window)){d.classList.add('no-tts');return;}
+document.addEventListener('click',function(ev){var b=ev.target.closest('.say');if(!b)return;
+var u=new SpeechSynthesisUtterance(b.getAttribute('data-say'));u.lang='ko-KR';u.rate=0.8;
+speechSynthesis.cancel();speechSynthesis.speak(u);});})();</script>"""
+
+
+def load_articles():
+    """Hangul guides: _src/learn/<slug>.html, each starting with an HTML comment holding JSON metadata
+    (title, description, date, updated, order). {{say:한글}} becomes a listen button."""
+    folder = os.path.join(os.path.dirname(__file__), "learn")
+    articles = []
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith(".html"):
+            continue
+        text = open(os.path.join(folder, name), encoding="utf-8").read()
+        m = re.match(r"\s*<!--(.*?)-->(.*)", text, re.S)
+        if not m:
+            sys.exit(f"_src/learn/{name} has no metadata comment")
+        meta = json.loads(m.group(1))
+        body = re.sub(r"\{\{say:([^}]+)\}\}",
+                      lambda k: f'<button type="button" class="say" data-say="{e(k.group(1))}" aria-label="Listen: {e(k.group(1))}">{ICON_SPEAK}</button>',
+                      m.group(2))
+        words = len(re.sub(r"<[^>]+>", " ", body).split())
+        articles.append({**meta, "slug": name[:-5], "body": body, "minutes": max(1, round(words / 200))})
+    return sorted(articles, key=lambda a: a["order"])
+
+
+ARTICLES = load_articles()
+
+
 def published_news():
     return [n for n in NEWS if not n.get("draft")]
 
@@ -82,7 +116,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
         alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{STUDIO["domain"]}{url(l, path)}">' for l in LANGS)
         alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
     image = og_image or f"{STUDIO['domain']}/assets/logo.png"
-    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("calc", t["nav_calc"], STUDIO["calc"]),
+    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("learn", t["nav_learn"], "/learn/"),
+                 ("calc", t["nav_calc"], STUDIO["calc"]),
                  ("news", t["nav_news"], url(lang, "news/")),
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
     nav = "".join(f'<a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{e(label)}</a>'
@@ -166,7 +201,9 @@ def game_card(lang, g):
 def news_item(lang, n, link_game=True):
     t, c = UI[lang], n[lang]
     more = ""
-    if link_game and n.get("game"):
+    if n.get("link"):
+        more = f'<a class="more" href="{n["link"]["href"]}">{e(n["link"][lang])} →</a>'
+    elif link_game and n.get("game"):
         web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
         if web:  # browser-only game: link straight to it
             more = f'<a class="more" href="/play/{web["slug"]}/">{e(web[lang]["name"])} →</a>'
@@ -187,6 +224,10 @@ def build_home(lang):
         teasers.append(f"""<div class="card play-teaser">
   <p>{ICON_WEB} {e(t['play_teaser'])}</p>
   <a class="btn light" href="{url(lang, 'play/')}">{e(t['play_teaser_cta'])} →</a>
+</div>""")
+    teasers.append(f"""<div class="card play-teaser">
+  <p>{ICON_SPEAK} {e(t['learn_teaser'])}</p>
+  <a class="btn light" href="/learn/" hreflang="en">{e(t['learn_teaser_cta'])} →</a>
 </div>""")
     teasers.append(f"""<div class="card play-teaser">
   <p>{ICON_CALC} {e(t['calc_teaser'])}</p>
@@ -371,12 +412,77 @@ def build_support(lang):
     page(lang, "support/", t["nav_support"], t["contact_text"], body, active="support")
 
 
+def article_card(a):
+    return f"""<a class="card guide-card" href="/learn/{a['slug']}/">
+  <span class="title">{e(a['title'])}</span><span class="desc">{e(a['description'])}</span>
+  <span class="meta">{a['minutes']} {e(UI['en']['min_read'])}</span></a>"""
+
+
+def learn_apps():
+    """'Practice with our apps' links under the guides: the two Korean learning apps."""
+    t = UI["en"]
+    items = []
+    for slug in ("learn-korean-hangul", "korean-word-quiz"):
+        g = game_by_slug(slug)
+        web = f' · <a href="{g["web"]}">{e(t["play_now_web"])}</a>' if g.get("web") else ""
+        items.append(f'<li><a href="{url("en", f"games/{slug}/")}"><strong>{e(g["en"]["name"])}</strong></a>: '
+                     f'{e(g["en"]["short"])}{web}</li>')
+    return f"""<div class="card prose guide"><h2>{e(t['learn_practice'])}</h2><ul>{''.join(items)}</ul></div>"""
+
+
+def build_learn():
+    t = UI["en"]
+    cards = "\n".join(article_card(a) for a in ARTICLES)
+    paras = "".join(f"<p>{e(p)}</p>" for p in t["learn_intro"])
+    body = f"""<section class="container"><h1 class="page-title">{e(t['learn_title'])}</h1>
+<p class="page-lead">{e(t['learn_lead'])}</p></section>
+<section class="section container"><div class="card prose">{paras}</div></section>
+<section class="section container">
+  <div class="section-head"><h2>{e(t['learn_guides'])}</h2></div>
+  <div class="guide-list">
+{cards}
+  </div>
+</section>
+<section class="section container">{learn_apps()}</section>"""
+    page("en", "learn/", t["learn_title"], t["learn_lead"], body, active="learn", translated=False)
+    for i, a in enumerate(ARTICLES):
+        prev = ARTICLES[i - 1] if i > 0 else None
+        nxt = ARTICLES[i + 1] if i + 1 < len(ARTICLES) else None
+        pager = ""
+        if prev:
+            pager += f'<a class="prev" href="/learn/{prev["slug"]}/"><span>← {e(t["learn_prev"])}</span>{e(prev["title"])}</a>'
+        if nxt:
+            pager += f'<a class="next" href="/learn/{nxt["slug"]}/"><span>{e(t["learn_next"])} →</span>{e(nxt["title"])}</a>'
+        dates = f'<time datetime="{a["date"]}">{a["date"]}</time>'
+        if a.get("updated") and a["updated"] != a["date"]:
+            dates += f' · {e(t["last_updated"])} <time datetime="{a["updated"]}">{a["updated"]}</time>'
+        body = f"""<section class="container article-head">
+  <a class="crumb" href="/learn/">{e(t['learn_title'])}</a>
+  <h1 class="page-title">{e(a['title'])}</h1>
+  <p class="article-meta">{dates} · {a['minutes']} {e(t['min_read'])} · {e(STUDIO['name'])}</p>
+</section>
+<section class="section container"><article class="card article" lang="en">
+{a['body']}
+</article></section>
+<section class="section container"><nav class="pager">{pager}</nav></section>
+<section class="section container">{learn_apps()}</section>"""
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
+              "description": a["description"], "inLanguage": "en",
+              "datePublished": a["date"], "dateModified": a.get("updated", a["date"]),
+              "mainEntityOfPage": f"{STUDIO['domain']}/learn/{a['slug']}/",
+              "author": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"},
+              "publisher": {"@type": "Organization", "name": STUDIO["name"],
+                            "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
+        page("en", f"learn/{a['slug']}/", a["title"], a["description"], body, active="learn", translated=False,
+             head_extra=ld_json(ld) + SAY_SCRIPT)
+
+
 def build_404():
     t = UI["en"]
     body = f"""<section class="container" style="text-align:center"><h1 class="page-title">{e(t['not_found_title'])}</h1>
 <p class="page-lead">{e(t['not_found_text'])} / {e(UI['ko']['not_found_text'])}</p>
 <p style="margin-top:22px"><a class="btn light" href="/">{e(t['back_home'])}</a> <a class="btn light" href="/ko/">{e(UI['ko']['back_home'])}</a></p></section>"""
-    page("en", "404.html", t["not_found_title"], t["not_found_text"], body)
+    page("en", "404.html", t["not_found_title"], t["not_found_text"], body, translated=False)
 
 
 POLICY_START, POLICY_END = "<!-- policy:start -->", "<!-- policy:end -->"
@@ -452,6 +558,8 @@ def main():
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     for g in WEB_GAMES:
         urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
+    build_learn()
+    urls += ["/learn/"] + [f"/learn/{a['slug']}/" for a in ARTICLES]
     build_404()
     for lang in LANGS:
         build_privacy(lang)
