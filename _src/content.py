@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/end-of-ww2-1945/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: 1945",
+               "body": "The fifth Korean-language article in our world history series: how the Second World War ended in Europe and Asia, Korea's liberation and the 38th parallel, and the world that began afterward."},
+        "ko": {"title": "세계사 읽을거리: 1945년, 제2차 세계대전의 끝",
+               "body": "연재 다섯 번째 글입니다. 유럽과 아시아에서 차례로 끝난 전쟁, 8월 15일 광복과 38선, 그리고 국제 연합과 냉전으로 이어진 전쟁 이후의 세계를 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/french-revolution-1789/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "World history reading: 1789",
                "body": "The fourth Korean-language article in our world history series: why the French Revolution broke out, what happened in 1789 from the Estates-General to the Declaration of the Rights of Man, and what the revolution left behind."},
