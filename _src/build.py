@@ -10,7 +10,7 @@ import sys
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
+from content import ABOUT, FAQ, GAMES, GUIDES, NEWS, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -225,7 +225,7 @@ def build_home(lang):
 
 
 def build_game(lang, g):
-    t, c = UI[lang], g[lang]
+    t, c = UI[lang], {**g[lang], **GUIDES.get(g["slug"], {}).get(lang, {})}
     path = f"games/{g['slug']}/"
     shots = "".join(f'<img src="{s}=h720" alt="" loading="lazy" height="360">' for s in SHOTS.get(g["shots_key"], []))
     paras = "".join(f"<p>{e(p)}</p>" for p in c["body"])
@@ -237,11 +237,27 @@ def build_game(lang, g):
   <div class="video{" wide" if g.get("video_wide") else ""}"><iframe src="https://www.youtube-nocookie.com/embed/{g['youtube']}" title="{e(c['name'])}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>"""
     others = "\n".join(game_card(lang, o) for o in GAMES if o is not g)
+    web_btn = (f' <a class="btn light" href="{g["web"]}">{ICON_WEB} {e(t["play_now_web"])}</a>'
+               if g.get("web") else "")
+    guide = ""
+    if c.get("howto") or c.get("tips"):
+        steps = "".join(f"<li>{e(s)}</li>" for s in c.get("howto", []))
+        tips = "".join(f"<li>{e(s)}</li>" for s in c.get("tips", []))
+        guide = f"""<section class="section container">
+  <div class="two-col">
+    <div class="card prose guide"><h2>{e(t['how_to_play'])}</h2><ol class="steps">{steps}</ol></div>
+    <div class="card prose guide"><h2>{e(t['tips'])}</h2><ul class="tips">{tips}</ul></div>
+  </div>
+</section>"""
+    if c.get("faq"):
+        faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in c["faq"])
+        guide += f"""
+<section class="section container"><div class="card faq"><h2>{e(t['faq_title'])}</h2>{faq}</div></section>"""
     body = f"""<section class="container">
   <div class="game-hero">
     <img src="{g['icon']}=s256" alt="{e(c['name'])} icon" width="120" height="120">
     <div><h1>{e(c['name'])}</h1><p>{e(c['short'])}</p>
-    <div class="hero-actions"><a class="btn" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a></div></div>
+    <div class="hero-actions"><a class="btn" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['get_play'])}</a>{web_btn}</div></div>
     <div class="qr">{qr_svg(go_url(g), e(t['qr_label']))}<span>{e(t['scan_qr'])}</span></div>
   </div>
 </section>
@@ -259,6 +275,7 @@ def build_game(lang, g):
     </div>
   </div>
 </section>
+{guide}
 <section class="section container">
   <div class="section-head"><h2>{e(t['more_games'])}</h2></div>
   <div class="games">

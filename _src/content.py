@@ -67,6 +67,9 @@ UI = {
         "qr_label": "QR code for Google Play",
         "privacy_desc": "How our apps and website handle your data: ads through Google AdMob and AdSense, cookies, no accounts, and progress saved only on your device.",
         "terms": "Terms of Service",
+        "how_to_play": "How to play",
+        "tips": "Tips",
+        "play_now_web": "Play in your browser",
         "terms_desc": "The terms for using our website, browser games and mobile apps.",
         "terms_date": "Effective date",
     },
@@ -122,6 +125,9 @@ UI = {
         "qr_label": "Google Play QR 코드",
         "privacy_desc": "앱과 웹사이트가 처리하는 정보: Google AdMob·AdSense 광고와 쿠키, 계정 없음, 기기에만 저장되는 기록.",
         "terms": "이용약관",
+        "how_to_play": "플레이 방법",
+        "tips": "공략 팁",
+        "play_now_web": "브라우저에서 하기",
         "terms_desc": "웹사이트, 브라우저 게임, 모바일 앱의 이용약관입니다.",
         "terms_date": "시행일",
     },
@@ -599,4 +605,203 @@ FAQ = {
         ("버그를 발견했어요. 무엇을 보내면 되나요?",
          "게임 이름, 휴대폰 기종, 앱 버전(설정에 표시), 어떤 일이 있었는지를 이메일로 보내 주세요. 스크린샷이 있으면 큰 도움이 됩니다."),
     ],
+}
+
+# Game page guides: "How to play" steps, tips and a per-game FAQ, merged into each game's page.
+# Only state what the game really does; when a game changes, update its guide here too.
+GUIDES = {
+    "pass-or-splash": {
+        "en": {
+            "howto": [
+                "A wall full of holes rushes toward you, with a puzzle at the top of the screen.",
+                "Drag left or right with one finger to move your buddy in front of the hole with the right answer.",
+                "Be in front of the right hole when the wall arrives and you pass straight through. Pick the wrong hole and the wall pushes you in: splash!",
+                "Clear the stages to move through five worlds, 100 stages in all.",
+            ],
+            "tips": [
+                "Read the whole puzzle before you move. For \"biggest\" or \"smallest\" questions, check every hole, not just the first good-looking one.",
+                "For sums that mix operations, do multiplication and division before addition and subtraction, working left to right.",
+                "On counting walls, count the dots in small groups of two or three instead of one by one.",
+                "On shuffling-disc walls, lock your eyes on the one disc you need from the very start and don't look away until it stops.",
+                "A stage takes about 40 seconds, so it's easy to fit one or two into a short break.",
+            ],
+            "faq": [
+                ("Do I need to read to play?",
+                 "No. Every rule is shown so you can understand it at a glance. Some walls ask you to solve sums, compare numbers, match shapes, count dots or follow shuffling discs."),
+                ("How many stages are there?",
+                 "100 stages across five worlds: the pool, the mud, cream, a ball pit and springs. Each world has its own silly penalty for a wrong answer."),
+                ("How do I change my ad consent?",
+                 "Open Settings and choose Privacy settings."),
+            ],
+        },
+        "ko": {
+            "howto": [
+                "구멍이 뚫린 벽이 다가오고, 화면 위에 문제가 나옵니다.",
+                "손가락 하나로 좌우로 드래그해서 정답이 적힌 구멍 앞으로 캐릭터를 옮기세요.",
+                "벽이 닿을 때 정답 구멍 앞에 있으면 그대로 통과합니다. 틀린 구멍을 고르면 벽에 밀려 풍덩!",
+                "스테이지를 깨며 5개 월드, 모두 100개 스테이지를 지나가세요.",
+            ],
+            "tips": [
+                "움직이기 전에 문제를 끝까지 읽으세요. \"가장 큰 수\", \"가장 작은 수\" 문제는 처음 눈에 띈 구멍만 보지 말고 모든 구멍을 비교하세요.",
+                "여러 연산이 섞인 계산은 곱셈과 나눗셈을 덧셈과 뺄셈보다 먼저, 왼쪽부터 차례로 계산하세요.",
+                "점 개수 세기 벽에서는 하나씩 세기보다 두세 개씩 묶어서 세면 빠릅니다.",
+                "섞이는 원판 벽에서는 처음부터 필요한 원판 하나만 눈으로 따라가고, 멈출 때까지 시선을 떼지 마세요.",
+                "한 판이 약 40초라서 짧은 쉬는 시간에 한두 판 하기 좋습니다.",
+            ],
+            "faq": [
+                ("글을 읽어야 할 수 있나요?",
+                 "아니요. 모든 규칙이 한눈에 보이도록 되어 있습니다. 벽마다 계산, 수 비교, 같은 도형 찾기, 점 개수 세기, 섞이는 원판 따라가기 같은 문제가 나옵니다."),
+                ("스테이지는 몇 개인가요?",
+                 "물웅덩이, 진흙탕, 크림, 볼풀, 스프링으로 이어지는 5개 월드에 모두 100개 스테이지가 있습니다. 월드마다 틀렸을 때의 벌칙이 다릅니다."),
+                ("광고 동의를 바꾸려면?",
+                 "설정에서 개인정보 설정(Privacy settings)을 누르세요."),
+            ],
+        },
+    },
+    "bust-below": {
+        "en": {
+            "howto": [
+                "Your cops leave the little police station on their own and chase the crooks hiding in the underground mall.",
+                "They cuff each crook and walk them back to the holding cell, and you earn the bounty.",
+                "Spend the bounty on station upgrades and material collectors, and promote your cops from Cadet to Captain.",
+                "Clear three hideouts, the ice cream shop, the museum and the casino, each with a boss at the end.",
+            ],
+            "tips": [
+                "Deeper hideouts have tougher crooks but bigger bounties, so build up your squad before you push further in.",
+                "Bosses take the whole squad to bring down. Make sure your team is strong before you take one on.",
+                "Your cops keep working while the game is closed, so come back regularly to collect your offline rewards and spend them.",
+            ],
+            "faq": [
+                ("Do my cops work when the game is closed?",
+                 "Yes. Your cops keep busting crooks while you're away, and the bounty is waiting for you as offline rewards."),
+                ("Are there forced ads?",
+                 "No. Bust Below has no forced ads."),
+                ("What happens to a boss after it's caught?",
+                 "Bosses go straight to the prosecutors."),
+                ("How do I change my ad consent?",
+                 "Open Settings and choose Privacy settings."),
+            ],
+        },
+        "ko": {
+            "howto": [
+                "경찰들이 작은 경찰서에서 알아서 출동해 지하 쇼핑몰에 숨은 범죄자를 쫓습니다.",
+                "범죄자를 체포해 유치장으로 데려오면 현상금이 쌓입니다.",
+                "현상금으로 경찰서 시설을 업그레이드하고 수집가를 고용하고, 경찰을 신병부터 경감까지 승진시키세요.",
+                "아이스크림 가게, 박물관, 카지노 세 은신처를 소탕하세요. 은신처마다 마지막에 두목이 있습니다.",
+            ],
+            "tips": [
+                "깊은 은신처일수록 범죄자가 강하지만 현상금도 큽니다. 팀을 충분히 키운 뒤 더 깊이 들어가세요.",
+                "두목은 팀 전체가 힘을 모아야 잡을 수 있습니다. 팀이 충분히 강해졌을 때 도전하세요.",
+                "게임을 꺼 두어도 경찰들은 계속 일하니, 자주 들어와 오프라인 보상을 받고 바로 투자하세요.",
+            ],
+            "faq": [
+                ("게임을 꺼 두어도 경찰이 일하나요?",
+                 "네. 자리를 비운 동안에도 경찰들이 범죄자를 잡고, 쌓인 현상금은 오프라인 보상으로 받을 수 있습니다."),
+                ("강제 광고가 있나요?",
+                 "아니요. Bust Below에는 강제 광고가 없습니다."),
+                ("잡은 두목은 어떻게 되나요?",
+                 "두목은 바로 검찰로 넘겨집니다."),
+                ("광고 동의를 바꾸려면?",
+                 "설정에서 개인정보 설정(Privacy settings)을 누르세요."),
+            ],
+        },
+    },
+    "hilltop-roll": {
+        "en": {
+            "howto": [
+                "Hold your finger on the screen to make the ball heavy and race down the hills.",
+                "Let go to make it light and fly off the hilltops.",
+                "Drag to steer through zigzag roads, tilted roads and forks.",
+                "Hit the ramps to leap over the gaps, and land along the slope for a PERFECT boost.",
+            ],
+            "tips": [
+                "Hold on the way down to build speed, then let go as you reach a hilltop to fly off it.",
+                "Aim to touch down along the slope rather than flat against it: that's what gives you a PERFECT boost, and chaining them builds your combo.",
+                "The road speeds up every few seconds, so start steering early when you see a fork or a zigzag coming.",
+                "If you find the sound distracting, you can turn music and sound effects off separately in Settings.",
+            ],
+            "faq": [
+                ("Does the game end?",
+                 "No. The tracks are endless and keep changing, so the goal is to see how far you can roll before you fall."),
+                ("How do I reset my best score?",
+                 "Open Settings (the gear button) and tap Reset best score twice."),
+                ("Can I turn off the music but keep sound effects?",
+                 "Yes. Music and sound effects have separate switches in Settings."),
+                ("How do I change my ad consent?",
+                 "Open Settings and choose Privacy settings."),
+            ],
+        },
+        "ko": {
+            "howto": [
+                "화면을 누르고 있으면 공이 무거워져 언덕을 빠르게 내려갑니다.",
+                "손을 떼면 공이 가벼워져 언덕 꼭대기에서 날아오릅니다.",
+                "드래그해서 지그재그 길, 기울어진 길, 갈림길을 헤쳐 나가세요.",
+                "점프대로 구멍을 뛰어넘고, 경사면을 따라 착지하면 PERFECT 부스트를 받습니다.",
+            ],
+            "tips": [
+                "내리막에서는 눌러서 속도를 붙이고, 언덕 꼭대기에 다다를 때 손을 떼면 날아오를 수 있습니다.",
+                "경사면에 평평하게 부딪히지 말고 경사를 따라 내려앉아야 PERFECT 부스트를 받고, 연달아 성공하면 콤보가 쌓입니다.",
+                "몇 초마다 길이 빨라지니, 갈림길이나 지그재그 길이 보이면 미리 방향을 잡으세요.",
+                "소리가 신경 쓰이면 설정에서 음악과 효과음을 따로 끌 수 있습니다.",
+            ],
+            "faq": [
+                ("게임에 끝이 있나요?",
+                 "아니요. 트랙이 끝없이 바뀌며 이어지기 때문에, 떨어지기 전까지 얼마나 멀리 가는지가 목표입니다."),
+                ("최고 기록을 초기화하려면?",
+                 "설정(톱니바퀴 버튼)을 열고 '최고 기록 초기화'를 두 번 누르세요."),
+                ("음악만 끄고 효과음은 들을 수 있나요?",
+                 "네. 설정에서 음악과 효과음을 따로 켜고 끌 수 있습니다."),
+                ("광고 동의를 바꾸려면?",
+                 "설정에서 개인정보 설정(Privacy settings)을 누르세요."),
+            ],
+        },
+    },
+    "updraft": {
+        "en": {
+            "howto": [
+                "Pick your launch angle.",
+                "Stop the power gauge at just the right moment.",
+                "Let the plane go. Once it leaves your hand there's no steering, so the flight is decided by your aim, your timing and your upgrades.",
+                "Catch updrafts to climb, avoid downdrafts and fly through five zones: the Park, the City, the Sea, the Mountains and Above the Clouds.",
+                "Use what you earn on the six upgrades and pre-launch skills, and fly farther next time.",
+            ],
+            "tips": [
+                "Because you can't steer after launch, take a moment to think about your angle and power before every throw.",
+                "The wind changes every day. Check today's wind before you launch and adjust your angle to it.",
+                "Updrafts lift your plane and downdrafts push it down, so try different angles to find a path through the updrafts.",
+                "Claim your daily rewards and finish the daily missions to earn upgrades faster.",
+            ],
+            "faq": [
+                ("Can I steer the plane?",
+                 "No. Once the plane leaves your hand, it flies on its own. Your angle, your timing and your upgrades decide how far it goes."),
+                ("How many zones are there?",
+                 "Five: the Park, the City, the Sea, the Mountains and Above the Clouds, each with its own obstacles."),
+                ("How do I change my ad consent?",
+                 "Email us at admin@kysystemstudio.com and we'll help."),
+            ],
+        },
+        "ko": {
+            "howto": [
+                "발사 각도를 정하세요.",
+                "힘 게이지를 딱 맞는 순간에 멈추세요.",
+                "비행기를 날리세요. 손을 떠난 비행기는 조종할 수 없어서 조준, 타이밍, 업그레이드가 비행을 결정합니다.",
+                "상승기류를 타고 오르고 하강기류는 피하며 공원, 도시, 바다, 산, 구름 위 다섯 구역을 날아가세요.",
+                "모은 보상으로 업그레이드 6종과 발사 전 스킬을 강화해 다음에는 더 멀리 날리세요.",
+            ],
+            "tips": [
+                "발사 후에는 조종할 수 없으니, 던지기 전에 각도와 힘을 한 번 더 생각하세요.",
+                "바람은 매일 바뀝니다. 발사 전에 오늘의 바람을 확인하고 각도를 맞추세요.",
+                "상승기류는 비행기를 띄우고 하강기류는 끌어내리니, 여러 각도로 상승기류를 지나는 길을 찾아보세요.",
+                "매일 출석 보상과 일일 미션을 챙기면 업그레이드가 빨라집니다.",
+            ],
+            "faq": [
+                ("비행기를 조종할 수 있나요?",
+                 "아니요. 손을 떠난 비행기는 스스로 날아갑니다. 각도, 타이밍, 업그레이드가 비행 거리를 결정합니다."),
+                ("구역은 몇 개인가요?",
+                 "공원, 도시, 바다, 산, 구름 위 다섯 구역이 있고, 구역마다 장애물이 다릅니다."),
+                ("광고 동의를 바꾸려면?",
+                 "admin@kysystemstudio.com으로 이메일을 보내 주시면 도와드리겠습니다."),
+            ],
+        },
+    },
 }
