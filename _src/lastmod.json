@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "8875c2ea80df52f148f6e34c9d1789b187976836"
+  "hash": "067eef23569f4bf0940e0a01457ca207519b3da3"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "84ca191b215085643dff6005c66ae08438630eaf"
+  "hash": "c311df94fe765ff82b514c339372eb6135592eb0"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "45d35a3e066d4ca840ac3eec147c8a123e5ab0c1"
+  "hash": "227399bc387f5911abbe6546147bf9497448c2de"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -101,7 +101,7 @@
  },
  "/ko/history/augustus-27bc/": {
   "date": "2026-11-07",
-  "hash": "c6fbb4dc404be0ea660bf474bdedd1f3807d6030"
+  "hash": "ce05c05c0208a9227fe228e4882da9ce8a4f0475"
  },
  "/ko/history/bandung-1955/": {
   "date": "2026-11-07",
@@ -114,6 +114,10 @@
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
   "hash": "2e01ef295bca14f4d43532e7eb3b2f4980bb0aa7"
+ },
+ "/ko/history/byeongja-horan-1636/": {
+  "date": "2026-11-07",
+  "hash": "afd144eaff3e1ecfc124ddd6db4fbf7eae039ef3"
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
@@ -141,7 +145,7 @@
  },
  "/ko/history/daedong-law-1608/": {
   "date": "2026-11-07",
-  "hash": "7ec8a7baef0c5a2771d9aea698e242c4911c61fc"
+  "hash": "c296c56da351445fc14690838c6cf8d9e50eea2c"
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
@@ -193,7 +197,11 @@
  },
  "/ko/history/gojoseon-2333bc/": {
   "date": "2026-11-07",
-  "hash": "9045566ffc6387d5477a55938d5bb6f54619bbe6"
+  "hash": "9d74819f0b30075fd71d4f466ea9fe5f92a9549b"
+ },
+ "/ko/history/gojoseon-fall-108bc/": {
+  "date": "2026-11-07",
+  "hash": "f83cbb2cfb33a4f59938f31ecab16a793e948349"
  },
  "/ko/history/great-depression-1929/": {
   "date": "2026-11-07",
@@ -235,6 +243,10 @@
   "date": "2026-11-07",
   "hash": "b77334d4e0fca3449c1155eab03509fb3a8053c3"
  },
+ "/ko/history/july4-joint-statement-1972/": {
+  "date": "2026-11-07",
+  "hash": "cd58441486d234b9c707abf066be8dbeb1db7a1b"
+ },
  "/ko/history/june-struggle-1987/": {
   "date": "2026-11-07",
   "hash": "72aefd2cc1ae97235f2471a1846c3e3b97047476"
@@ -265,7 +277,7 @@
  },
  "/ko/history/may-eighteenth-1980/": {
   "date": "2026-11-07",
-  "hash": "165096591b45d6bc33f97cdc03313a9d30694739"
+  "hash": "5ee63f713ab8ec950defcd5f78a9c7113a5c01b7"
  },
  "/ko/history/may-fourth-1919/": {
   "date": "2026-11-07",
@@ -281,11 +293,11 @@
  },
  "/ko/history/ming-qing-1644/": {
   "date": "2026-11-07",
-  "hash": "94ed04a0508bdec3f54193b27fe9869c85cb0e53"
+  "hash": "716fb80d6c63909b032e03335972e547e05384ec"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
-  "hash": "e6e55fb056bb67bfde89e5d115c59be58df771bf"
+  "hash": "03d38cd49259cb9d9e42b72ae3cd405e92a82c8e"
  },
  "/ko/history/norman-conquest-1066/": {
   "date": "2026-11-07",
@@ -333,7 +345,7 @@
  },
  "/ko/history/silk-road-139bc/": {
   "date": "2026-11-07",
-  "hash": "1d02610c6055034f41fe2c1a8f0fe29466d837b5"
+  "hash": "b15242570db297e3655940bb3bf031d4429cb0aa"
  },
  "/ko/history/silla-unification-676/": {
   "date": "2026-11-07",
@@ -373,7 +385,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "42fe38f75b47eec7d024e86988de380596791ef4"
+  "hash": "a7398100ca823a892edad314900e85f4ef72e753"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -449,7 +461,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "8f0b49f34bf810b4ccf16799fa909feb42561c9c"
+  "hash": "8f58caec42ce88de117b0a7dcb6fdf853b43fc8a"
  },
  "/play/": {
   "date": "2026-11-07",
