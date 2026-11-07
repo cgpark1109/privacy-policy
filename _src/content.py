@@ -450,6 +450,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-11-25",
+        "game": None,
+        "link": {"href": "/learn/introducing-yourself/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: introducing yourself in Korean",
+               "body": "A step-by-step self-introduction: greeting, your name, where you're from, your job or studies, your hobbies and the polite closing 잘 부탁드립니다."},
+        "ko": {"title": "새 한글 가이드: 한국어로 자기소개하기",
+               "body": "인사, 이름, 나라, 직업과 공부, 취미, 그리고 잘 부탁드립니다까지 한 단계씩 자기소개를 만드는 법을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-22",
+        "game": None,
+        "link": {"href": "/learn/weather-and-seasons/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: the weather and seasons",
+               "body": "Hot and cold, rain and snow, the four seasons, the rainy season and fine dust, reading a weather forecast and using the weather as small talk."},
+        "ko": {"title": "새 한글 가이드: 날씨와 계절 표현",
+               "body": "덥다·춥다 같은 날씨 표현, 사계절, 장마와 미세먼지, 일기 예보 읽기, 날씨로 대화 시작하기를 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-19",
+        "game": None,
+        "link": {"href": "/learn/shopping-in-korean/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: shopping in Korean",
+               "body": "Asking how much something costs, reading prices in won, asking for another size or color, trying things on, paying and asking for a bag or a receipt."},
+        "ko": {"title": "새 한글 가이드: 쇼핑할 때 쓰는 표현",
+               "body": "가격 묻기와 원 읽기, 다른 크기와 색깔 묻기, 입어 보기, 계산, 봉투와 영수증, 교환과 환불 표현을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
         "date": "2026-11-16",
         "game": None,
         "link": {"href": "/learn/korean-question-words/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
