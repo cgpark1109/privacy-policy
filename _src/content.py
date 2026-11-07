@@ -465,7 +465,7 @@ NEWS = [
         "en": {"title": "World history reading: the Imjin War",
                "body": "A new Korean-language article in our world history series: the seven-year war of 1592 to 1598 between Joseon, Japan and Ming China, Yi Sun-sin and the righteous armies, and how the war changed all three countries."},
         "ko": {"title": "세계사 읽을거리: 1592년, 임진왜란",
-               "body": "조선과 일본, 명나라가 7년 동안 맞붙은 동아시아의 국제 전쟁과 이순신, 의병의 활약, 그리고 전쟁 뒤 세 나라의 변화를 담았습니다."},
+               "body": "조선과 일본, 명나라가 7년 동안 맞붙은 동아시아의 국제 전쟁과 이순신·의병의 활약, 그리고 전쟁 뒤 세 나라의 변화를 담았습니다."},
     },
     {
         "date": "2026-11-07",
