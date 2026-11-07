@@ -456,7 +456,7 @@ NEWS = [
         "en": {"title": "World history reading: the Xinhai Revolution",
                "body": "A new Korean-language article in our world history series: how the Qing dynasty fell in 1911 and 1912, Sun Yat-sen and the founding of the Republic of China, and the last emperor Puyi."},
         "ko": {"title": "세계사 읽을거리: 1911년, 신해혁명",
-               "body": "흔들리던 청나라가 우창 봉기로 무너지고 중화민국이 세워지기까지, 쑨원과 마지막 황제 푸이의 이야기를 담았습니다."},
+               "body": "흔들리던 청나라가 우창 봉기를 계기로 무너지고 중화민국이 세워지기까지, 쑨원과 마지막 황제 푸이의 이야기를 담았습니다."},
     },
     {
         "date": "2026-11-07",
