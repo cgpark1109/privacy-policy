@@ -456,7 +456,7 @@ NEWS = [
         "en": {"title": "World history reading: 1914",
                "body": "A new Korean-language article in our world history series: how one shot in Sarajevo became a war across Europe, life in the trenches, and the world the First World War left behind."},
         "ko": {"title": "세계사 읽을거리: 1914년, 제1차 세계대전",
-               "body": "사라예보의 총성이 한 달 만에 유럽 전체의 전쟁으로 번진 과정과 참호전, 그리고 전쟁이 바꾸어 놓은 세계를 담았습니다."},
+               "body": "사라예보의 총성이 한 달여 만에 유럽 전체의 전쟁으로 번진 과정과 참호전, 그리고 전쟁이 바꾸어 놓은 세계를 담았습니다."},
     },
     {
         "date": "2026-11-07",
