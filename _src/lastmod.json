@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "fd5e05dffa5debc1e9552f86f687643fc4ebe4e5"
+  "hash": "a12d1da8f1c942079262fdf4ca67cb5a587e79b1"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "6a610e475a6682cfd3d11939b215206b6a6126f7"
+  "hash": "e9e5f65c62bf1c42b270dca09cd9f3859027c9d9"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "4fe7456d2d8e3192ca43afdd4568d15e1ead2db1"
+  "hash": "381e481f545e15db94d356efc3444453b8b82553"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -93,7 +93,7 @@
  },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-07",
-  "hash": "c4a0201fbe14cd421e69c39f236f6e3b40693fe4"
+  "hash": "8c5d63f95991c92bbacda1107244e981bbc28561"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -101,7 +101,7 @@
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
-  "hash": "d7f34f3ce880153efac5b32ad2073370ecadc606"
+  "hash": "7b34af130764cd4c552ea07a2dac50add205bb43"
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
@@ -113,7 +113,7 @@
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
-  "hash": "9de14b0950b2a77196dc3c7d092d95833370e501"
+  "hash": "20bd0c0321fcbc00d4fc51e6a8cd3786a7b78699"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
@@ -121,7 +121,7 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "da6b7b8664297da17d67621b3d848c8e264052c4"
+  "hash": "c0c6957e5ddc8c4ae7fc3d289e3c40d221235924"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
@@ -130,6 +130,10 @@
  "/ko/history/glorious-revolution-1688/": {
   "date": "2026-11-07",
   "hash": "8b6dd7be23a6f4a85e39974ea09dcfba5e72ea18"
+ },
+ "/ko/history/hunminjeongeum-1443/": {
+  "date": "2026-11-07",
+  "hash": "4d9d5e2c74ddea35313290c1a74808af38b3da4d"
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
@@ -145,7 +149,7 @@
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-07",
-  "hash": "0e7b5c53fdb5d8e893e4ed023bad5171c1571461"
+  "hash": "5fe4d2f790e0a41f90ac61717479d58219ea5ed7"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
@@ -163,13 +167,21 @@
   "date": "2026-11-07",
   "hash": "effb3d546de7c6286632cc78d9c67eec95e5e58e"
  },
+ "/ko/history/waterloo-1815/": {
+  "date": "2026-11-07",
+  "hash": "5ce3e91fa9965c05290ba15d12d806e888ec4660"
+ },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
-  "hash": "e4309aaaf1c7fba202742592844e85ef1b2284f9"
+  "hash": "89d8e3bec9fef779e40f5665e2e0c12452d675fe"
+ },
+ "/ko/history/xinhai-revolution-1911/": {
+  "date": "2026-11-07",
+  "hash": "0e540100595012e0a2f4fd1439ac64ffa99f1741"
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "f45d6202c0f18b78aa8b6313af902814df9127d0"
+  "hash": "bd57153c80574a29991a77da4539fd9495b2f1ca"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -245,7 +257,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "a6806fce8ce0eabeb68a01f52a711654505137c1"
+  "hash": "037c061d8c2db8f54c2df45d8c2da183e75a9cc5"
  },
  "/play/": {
   "date": "2026-11-07",
