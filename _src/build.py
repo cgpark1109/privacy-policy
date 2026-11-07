@@ -226,14 +226,21 @@ def build_home(lang):
   <a class="btn light" href="{url(lang, 'play/')}">{e(t['play_teaser_cta'])} →</a>
 </div>""")
     teasers.append(f"""<div class="card play-teaser">
-  <p>{ICON_SPEAK} {e(t['learn_teaser'])}</p>
-  <a class="btn light" href="/learn/" hreflang="en">{e(t['learn_teaser_cta'])} →</a>
-</div>""")
-    teasers.append(f"""<div class="card play-teaser">
   <p>{ICON_CALC} {e(t['calc_teaser'])}</p>
   <a class="btn light" href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_teaser_cta'])} →</a>
 </div>""")
     teaser_section = f'<section class="section container teasers">\n{chr(10).join(teasers)}\n</section>'
+    # What the site offers, with live counts, then the most recent guides.
+    counts = {"games": len(GAMES), "guides": len(ARTICLES),
+              "web": sum(1 for g in GAMES if g.get("web")) + len(WEB_GAMES)}
+    links = {"games": "#games", "guides": "/learn/", "web": url(lang, "play/")}
+    points = "".join(f'<li><a href="{links[key]}"><strong>{e(label)}</strong></a>: {e(text.format(**counts))}</li>'
+                     for key, label, text in t["home_points"])
+    intro = f"""<section class="section container"><div class="card prose home-intro">
+  <h2>{e(t['home_intro_title'])}</h2><p>{e(t['home_intro'])}</p><ul>{points}</ul>
+</div></section>"""
+    latest = sorted(ARTICLES, key=lambda a: (a.get("updated", a["date"]), a["order"]), reverse=True)[:3]
+    guides = "\n".join(article_card(a, lang) for a in latest)
     body = f"""<section class="hero container">
   <img class="logo" src="/assets/logo-256.png" alt="{e(STUDIO['name'])} logo" width="116" height="116">
   <h1>{e(STUDIO['name'])}</h1>
@@ -242,6 +249,13 @@ def build_home(lang):
   <div class="social">
     <a href="{STUDIO['youtube']}" target="_blank" rel="noopener">{ICON_YT} YouTube</a>
     <a href="{STUDIO['instagram']}" target="_blank" rel="noopener">{ICON_IG} Instagram</a>
+  </div>
+</section>
+{intro}
+<section class="section container">
+  <div class="section-head"><h2>{e(t['home_guides_title'])}</h2><a href="/learn/" hreflang="en">{e(t['home_guides_all'])} →</a></div>
+  <div class="guide-list">
+{guides}
   </div>
 </section>
 <section class="section container" id="games">
@@ -412,10 +426,13 @@ def build_support(lang):
     page(lang, "support/", t["nav_support"], t["contact_text"], body, active="support")
 
 
-def article_card(a):
-    return f"""<a class="card guide-card" href="/learn/{a['slug']}/">
-  <span class="title">{e(a['title'])}</span><span class="desc">{e(a['description'])}</span>
-  <span class="meta">{a['minutes']} {e(UI['en']['min_read'])}</span></a>"""
+def article_card(a, lang="en"):
+    """A guide card. On Korean pages the (English) guide gets its one-line Korean summary, "ko" in its metadata."""
+    desc = a.get("ko", a["description"]) if lang == "ko" else a["description"]
+    hreflang = ' hreflang="en"' if lang != "en" else ""
+    return f"""<a class="card guide-card" href="/learn/{a['slug']}/"{hreflang}>
+  <span class="title" lang="en">{e(a['title'])}</span><span class="desc">{e(desc)}</span>
+  <span class="meta">{e(UI[lang]['read_time'].format(n=a['minutes']))}</span></a>"""
 
 
 def learn_apps():
