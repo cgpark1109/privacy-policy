@@ -10,8 +10,10 @@ Adding a game: add an entry to `GAMES` in content.py and its Play screenshot URL
 `screenshots.json`. News entries with `"draft": True` stay off the site. Game pages get a
 "scan to install" QR code (drawn by `qr.py`, shown to desktop visitors only) and structured data.
 
-privacy.html: the policy text between `<!-- policy:start -->` and `<!-- policy:end -->` is edited by
-hand (the build keeps it as is); the build regenerates the site header, footer and game list around it.
+Privacy policies: privacy.html (English) and ko/privacy/index.html (Korean). The policy text between
+`<!-- policy:start -->` and `<!-- policy:end -->` is edited by hand (the build keeps it as is); the build
+regenerates the site header, footer and game list around it. Keep the two languages in step.
+Terms of Service (terms/, ko/terms/) and the About page are generated from TERMS and ABOUT in content.py.
 
 Browser games: `play/<slug>/` (except the generated list page `play/index.html`) are copies of the
 web repos korean_word_quiz_web, korean_challenge_web and world_history_quiz_web, with their
@@ -24,7 +26,8 @@ github.io URLs rewritten to this domain. Don't edit them here: change the web re
 (the Learn Korean app reads korean_challenge_web/notice.json there), so when that notice changes,
 re-sync so the copy on this site shows the same notice.
 
-Not generated, edit by hand: privacy-policy/, app-ads.txt, ads.txt, CNAME.
+Not generated, edit by hand: privacy-policy/ (an older copy of the policy kept for old app listings,
+marked noindex), app-ads.txt, ads.txt, CNAME.
 AdSense: every page carries the google-adsense-account tag (STUDIO["adsense"] in content.py; sync_webapps.py
 adds it to the web games). ads.txt and app-ads.txt hold the same publisher line.
 GitHub Pages (Jekyll) does not publish folders starting with "_", so this folder stays private.
