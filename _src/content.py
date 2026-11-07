@@ -68,6 +68,20 @@ UI = {
         "privacy_desc": "How our apps and website handle your data: ads through Google AdMob and AdSense, cookies, no accounts, and progress saved only on your device.",
         "terms": "Terms of Service",
         "how_to_play": "How to play",
+        "nav_learn": "Learn Hangul",
+        "learn_teaser": "New to Korean? Our free Hangul guides explain the alphabet step by step, from consonants and vowels to batchim, with audio.",
+        "learn_teaser_cta": "Read the guides",
+        "learn_title": "Learn Hangul",
+        "learn_lead": "Free guides to the Korean alphabet, from your first letter to reading real words.",
+        "learn_intro": [
+            "Hangul, the Korean alphabet, is one of the easiest writing systems in the world to learn. It has 24 basic letters, and the shapes follow a plan: consonants are drawn after the mouth and tongue, and vowels are built from a dot, a flat line and a standing line.",
+            "These guides take you from zero to reading Korean words. Read them in order, tap the speaker buttons to hear the examples, and use our free apps to practice what you've learned. Most people can read Hangul within a week or two of short daily practice.",
+        ],
+        "learn_guides": "Guides",
+        "learn_practice": "Practice with our apps",
+        "learn_prev": "Previous",
+        "learn_next": "Next",
+        "min_read": "min read",
         "tips": "Tips",
         "play_now_web": "Play in your browser",
         "terms_desc": "The terms for using our website, browser games and mobile apps.",
@@ -126,6 +140,9 @@ UI = {
         "privacy_desc": "앱과 웹사이트가 처리하는 정보: Google AdMob·AdSense 광고와 쿠키, 계정 없음, 기기에만 저장되는 기록.",
         "terms": "이용약관",
         "how_to_play": "플레이 방법",
+        "nav_learn": "한글 가이드",
+        "learn_teaser": "한국어를 배우는 외국인 친구에게 소개해 주세요. 자음, 모음, 받침까지 한글을 차근차근 설명하는 무료 영어 가이드입니다.",
+        "learn_teaser_cta": "한글 가이드 (영어)",
         "tips": "공략 팁",
         "play_now_web": "브라우저에서 하기",
         "terms_desc": "웹사이트, 브라우저 게임, 모바일 앱의 이용약관입니다.",
@@ -367,6 +384,15 @@ WEB_GAMES = [
 
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
+    {
+        "date": "2026-11-07",
+        "game": None,
+        "link": {"href": "/learn/", "en": "Read the guides", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New: free guides to learning Hangul",
+               "body": "Six step-by-step guides to the Korean alphabet: how Hangul works, consonants, vowels, plain, aspirated and tense sounds, batchim, and a two-week study plan. Every example word comes with audio."},
+        "ko": {"title": "외국인을 위한 한글 가이드를 열었습니다",
+               "body": "한글의 원리, 자음, 모음, 예사소리·거센소리·된소리, 받침, 2주 학습 계획까지 한국어를 배우는 분들을 위한 영어 가이드 6편을 공개했습니다. 모든 예시 단어는 발음을 들을 수 있습니다."},
+    },
     {
         "date": "2026-10-14",
         "game": "flag-quiz",

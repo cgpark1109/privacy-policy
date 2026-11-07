@@ -15,6 +15,12 @@ Privacy policies: privacy.html (English) and ko/privacy/index.html (Korean). The
 regenerates the site header, footer and game list around it. Keep the two languages in step.
 Terms of Service (terms/, ko/terms/) and the About page are generated from TERMS and ABOUT in content.py.
 
+Hangul guides (/learn/, English only): one file per article in `_src/learn/<slug>.html`. Each starts with an
+HTML comment holding JSON metadata (title, description, date, optional updated, order) followed by the article
+HTML. Write `{{say:한글}}` to add a listen button that reads the Korean with the browser's voice. The guide list,
+reading time, previous/next links, sitemap entries and Article structured data are generated.
+Game page guides (how to play, tips, FAQ) live in GUIDES in content.py.
+
 Browser games: `play/<slug>/` (except the generated list page `play/index.html`) are copies of the
 web repos korean_word_quiz_web, korean_challenge_web and world_history_quiz_web, with their
 github.io URLs rewritten to this domain. Don't edit them here: change the web repo, push it, then run
