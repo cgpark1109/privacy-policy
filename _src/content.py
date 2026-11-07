@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/korean-numbers/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: Korean numbers",
+               "body": "Korean has two sets of numbers. Our new guide covers both, the rule of thumb for choosing between them, and how to say the time, prices, dates and your age."},
+        "ko": {"title": "새 한글 가이드: 한국어 숫자",
+               "body": "한국어의 두 가지 숫자 체계(고유어·한자어)와 언제 무엇을 쓰는지, 시간, 가격, 날짜, 나이를 말하는 방법을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/", "en": "Read the guides", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New: free guides to learning Hangul",
                "body": "Six step-by-step guides to the Korean alphabet: how Hangul works, consonants, vowels, plain, aspirated and tense sounds, batchim, and a two-week study plan. Every example word comes with audio."},
