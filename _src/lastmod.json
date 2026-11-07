@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "c786b42cab008b17935a0ce5a5743ae12f578068"
+  "hash": "35ba8b1242ba85e150f4c9e1890df5684cc71e9f"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "85786330e511ec642f9ecd7d3ee520e31ef6c20b"
+  "hash": "6bd911af704ce10b1f0b89476fb859e9db26b6fc"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "515cfdef594667bfe1b21e120b50d2e7ea0d64df"
+  "hash": "f7cd7e87533c3aabf89c1e722ac3a84d244c2325"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -86,6 +86,10 @@
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-07",
   "hash": "aeb3ae2640deb8f8f9b30233f51a2c69609cde86"
+ },
+ "/ko/history/asian-financial-crisis-1997/": {
+  "date": "2026-11-07",
+  "hash": "78fedeb97fd4fc3074dceb88e9223301956ff0fe"
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-07",
@@ -101,15 +105,19 @@
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
-  "hash": "fcc62ead401a1d866d1a9da51170dfb9ea56b48e"
+  "hash": "40f63bfda591e1300506a16eff5c3d5b9a95f6c5"
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
-  "hash": "f6bd28e7fca1cfa54c81809b02350794ecafad78"
+  "hash": "ce37d4f3317f925c677f3302f490a4ef95e49757"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
   "hash": "4d306b3fa5e26ab89acd2fec336ab1cf13f39250"
+ },
+ "/ko/history/crusades-1096/": {
+  "date": "2026-11-07",
+  "hash": "cdc6927fff65c1380d6eea9c2ae8b260ebb6af34"
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
@@ -125,7 +133,7 @@
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-07",
-  "hash": "3734ce4998e4152eae45bb17b3490e50eb714e27"
+  "hash": "7eb78f0e682f5944f78adf7434a921486fe72e73"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -141,11 +149,15 @@
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
-  "hash": "7d11d24daf34f95450718fd86006e27b437dda95"
+  "hash": "601d4af73248366f18995165fec2be1241f1863b"
  },
  "/ko/history/glorious-revolution-1688/": {
   "date": "2026-11-07",
   "hash": "52ae2c55c55c3d9d879c294bad582b0d88473a74"
+ },
+ "/ko/history/gojoseon-2333bc/": {
+  "date": "2026-11-07",
+  "hash": "aa7dab678523c23859d403c5a9eb59eaa3637730"
  },
  "/ko/history/hunminjeongeum-1443/": {
   "date": "2026-11-07",
@@ -217,7 +229,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "3685ead5ad37be3337603d9390a3ede7420484f8"
+  "hash": "6a85d6a0fde82521a623a160eb9e69c16033d99d"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -293,7 +305,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "bc8b4bf2d30041ad3484ed036d5aea48108ba534"
+  "hash": "cd98ee1edbe4b430d78ce51010f85ca470954462"
  },
  "/play/": {
   "date": "2026-11-07",
