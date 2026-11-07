@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/french-revolution-1789/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: 1789",
+               "body": "The fourth Korean-language article in our world history series: why the French Revolution broke out, what happened in 1789 from the Estates-General to the Declaration of the Rights of Man, and what the revolution left behind."},
+        "ko": {"title": "세계사 읽을거리: 1789년, 프랑스 혁명",
+               "body": "연재 네 번째 글입니다. 빈 나라 곳간과 비싼 빵값에서 바스티유 습격, 인권 선언까지 1789년 한 해의 흐름과 혁명이 남긴 것, 그리고 같은 해 조선의 모습을 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/columbus-1492/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "World history reading: 1492",
                "body": "The third Korean-language article in our world history series: Columbus's voyage of 1492, the land he believed was Asia, and how chili peppers and sweet potatoes eventually reached Korea."},
