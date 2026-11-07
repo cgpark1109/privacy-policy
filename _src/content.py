@@ -456,7 +456,7 @@ NEWS = [
         "en": {"title": "World history reading: the Korean War",
                "body": "A new Korean-language article in our world history series: how the Korean War began in 1950, the course of the fighting from the Nakdong River to the Yalu, the 1953 armistice, and what the war left behind."},
         "ko": {"title": "세계사 읽을거리: 1950년, 한국 전쟁",
-               "body": "38도선에서 시작된 전쟁이 낙동강과 압록강을 오가다 1953년 정전으로 멈추기까지, 냉전 속 첫 대규모 전쟁의 흐름과 그 결과를 담았습니다."},
+               "body": "38도선에서 시작된 전쟁이 낙동강과 압록강을 오가다 1953년 정전으로 멈추기까지, 냉전 속 첫 대규모 국제전의 흐름과 그 결과를 담았습니다."},
     },
     {
         "date": "2026-11-07",
