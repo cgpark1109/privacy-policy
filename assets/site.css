@@ -160,6 +160,7 @@ main { flex: 1; padding-bottom: 48px; }
 .site-footer nav { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
 .site-footer a { color: var(--navy); font-weight: 500; text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
+.site-footer .updated { margin-top: 4px; font-size: 12px; overflow-wrap: anywhere; }
 
 /* Browser games (/play/): kept apart from game pages so those lead with the app */
 .play-card { display: flex; gap: 14px; align-items: flex-start; padding: 16px; }

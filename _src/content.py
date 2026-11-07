@@ -11,6 +11,7 @@ STUDIO = {
     "domain": "https://kysystemstudio.com",
     "adsense": "ca-pub-4148553154486992",  # AdSense site verification (same publisher as AdMob); ads.txt matches
     "calc": "https://calc.kysystemstudio.com/",  # 계산만물상 (Korean calculators), its own repo cgpark1109/calc
+    "updated": "2026-11-07",  # shown in the footer as "Last updated"; change it when the site changes
 }
 
 UI = {
@@ -61,6 +62,7 @@ UI = {
         "not_found_text": "The page you're looking for doesn't exist.",
         "back_home": "Back to home",
         "rights": "All rights reserved.",
+        "last_updated": "Last updated",
         "scan_qr": "Scan with your phone to install",
         "qr_label": "QR code for Google Play",
         "privacy_desc": "How our apps handle your data: ads through Google AdMob, no accounts, and progress saved only on your device.",
@@ -112,6 +114,7 @@ UI = {
         "not_found_text": "요청하신 페이지가 없습니다.",
         "back_home": "홈으로",
         "rights": "All rights reserved.",
+        "last_updated": "최종 업데이트",
         "scan_qr": "휴대폰 카메라로 스캔해서 설치하세요",
         "qr_label": "Google Play QR 코드",
         "privacy_desc": "광고는 Google AdMob으로 제공하고, 계정이 없으며, 기록은 기기에만 저장됩니다.",
