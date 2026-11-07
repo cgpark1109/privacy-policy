@@ -7,10 +7,11 @@ import json
 import os
 import re
 import sys
+from datetime import date
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ABOUT, FAQ, GAMES, GUIDES, NEWS, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
+from content import ABOUT, FAQ, GAMES, GUIDES, NEWS, PLAY_DETAILS, PLAY_REFERENCE, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -366,12 +367,17 @@ def build_game(lang, g):
 def build_play(lang):
     """Browser versions, kept on their own page so game pages lead with the app."""
     t = UI[lang]
+
+    def detail(g):
+        d = PLAY_DETAILS.get(g["slug"], {}).get(lang)
+        return f'<p class="detail">{e(d)}</p>' if d else ""
+
     cards = ""
     for g in (g for g in GAMES if g.get("web")):
         c = g[lang]
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}=s192" alt="" width="76" height="76" loading="lazy">
-  <div><a class="title" href="{url(lang, f'games/{g["slug"]}/')}">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>
+  <div><a class="title" href="{url(lang, f'games/{g["slug"]}/')}">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>{detail(g)}
   <div class="play-actions"><a class="btn" href="{e(g['web'])}">{ICON_WEB} {e(t['play_now'])}</a>
   <a class="text-link" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['play_get_app'])}</a></div></div>
 </div>
@@ -380,14 +386,20 @@ def build_play(lang):
         c = g[lang]
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}" alt="" width="76" height="76" loading="lazy">
-  <div><a class="title" href="/play/{g['slug']}/">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>
+  <div><a class="title" href="/play/{g['slug']}/">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>{detail(g)}
   <div class="play-actions"><a class="btn" href="/play/{g['slug']}/">{ICON_WEB} {e(t['play_now'])}</a></div></div>
 </div>
 """
+    intro = "".join(f"<p>{e(p)}</p>" for p in t["play_intro"])
+    refs = "".join(f'<li><a href="{r["href"]}">{e(r[lang])}</a></li>' for r in PLAY_REFERENCE)
+    faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in t["play_faq"])
     body = f"""<section class="container"><h1 class="page-title">{e(t['play_title'])}</h1><p class="page-lead">{e(t['play_lead'])}</p></section>
+<section class="section container"><div class="card prose">{intro}</div></section>
 <section class="section container"><div class="games">
 {cards}</div>
-<p class="play-note">{e(t['play_note'])}</p></section>"""
+<p class="play-note">{e(t['play_note'])}</p></section>
+<section class="section container"><div class="card prose guide"><h2>{e(t['play_reference'])}</h2><p>{e(t['play_reference_lead'])}</p><ul>{refs}</ul></div></section>
+<section class="section container"><div class="card faq"><h2>{e(t['faq_title'])}</h2>{faq}</div></section>"""
     page(lang, "play/", t["play_title"], t["play_lead"], body)
 
 
@@ -629,8 +641,35 @@ def build_go(g):
         f.write(doc)
 
 
+LASTMOD_FILE = os.path.join(os.path.dirname(__file__), "lastmod.json")
+
+
+def page_fingerprint(u):
+    """A hash of a built page, ignoring what changes on every page at once (the stylesheet version and the
+    footer's site-wide "Last updated" date), so only real content changes give a page a new lastmod."""
+    path = os.path.join(ROOT, u.lstrip("/"))
+    if u.endswith("/"):
+        path = os.path.join(path, "index.html")
+    text = open(path, encoding="utf-8").read()
+    text = re.sub(r"site\.css\?v=[0-9a-f]+", "site.css", text)
+    text = re.sub(r'<p class="updated">[^<]*<time datetime="[^"]*">[^<]*</time></p>', "", text)
+    return hashlib.sha1(text.encode("utf-8")).hexdigest()
+
+
 def build_sitemap(urls):
-    entries = "".join(f"<url><loc>{STUDIO['domain']}{u}</loc></url>" for u in urls)
+    """Each URL gets a lastmod: the build date when its page content changed, otherwise the date already
+    recorded in _src/lastmod.json (commit that file along with the site)."""
+    old = json.load(open(LASTMOD_FILE, encoding="utf-8")) if os.path.exists(LASTMOD_FILE) else {}
+    today = date.today().isoformat()
+    record = {}
+    for u in urls:
+        fp = page_fingerprint(u)
+        prev = old.get(u)
+        record[u] = prev if prev and prev["hash"] == fp else {"hash": fp, "date": today}
+    with open(LASTMOD_FILE, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(record, f, indent=1, sort_keys=True)
+        f.write("\n")
+    entries = "".join(f"<url><loc>{STUDIO['domain']}{u}</loc><lastmod>{record[u]['date']}</lastmod></url>" for u in urls)
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
         f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{entries}</urlset>\n')
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8", newline="\n") as f:

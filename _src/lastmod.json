@@ -1,0 +1,210 @@
+{
+ "/": {
+  "date": "2026-11-07",
+  "hash": "35fe04119c8178932ceb010799859fe81fc17eac"
+ },
+ "/about/": {
+  "date": "2026-11-07",
+  "hash": "8f8f697620717cf30867ca51e0dba7d734042dac"
+ },
+ "/games/bust-below/": {
+  "date": "2026-11-07",
+  "hash": "d457152ce3b3dfb255c08188a0dda931f7fa55b8"
+ },
+ "/games/hilltop-roll/": {
+  "date": "2026-11-07",
+  "hash": "28a6ead2cc16332e838cbb945d9444cc36c49850"
+ },
+ "/games/korean-word-quiz/": {
+  "date": "2026-11-07",
+  "hash": "2332ee50d684127260df63723f785c2af882386c"
+ },
+ "/games/learn-korean-hangul/": {
+  "date": "2026-11-07",
+  "hash": "7815443aba25452726e96f5fd614eaed462d6024"
+ },
+ "/games/pass-or-splash/": {
+  "date": "2026-11-07",
+  "hash": "08f83ee3cc6d8cb9c79775f9af16f4485ebde60d"
+ },
+ "/games/updraft/": {
+  "date": "2026-11-07",
+  "hash": "c404d550eda884d4de4bfe375b017c9f76e8f6e3"
+ },
+ "/games/world-history-quiz/": {
+  "date": "2026-11-07",
+  "hash": "6ab23422ef7d42164231c03fb1c36f02ea375cb0"
+ },
+ "/ko/": {
+  "date": "2026-11-07",
+  "hash": "083cff5d4d471b4d607bfd4d0317ee04518ebd26"
+ },
+ "/ko/about/": {
+  "date": "2026-11-07",
+  "hash": "fc610d438d9e73df0d4c6a2a69d5a293e304e679"
+ },
+ "/ko/games/bust-below/": {
+  "date": "2026-11-07",
+  "hash": "448d226cd0ebf24ee08bfe7470946665b4780f26"
+ },
+ "/ko/games/hilltop-roll/": {
+  "date": "2026-11-07",
+  "hash": "de924ba804f6259929cc6eb81e7a1396e1abceae"
+ },
+ "/ko/games/korean-word-quiz/": {
+  "date": "2026-11-07",
+  "hash": "acfabf3ae683c76414448312b6da0f98a7bfbeac"
+ },
+ "/ko/games/learn-korean-hangul/": {
+  "date": "2026-11-07",
+  "hash": "ce884a7ba930064c5796ea2b24ad20a6f83f6429"
+ },
+ "/ko/games/pass-or-splash/": {
+  "date": "2026-11-07",
+  "hash": "6faedf9c16c12217ffbac61c0cf8a912c7c092a1"
+ },
+ "/ko/games/updraft/": {
+  "date": "2026-11-07",
+  "hash": "581905084954c2a5be10e8a813db9928bc9d4177"
+ },
+ "/ko/games/world-history-quiz/": {
+  "date": "2026-11-07",
+  "hash": "2d4f2b8f3bfeefac423bcfd0326417217dc46149"
+ },
+ "/ko/history/": {
+  "date": "2026-11-07",
+  "hash": "adf41ed4442ce8002b8488ba6aa6b2b398213a34"
+ },
+ "/ko/history/fall-of-constantinople/": {
+  "date": "2026-11-07",
+  "hash": "cc402109a7eabea7b0d6bdf9863582a000241580"
+ },
+ "/ko/history/fall-of-western-rome/": {
+  "date": "2026-11-07",
+  "hash": "56f1571dda91aa1a2087b28251813d8d3a41f281"
+ },
+ "/ko/news/": {
+  "date": "2026-11-07",
+  "hash": "0ff375667b82dd60e35946834001c7e8e95bd1e8"
+ },
+ "/ko/play/": {
+  "date": "2026-11-07",
+  "hash": "a72a538311750ca450a8b5bcab68e61693e1a603"
+ },
+ "/ko/privacy/": {
+  "date": "2026-11-07",
+  "hash": "cc3f25d7a88a9d1ee24fd5c6ad0490f7dc176460"
+ },
+ "/ko/support/": {
+  "date": "2026-11-07",
+  "hash": "753e54226bdd5e0237057fca845e538f777d665e"
+ },
+ "/ko/terms/": {
+  "date": "2026-11-07",
+  "hash": "2ae5bb28c8da959d583b4fbf39accc0d0881b6e4"
+ },
+ "/learn/": {
+  "date": "2026-11-07",
+  "hash": "31a94e049b8c95a2cd3c01767df6dd35753239a6"
+ },
+ "/learn/batchim/": {
+  "date": "2026-11-07",
+  "hash": "196a271ba6ab574b5012e70f9b1b72a9f364145b"
+ },
+ "/learn/days-and-dates/": {
+  "date": "2026-11-07",
+  "hash": "100f4a01d47455df48fdc1ad341656636f043620"
+ },
+ "/learn/how-hangul-works/": {
+  "date": "2026-11-07",
+  "hash": "92d24191fdca3197bd91f9b96e99af22f044bc6d"
+ },
+ "/learn/korean-consonants/": {
+  "date": "2026-11-07",
+  "hash": "04fe7ffa5f87dae27cff57732f9162efe9380e71"
+ },
+ "/learn/korean-family-terms/": {
+  "date": "2026-11-07",
+  "hash": "dc0516f92a26b35b32fca8e866d220746af878f1"
+ },
+ "/learn/korean-greetings/": {
+  "date": "2026-11-07",
+  "hash": "fc3674a885ea21a534c6d7da5b277af0cd729c92"
+ },
+ "/learn/korean-numbers/": {
+  "date": "2026-11-07",
+  "hash": "d2e882ddc631b4a96defbae51f1f9c78fb04b0cd"
+ },
+ "/learn/korean-politeness/": {
+  "date": "2026-11-07",
+  "hash": "59ede01a6de2343b6edaa19987d2d9e2c16fe37b"
+ },
+ "/learn/korean-vowels/": {
+  "date": "2026-11-07",
+  "hash": "307b8df52d3c34c7f0413426412560b48e73e6d2"
+ },
+ "/learn/ordering-at-a-restaurant/": {
+  "date": "2026-11-07",
+  "hash": "cdf6768558743c40249cb7608be69419e09d682a"
+ },
+ "/learn/plain-aspirated-tense/": {
+  "date": "2026-11-07",
+  "hash": "fe45c44edb93396e7bf2c3b4e3c654352954f4d7"
+ },
+ "/learn/topic-and-subject-particles/": {
+  "date": "2026-11-07",
+  "hash": "8ee47f4a12a6bbed06d5a56ba58f46d92bc087fd"
+ },
+ "/learn/two-week-plan/": {
+  "date": "2026-11-07",
+  "hash": "61c4c9cf61347a9df264989e7ea47e994e91e8f4"
+ },
+ "/news/": {
+  "date": "2026-11-07",
+  "hash": "b077e0d4bc7e43346b31827cef2b0e314bb66899"
+ },
+ "/play/": {
+  "date": "2026-11-07",
+  "hash": "9730f8a8c1f76547bfcebc4f15c0ca9154198d90"
+ },
+ "/play/capital-quiz/": {
+  "date": "2026-11-07",
+  "hash": "0ef604b0bbfad5869e2f492c1b01c443bfd6124b"
+ },
+ "/play/capital-quiz/all-capitals.html": {
+  "date": "2026-11-07",
+  "hash": "e5eb3b4d6e6a5c6fbf50b09f5c13426b478ad8f8"
+ },
+ "/play/flag-quiz/": {
+  "date": "2026-11-07",
+  "hash": "1108cccdb057f7aba2530fa73c38fd82fc4d48e1"
+ },
+ "/play/flag-quiz/all-flags.html": {
+  "date": "2026-11-07",
+  "hash": "19629b5885f416f546a08623a14f40411670593d"
+ },
+ "/play/korean-word-quiz/": {
+  "date": "2026-11-07",
+  "hash": "d5e03b6a5e267d1fca8a41895fc31ad6f6f2c6f3"
+ },
+ "/play/learn-korean-hangul/": {
+  "date": "2026-11-07",
+  "hash": "b4a1d048e276d2905bbf40cc84f8286192b07ff5"
+ },
+ "/play/world-history-quiz/": {
+  "date": "2026-11-07",
+  "hash": "bd075a4fefeb75f38a4dc2b9a48c7b018ec02c91"
+ },
+ "/privacy.html": {
+  "date": "2026-11-07",
+  "hash": "899504b2687c7136e48cf0477efa8a837cc34976"
+ },
+ "/support/": {
+  "date": "2026-11-07",
+  "hash": "6bac67fbf48a69bfe830022da1cbe8985f2b4f8e"
+ },
+ "/terms/": {
+  "date": "2026-11-07",
+  "hash": "0c80ca4fce73596789c767147f35a0e31b16ccb7"
+ }
+}

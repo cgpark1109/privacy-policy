@@ -35,6 +35,22 @@ UI = {
         "play_now": "Play now",
         "play_get_app": "Get the app",
         "play_note": "Browser progress is saved on this device only. On your phone, the Android app is the easiest way to play.",
+        "play_intro": [
+            "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
+            "Three of them are browser versions of our learning apps, for Korean vocabulary, the Korean alphabet and world history. The other two, Flag Quiz and Capital Quiz, are made for the browser and cover every country in the world.",
+        ],
+        "play_reference": "Reference pages",
+        "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters.",
+        "play_faq": [
+            ("Do I need to install anything?",
+             "No. The games run in your web browser on a phone, a tablet or a computer. There's nothing to download and no sign-up."),
+            ("Is my progress saved?",
+             "Yes, in your browser on this device. It isn't sent to us, so it doesn't carry over to another browser, another device or our Android apps. Clearing this site's data in your browser deletes it."),
+            ("Can I play with a keyboard?",
+             "Yes. On a computer, most of the games let you choose an answer with the number keys 1 to 4 and continue with Enter."),
+            ("Should I use the browser version or the app?",
+             "The browser versions are the quickest way to try a game. On a phone, the Android apps are easier to use and keep your progress inside the app."),
+        ],
         "play_teaser": "Try some of our learning games right in your web browser.",
         "play_teaser_cta": "Browser games",
         "calc_teaser": "계산만물상: free calculators (in Korean) for take-home pay, severance, loans, units and dates.",
@@ -116,6 +132,22 @@ UI = {
         "play_now": "바로 하기",
         "play_get_app": "앱 받기",
         "play_note": "브라우저 기록은 이 기기에만 저장돼요. 휴대폰에서는 Android 앱으로 더 편하게 즐길 수 있어요.",
+        "play_intro": [
+            "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
+            "세 게임은 한국어 단어, 한글, 세계사를 공부하는 학습 앱의 브라우저 버전이고, 국기 퀴즈와 수도 퀴즈는 브라우저용으로 만든 게임으로 세계 모든 나라를 다룹니다.",
+        ],
+        "play_reference": "참고 페이지",
+        "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아볼 수 있어요.",
+        "play_faq": [
+            ("설치해야 하나요?",
+             "아니요. 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 내려받을 것도, 가입할 것도 없습니다."),
+            ("기록이 저장되나요?",
+             "네, 이 기기의 브라우저에 저장됩니다. 저희에게 전송되지 않기 때문에 다른 브라우저나 다른 기기, Android 앱으로는 이어지지 않습니다. 브라우저에서 이 사이트의 데이터를 지우면 기록도 삭제됩니다."),
+            ("키보드로 할 수 있나요?",
+             "네. 컴퓨터에서는 대부분의 게임에서 숫자 키 1~4로 답을 고르고 Enter 키로 넘어갈 수 있습니다."),
+            ("브라우저 버전과 앱 중 무엇이 좋나요?",
+             "브라우저 버전은 게임을 바로 해 보기에 가장 빠른 방법입니다. 휴대폰에서는 Android 앱이 더 편하고, 기록도 앱 안에 저장됩니다."),
+        ],
         "play_teaser": "일부 학습 게임은 웹 브라우저에서 바로 해볼 수 있어요.",
         "play_teaser_cta": "웹에서 하기",
         "calc_teaser": "계산만물상: 연봉 실수령액, 퇴직금, 대출 이자, 단위 변환, 날짜 계산을 무료로 할 수 있어요.",
@@ -1101,3 +1133,32 @@ GUIDES = {
     },
 }
 
+# One extra line per browser game on the /play/ page, from what the browser versions actually contain.
+PLAY_DETAILS = {
+    "korean-word-quiz": {
+        "en": "Ten questions a day from more than 30,000 Korean words, with pronunciation, example sentences for verbs and adjectives, and a review of the words you missed.",
+        "ko": "30,000개가 넘는 한국어 단어로 하루 10문제. 발음 듣기, 동사·형용사 예문, 틀린 단어 복습을 지원합니다.",
+    },
+    "learn-korean-hangul": {
+        "en": "Learn all 40 Hangul letters with audio and animated stroke order, then test yourself in eight quiz stages.",
+        "ko": "한글 40자를 발음과 획순 애니메이션으로 익히고, 8단계 퀴즈로 실력을 확인하세요.",
+    },
+    "world-history-quiz": {
+        "en": "150 stages across five eras, with Person, Year and Event questions and a short explanation after every answer. In English and Korean.",
+        "ko": "다섯 시대, 150개 스테이지의 인물·연도·사건 문제. 답할 때마다 짧은 해설이 나오며 영어와 한국어를 지원합니다.",
+    },
+    "flag-quiz": {
+        "en": "195 flags in 39 levels, from famous flags to look-alikes like Chad and Romania. Name the country from its flag, or the other way around.",
+        "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
+    },
+    "capital-quiz": {
+        "en": "193 capitals in 38 levels. Name the capital or the country, with a short note for countries that have more than one capital.",
+        "ko": "38개 레벨, 193개국 수도. 수도나 나라 이름을 맞히고, 수도가 여러 곳인 나라는 짧은 설명으로 확인하세요.",
+    },
+}
+
+# Reference pages that come with the browser games, shown on /play/.
+PLAY_REFERENCE = [
+    {"href": "/play/flag-quiz/all-flags.html", "en": "All flags of the world", "ko": "세계 국기 전체 보기"},
+    {"href": "/play/capital-quiz/all-capitals.html", "en": "World capitals", "ko": "세계 수도 전체 보기"},
+]
