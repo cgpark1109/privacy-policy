@@ -456,7 +456,7 @@ NEWS = [
         "en": {"title": "World history reading: the June Democratic Struggle",
                "body": "A new Korean-language article in our world history series: how citizens across Korea won back the direct election of the president in June 1987, and how the current constitution was born."},
         "ko": {"title": "세계사 읽을거리: 1987년, 6월 민주 항쟁",
-               "body": "한 대학생의 죽음과 그 진실을 감추려던 시도에서 시작해 시민들이 대통령 직선제를 되찾기까지, 6월 민주 항쟁과 지금의 헌법이 만들어진 이야기를 담았습니다."},
+               "body": "한 대학생의 죽음과 그 진실을 감추려던 시도에서 시작해 시민들이 대통령 직선제를 되찾기까지, 6월 민주 항쟁과 직선제 헌법이 만들어진 이야기를 담았습니다."},
     },
     {
         "date": "2026-11-07",
