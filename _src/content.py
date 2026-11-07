@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/korean-greetings/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: everyday Korean greetings",
+               "body": "Hello, goodbye, thank you and sorry, plus what Koreans say at meals, at work, in shops, on the phone and on holidays, with what each phrase literally means."},
+        "ko": {"title": "새 한글 가이드: 자주 쓰는 인사말",
+               "body": "안녕하세요부터 안녕히 가세요와 안녕히 계세요의 차이, 잘 먹겠습니다, 수고하셨습니다, 새해 복 많이 받으세요까지 상황별 인사말을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/korean-family-terms/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: Korean family terms",
                "body": "Why there are four words for an older sibling, how relatives are named on each side of the family, and why you'll hear 언니 and 이모 used for people who aren't family at all."},
