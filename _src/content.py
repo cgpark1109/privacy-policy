@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/korean-politeness/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: Korean politeness basics",
+               "body": "When to say 감사합니다, 고마워요 or 고마워: the three speech styles you'll actually use, how to make the polite -요 form, respectful -시-, and when it's okay to speak casually."},
+        "ko": {"title": "새 한글 가이드: 존댓말 기초",
+               "body": "-습니다, -요, 반말 세 가지 말투와 -요 형태 만드는 법, 높임의 -시-, 반말로 바꾸는 시점을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/korean-numbers/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: Korean numbers",
                "body": "Korean has two sets of numbers. Our new guide covers both, the rule of thumb for choosing between them, and how to say the time, prices, dates and your age."},
