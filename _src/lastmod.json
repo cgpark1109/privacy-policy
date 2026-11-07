@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "1451661fd0dfc7f75c838fdad927029663191ffc"
+  "hash": "192f48e31c77c28d58364fdac9aa4d9526821d1f"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "0fd852296f3039eb73f795660d5fa9785793f8ae"
+  "hash": "a0d194899282025f36353993443f3a67eca764f2"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "161b6536f81c827290ecd98dd4b969036aea71b6"
+  "hash": "d9e9f0fb4965726f6253b56d8a673fc6db12212f"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -81,7 +81,7 @@
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
-  "hash": "14a3fbdd78e1f985a2a032e47f80fc6a960edcfb"
+  "hash": "91a3a08eaecaf39dac5acbfb2fb7ef08ac664293"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -99,9 +99,13 @@
   "date": "2026-11-07",
   "hash": "4a70f7f4c3dfcf2709749f446c3268134abafc9b"
  },
+ "/ko/history/moon-landing-1969/": {
+  "date": "2026-11-07",
+  "hash": "416e2d43bf2bb6ad0f7043ea968b6a5451964608"
+ },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "c9c798078fc0325aa723123838ef6c009ae3492a"
+  "hash": "2758b40022fc87a0aaa3a1b3bda979ae83b03766"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -177,7 +181,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "5e03301cbb608bf2fb3835d3ea586d0c683dbc8a"
+  "hash": "6138ead229e3d06b351355d1d97142eb77e81f51"
  },
  "/play/": {
   "date": "2026-11-07",
