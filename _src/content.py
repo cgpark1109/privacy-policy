@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/moon-landing-1969/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: the 1969 Moon landing",
+               "body": "A new Korean-language article in our world history series: the space race, the Apollo 11 landing with less than a minute of fuel to spare, how Korea watched it, and the evidence that still sits on the Moon."},
+        "ko": {"title": "세계사 읽을거리: 1969년, 달 착륙",
+               "body": "냉전 속 우주 경쟁, 연료가 1분도 남지 않았던 아폴로 11호의 착륙, 임시 공휴일이 된 한국의 그날, 그리고 지금도 달에 남아 쓰이는 장비까지 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/march-first-movement-1919/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "World history reading: the March 1st Movement",
                "body": "A new Korean-language article in our world history series: how Korea's March 1st Movement of 1919 began, how it spread at home and abroad, and what it led to, including the Provisional Government in Shanghai."},
