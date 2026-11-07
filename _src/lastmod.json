@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "b4ebdb567cedcccfd848bcfddc5f052177d4c684"
+  "hash": "7b89a2483dc2d06e6509c02c98ad21c85d5e0bf5"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "6d2a0f03708e6e453900dfea00dd90e44c9621c4"
+  "hash": "f07d6e518c661e6b272d8e643fb763941e33a397"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "fa705f5cf22c4f6cbd8c2a5f5c3be56f75f425fc"
+  "hash": "fc5c89683e0d1f557ed70a250a76f3b398e60d66"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
@@ -97,11 +97,11 @@
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
-  "hash": "0109c685641be338010ce478b5fce5764bd7ba8c"
+  "hash": "ab0ebd3fb97ae65d4e45d511b2d36a04e4f633cb"
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "7603ce598f2c7b7b73c64486d2f6a6de36eebcf8"
+  "hash": "13a067dbae447ef4add94e620cec5ead48a0bb3c"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
@@ -109,19 +109,31 @@
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
-  "hash": "c3d14eddcee6bfd5d3975ce1beff5ed9d209790a"
+  "hash": "26c6e58495a4a5526fcd1957de3b2183614410b0"
+ },
+ "/ko/history/meiji-restoration-1868/": {
+  "date": "2026-11-07",
+  "hash": "9f9fc86b0dc139111941b1495c65994ffb1cd395"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
   "hash": "8f9bb83293a26b51157d73d069d64562a706de6f"
  },
+ "/ko/history/qin-unification-221bc/": {
+  "date": "2026-11-07",
+  "hash": "5ebfdeec3f110a4aaa609897e57abaed09992078"
+ },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
   "hash": "8a8867f6f248944410493371fe6ff06be4b48ece"
  },
+ "/ko/history/world-war-one-1914/": {
+  "date": "2026-11-07",
+  "hash": "fa55d5c66400f846ad286453d3aba96a5b4705a5"
+ },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "e5eba6b7f57dfcb9f60c477fcea79c8c614ec4a0"
+  "hash": "65f8e94f45088b90c728e8654827775c0bb98f8f"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -197,7 +209,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "09a5c66975eea4b2144cf2a997e1df4142a31fe2"
+  "hash": "8ea340b9d1bafba60c46d927986222e376492596"
  },
  "/play/": {
   "date": "2026-11-07",
