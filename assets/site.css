@@ -192,6 +192,8 @@ main { flex: 1; padding-bottom: 48px; }
 .guide-card .title { font-size: 17px; font-weight: 700; line-height: 1.35; }
 .guide-card .desc { font-size: 14px; color: var(--navy-soft); }
 .guide-card .meta { font-size: 13px; color: var(--muted); margin-top: auto; }
+.home-intro ul { padding-left: 20px; margin-top: 12px; display: grid; gap: 8px; color: var(--navy-soft); }
+.home-intro li::marker { color: var(--coral); }
 .article-head .crumb { display: inline-block; margin-top: 36px; color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; opacity: 0.9; }
 .article-head .crumb:hover { text-decoration: underline; }
 .article-head .page-title { padding-top: 6px; }
