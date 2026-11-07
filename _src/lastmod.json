@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "1e8df73a3f3485b464b69e5d9d9eae2e9b2fdb46"
+  "hash": "fd5e05dffa5debc1e9552f86f687643fc4ebe4e5"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "d0243aaf1d7e329871dda3b003e6a5ccd2a4380d"
+  "hash": "6a610e475a6682cfd3d11939b215206b6a6126f7"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,15 +73,19 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "be1e49eb3dce9566e8625d7c575e212fd23c6740"
+  "hash": "86dea1a6ff87a15b7fb628a49faf2fa11043e05e"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
-  "hash": "e3ce8726690bb5f1a6d2f4c7450bb4b887eb2c16"
+  "hash": "b464bc05d3631e3cb744fb80f176eb398822c77f"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
   "hash": "80542aabab1430410c6bf6882f5a56c2a41a30a8"
+ },
+ "/ko/history/athenian-democracy-508bc/": {
+  "date": "2026-11-07",
+  "hash": "b7f016f7282c3a3730adacf932e74d286d089e34"
  },
  "/ko/history/augustus-27bc/": {
   "date": "2026-11-07",
@@ -113,7 +117,7 @@
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
-  "hash": "9183fff1461e7e3e1262c37903cacef40e44a508"
+  "hash": "751c32b694e45662ec6d564835e2f55c0738becf"
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
@@ -121,15 +125,19 @@
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
-  "hash": "c7b184bf9c9677f23515066c1ec7cded9cd105e1"
+  "hash": "14654c4230853c538ef75572f835ab119b7d1faa"
+ },
+ "/ko/history/glorious-revolution-1688/": {
+  "date": "2026-11-07",
+  "hash": "587042fc212bf95806e2d568eacea8d5b8bc33e1"
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
-  "hash": "825bd79fb6a1916a741548d3ebc376d58e245c1f"
+  "hash": "e2a8bbc2b015f3caa015103f7db93aaeecfdb6d7"
  },
  "/ko/history/industrial-revolution-1769/": {
   "date": "2026-11-07",
-  "hash": "bbb59e594334c20c1c2094d0a6f5a4adb3ea2465"
+  "hash": "b3ce7253a40351d63b12fe1616e76ce295573eb5"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
@@ -151,13 +159,17 @@
   "date": "2026-11-07",
   "hash": "eb80d692db60e4c9fbe1a231ef087d145b8370fb"
  },
+ "/ko/history/tang-dynasty-618/": {
+  "date": "2026-11-07",
+  "hash": "05ad478fb08525e089337f23c04793459ab9b477"
+ },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-07",
   "hash": "e4309aaaf1c7fba202742592844e85ef1b2284f9"
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "930ca69ef3159137ce369b4da45d49e15967e79d"
+  "hash": "f45d6202c0f18b78aa8b6313af902814df9127d0"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -233,7 +245,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "a94e0ef3cdc8f5e4bf83f951a907d5c63b90f09a"
+  "hash": "a6806fce8ce0eabeb68a01f52a711654505137c1"
  },
  "/play/": {
   "date": "2026-11-07",
