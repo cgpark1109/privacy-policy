@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "06dda43c6c20ef9b03cf9b66b72535c6ccb8f35c"
+  "hash": "c786b42cab008b17935a0ce5a5743ae12f578068"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "6a34652494dd471816cf9789096a90c9b120b499"
+  "hash": "b400810b98e4b952eccb9fe029f87542b2900f29"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "46a63314243fa6da3511a27fe838bcacb76caf46"
+  "hash": "cfa4d0df85a8811e403e822c54541e885cc74192"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -97,7 +97,7 @@
  },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-07",
-  "hash": "8c5d63f95991c92bbacda1107244e981bbc28561"
+  "hash": "4f38e20985c67dd2dc8e3562a02c319b89f33e80"
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
@@ -111,6 +111,10 @@
   "date": "2026-11-07",
   "hash": "4d306b3fa5e26ab89acd2fec336ab1cf13f39250"
  },
+ "/ko/history/donghak-1894/": {
+  "date": "2026-11-07",
+  "hash": "619326dd4cfd46f57db25765391e8b634f0b985d"
+ },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
   "hash": "7b34af130764cd4c552ea07a2dac50add205bb43"
@@ -121,7 +125,7 @@
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-07",
-  "hash": "6d9bd86fe2bb42791750d9e5f5d8b20bc09bc470"
+  "hash": "3734ce4998e4152eae45bb17b3490e50eb714e27"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -137,7 +141,7 @@
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
-  "hash": "93bdf7c183323ff0ac35da3a0648a3b0047e3f53"
+  "hash": "7d11d24daf34f95450718fd86006e27b437dda95"
  },
  "/ko/history/glorious-revolution-1688/": {
   "date": "2026-11-07",
@@ -155,9 +159,17 @@
   "date": "2026-11-07",
   "hash": "89a2dc58e7e928e3a6efb55caec0a19ea974d0f7"
  },
+ "/ko/history/june-struggle-1987/": {
+  "date": "2026-11-07",
+  "hash": "df0d8f261fabfdb50ae3eb855e45db15ab30010d"
+ },
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-07",
   "hash": "f8170231012fb294f2dec4bd7263448f8c81c719"
+ },
+ "/ko/history/magna-carta-1215/": {
+  "date": "2026-11-07",
+  "hash": "b491cf01472acd1c616ec8536ba666b65923fc75"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
@@ -165,11 +177,11 @@
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-07",
-  "hash": "5fe4d2f790e0a41f90ac61717479d58219ea5ed7"
+  "hash": "d18bf6ab072847db26be07dea3290ac1c476f554"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
-  "hash": "409a3f257fe960f1fd20d62283a61eb197bf0fc5"
+  "hash": "294878504345b7e6446ba1315fd4f206c7b2e3c3"
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
@@ -201,11 +213,11 @@
  },
  "/ko/history/xinhai-revolution-1911/": {
   "date": "2026-11-07",
-  "hash": "0e540100595012e0a2f4fd1439ac64ffa99f1741"
+  "hash": "680622819292140f096aba00d61250ed02727164"
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "59e75068822fe73937dc164bfedda973ce1bb54a"
+  "hash": "31d49f9c71928ede753cb07dfe49c67c8648c19f"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -281,7 +293,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "3ce15df9d47d9f707cbb4e2f265934028ecc5168"
+  "hash": "bc8b4bf2d30041ad3484ed036d5aea48108ba534"
  },
  "/play/": {
   "date": "2026-11-07",
