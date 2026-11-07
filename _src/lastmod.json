@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "d87a3ca449dea2f8b67875a5c3c9b84de7881dd3"
+  "hash": "a00b7b00e8c011848286c67e89c6f93c0a3ac2db"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "847abca466ab6eeae53488edb4bf3de213b062f6"
+  "hash": "154c271c1a47c75b32f92231036bcb41f4629a01"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "e53ee1c24ef242922d0a46482972e2f0931af836"
+  "hash": "371ede8bfb3cd8f5a07047aa92f6c2649f297563"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -109,7 +109,7 @@
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-07",
-  "hash": "aeb32886c141748920d0d3494eb0992b54552246"
+  "hash": "83e7146fac89373d41de5e64818feba3e6441bc4"
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
@@ -125,7 +125,7 @@
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
-  "hash": "ddc1eb91a38f879a368823062c273bdce4f0ef18"
+  "hash": "17bebf3e427b883a675be944b213e7f63c29936f"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
@@ -141,7 +141,7 @@
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
-  "hash": "20bd0c0321fcbc00d4fc51e6a8cd3786a7b78699"
+  "hash": "87e5b96b6bf3816f11fe5c211f0624c3ea1784cc"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
@@ -150,6 +150,10 @@
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
   "hash": "c0c6957e5ddc8c4ae7fc3d289e3c40d221235924"
+ },
+ "/ko/history/ganghwa-treaty-1876/": {
+  "date": "2026-11-07",
+  "hash": "3715db0ceeb7a5ffdb39389396d3601c8d0f7647"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
@@ -163,9 +167,13 @@
   "date": "2026-11-07",
   "hash": "7064a5ebd1fd5d5a5e3e4bd314ae42dc223a2b66"
  },
+ "/ko/history/gutenberg-1450/": {
+  "date": "2026-11-07",
+  "hash": "05756c79b6d1ba25c080873544ac3854cf3467fb"
+ },
  "/ko/history/hunminjeongeum-1443/": {
   "date": "2026-11-07",
-  "hash": "4d9d5e2c74ddea35313290c1a74808af38b3da4d"
+  "hash": "550d3b83697e55ee83ed5213b70c983c8529b495"
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-07",
@@ -201,7 +209,7 @@
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-07",
-  "hash": "95aedcd77ff6ceb00c7beaa489a31510fb89f31b"
+  "hash": "2ae7de944592095ae3c1b44e06f0dae8e4a2d341"
  },
  "/ko/history/ming-qing-1644/": {
   "date": "2026-11-07",
@@ -213,7 +221,7 @@
  },
  "/ko/history/olympics-776bc/": {
   "date": "2026-11-07",
-  "hash": "ac3e0812b043a9b4eb51ec7f13be1fc9d85a2077"
+  "hash": "a215e66480f9f4aa91cd37a468a8b8cda760c07d"
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
@@ -221,7 +229,11 @@
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
-  "hash": "9efb9dd7ee79fe485f2a0ca616f1b08db2f3da1d"
+  "hash": "ea9cf06bfd648dfbc7074752687cfe880e89eb9e"
+ },
+ "/ko/history/rome-founding-753bc/": {
+  "date": "2026-11-07",
+  "hash": "7268c2eaf23081f32c48a5b0f20eb4cdf176cadf"
  },
  "/ko/history/sekigahara-1600/": {
   "date": "2026-11-07",
@@ -253,7 +265,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "b3d4319ef54c0488ab987ef197d482a5c103ab04"
+  "hash": "03b80ec15b023242a1b02232502c5a53a2578cc3"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -329,7 +341,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "a72e12fd0cb37bf4ed6db19a027d95b71a5ad416"
+  "hash": "945f1bebe3d1505a264095869f35ca2c4b8cade7"
  },
  "/play/": {
   "date": "2026-11-07",
