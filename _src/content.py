@@ -471,7 +471,7 @@ NEWS = [
         "date": "2026-11-28",
         "game": None,
         "link": {"href": "/learn/hospital-and-pharmacy/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
-        "en": {"title": "New guide: at the pharmacy and the doctor's",
+        "en": {"title": "New guide: at the pharmacy and the doctor's office",
                "body": "Saying where it hurts, describing common symptoms, buying medicine at a pharmacy, seeing a doctor at a clinic, and the emergency numbers 119 and 112."},
         "ko": {"title": "새 한글 가이드: 약국과 병원에서",
                "body": "아픈 곳과 증상 말하기, 약국에서 약 사기, 동네 의원과 진료 과목, 처방전, 응급 번호 119와 112를 외국인 학습자를 위해 정리했습니다."},
