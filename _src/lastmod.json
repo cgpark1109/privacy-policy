@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "3e1e6f4b843e6055cebb3c00436b5b1f282e00e3"
+  "hash": "8c0a83dcc124f9808604e5fb8b81604cb25f786f"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "3b37e28035cb2c9c0ee606b49fa3f82f5f223a66"
+  "hash": "2748e31e4cca67df4e0f0af91b7eeef27fb829ef"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "f64a0d2f799716691400697753088acfa126ce2e"
+  "hash": "bfcb3fee8cd54cc1a851c3f18b45e320ab021d60"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -89,7 +89,7 @@
  },
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-07",
-  "hash": "aeb3ae2640deb8f8f9b30233f51a2c69609cde86"
+  "hash": "03ac9ef22fa0d9bb1f316c1c72b6feb82f011a1b"
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-07",
@@ -113,7 +113,7 @@
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-07",
-  "hash": "762519c99a4454f282f6d9f1d3d21942bc13dbfc"
+  "hash": "b562f89db00d9aa7757fa91259f225ff9b0feb73"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
@@ -129,7 +129,7 @@
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
-  "hash": "17bebf3e427b883a675be944b213e7f63c29936f"
+  "hash": "70a575e62c415a46b6384a950e2cd7a1ef2bdccf"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
@@ -137,7 +137,7 @@
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
-  "hash": "60fdacf63367fd76ac0dc201617d076de4daccc3"
+  "hash": "5da32f207fbd524a52bb57c4391331ae20abae09"
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-07",
@@ -157,7 +157,11 @@
  },
  "/ko/history/ganghwa-treaty-1876/": {
   "date": "2026-11-07",
-  "hash": "3715db0ceeb7a5ffdb39389396d3601c8d0f7647"
+  "hash": "a200cb006c7b3cb2b0d35f78265cf52cdca96700"
+ },
+ "/ko/history/gapsin-coup-1884/": {
+  "date": "2026-11-07",
+  "hash": "5ad85a6cfd49dab30a96f2f833b9aa6ceda622b9"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
@@ -213,7 +217,7 @@
  },
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-07",
-  "hash": "f8170231012fb294f2dec4bd7263448f8c81c719"
+  "hash": "a0e10709ac86eda8cae5a4d9196c856118a1e391"
  },
  "/ko/history/magna-carta-1215/": {
   "date": "2026-11-07",
@@ -239,6 +243,10 @@
   "date": "2026-11-07",
   "hash": "294878504345b7e6446ba1315fd4f206c7b2e3c3"
  },
+ "/ko/history/norman-conquest-1066/": {
+  "date": "2026-11-07",
+  "hash": "2ed91301eb2d7095ea90755049c558a5d0bf1490"
+ },
  "/ko/history/olympics-776bc/": {
   "date": "2026-11-07",
   "hash": "a215e66480f9f4aa91cd37a468a8b8cda760c07d"
@@ -259,6 +267,10 @@
   "date": "2026-11-07",
   "hash": "ea9cf06bfd648dfbc7074752687cfe880e89eb9e"
  },
+ "/ko/history/rok-government-1948/": {
+  "date": "2026-11-07",
+  "hash": "6804073cff0acfc136209ee6b0847ad659211227"
+ },
  "/ko/history/rome-founding-753bc/": {
   "date": "2026-11-07",
   "hash": "7268c2eaf23081f32c48a5b0f20eb4cdf176cadf"
@@ -277,7 +289,7 @@
  },
  "/ko/history/silla-unification-676/": {
   "date": "2026-11-07",
-  "hash": "69f6338b92b7fd809998cbdf9a7447003372371e"
+  "hash": "24e590be33962fa4238997df9bcf6ed6ba9f39b1"
  },
  "/ko/history/tang-dynasty-618/": {
   "date": "2026-11-07",
@@ -301,7 +313,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "d4078c8d1caaf22527739d3ea98a6c661484bd2b"
+  "hash": "6cfd4a76433f181effbe2ae2d6528e08eb177a22"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -377,7 +389,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "e270b52d18ccfca137eb054e765f0c0378db6ff5"
+  "hash": "ad1b4b31c9f9b1685e0b6d584c9e9249d900668b"
  },
  "/play/": {
   "date": "2026-11-07",
