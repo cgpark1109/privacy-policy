@@ -65,7 +65,10 @@ UI = {
         "last_updated": "Last updated",
         "scan_qr": "Scan with your phone to install",
         "qr_label": "QR code for Google Play",
-        "privacy_desc": "How our apps handle your data: ads through Google AdMob, no accounts, and progress saved only on your device.",
+        "privacy_desc": "How our apps and website handle your data: ads through Google AdMob and AdSense, cookies, no accounts, and progress saved only on your device.",
+        "terms": "Terms of Service",
+        "terms_desc": "The terms for using our website, browser games and mobile apps.",
+        "terms_date": "Effective date",
     },
     "ko": {
         "lang_name": "한국어",
@@ -117,7 +120,10 @@ UI = {
         "last_updated": "최종 업데이트",
         "scan_qr": "휴대폰 카메라로 스캔해서 설치하세요",
         "qr_label": "Google Play QR 코드",
-        "privacy_desc": "광고는 Google AdMob으로 제공하고, 계정이 없으며, 기록은 기기에만 저장됩니다.",
+        "privacy_desc": "앱과 웹사이트가 처리하는 정보: Google AdMob·AdSense 광고와 쿠키, 계정 없음, 기기에만 저장되는 기록.",
+        "terms": "이용약관",
+        "terms_desc": "웹사이트, 브라우저 게임, 모바일 앱의 이용약관입니다.",
+        "terms_date": "시행일",
     },
 }
 
@@ -437,18 +443,130 @@ NEWS = [
     },
 ]
 
+# About page: (heading, paragraphs) sections; the first heading is None (the intro).
 ABOUT = {
     "en": [
-        "ggook's studio is a small independent studio in Seoul, Korea.",
-        "We make simple, friendly mobile games and learning apps: the kind you can pick up in a minute, understand without a tutorial and come back to every day. Some are quick arcade games like Hilltop Roll and Updraft, a puzzle game like Pass or Splash or an idle game like Bust Below; others help you learn, like our Korean and world history quizzes.",
-        "Our games are free to play and supported by ads. We keep things light: no accounts, no sign-ups, and your progress stays on your device.",
-        "Thanks for playing. If you have an idea or find a bug, we'd love to hear from you.",
+        (None, [
+            "ggook's studio (KY System Studio) is a small independent studio in Seoul, Korea. We make simple, friendly mobile games and learning apps: the kind you can pick up in a minute, understand without a tutorial and come back to every day.",
+        ]),
+        ("What we make", [
+            "Quick games you can play with one finger: Hilltop Roll and Updraft are arcade games about rolling and flying as far as you can, Pass or Splash is a puzzle game where you solve the question on a wall before it hits you, and Bust Below is an idle game where your cops keep working while you're away.",
+            "Learning apps for people who want to study a little every day: Korean Word Quiz and Learn Korean – Hangul for learners of Korean, and World History Quiz for anyone who likes history.",
+            "Browser games you can play right here without installing anything, including Flag Quiz and Capital Quiz, and 계산만물상, a set of free calculators in Korean for take-home pay, severance, loans, units and dates.",
+        ]),
+        ("How we make our learning content", [
+            "A learning app is only useful if its answers are right, so we build our quiz content with care. Every word in Korean Word Quiz comes with an example sentence, and new words are reviewed before they are added: version 1.6.0 added 2,233 reviewed words, for 30,242 in total. Learn Korean – Hangul teaches every letter with audio and stroke order, then 2,400 basic words.",
+            "World History Quiz covers five eras, from ancient to contemporary history, with questions about people, years and events across 150 stages that get harder as you go. Flag Quiz covers the flags of all 195 countries, and Capital Quiz the capitals of 193 countries, with a short note for countries that have more than one capital.",
+            "If you find a mistake in any of our questions, please email us and we'll correct it.",
+        ]),
+        ("Our story so far", [
+            "We released our first app on Google Play in April 2025. In autumn 2026 we released Hilltop Roll, Bust Below and Pass or Splash, rebuilt Learn Korean – Hangul from the ground up, gave Korean Word Quiz and World History Quiz a new look, opened this website and added our first browser-only games. You can follow every update on our News page.",
+        ]),
+        ("How we keep our games free", [
+            "Our games are free to play and supported by ads. We keep things light: no accounts, no sign-ups, and your progress stays on your device. Our Privacy Policy explains exactly what data our apps and this website use.",
+        ]),
+        ("Get in touch", [
+            "Thanks for playing. If you have an idea, find a bug or spot a mistake, we'd love to hear from you at admin@kysystemstudio.com.",
+        ]),
     ],
     "ko": [
-        "ggook's studio는 서울에 있는 작은 독립 스튜디오입니다.",
-        "잠깐이면 시작할 수 있고, 설명 없이도 이해되고, 매일 다시 찾게 되는 간단하고 친근한 모바일 게임과 학습 앱을 만듭니다. Hilltop Roll, Updraft 같은 짧은 아케이드 게임, Pass or Splash 같은 퍼즐 게임, Bust Below 같은 방치형 게임도 있고, 한국어와 세계사 퀴즈처럼 배움을 돕는 앱도 있습니다.",
-        "모든 게임은 광고로 운영되는 무료 게임입니다. 계정이나 가입 없이 바로 즐길 수 있고, 기록은 기기에만 저장됩니다.",
-        "플레이해 주셔서 감사합니다. 아이디어나 버그가 있다면 언제든 알려 주세요.",
+        (None, [
+            "ggook's studio(KY System Studio)는 서울에 있는 작은 독립 스튜디오입니다. 잠깐이면 시작할 수 있고, 설명 없이도 이해되고, 매일 다시 찾게 되는 간단하고 친근한 모바일 게임과 학습 앱을 만듭니다.",
+        ]),
+        ("만드는 것", [
+            "손가락 하나로 즐기는 짧은 게임: 언덕을 굴러 내려가는 Hilltop Roll과 종이비행기를 멀리 날리는 Updraft 같은 아케이드 게임, 다가오는 벽의 문제를 풀어 정답 구멍으로 빠져나가는 퍼즐 게임 Pass or Splash, 게임을 꺼 두어도 경찰들이 알아서 일하는 방치형 게임 Bust Below가 있습니다.",
+            "매일 조금씩 공부하고 싶은 분들을 위한 학습 앱: 한국어를 배우는 분들을 위한 Korean Word Quiz와 Learn Korean – Hangul, 역사를 좋아하는 분들을 위한 World History Quiz가 있습니다.",
+            "설치 없이 이 사이트에서 바로 하는 국기 퀴즈, 수도 퀴즈 같은 브라우저 게임과, 연봉 실수령액, 퇴직금, 대출 이자, 단위 변환, 날짜를 계산하는 무료 계산기 모음 계산만물상도 운영합니다.",
+        ]),
+        ("학습 콘텐츠를 만드는 방식", [
+            "학습 앱은 정답이 정확해야 의미가 있기 때문에 문제 하나하나를 신경 써서 만듭니다. Korean Word Quiz의 모든 단어에는 예문이 있고, 새 단어는 검수를 거친 뒤 추가합니다. 1.6.0 버전에서는 검수한 단어 2,233개를 더해 모두 30,242개가 되었습니다. Learn Korean – Hangul은 모든 글자를 발음과 획순으로 익힌 뒤 기본 단어 2,400개로 넘어가도록 구성했습니다.",
+            "World History Quiz는 고대부터 현대까지 다섯 시대를 인물, 연도, 사건 문제로 다루며, 150개 스테이지를 지날수록 점점 어려워집니다. 국기 퀴즈는 세계 195개국의 국기를, 수도 퀴즈는 193개국의 수도를 다루고, 수도가 여러 곳인 나라에는 짧은 설명을 붙였습니다.",
+            "문제에서 틀린 내용을 발견하시면 이메일로 알려 주세요. 확인 후 바로잡겠습니다.",
+        ]),
+        ("지금까지의 이야기", [
+            "2025년 4월 Google Play에 첫 앱을 출시했습니다. 2026년 가을에는 Hilltop Roll, Bust Below, Pass or Splash를 출시하고, Learn Korean – Hangul을 처음부터 다시 만들었으며, Korean Word Quiz와 World History Quiz의 디자인을 새로 바꾸고, 이 홈페이지와 첫 브라우저 전용 게임을 열었습니다. 모든 업데이트는 소식 페이지에서 볼 수 있습니다.",
+        ]),
+        ("무료로 운영하는 방법", [
+            "모든 게임은 광고로 운영되는 무료 게임입니다. 계정이나 가입 없이 바로 즐길 수 있고, 기록은 기기에만 저장됩니다. 앱과 웹사이트가 어떤 정보를 사용하는지는 개인정보처리방침에 자세히 적어 두었습니다.",
+        ]),
+        ("연락하기", [
+            "플레이해 주셔서 감사합니다. 아이디어, 버그, 틀린 문제가 있다면 언제든 admin@kysystemstudio.com으로 알려 주세요.",
+        ]),
+    ],
+}
+
+# Terms of Service: (heading, paragraphs) sections. Change TERMS_DATE when the text changes.
+TERMS_DATE = {"en": "November 7, 2026", "ko": "2026년 11월 7일"}
+TERMS = {
+    "en": [
+        ("About these terms", [
+            "These Terms of Service apply to our website kysystemstudio.com, the games you can play on it in your browser and our mobile apps (together, the \"services\"), provided by KY System Studio, known on Google Play as ggook's studio (\"we\", \"us\"). By using the services, you agree to these terms.",
+        ]),
+        ("Using our services", [
+            "Our services are free for personal, non-commercial use. Please don't use them in a way that breaks the law, harms other people or disrupts the services, for example by trying to access them by automated means at a volume that affects other users, or by copying our games or content to publish them as your own.",
+        ]),
+        ("Ads", [
+            "Our services are free because they show ads, provided by Google AdMob in our apps and Google AdSense on this website. Ads come from third-party advertisers, and we aren't responsible for their products or websites. Please don't click on ads for any reason other than genuine interest, and don't ask others to.",
+        ]),
+        ("Our content", [
+            "Our games, text, graphics, sounds and code belong to KY System Studio unless stated otherwise. Some materials, such as flag images, are used under their own licenses, which are noted where they appear. You're welcome to link to our pages and share screenshots of our games.",
+        ]),
+        ("Learning content", [
+            "We review our quiz and learning content carefully, but mistakes can still happen. Our content is meant for learning and entertainment and isn't professional advice. If you find a mistake, please email us and we'll correct it.",
+        ]),
+        ("Your progress", [
+            "Your progress and settings are saved only on your device. If you uninstall an app, clear its data or clear this site's data in your browser, your progress is deleted and we can't restore it.",
+        ]),
+        ("Changes and availability", [
+            "We may update, change or stop any part of the services at any time, for example to fix bugs or add new content. We'll try to keep the services available, but we can't promise they'll always work without interruption.",
+        ]),
+        ("Disclaimer and limitation of liability", [
+            "The services are provided \"as is\". To the extent permitted by law, we make no warranties about the services and aren't liable for indirect or incidental damages arising from their use. Nothing in these terms limits liability that can't be limited under applicable law.",
+        ]),
+        ("Links to other websites", [
+            "Our services link to other websites, such as Google Play, YouTube and Instagram. Those websites have their own terms and privacy policies, and we aren't responsible for them.",
+        ]),
+        ("Changes to these terms", [
+            "We may update these terms from time to time. The new version will be posted on this page with a new date. If you keep using the services after a change, you agree to the updated terms.",
+        ]),
+        ("Governing law and contact", [
+            "These terms are governed by the laws of the Republic of Korea. If you have any questions about them, email us at admin@kysystemstudio.com.",
+        ]),
+    ],
+    "ko": [
+        ("약관의 적용", [
+            "이 이용약관은 KY System Studio(Google Play 개발자명 ggook's studio, 이하 \"저희\")가 제공하는 웹사이트 kysystemstudio.com, 이 사이트에서 하는 브라우저 게임, 모바일 앱(이하 \"서비스\")에 적용됩니다. 서비스를 이용하면 이 약관에 동의하는 것으로 봅니다.",
+        ]),
+        ("서비스 이용", [
+            "서비스는 개인적, 비상업적 용도로 무료로 이용할 수 있습니다. 법을 어기거나, 다른 사람에게 피해를 주거나, 서비스를 방해하는 방식으로 이용하지 말아 주세요. 예를 들어 다른 이용자에게 영향을 줄 정도로 자동화된 방법으로 접속하거나, 저희 게임과 콘텐츠를 복제해 자신의 것처럼 게시하는 행위가 여기에 해당합니다.",
+        ]),
+        ("광고", [
+            "서비스는 광고 덕분에 무료로 제공됩니다. 앱에서는 Google AdMob, 이 웹사이트에서는 Google AdSense로 광고를 게재합니다. 광고는 제3자 광고주가 제공하며, 저희는 광고주의 상품이나 웹사이트에 대해 책임지지 않습니다. 실제 관심이 있을 때만 광고를 눌러 주시고, 다른 사람에게 광고 클릭을 부탁하지 말아 주세요.",
+        ]),
+        ("콘텐츠의 권리", [
+            "따로 표시한 경우를 제외하고 저희 게임, 글, 그림, 소리, 코드의 권리는 KY System Studio에 있습니다. 국기 이미지처럼 별도 라이선스로 사용하는 자료는 해당 위치에 라이선스를 표시했습니다. 저희 페이지로 링크하거나 게임 스크린샷을 공유하는 것은 얼마든지 환영합니다.",
+        ]),
+        ("학습 콘텐츠", [
+            "퀴즈와 학습 콘텐츠는 꼼꼼히 검토하지만 그래도 틀린 내용이 있을 수 있습니다. 콘텐츠는 학습과 재미를 위한 것이며 전문적인 조언이 아닙니다. 틀린 내용을 발견하시면 이메일로 알려 주세요. 확인 후 바로잡겠습니다.",
+        ]),
+        ("진행 기록", [
+            "진행 상황과 설정은 사용자의 기기에만 저장됩니다. 앱을 삭제하거나 앱 데이터를 지우거나 브라우저에서 이 사이트의 데이터를 지우면 기록이 삭제되며, 저희가 복구해 드릴 수 없습니다.",
+        ]),
+        ("서비스의 변경", [
+            "버그 수정이나 새 콘텐츠 추가 등을 위해 서비스의 일부를 언제든 업데이트, 변경, 중단할 수 있습니다. 서비스가 원활히 운영되도록 노력하지만 항상 중단 없이 작동한다고 보장할 수는 없습니다.",
+        ]),
+        ("책임의 제한", [
+            "서비스는 \"있는 그대로\" 제공됩니다. 법이 허용하는 범위에서 저희는 서비스에 대해 보증하지 않으며, 서비스 이용으로 생긴 간접적, 부수적 손해에 대해 책임지지 않습니다. 다만 관련 법령상 제한할 수 없는 책임은 이 약관으로 제한되지 않습니다.",
+        ]),
+        ("외부 링크", [
+            "서비스에는 Google Play, YouTube, Instagram 같은 다른 웹사이트로 가는 링크가 있습니다. 해당 웹사이트에는 각자의 약관과 개인정보처리방침이 적용되며, 저희는 이에 대해 책임지지 않습니다.",
+        ]),
+        ("약관의 변경", [
+            "이 약관은 필요에 따라 바뀔 수 있으며, 바뀐 약관은 새 날짜와 함께 이 페이지에 게시합니다. 변경 후에도 서비스를 계속 이용하면 바뀐 약관에 동의하는 것으로 봅니다.",
+        ]),
+        ("준거법과 문의", [
+            "이 약관은 대한민국 법률을 따릅니다. 약관에 관한 문의는 admin@kysystemstudio.com으로 보내 주세요.",
+        ]),
     ],
 }
 

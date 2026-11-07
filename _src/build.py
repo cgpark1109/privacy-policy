@@ -10,7 +10,7 @@ import sys
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
-from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, UI, WEB_GAMES  # noqa: E402
+from content import ABOUT, FAQ, GAMES, NEWS, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,6 +60,11 @@ def published_news():
     return [n for n in NEWS if not n.get("draft")]
 
 
+def privacy_url(lang):
+    """The English policy stays at /privacy.html (linked from Google Play); the Korean one is /ko/privacy/."""
+    return "/privacy.html" if lang == "en" else url(lang, "privacy/")
+
+
 def game_by_slug(slug):
     return next(g for g in GAMES if g["slug"] == slug)
 
@@ -68,7 +73,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
          show_updated=True):
     """Wraps a page body in the shared head, header and footer and writes it.
     translated=False is for pages that exist in one language only: the language switch goes to the other home.
-    show_updated=False leaves out the footer's "Last updated" line (privacy.html has its own policy date)."""
+    show_updated=False leaves out the footer's "Last updated" line (the privacy policies carry their own date)."""
     t = UI[lang]
     other = "ko" if lang == "en" else "en"
     full_title = f"{title} – {STUDIO['name']}" if title else f"{STUDIO['name']} – {t['tagline']}"
@@ -124,7 +129,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
 <footer class="site-footer">
   <div class="container">
     <nav>
-      <a href="/privacy.html">{e(t['privacy'])}</a>
+      <a href="{privacy_url(lang)}">{e(t['privacy'])}</a>
+      <a href="{url(lang, 'terms/')}">{e(t['terms'])}</a>
       <a href="{url(lang, 'play/')}">{e(t['play_title'])}</a>
       <a href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_link'])}</a>
       <a href="{url(lang, 'support/')}">{e(t['support'])}</a>
@@ -249,7 +255,7 @@ def build_game(lang, g):
     <div class="card prose"><h2>{e(t['about_game'])}</h2>{paras}</div>
     <div class="card"><h2>{e(t['features'])}</h2><ul class="features">{feats}</ul>
       <h2 style="margin-top:20px">{e(t['game_links'])}</h2>
-      <ul class="link-list"><li><a href="/privacy.html">{e(t['privacy'])}</a></li><li><a href="{url(lang, 'support/')}">{e(t['support'])}</a></li></ul>
+      <ul class="link-list"><li><a href="{privacy_url(lang)}">{e(t['privacy'])}</a></li><li><a href="{url(lang, 'support/')}">{e(t['support'])}</a></li></ul>
     </div>
   </div>
 </section>
@@ -310,15 +316,29 @@ def build_news(lang):
 
 def build_about(lang):
     t = UI[lang]
-    paras = "".join(f"<p>{e(p)}</p>" for p in ABOUT[lang])
+    sections = "".join((f"<h2>{e(h)}</h2>" if h else "") + "".join(f"<p>{e(p)}</p>" for p in paras)
+                       for h, paras in ABOUT[lang])
     body = f"""<section class="container"><h1 class="page-title">{e(t['about_title'])}</h1></section>
-<section class="section container"><div class="card prose">{paras}
-  <div class="social" style="justify-content:flex-start">
+<section class="section container"><div class="card prose about">{sections}
+  <div class="actions">
+    <a class="btn" href="mailto:{STUDIO['email']}">{e(t['contact'])}</a>
     <a class="btn" href="{STUDIO['youtube']}" target="_blank" rel="noopener">{ICON_YT} YouTube</a>
     <a class="btn" href="{STUDIO['instagram']}" target="_blank" rel="noopener">{ICON_IG} Instagram</a>
   </div>
 </div></section>"""
-    page(lang, "about/", t["about_title"], ABOUT[lang][0], body, active="about")
+    page(lang, "about/", t["about_title"], ABOUT[lang][0][1][0], body, active="about")
+
+
+def build_terms(lang):
+    t = UI[lang]
+    sections = "\n".join(f"<section><h2>{e(h)}</h2>" + "".join(f"<p>{e(p)}</p>" for p in paras) + "</section>"
+                         for h, paras in TERMS[lang])
+    body = f"""<section class="container"><h1 class="page-title">{e(t['terms'])}</h1></section>
+<section class="section container"><div class="card policy">
+<p class="updated">{e(t['terms_date'])}: {e(TERMS_DATE[lang])}</p>
+{sections}
+</div></section>"""
+    page(lang, "terms/", t["terms"], t["terms_desc"], body, show_updated=False)
 
 
 def build_support(lang):
@@ -345,16 +365,17 @@ def build_404():
 POLICY_START, POLICY_END = "<!-- policy:start -->", "<!-- policy:end -->"
 
 
-def build_privacy():
-    """privacy.html keeps its policy text between the policy markers (edit it there by hand);
-    everything around it (header, footer, game list) is regenerated from the site layout."""
-    t = UI["en"]
-    path = os.path.join(ROOT, "privacy.html")
+def build_privacy(lang):
+    """The policy text between the policy markers is edited by hand (privacy.html for English,
+    ko/privacy/index.html for Korean); everything around it (header, footer, game list) is regenerated."""
+    t = UI[lang]
+    out_path = "privacy.html" if lang == "en" else "privacy/"
+    path = os.path.join(ROOT, privacy_url(lang).lstrip("/") + ("index.html" if lang != "en" else ""))
     m = re.search(re.escape(POLICY_START) + r"(.*?)" + re.escape(POLICY_END),
                   open(path, encoding="utf-8").read(), re.S)
     if not m:
-        sys.exit(f"privacy.html has no {POLICY_START} ... {POLICY_END} section")
-    cards = "\n".join(game_card("en", g) for g in GAMES)
+        sys.exit(f"{path} has no {POLICY_START} ... {POLICY_END} section")
+    cards = "\n".join(game_card(lang, g) for g in GAMES)
     body = f"""<section class="container"><h1 class="page-title">{e(t['privacy'])}</h1></section>
 <section class="section container"><div class="card policy">{POLICY_START}{m.group(1)}{POLICY_END}</div></section>
 <section class="section container">
@@ -363,7 +384,7 @@ def build_privacy():
 {cards}
   </div>
 </section>"""
-    page("en", "privacy.html", t["privacy"], t["privacy_desc"], body, translated=False, show_updated=False)
+    page(lang, out_path, t["privacy"], t["privacy_desc"], body, translated=False, show_updated=False)
 
 
 def build_go(g):
@@ -407,17 +428,19 @@ def main():
         for g in GAMES:
             build_game(lang, g)
             urls.append(url(lang, f"games/{g['slug']}/"))
-        for fn, path in [(build_play, "play/"), (build_news, "news/"), (build_about, "about/"), (build_support, "support/")]:
+        for fn, path in [(build_play, "play/"), (build_news, "news/"), (build_about, "about/"), (build_support, "support/"),
+                         (build_terms, "terms/")]:
             fn(lang)
             urls.append(url(lang, path))
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     for g in WEB_GAMES:
         urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_404()
-    build_privacy()
+    for lang in LANGS:
+        build_privacy(lang)
     for g in GAMES:
         build_go(g)
-    urls.append("/privacy.html")
+    urls += [privacy_url(lang) for lang in LANGS]
     build_sitemap(urls)
     print(f"built {len(urls) - 1} pages + 404, sitemap, robots")
 
