@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/topic-and-subject-particles/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: 은/는 or 이/가?",
+               "body": "The two Korean particles every learner mixes up: which form to use, the difference between topic and subject, and seven everyday situations that show when to choose each."},
+        "ko": {"title": "새 한글 가이드: 은/는과 이/가",
+               "body": "외국인 학습자가 가장 많이 헷갈리는 조사 은/는과 이/가의 형태, 주제와 주어의 차이, 상황별 사용법을 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/korean-greetings/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: everyday Korean greetings",
                "body": "Hello, goodbye, thank you and sorry, plus what Koreans say at meals, at work, in shops, on the phone and on holidays, with what each phrase literally means."},
