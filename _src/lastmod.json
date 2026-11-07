@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "067eef23569f4bf0940e0a01457ca207519b3da3"
+  "hash": "7645c83560496053a70c1193f3c77a1f1d707c60"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "c311df94fe765ff82b514c339372eb6135592eb0"
+  "hash": "d2fea1c3cb49d6819da7a21fb2d2b75caf3aeee3"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,7 +73,7 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "227399bc387f5911abbe6546147bf9497448c2de"
+  "hash": "f258978808d4e420598fa6ceb2214e84e59a89a1"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
@@ -106,6 +106,10 @@
  "/ko/history/bandung-1955/": {
   "date": "2026-11-07",
   "hash": "0b4c655523416aa570548bbd3963b8eb0e7fb501"
+ },
+ "/ko/history/berlin-conference-1884/": {
+  "date": "2026-11-07",
+  "hash": "46ca7718f884de4fd71d9ca00792bd0ef1c12372"
  },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-07",
@@ -149,7 +153,7 @@
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-07",
-  "hash": "93a47df4a02ce49a1b5e8bb3f5e3752d916a5b97"
+  "hash": "0f9c1959733f1a4cefb9230b5f9c31cc9c162a76"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
@@ -181,7 +185,7 @@
  },
  "/ko/history/gapsin-coup-1884/": {
   "date": "2026-11-07",
-  "hash": "5ad85a6cfd49dab30a96f2f833b9aa6ceda622b9"
+  "hash": "dff31c6f35eed07c67e4c44954375f11c7b2bbc0"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-07",
@@ -205,7 +209,11 @@
  },
  "/ko/history/great-depression-1929/": {
   "date": "2026-11-07",
-  "hash": "570e10d047ee45e510aa5830d1fcefb3eee61eec"
+  "hash": "0281a5db2b7422c989366728a5e4a26503b067d0"
+ },
+ "/ko/history/great-kanto-earthquake-1923/": {
+  "date": "2026-11-07",
+  "hash": "1c7126f63442c3c1f13ba7b8697137c940e73e12"
  },
  "/ko/history/gutenberg-1450/": {
   "date": "2026-11-07",
@@ -239,13 +247,17 @@
   "date": "2026-11-07",
   "hash": "89a2dc58e7e928e3a6efb55caec0a19ea974d0f7"
  },
+ "/ko/history/iranian-revolution-1979/": {
+  "date": "2026-11-07",
+  "hash": "d78c2fc218331a24a3d7337ffd47138371ae8452"
+ },
  "/ko/history/joseon-founding-1392/": {
   "date": "2026-11-07",
   "hash": "b77334d4e0fca3449c1155eab03509fb3a8053c3"
  },
  "/ko/history/july4-joint-statement-1972/": {
   "date": "2026-11-07",
-  "hash": "e7cc4af8df3b246081e07e1b2b1b527d7d58cf30"
+  "hash": "489abbfafb00e064b964d4fc520e4930a8338df5"
  },
  "/ko/history/june-struggle-1987/": {
   "date": "2026-11-07",
@@ -277,11 +289,11 @@
  },
  "/ko/history/may-eighteenth-1980/": {
   "date": "2026-11-07",
-  "hash": "5ee63f713ab8ec950defcd5f78a9c7113a5c01b7"
+  "hash": "6da4e3cbb08a25d280afe269ace779fdc29fbdb7"
  },
  "/ko/history/may-fourth-1919/": {
   "date": "2026-11-07",
-  "hash": "9fbb06c907577d228aee883d7319aa9d4cf6ee75"
+  "hash": "02c2ff1c280803ff2a2bac5f707cb2cf2f8430fb"
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-07",
@@ -385,7 +397,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "a7398100ca823a892edad314900e85f4ef72e753"
+  "hash": "91ad903a191a206ac946f42ad92323cb8f37f441"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -461,7 +473,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "8f58caec42ce88de117b0a7dcb6fdf853b43fc8a"
+  "hash": "6d96e110c5cb77d943e445e044003aeb7d2bebdd"
  },
  "/play/": {
   "date": "2026-11-07",
