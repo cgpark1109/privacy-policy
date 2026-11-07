@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/korean-family-terms/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: Korean family terms",
+               "body": "Why there are four words for an older sibling, how relatives are named on each side of the family, and why you'll hear 언니 and 이모 used for people who aren't family at all."},
+        "ko": {"title": "새 한글 가이드: 가족 호칭",
+               "body": "형, 오빠, 누나, 언니부터 친가와 외가, 삼촌, 이모, 고모, 촌수, 그리고 식당에서 부르는 '이모'까지 가족 호칭을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/korean-politeness/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: Korean politeness basics",
                "body": "When to say 감사합니다, 고마워요 or 고마워: the three speech styles you'll actually use, how to make the polite -요 form, respectful -시-, and when it's okay to speak casually."},
