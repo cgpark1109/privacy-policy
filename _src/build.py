@@ -67,10 +67,10 @@ var u=new SpeechSynthesisUtterance(b.getAttribute('data-say'));u.lang='ko-KR';u.
 speechSynthesis.cancel();speechSynthesis.speak(u);});})();</script>"""
 
 
-def load_articles():
+def load_articles(section="learn", lang="en"):
     """Hangul guides: _src/learn/<slug>.html, each starting with an HTML comment holding JSON metadata
     (title, description, date, updated, order). {{say:한글}} becomes a listen button."""
-    folder = os.path.join(os.path.dirname(__file__), "learn")
+    folder = os.path.join(os.path.dirname(__file__), section)
     articles = []
     for name in sorted(os.listdir(folder)):
         if not name.endswith(".html"):
@@ -83,12 +83,15 @@ def load_articles():
         body = re.sub(r"\{\{say:([^}]+)\}\}",
                       lambda k: f'<button type="button" class="say" data-say="{e(k.group(1))}" aria-label="Listen: {e(k.group(1))}">{ICON_SPEAK}</button>',
                       m.group(2))
-        words = len(re.sub(r"<[^>]+>", " ", body).split())
-        articles.append({**meta, "slug": name[:-5], "body": body, "minutes": max(1, round(words / 200))})
+        text = re.sub(r"<[^>]+>", " ", body)
+        # Reading time: about 200 words a minute in English, about 500 characters a minute in Korean.
+        size = len(re.sub(r"\s", "", text)) / 500 if lang == "ko" else len(text.split()) / 200
+        articles.append({**meta, "slug": name[:-5], "body": body, "minutes": max(1, round(size))})
     return sorted(articles, key=lambda a: a["order"])
 
 
-ARTICLES = load_articles()
+ARTICLES = load_articles()          # Hangul guides, English, /learn/
+HISTORY = load_articles("history", "ko")  # world history reading, Korean, /ko/history/
 
 
 def published_news():
@@ -118,6 +121,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
         alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
     image = og_image or f"{STUDIO['domain']}/assets/logo.png"
     nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("learn", t["nav_learn"], "/learn/"),
+                 *([("history", t["nav_history"], url(lang, "history/"))] if lang == "ko" else []),
                  ("calc", t["nav_calc"], STUDIO["calc"]),
                  ("news", t["nav_news"], url(lang, "news/")),
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
@@ -232,9 +236,9 @@ def build_home(lang):
 </div>""")
     teaser_section = f'<section class="section container teasers">\n{chr(10).join(teasers)}\n</section>'
     # What the site offers, with live counts, then the most recent guides.
-    counts = {"games": len(GAMES), "guides": len(ARTICLES),
+    counts = {"games": len(GAMES), "guides": len(ARTICLES), "history": len(HISTORY),
               "web": sum(1 for g in GAMES if g.get("web")) + len(WEB_GAMES)}
-    links = {"games": "#games", "guides": "/learn/", "web": url(lang, "play/")}
+    links = {"games": "#games", "guides": "/learn/", "history": url("ko", "history/"), "web": url(lang, "play/")}
     points = "".join(f'<li><a href="{links[key]}"><strong>{e(label)}</strong></a>: {e(text.format(**counts))}</li>'
                      for key, label, text in t["home_points"])
     intro = f"""<section class="section container"><div class="card prose home-intro">
@@ -242,6 +246,16 @@ def build_home(lang):
 </div></section>"""
     latest = sorted(ARTICLES, key=lambda a: (a.get("updated", a["date"]), a["order"]), reverse=True)[:3]
     guides = "\n".join(article_card(a, lang) for a in latest)
+    history_section = ""
+    if lang == "ko" and HISTORY:
+        recent = sorted(HISTORY, key=lambda a: (a.get("updated", a["date"]), a["order"]), reverse=True)[:3]
+        history_cards = "\n".join(article_card(a, "ko", url("ko", "history/"), "ko") for a in recent)
+        history_section = f"""<section class="section container">
+  <div class="section-head"><h2>{e(t['home_history_title'])}</h2><a href="{url('ko', 'history/')}">{e(t['home_history_all'])} →</a></div>
+  <div class="guide-list">
+{history_cards}
+  </div>
+</section>"""
     body = f"""<section class="hero container">
   <img class="logo" src="/assets/logo-256.png" alt="{e(STUDIO['name'])} logo" width="116" height="116">
   <h1>{e(STUDIO['name'])}</h1>
@@ -259,6 +273,7 @@ def build_home(lang):
 {guides}
   </div>
 </section>
+{history_section}
 <section class="section container" id="games">
   <div class="section-head"><h2>{e(t['games_title'])}</h2><p>{e(t['games_lead'])}</p></div>
   <div class="games">
@@ -438,13 +453,14 @@ def build_support(lang):
     page(lang, "support/", t["nav_support"], t["contact_text"], body, active="support")
 
 
-def article_card(a, lang="en"):
-    """A guide card. On Korean pages the (English) guide gets its one-line Korean summary, "ko" in its metadata."""
-    desc = a.get("ko", a["description"]) if lang == "ko" else a["description"]
-    hreflang = ' hreflang="en"' if lang != "en" else ""
-    return f"""<a class="card guide-card" href="/learn/{a['slug']}/"{hreflang}>
-  <span class="title" lang="en">{e(a['title'])}</span><span class="desc">{e(desc)}</span>
-  <span class="meta">{e(UI[lang]['read_time'].format(n=a['minutes']))}</span></a>"""
+def article_card(a, lang="en", base="/learn/", article_lang="en"):
+    """An article card. On Korean pages an English guide shows its one-line Korean summary ("ko" in its metadata)."""
+    desc = a.get("ko", a["description"]) if lang == "ko" and article_lang == "en" else a["description"]
+    hreflang = f' hreflang="{article_lang}"' if lang != article_lang else ""
+    read_time = UI[lang]["read_time"] if article_lang != lang else UI[lang]["read_time_same"]
+    return f"""<a class="card guide-card" href="{base}{a['slug']}/"{hreflang}>
+  <span class="title" lang="{article_lang}">{e(a['title'])}</span><span class="desc">{e(desc)}</span>
+  <span class="meta">{e(read_time.format(n=a['minutes']))}</span></a>"""
 
 
 def learn_apps():
@@ -504,6 +520,67 @@ def build_learn():
                             "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
         page("en", f"learn/{a['slug']}/", a["title"], a["description"], body, active="learn", translated=False,
              head_extra=ld_json(ld) + SAY_SCRIPT)
+
+
+def history_quiz_card():
+    """'Test yourself' card under the history articles: the World History Quiz app and browser version."""
+    t, g = UI["ko"], game_by_slug("world-history-quiz")
+    web = f' · <a href="{g["web"]}">{e(t["play_now_web"])}</a>' if g.get("web") else ""
+    return (f'<div class="card prose guide"><h2>{e(t["history_practice"])}</h2><ul><li>'
+            f'<a href="{url("ko", "games/world-history-quiz/")}"><strong>{e(g["ko"]["name"])}</strong></a>: '
+            f'{e(t["history_practice_text"])}{web}</li></ul></div>')
+
+
+def build_history():
+    """Korean world history reading at /ko/history/, from _src/history/<slug>.html (same format as the guides)."""
+    if not HISTORY:
+        return []
+    t = UI["ko"]
+    cards = "\n".join(article_card(a, "ko", url("ko", "history/"), "ko") for a in HISTORY)
+    paras = "".join(f"<p>{e(p)}</p>" for p in t["history_intro"])
+    body = f"""<section class="container"><h1 class="page-title">{e(t['history_title'])}</h1>
+<p class="page-lead">{e(t['history_lead'])}</p></section>
+<section class="section container"><div class="card prose">{paras}</div></section>
+<section class="section container">
+  <div class="section-head"><h2>{e(t['history_list'])}</h2></div>
+  <div class="guide-list">
+{cards}
+  </div>
+</section>
+<section class="section container">{history_quiz_card()}</section>"""
+    page("ko", "history/", t["history_title"], t["history_lead"], body, active="history", translated=False)
+    urls = [url("ko", "history/")]
+    for i, a in enumerate(HISTORY):
+        prev = HISTORY[i - 1] if i > 0 else None
+        nxt = HISTORY[i + 1] if i + 1 < len(HISTORY) else None
+        pager = ""
+        if prev:
+            prev_href = url("ko", "history/" + prev["slug"] + "/")
+            pager += f'<a class="prev" href="{prev_href}"><span>← {e(t["prev_article"])}</span>{e(prev["title"])}</a>'
+        if nxt:
+            next_href = url("ko", "history/" + nxt["slug"] + "/")
+            pager += f'<a class="next" href="{next_href}"><span>{e(t["next_article"])} →</span>{e(nxt["title"])}</a>'
+        path = f"history/{a['slug']}/"
+        body = f"""<section class="container article-head">
+  <a class="crumb" href="{url('ko', 'history/')}">{e(t['history_title'])}</a>
+  <h1 class="page-title">{e(a['title'])}</h1>
+  <p class="article-meta"><time datetime="{a['date']}">{a['date']}</time> · {e(t['read_time_same'].format(n=a['minutes']))} · {e(STUDIO['name'])}</p>
+</section>
+<section class="section container"><article class="card article">
+{a['body']}
+</article></section>
+<section class="section container"><nav class="pager">{pager}</nav></section>
+<section class="section container">{history_quiz_card()}</section>"""
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
+              "description": a["description"], "inLanguage": "ko",
+              "datePublished": a["date"], "dateModified": a.get("updated", a["date"]),
+              "mainEntityOfPage": f"{STUDIO['domain']}{url('ko', path)}",
+              "author": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"},
+              "publisher": {"@type": "Organization", "name": STUDIO["name"],
+                            "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
+        page("ko", path, a["title"], a["description"], body, active="history", translated=False, head_extra=ld_json(ld))
+        urls.append(url("ko", path))
+    return urls
 
 
 def build_404():
@@ -615,6 +692,7 @@ def main():
     for g in WEB_GAMES:
         urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_learn()
+    urls += build_history()
     urls += ["/learn/"] + [f"/learn/{a['slug']}/" for a in ARTICLES]
     build_404()
     for lang in LANGS:

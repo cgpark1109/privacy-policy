@@ -97,6 +97,7 @@ UI = {
         "learn_next": "Next",
         "min_read": "min read",
         "read_time": "{n} min read",
+        "read_time_same": "{n} min read",
         "home_intro_title": "What you'll find here",
         "home_intro": "ggook's studio is a small studio in Seoul that makes free mobile games and learning apps. This site brings them all together, along with free guides for people learning Korean.",
         "home_points": [
@@ -182,11 +183,27 @@ UI = {
         "how_to_play": "플레이 방법",
         "nav_learn": "한글 가이드",
         "read_time": "영어 글 · 약 {n}분",
+        "read_time_same": "약 {n}분 분량",
+        "nav_history": "세계사",
+        "history_title": "세계사 읽을거리",
+        "history_lead": "세계사의 흐름을 바꾼 순간들을 한 편씩 차근차근 읽어 봅니다.",
+        "history_intro": [
+            "연도와 이름을 외우는 것만으로는 역사가 잘 기억나지 않습니다. 그 일이 왜 일어났고, 그 뒤에 무엇이 달라졌는지를 알면 사건과 연도가 함께 머릿속에 남습니다.",
+            "이 읽을거리는 저희 World History Quiz가 시대를 나누는 기준으로 삼은 사건들부터 시작합니다. 한 편을 읽은 뒤 퀴즈로 확인해 보세요.",
+        ],
+        "history_list": "글 목록",
+        "history_practice": "퀴즈로 확인하기",
+        "history_practice_text": "고대부터 현대까지 다섯 시대, 150개 스테이지의 인물·연도·사건 문제로 읽은 내용을 확인해 보세요.",
+        "home_history_title": "세계사 읽을거리",
+        "home_history_all": "전체 글",
+        "prev_article": "이전 글",
+        "next_article": "다음 글",
         "home_intro_title": "이 사이트에서는",
         "home_intro": "ggook's studio는 서울에 있는 작은 스튜디오로, 무료 모바일 게임과 학습 앱을 만듭니다. 이곳에서 모든 게임과 함께, 한국어를 배우는 외국인을 위한 무료 한글 가이드를 만나 보세요.",
         "home_points": [
             ("games", "게임", "손가락 하나로 즐기는 아케이드·퍼즐 게임부터 한국어·세계사 퀴즈까지, Google Play에서 무료로 받을 수 있는 게임과 학습 앱 {games}개가 있습니다."),
             ("guides", "한글 가이드", "한글 읽기부터 인사말, 숫자, 존댓말까지 한국어를 배우는 외국인을 위한 영어 가이드 {guides}편이 있습니다. 모든 예시를 소리로 들을 수 있으니, 한국어를 배우는 친구에게 소개해 주세요."),
+            ("history", "세계사 읽을거리", "로마 제국의 멸망처럼 세계사의 흐름을 바꾼 순간을 차근차근 풀어 쓴 한국어 글 {history}편이 있습니다."),
             ("web", "브라우저 게임", "국기 퀴즈, 수도 퀴즈처럼 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
         ],
         "home_guides_title": "최신 한글 가이드 (영어)",
@@ -432,6 +449,15 @@ WEB_GAMES = [
 
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
+    {
+        "date": "2026-11-07",
+        "game": None,
+        "link": {"href": "/ko/history/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "New in Korean: world history reading",
+               "body": "A new series of Korean-language articles on the turning points of world history, starting with the fall of the Western Roman Empire in 476 and the fall of Constantinople in 1453."},
+        "ko": {"title": "새 연재: 세계사 읽을거리",
+               "body": "세계사의 흐름을 바꾼 순간을 한 편씩 풀어 쓰는 한국어 연재를 시작합니다. 첫 두 편은 476년 서로마 제국의 멸망과 1453년 콘스탄티노폴리스 함락입니다."},
+    },
     {
         "date": "2026-11-07",
         "game": None,
