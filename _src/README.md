@@ -21,6 +21,9 @@ HTML. Write `{{say:한글}}` to add a listen button that reads the Korean with t
 reading time, previous/next links, sitemap entries and Article structured data are generated.
 Game page guides (how to play, tips, FAQ) live in GUIDES in content.py.
 
+World history reading (/ko/history/, Korean only): one file per article in `_src/history/<slug>.html`, in the same
+format as the Hangul guides. It appears in the Korean menu and on the Korean home page.
+
 Browser games: `play/<slug>/` (except the generated list page `play/index.html`) are copies of the
 web repos korean_word_quiz_web, korean_challenge_web and world_history_quiz_web, with their
 github.io URLs rewritten to this domain. Don't edit them here: change the web repo, push it, then run
