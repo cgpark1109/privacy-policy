@@ -452,6 +452,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/ko/history/columbus-1492/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
+        "en": {"title": "World history reading: 1492",
+               "body": "The third Korean-language article in our world history series: Columbus's voyage of 1492, the land he believed was Asia, and how chili peppers and sweet potatoes eventually reached Korea."},
+        "ko": {"title": "세계사 읽을거리: 1492년, 콜럼버스의 항해",
+               "body": "연재 세 번째 글입니다. 콜럼버스가 끝까지 아시아라고 믿었던 땅, '지구가 평평하다'는 오해, 그리고 고추와 고구마가 한반도에 오기까지의 이야기를 담았습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/ko/history/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
         "en": {"title": "New in Korean: world history reading",
                "body": "A new series of Korean-language articles on the turning points of world history, starting with the fall of the Western Roman Empire in 476 and the fall of Constantinople in 1453."},
