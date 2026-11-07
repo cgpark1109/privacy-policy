@@ -14,6 +14,10 @@ sys.path.insert(0, os.path.dirname(__file__))
 from content import ABOUT, FAQ, GAMES, GUIDES, NEWS, PLAY_DETAILS, PLAY_REFERENCE, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
+# Scheduled publishing: a guide, article or news item dated after today is left out of the build until that
+# day comes. The scheduled GitHub Actions workflow rebuilds the site every day just after midnight Korean time.
+TODAY = os.environ.get("BUILD_DATE") or date.today().isoformat()
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS_VERSION = hashlib.sha1(open(os.path.join(ROOT, "assets", "site.css"), "rb").read()).hexdigest()[:10]
 SHOTS = json.load(open(os.path.join(os.path.dirname(__file__), "screenshots.json"), encoding="utf-8"))
@@ -80,6 +84,8 @@ def load_articles(section="learn", lang="en"):
         if not m:
             sys.exit(f"_src/learn/{name} has no metadata comment")
         meta = json.loads(m.group(1))
+        if meta["date"] > TODAY:
+            continue
         body = re.sub(r"\{\{say:([^}]+)\}\}",
                       lambda k: f'<button type="button" class="say" data-say="{e(k.group(1))}" aria-label="Listen: {e(k.group(1))}">{ICON_SPEAK}</button>',
                       m.group(2))
@@ -95,7 +101,7 @@ HISTORY = load_articles("history", "ko")  # world history reading, Korean, /ko/h
 
 
 def published_news():
-    return [n for n in NEWS if not n.get("draft")]
+    return [n for n in NEWS if not n.get("draft") and n["date"] <= TODAY]
 
 
 def privacy_url(lang):
@@ -660,7 +666,7 @@ def build_sitemap(urls):
     """Each URL gets a lastmod: the build date when its page content changed, otherwise the date already
     recorded in _src/lastmod.json (commit that file along with the site)."""
     old = json.load(open(LASTMOD_FILE, encoding="utf-8")) if os.path.exists(LASTMOD_FILE) else {}
-    today = date.today().isoformat()
+    today = TODAY
     record = {}
     for u in urls:
         fp = page_fingerprint(u)

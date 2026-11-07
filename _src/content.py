@@ -450,6 +450,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-11-16",
+        "game": None,
+        "link": {"href": "/learn/korean-question-words/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: asking questions in Korean",
+               "body": "Who, what, where, when, why and how: the Korean question words, the particles that go with them, yes-or-no questions and the first questions worth learning."},
+        "ko": {"title": "새 한글 가이드: 의문사로 질문하기",
+               "body": "뭐, 누구, 어디, 언제, 왜, 어떻게, 얼마, 몇 등 의문사와 함께 쓰는 조사, 예·아니요 질문, 처음 익히면 좋은 질문을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-13",
+        "game": None,
+        "link": {"href": "/learn/polite-present-tense/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: your first Korean verbs",
+               "body": "How to turn any verb into the everyday polite present tense: finding the stem, the 아/어 rule, contractions, 하다 verbs, 이다 and 있다, and a few irregular verbs."},
+        "ko": {"title": "새 한글 가이드: 동사의 해요체 현재형",
+               "body": "동사의 기본형과 어간, 아요/어요를 고르는 규칙, 모음 축약, 하다 동사, 이다와 있다, 자주 쓰는 불규칙 동사를 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-10",
+        "game": None,
+        "link": {"href": "/learn/getting-around/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: getting around in Korea",
+               "body": "Subway, bus and taxi phrases: station signs and announcements, transport cards, telling a taxi driver where to go and asking for directions."},
+        "ko": {"title": "새 한글 가이드: 지하철·버스·택시 타기",
+               "body": "역과 출구 표시, 안내 방송, 교통카드 충전, 택시에서 목적지 말하기, 길 묻기까지 외국인 학습자를 위한 교통 표현을 정리했습니다."},
+    },
+    {
         "date": "2026-11-07",
         "game": None,
         "link": {"href": "/ko/history/cuban-missile-crisis-1962/", "en": "Read (in Korean)", "ko": "읽으러 가기"},
