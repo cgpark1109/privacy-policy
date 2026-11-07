@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "d4650938173f47d3c69fe95f238a23583714ca36"
+  "hash": "38fda26ccd5b59280a572e84bfe85351476fba44"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "49e66af7961ae9307d483e43e933327e11841263"
+  "hash": "66a97cf52a045a967244b534bbe99521407f8629"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,11 +73,15 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "b0edf1dbf49be554311a38c0c955166c18293a5a"
+  "hash": "d95cd5a108e8482e77d38f8a2f6f378268170b3a"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
   "hash": "d79e95dafbb8ae6e6b21513cacc2c64ddebccbea"
+ },
+ "/ko/history/end-of-ww2-1945/": {
+  "date": "2026-11-07",
+  "hash": "adc44152ecbfcbf31ddba36d63a55266aed6e28b"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
@@ -89,11 +93,11 @@
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-07",
-  "hash": "7b6e5eba54c8670e85fb350047dc445bf607afd6"
+  "hash": "5aada15a7b5fd0583ee34b0853e86ada0342e518"
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "e7cd00dae8f74ca3602e284838de37f96179abbe"
+  "hash": "32cdf5ecf28b58e3f2a73369d46dbac1280df792"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -169,7 +173,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "1de9417ae36452c1add26bef406fc145235e6234"
+  "hash": "959c64de89f5c34e7c7955b613a66036c4f0a867"
  },
  "/play/": {
   "date": "2026-11-07",
