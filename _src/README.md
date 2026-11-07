@@ -21,6 +21,10 @@ HTML. Write `{{say:한글}}` to add a listen button that reads the Korean with t
 reading time, previous/next links, sitemap entries and Article structured data are generated.
 Game page guides (how to play, tips, FAQ) live in GUIDES in content.py.
 
+sitemap.xml lastmod: each build hashes every page in the sitemap (ignoring the stylesheet version and the footer's
+site-wide date) and compares it with `_src/lastmod.json`. Pages whose content changed get today's date; the rest keep
+their recorded date. Commit `_src/lastmod.json` together with the rebuilt site.
+
 Browser games: `play/<slug>/` (except the generated list page `play/index.html`) are copies of the
 web repos korean_word_quiz_web, korean_challenge_web and world_history_quiz_web, with their
 github.io URLs rewritten to this domain. Don't edit them here: change the web repo, push it, then run
