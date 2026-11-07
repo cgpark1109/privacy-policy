@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "35fe04119c8178932ceb010799859fe81fc17eac"
+  "hash": "2483eff612f08b78272e9fc632d2d959be5da6ec"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "083cff5d4d471b4d607bfd4d0317ee04518ebd26"
+  "hash": "a2514accfa5b3833c03f05e10872ddce5b405bc9"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,11 +73,15 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "adf41ed4442ce8002b8488ba6aa6b2b398213a34"
+  "hash": "75caedca864c9a9c63eec26fc6f072216077b121"
+ },
+ "/ko/history/columbus-1492/": {
+  "date": "2026-11-07",
+  "hash": "20a4e374c759898a0f766fdf7c54a80c4e2c99c3"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-07",
-  "hash": "cc402109a7eabea7b0d6bdf9863582a000241580"
+  "hash": "e977b89021bb9ef91ed5feb57db4eea9ff59d6bb"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-07",
@@ -85,7 +89,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "0ff375667b82dd60e35946834001c7e8e95bd1e8"
+  "hash": "2f907ff0ce7b15ab9bb877a15d93687964ddfbed"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -161,7 +165,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "b077e0d4bc7e43346b31827cef2b0e314bb66899"
+  "hash": "c90836f8788b2d77b39b1d59431561b32273fb91"
  },
  "/play/": {
   "date": "2026-11-07",
