@@ -387,6 +387,15 @@ NEWS = [
     {
         "date": "2026-11-07",
         "game": None,
+        "link": {"href": "/learn/ordering-at-a-restaurant/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: ordering at a Korean restaurant",
+               "body": "From \"how many people?\" to the bill: calling the server, ordering by the portion, asking for more side dishes, spice levels, takeout and paying at the counter."},
+        "ko": {"title": "새 한글 가이드: 식당에서 주문하기",
+               "body": "몇 분이세요?부터 계산해 주세요까지, 직원 부르기, 인분으로 주문하기, 반찬 더 달라고 하기, 맵기 조절, 포장, 카운터 계산까지 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-11-07",
+        "game": None,
         "link": {"href": "/learn/days-and-dates/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
         "en": {"title": "New guide: days, weeks and dates in Korean",
                "body": "The days of the week and the elements behind their names, yesterday to the day after tomorrow, parts of the day, and how to ask and say the date."},
