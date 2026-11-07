@@ -450,6 +450,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-12-04",
+        "game": None,
+        "link": {"href": "/learn/making-plans/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: making plans in Korean",
+               "body": "Telling the time and parts of the day, saying what you want to do with -고 싶어요, suggesting with -(으)ㄹ까요?, agreeing, declining politely and setting a time and place."},
+        "ko": {"title": "새 한글 가이드: 약속 잡기",
+               "body": "시간과 하루의 때 말하기, -고 싶어요로 하고 싶은 일 말하기, -(으)ㄹ까요로 제안하기, 공손하게 거절하기, 만날 시간과 장소 정하기를 정리했습니다."},
+    },
+    {
+        "date": "2026-12-01",
+        "game": None,
+        "link": {"href": "/learn/past-tense/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: talking about the past",
+               "body": "The polite past tense -았어요/-었어요, built on the present tense: the 았/었 rule, contractions, 했어요, 였어요/이었어요, irregular verbs, negatives and time words."},
+        "ko": {"title": "새 한글 가이드: 해요체 과거형",
+               "body": "현재형을 바탕으로 과거형 만드는 법, 았/었 규칙과 축약, 했어요, 였어요/이었어요, 불규칙 동사, 안과 못, 과거를 나타내는 시간 표현을 정리했습니다."},
+    },
+    {
+        "date": "2026-11-28",
+        "game": None,
+        "link": {"href": "/learn/hospital-and-pharmacy/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: at the pharmacy and the doctor's office",
+               "body": "Saying where it hurts, describing common symptoms, buying medicine at a pharmacy, seeing a doctor at a clinic, and the emergency numbers 119 and 112."},
+        "ko": {"title": "새 한글 가이드: 약국과 병원에서",
+               "body": "아픈 곳과 증상 말하기, 약국에서 약 사기, 동네 의원과 진료 과목, 처방전, 응급 번호 119와 112를 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
         "date": "2026-11-25",
         "game": None,
         "link": {"href": "/learn/introducing-yourself/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
