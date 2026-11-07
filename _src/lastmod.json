@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-07",
-  "hash": "a12d1da8f1c942079262fdf4ca67cb5a587e79b1"
+  "hash": "76d4abaade0d472285f3398d70fe22786d472424"
  },
  "/about/": {
   "date": "2026-11-07",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-07",
-  "hash": "e9e5f65c62bf1c42b270dca09cd9f3859027c9d9"
+  "hash": "20d4b17ebf171289a4c7299fbf0109cc83dc2954"
  },
  "/ko/about/": {
   "date": "2026-11-07",
@@ -73,11 +73,11 @@
  },
  "/ko/history/": {
   "date": "2026-11-07",
-  "hash": "381e481f545e15db94d356efc3444453b8b82553"
+  "hash": "a07ec9f56ad0232dbda196264d0e97e515848fdd"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-07",
-  "hash": "b464bc05d3631e3cb744fb80f176eb398822c77f"
+  "hash": "983a30db18c5a6a4c16b372cc8e1e703c0c73fb6"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-07",
@@ -85,7 +85,7 @@
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-07",
-  "hash": "baa4be165f87a6a3086222742fd3828c7f44d68c"
+  "hash": "1a9349711693aeb41a04d1d9b2612ecdd96f41ac"
  },
  "/ko/history/augustus-27bc/": {
   "date": "2026-11-07",
@@ -95,9 +95,13 @@
   "date": "2026-11-07",
   "hash": "8c5d63f95991c92bbacda1107244e981bbc28561"
  },
+ "/ko/history/buddha-500bc/": {
+  "date": "2026-11-07",
+  "hash": "6d52e9029fa83bc656739a4bc0e9b3cfb131d7ec"
+ },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-07",
-  "hash": "6d703141b9d872e303dd17ecd04cb75b46c3cd77"
+  "hash": "4d306b3fa5e26ab89acd2fec336ab1cf13f39250"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-07",
@@ -105,7 +109,7 @@
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-07",
-  "hash": "246ee399b4c03dd06333cc3979cf360b7a05fc88"
+  "hash": "55f6cd2a2fe8fad6c57b4fb3fec086f6d4e4b8e9"
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-07",
@@ -143,6 +147,10 @@
   "date": "2026-11-07",
   "hash": "89a2dc58e7e928e3a6efb55caec0a19ea974d0f7"
  },
+ "/ko/history/korean-war-1950/": {
+  "date": "2026-11-07",
+  "hash": "930fdbc90bdaa25e00b75a6de06cff50356db3d5"
+ },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-07",
   "hash": "26c6e58495a4a5526fcd1957de3b2183614410b0"
@@ -153,7 +161,7 @@
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-07",
-  "hash": "8f9bb83293a26b51157d73d069d64562a706de6f"
+  "hash": "4ef3b34edbcf1b0583d4959ce5274d7b838315d6"
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-07",
@@ -161,11 +169,15 @@
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-07",
-  "hash": "eb80d692db60e4c9fbe1a231ef087d145b8370fb"
+  "hash": "9efb9dd7ee79fe485f2a0ca616f1b08db2f3da1d"
  },
  "/ko/history/tang-dynasty-618/": {
   "date": "2026-11-07",
   "hash": "effb3d546de7c6286632cc78d9c67eec95e5e58e"
+ },
+ "/ko/history/vasco-da-gama-1498/": {
+  "date": "2026-11-07",
+  "hash": "8063e21fc7a5e146f80bd964a8f091c3b21d78dd"
  },
  "/ko/history/waterloo-1815/": {
   "date": "2026-11-07",
@@ -181,7 +193,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-07",
-  "hash": "bd57153c80574a29991a77da4539fd9495b2f1ca"
+  "hash": "1dcc8873bc003f5366d862b6c9580df18dee144a"
  },
  "/ko/play/": {
   "date": "2026-11-07",
@@ -257,7 +269,7 @@
  },
  "/news/": {
   "date": "2026-11-07",
-  "hash": "037c061d8c2db8f54c2df45d8c2da183e75a9cc5"
+  "hash": "5d8d4e7c82de85510c62b8582dc5112419c10b29"
  },
  "/play/": {
   "date": "2026-11-07",
