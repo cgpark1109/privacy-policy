@@ -450,6 +450,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-12-22",
+        "game": None,
+        "link": {"href": "/learn/feelings-and-emotions/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: talking about feelings",
+               "body": "Words for how you feel, asking how someone is, adding degree, talking about other people's feelings with -아하다/-어하다, and words like 답답하다 and 설레다."},
+        "ko": {"title": "새 한글 가이드: 기분과 감정 표현",
+               "body": "기쁘다·피곤하다·심심하다 같은 감정 표현, 기분 묻기, 다른 사람의 감정을 말하는 -아하다/-어하다, 답답하다·설레다 같은 단어를 정리했습니다."},
+    },
+    {
+        "date": "2026-12-19",
+        "game": None,
+        "link": {"href": "/learn/connecting-sentences/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: connecting sentences",
+               "body": "Joining two ideas in one sentence with -고 (and), -지만 (but) and -아서/-어서 (so, and then), plus 그리고, 그런데, 그래서 and 그래도."},
+        "ko": {"title": "새 한글 가이드: 문장 잇기",
+               "body": "-고, -지만, -아서/-어서로 두 문장을 잇는 법과 그리고·그런데·그래서·그래도 같은 접속 부사를 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
+        "date": "2026-12-16",
+        "game": None,
+        "link": {"href": "/learn/korean-holidays/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: Korean holidays",
+               "body": "Seollal and Chuseok for learners: customs like 세배 and 차례, foods like 떡국 and 송편, holiday greetings, and Korea's other public holidays."},
+        "ko": {"title": "새 한글 가이드: 한국의 명절과 공휴일",
+               "body": "설날과 추석의 풍습(세배, 차례, 성묘)과 음식(떡국, 송편), 명절 인사, 그 밖의 공휴일을 외국인 학습자를 위해 정리했습니다."},
+    },
+    {
         "date": "2026-12-13",
         "game": None,
         "link": {"href": "/learn/texting-in-korean/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
