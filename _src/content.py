@@ -480,6 +480,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2027-01-18",
+        "game": None,
+        "link": {"href": "/learn/visiting-a-korean-home/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: visiting a Korean home",
+               "body": "Accepting an invitation, bringing a gift and the housewarming 집들이, taking off your shoes, what hosts say at the table, polite compliments and saying goodbye."},
+        "ko": {"title": "새 한글 가이드: 한국 가정 방문",
+               "body": "초대받았을 때, 선물과 집들이, 현관에서 신발 벗기, 식탁에서 주고받는 말, 칭찬과 겸손한 대답, 떠날 때 인사까지 정리했습니다."},
+    },
+    {
+        "date": "2027-01-15",
+        "game": None,
+        "link": {"href": "/learn/colors-in-korean/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: colors in Korean",
+               "body": "The five basic color adjectives like 빨갛다 and how they change, color nouns like 초록색 and 보라색, loanword colors, light and dark, and asking about colors."},
+        "ko": {"title": "새 한글 가이드: 색깔 표현",
+               "body": "빨갛다·노랗다·파랗다·하얗다·까맣다와 그 활용, 초록색·보라색 같은 색 이름, 외래어 색 이름, 진하다·연하다, 색 묻는 법을 정리했습니다."},
+    },
+    {
+        "date": "2027-01-12",
+        "game": None,
+        "link": {"href": "/learn/if-and-when/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: if and when with -(으)면",
+               "body": "How to form -(으)면, conditions and habits, why the future doesn't go before -면, and the patterns -(으)면 돼요, -(으)면 안 돼요 and -(으)면 좋겠어요."},
+        "ko": {"title": "새 한글 가이드: -(으)면으로 조건 말하기",
+               "body": "-(으)면 만드는 법, 조건과 습관, 미래 시제를 쓰지 않는 이유, -(으)면 돼요·-(으)면 안 돼요·-(으)면 좋겠어요를 정리했습니다."},
+    },
+    {
         "date": "2027-01-09",
         "game": None,
         "link": {"href": "/learn/phone-calls/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
