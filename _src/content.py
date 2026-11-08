@@ -480,6 +480,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2026-12-31",
+        "game": None,
+        "link": {"href": "/learn/where-is-it/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: saying where things are",
+               "body": "Here, there and over there, location words like 위, 앞, 옆 and 안, the pattern 'noun + location word + 에 있어요', and when to use 에 or 에서."},
+        "ko": {"title": "새 한글 가이드: 위치 표현",
+               "body": "여기·거기·저기, 위·앞·옆·안 같은 위치 표현, '명사 + 위치 + 에 있어요' 문형, 에와 에서의 차이를 정리했습니다."},
+    },
+    {
+        "date": "2026-12-28",
+        "game": None,
+        "link": {"href": "/learn/staying-at-a-hotel/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: staying at a hotel or guesthouse",
+               "body": "Checking in with a reservation, room numbers and floors, asking about breakfast and luggage, reporting problems in your room, ondol rooms and checking out."},
+        "ko": {"title": "새 한글 가이드: 호텔과 게스트하우스",
+               "body": "예약 확인과 체크인, 호수와 층, 조식과 짐 보관 묻기, 방에 문제가 있을 때 쓰는 표현, 온돌방, 체크아웃까지 정리했습니다."},
+    },
+    {
+        "date": "2026-12-25",
+        "game": None,
+        "link": {"href": "/learn/saying-no/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: saying no in Korean",
+               "body": "안 and 못, the longer -지 않아요 and -지 못해요, 아니에요, 없어요 and 몰라요, -지 마세요 on signs, and how to answer negative questions."},
+        "ko": {"title": "새 한글 가이드: 부정 표현",
+               "body": "안과 못, -지 않아요와 -지 못해요, 아니에요·없어요·몰라요, 표지판의 -지 마세요, 부정 질문에 대답하는 법을 정리했습니다."},
+    },
+    {
         "date": "2026-12-22",
         "game": None,
         "link": {"href": "/learn/feelings-and-emotions/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
