@@ -13,14 +13,15 @@
 <meta property="og:title" content="세계사 읽을거리 – ggook&#x27;s studio">
 <meta property="og:description" content="세계사의 흐름을 바꾼 순간들을 한 편씩 차근차근 읽어 봅니다.">
 <meta property="og:url" content="https://kysystemstudio.com/ko/history/">
-<meta property="og:image" content="https://kysystemstudio.com/assets/logo.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://kysystemstudio.com/assets/og-history.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="세계사 읽을거리" href="/ko/history/feed.xml">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=4e731aab69">
+<link rel="stylesheet" href="/assets/site.css?v=78860d5b27">
 
 </head>
 <body>
@@ -35,8 +36,15 @@
 <section class="container"><h1 class="page-title">세계사 읽을거리</h1>
 <p class="page-lead">세계사의 흐름을 바꾼 순간들을 한 편씩 차근차근 읽어 봅니다.</p></section>
 <section class="section container"><div class="card prose"><p>연도와 이름을 외우는 것만으로는 역사가 잘 기억나지 않습니다. 그 일이 왜 일어났고, 그 뒤에 무엇이 달라졌는지를 알면 사건과 연도가 함께 머릿속에 남습니다.</p><p>이 읽을거리는 저희 World History Quiz가 시대를 나누는 기준으로 삼은 사건들부터 시작합니다. 한 편을 읽은 뒤 퀴즈로 확인해 보세요.</p></div></section>
-<section class="section container"><nav class="jump" aria-label="시대별로 보기"><a href="#era-ancient">고대 <span>13</span></a><a href="#era-medieval">중세 <span>18</span></a><a href="#era-early-modern">근대 <span>15</span></a><a href="#era-modern-1">현대 1 <span>20</span></a><a href="#era-modern-2">현대 2 <span>17</span></a></nav></section>
-<section class="section container" id="era-ancient">
+<section class="section container"><nav class="jump" aria-label="시대별로 보기"><a href="#era-ancient">고대 <span>13</span></a><a href="#era-medieval">중세 <span>18</span></a><a href="#era-early-modern">근대 <span>15</span></a><a href="#era-modern-1">현대 1 <span>20</span></a><a href="#era-modern-2">현대 2 <span>17</span></a></nav>
+<div class="list-search" id="list-search-box" hidden><input type="search" id="list-search" placeholder="제목이나 내용으로 글 찾기" aria-label="제목이나 내용으로 글 찾기" autocomplete="off"></div>
+<p class="list-empty" id="list-empty" hidden>찾는 글이 없습니다.</p>
+<script>(function(){var b=document.getElementById('list-search-box'),q=document.getElementById('list-search'),m=document.getElementById('list-empty');
+b.hidden=false;
+q.addEventListener('input',function(){var cards=[].slice.call(document.querySelectorAll('[data-group] .guide-card')),groups=[].slice.call(document.querySelectorAll('[data-group]'));
+var v=q.value.trim().toLowerCase(),any=false;cards.forEach(function(c){var hit=!v||c.textContent.toLowerCase().indexOf(v)>-1;c.hidden=!hit;if(hit)any=true;});
+groups.forEach(function(g){g.hidden=!g.querySelector('.guide-card:not([hidden])');});m.hidden=any;});})();</script></section>
+<section class="section container" id="era-ancient" data-group>
   <div class="section-head"><h2>고대</h2><p>476년까지 · 13편</p></div>
   <div class="guide-list">
 <a class="card guide-card" href="/ko/history/giza-pyramid-2560bc/">
@@ -80,7 +88,7 @@
   <span class="meta">약 3분 분량</span></a>
   </div>
 </section>
-<section class="section container" id="era-medieval">
+<section class="section container" id="era-medieval" data-group>
   <div class="section-head"><h2>중세</h2><p>476~1453년 · 18편</p></div>
   <div class="guide-list">
 <a class="card guide-card" href="/ko/history/tang-dynasty-618/">
@@ -139,7 +147,7 @@
   <span class="meta">약 3분 분량</span></a>
   </div>
 </section>
-<section class="section container" id="era-early-modern">
+<section class="section container" id="era-early-modern" data-group>
   <div class="section-head"><h2>근대</h2><p>1453~1800년 · 15편</p></div>
   <div class="guide-list">
 <a class="card guide-card" href="/ko/history/columbus-1492/">
@@ -189,7 +197,7 @@
   <span class="meta">약 4분 분량</span></a>
   </div>
 </section>
-<section class="section container" id="era-modern-1">
+<section class="section container" id="era-modern-1" data-group>
   <div class="section-head"><h2>현대 1</h2><p>1800~1945년 · 20편</p></div>
   <div class="guide-list">
 <a class="card guide-card" href="/ko/history/latin-american-independence-1810/">
@@ -254,7 +262,7 @@
   <span class="meta">약 4분 분량</span></a>
   </div>
 </section>
-<section class="section container" id="era-modern-2">
+<section class="section container" id="era-modern-2" data-group>
   <div class="section-head"><h2>현대 2</h2><p>1945년 이후 · 17편</p></div>
   <div class="guide-list">
 <a class="card guide-card" href="/ko/history/india-independence-1947/">
@@ -321,6 +329,7 @@
       <a href="https://calc.kysystemstudio.com/" hreflang="ko">계산만물상</a>
       <a href="/ko/support/">지원</a>
       <a href="mailto:admin@kysystemstudio.com">문의</a>
+      <a href="/ko/history/feed.xml">RSS</a>
       <a href="https://www.youtube.com/@ggooksstudio" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.instagram.com/ggooksstudio/" target="_blank" rel="noopener">Instagram</a>
     </nav>

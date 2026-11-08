@@ -7,7 +7,8 @@ import json
 import os
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
+from email.utils import format_datetime
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -98,6 +99,56 @@ def breadcrumbs(lang, trail):
     return nav, ld_json(ld)
 
 
+def related(items, a, n=3):
+    """Up to n other articles from items, nearest to a in reading order."""
+    others = [x for x in items if x is not a]
+    return sorted(others, key=lambda x: (abs(x["order"] - a["order"]), x["order"]))[:n]
+
+
+def related_section(title, cards):
+    return f"""<section class="section container">
+  <div class="section-head"><h2>{e(title)}</h2></div>
+  <div class="guide-list">
+{cards}
+  </div>
+</section>"""
+
+
+def list_search(placeholder, empty):
+    """A search box that filters the article cards on a list page (hidden until the script runs)."""
+    return f"""<div class="list-search" id="list-search-box" hidden><input type="search" id="list-search" placeholder="{e(placeholder)}" aria-label="{e(placeholder)}" autocomplete="off"></div>
+<p class="list-empty" id="list-empty" hidden>{e(empty)}</p>
+<script>(function(){{var b=document.getElementById('list-search-box'),q=document.getElementById('list-search'),m=document.getElementById('list-empty');
+b.hidden=false;
+q.addEventListener('input',function(){{var cards=[].slice.call(document.querySelectorAll('[data-group] .guide-card')),groups=[].slice.call(document.querySelectorAll('[data-group]'));
+var v=q.value.trim().toLowerCase(),any=false;cards.forEach(function(c){{var hit=!v||c.textContent.toLowerCase().indexOf(v)>-1;c.hidden=!hit;if(hit)any=true;}});
+groups.forEach(function(g){{g.hidden=!g.querySelector('.guide-card:not([hidden])');}});m.hidden=any;}});}})();</script>"""
+
+
+def build_feed(path, title, description, link, items, lang):
+    """RSS 2.0 feed of articles, newest first. items: [(title, absolute url, description, yyyy-mm-dd)]."""
+    kst = timezone(timedelta(hours=9))
+    stamp = lambda d: format_datetime(datetime.strptime(d, "%Y-%m-%d").replace(hour=9, tzinfo=kst))
+    entries = "".join(f"""
+  <item><title>{e(t)}</title><link>{u}</link><guid isPermaLink="true">{u}</guid><pubDate>{stamp(d)}</pubDate><description>{e(desc)}</description></item>"""
+                      for t, u, desc, d in items)
+    last = stamp(max(d for *_, d in items)) if items else stamp(TODAY)
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>{e(title)}</title>
+  <link>{link}</link>
+  <description>{e(description)}</description>
+  <language>{lang}</language>
+  <lastBuildDate>{last}</lastBuildDate>
+  <atom:link href="{STUDIO['domain']}{path}" rel="self" type="application/rss+xml"/>{entries}
+</channel>
+</rss>
+"""
+    with open(os.path.join(ROOT, path.lstrip("/")), "w", encoding="utf-8", newline="\n") as f:
+        f.write(xml)
+
+
 def load_articles(section="learn", lang="en"):
     """Hangul guides: _src/learn/<slug>.html, each starting with an HTML comment holding JSON metadata
     (title, description, date, updated, order). {{say:한글}} becomes a listen button."""
@@ -152,7 +203,11 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
     if translated:
         alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{STUDIO["domain"]}{url(l, path)}">' for l in LANGS)
         alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
-    image = og_image or f"{STUDIO['domain']}/assets/logo.png"
+    image = og_image or "/assets/logo.png"
+    image = image if image.startswith("http") else STUDIO["domain"] + image
+    card = "summary_large_image" if "/assets/og-" in image else "summary"  # the wide share images
+    feed = (f'<link rel="alternate" type="application/rss+xml" title="{e(t["feed_learn"] if lang == "en" else t["feed_history"])}" '
+            f'href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">')
     nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("learn", t["nav_learn"], "/learn/"),
                  *([("history", t["nav_history"], url(lang, "history/"))] if lang == "ko" else []),
                  ("calc", t["nav_calc"], STUDIO["calc"]),
@@ -179,7 +234,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{STUDIO['domain']}{url(lang, path)}">
 <meta property="og:image" content="{image}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{card}">
+{feed}
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,6 +264,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
       <a href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_link'])}</a>
       <a href="{url(lang, 'support/')}">{e(t['support'])}</a>
       <a href="mailto:{STUDIO['email']}">{e(t['contact'])}</a>
+      <a href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">RSS</a>
       <a href="{STUDIO['youtube']}" target="_blank" rel="noopener">YouTube</a>
       <a href="{STUDIO['instagram']}" target="_blank" rel="noopener">Instagram</a>
     </nav>
@@ -448,7 +505,7 @@ def build_news(lang):
 <section class="section container"><div class="news-list">
 {items}
 </div>{more}</section>"""
-    page(lang, "news/", t["news_title"], t["news_title"], body, active="news")
+    page(lang, "news/", t["news_title"], t["news_desc"], body, active="news")
     if not older:
         return []
     rows = []
@@ -546,7 +603,7 @@ def build_learn():
     jump = "".join(f'<a href="#topic-{k}">{e(t["learn_topic_names"][k])} <span>{len(items)}</span></a>'
                    for k, items in groups)
     sections = "".join(f"""
-<section class="section container" id="topic-{k}">
+<section class="section container" id="topic-{k}" data-group>
   <div class="section-head"><h2>{e(t['learn_topic_names'][k])}</h2><p>{e(t['guide_count'].format(n=len(items)))}</p></div>
   <p class="group-lead">{e(t['learn_topic_leads'][k])}</p>
   <div class="guide-list">
@@ -557,9 +614,14 @@ def build_learn():
     body = f"""<section class="container"><h1 class="page-title">{e(t['learn_title'])}</h1>
 <p class="page-lead">{e(t['learn_lead'])}</p></section>
 <section class="section container"><div class="card prose">{paras}</div></section>
-<section class="section container"><nav class="jump" aria-label="{e(t['learn_topics'])}">{jump}</nav></section>{sections}
+<section class="section container"><nav class="jump" aria-label="{e(t['learn_topics'])}">{jump}</nav>
+{list_search(t['search_learn'], t['search_empty'])}</section>{sections}
 <section class="section container">{learn_apps()}</section>"""
-    page("en", "learn/", t["learn_title"], t["learn_lead"], body, active="learn", translated=False)
+    page("en", "learn/", t["learn_title"], t["learn_lead"], body, active="learn", translated=False,
+         og_image="/assets/og-learn.png")
+    newest = sorted(ARTICLES, key=lambda a: (a["date"], a["order"]), reverse=True)
+    build_feed("/learn/feed.xml", f"{t['learn_title']} – {STUDIO['name']}", t["learn_lead"], f"{STUDIO['domain']}/learn/",
+               [(a["title"], f"{STUDIO['domain']}/learn/{a['slug']}/", a["description"], a["date"]) for a in newest], "en")
     for i, a in enumerate(ARTICLES):
         prev = ARTICLES[i - 1] if i > 0 else None
         nxt = ARTICLES[i + 1] if i + 1 < len(ARTICLES) else None
@@ -583,6 +645,7 @@ def build_learn():
 {a['body']}
 </article></section>
 <section class="section container"><nav class="pager">{pager}</nav></section>
+{related_section(t["related_learn"], chr(10).join(article_card(x) for x in related([x for x in ARTICLES if x["topic"] == a["topic"]], a)))}
 <section class="section container">{learn_apps()}</section>"""
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
               "description": a["description"], "inLanguage": "en",
@@ -592,7 +655,7 @@ def build_learn():
               "publisher": {"@type": "Organization", "name": STUDIO["name"],
                             "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
         page("en", f"learn/{a['slug']}/", a["title"], a["description"], body, active="learn", translated=False,
-             head_extra=ld_json(ld) + crumbs_ld + SAY_SCRIPT)
+             head_extra=ld_json(ld) + crumbs_ld + SAY_SCRIPT, og_image="/assets/og-learn.png")
 
 
 def history_quiz_card():
@@ -613,7 +676,7 @@ def build_history():
     groups = [(era, items) for era, items in groups if items]
     jump = "".join(f'<a href="#era-{era[0]}">{e(era[1])} <span>{len(items)}</span></a>' for era, items in groups)
     sections = "".join(f"""
-<section class="section container" id="era-{era[0]}">
+<section class="section container" id="era-{era[0]}" data-group>
   <div class="section-head"><h2>{e(era[1])}</h2><p>{e(era[2])} · {e(t['history_era_count'].format(n=len(items)))}</p></div>
   <div class="guide-list">
 {chr(10).join(article_card(a, "ko", url("ko", "history/"), "ko") for a in items)}
@@ -623,9 +686,16 @@ def build_history():
     body = f"""<section class="container"><h1 class="page-title">{e(t['history_title'])}</h1>
 <p class="page-lead">{e(t['history_lead'])}</p></section>
 <section class="section container"><div class="card prose">{paras}</div></section>
-<section class="section container"><nav class="jump" aria-label="{e(t['history_eras'])}">{jump}</nav></section>{sections}
+<section class="section container"><nav class="jump" aria-label="{e(t['history_eras'])}">{jump}</nav>
+{list_search(t['search_history'], t['search_empty'])}</section>{sections}
 <section class="section container">{history_quiz_card()}</section>"""
-    page("ko", "history/", t["history_title"], t["history_lead"], body, active="history", translated=False)
+    page("ko", "history/", t["history_title"], t["history_lead"], body, active="history", translated=False,
+         og_image="/assets/og-history.png")
+    newest = sorted(HISTORY, key=lambda a: (a["date"], a["order"]), reverse=True)
+    build_feed(url("ko", "history/feed.xml"), f"{t['history_title']} – {STUDIO['name']}", t["history_lead"],
+               f"{STUDIO['domain']}{url('ko', 'history/')}",
+               [(a["title"], f"{STUDIO['domain']}{url('ko', 'history/' + a['slug'] + '/')}", a["description"], a["date"])
+                for a in newest], "ko")
     urls = [url("ko", "history/")]
     for i, a in enumerate(HISTORY):
         prev = HISTORY[i - 1] if i > 0 else None
@@ -650,6 +720,7 @@ def build_history():
 {a['body']}
 </article></section>
 <section class="section container"><nav class="pager">{pager}</nav></section>
+{related_section(t["related_history"], chr(10).join(article_card(x, "ko", url("ko", "history/"), "ko") for x in related([x for x in HISTORY if era_of(x) is era], a)))}
 <section class="section container">{history_quiz_card()}</section>"""
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
               "description": a["description"], "inLanguage": "ko",
@@ -659,7 +730,7 @@ def build_history():
               "publisher": {"@type": "Organization", "name": STUDIO["name"],
                             "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
         page("ko", path, a["title"], a["description"], body, active="history", translated=False,
-             head_extra=ld_json(ld) + crumbs_ld)
+             head_extra=ld_json(ld) + crumbs_ld, og_image="/assets/og-history.png")
         urls.append(url("ko", path))
     return urls
 

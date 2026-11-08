@@ -241,3 +241,11 @@ section[id] { scroll-margin-top: 84px; }
 .archive { list-style: none; padding-left: 0 !important; display: grid; gap: 10px; }
 .archive time { display: inline-block; min-width: 92px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
 .more-link { margin-top: 18px; text-align: center; }
+
+/* Search box on list pages and related articles */
+[hidden] { display: none !important; }
+.list-search { margin-top: 14px; }
+.list-search input { width: 100%; max-width: 520px; padding: 12px 18px; border-radius: 999px; border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.95); color: var(--navy); font: inherit; font-size: 15px; box-shadow: 0 4px 14px rgba(43, 49, 85, 0.08); }
+.list-search input:focus { outline: 2px solid var(--coral); outline-offset: 2px; }
+.list-empty { margin-top: 14px; color: #fff; font-weight: 600; }
