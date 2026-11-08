@@ -480,6 +480,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2027-01-09",
+        "game": None,
+        "link": {"href": "/learn/phone-calls/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: making phone calls in Korean",
+               "body": "Answering with 여보세요, saying who's calling, asking for someone, reading phone numbers, when you can't hear, wrong numbers, calling to book and ending a call with 들어가세요."},
+        "ko": {"title": "새 한글 가이드: 전화 통화",
+               "body": "여보세요로 전화 받기, 누구인지 말하기, 사람 바꿔 달라고 하기, 전화번호 읽기, 잘 안 들릴 때와 잘못 건 전화, 예약 전화, 들어가세요로 끝맺기까지 정리했습니다."},
+    },
+    {
+        "date": "2027-01-06",
+        "game": None,
+        "link": {"href": "/learn/tastes-and-food-words/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: taste and food words",
+               "body": "맛있어요 and 맛없어요, spicy, salty, sweet, sour, bitter and bland, words like 고소하다 and 느끼하다, how dishes are named, common ingredients, and hungry or full."},
+        "ko": {"title": "새 한글 가이드: 맛과 음식 단어",
+               "body": "맛있어요와 맛없어요, 맵다·짜다·달다·싱겁다, 고소하다·느끼하다 같은 표현, 찌개·볶음·구이·전 같은 요리 이름, 재료, 배고파요와 배불러요를 정리했습니다."},
+    },
+    {
+        "date": "2027-01-03",
+        "game": None,
+        "link": {"href": "/learn/can-and-cant/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: can and can't in Korean",
+               "body": "-(으)ㄹ 수 있어요 and -(으)ㄹ 수 없어요, how they compare with 못, -(으)ㄹ 줄 알아요 for skills, and asking permission with -아도/어도 돼요."},
+        "ko": {"title": "새 한글 가이드: 할 수 있어요와 해도 돼요",
+               "body": "-(으)ㄹ 수 있어요/없어요와 못의 비교, 기술을 말하는 -(으)ㄹ 줄 알아요, 허락을 구하는 -아도/어도 돼요를 정리했습니다."},
+    },
+    {
         "date": "2026-12-31",
         "game": None,
         "link": {"href": "/learn/where-is-it/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
