@@ -225,3 +225,19 @@ main { flex: 1; padding-bottom: 48px; }
 .article + .guide, section > .guide { max-width: 820px; margin: 0 auto; }
 @media (max-width: 560px) { .article { padding: 18px; } .article table { font-size: 14px; } .article th, .article td { padding: 8px 5px; }
   .article th { letter-spacing: 0.02em; font-size: 11px; } .pager { grid-template-columns: 1fr; } .pager .next { grid-column: 1; } }
+
+/* Breadcrumbs, jump links (eras, topics) and the news archive */
+.article-head .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 36px; color: #fff; font-size: 14px; font-weight: 600; }
+.article-head .crumbs a { color: #fff; text-decoration: none; opacity: 0.9; }
+.article-head .crumbs a:hover { text-decoration: underline; opacity: 1; }
+.article-head .crumbs span { opacity: 0.6; }
+.jump { display: flex; flex-wrap: wrap; gap: 8px; }
+.jump a { display: inline-flex; align-items: center; gap: 6px; padding: 8px 15px; border-radius: 999px; background: rgba(255, 255, 255, 0.88);
+  color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 14px rgba(43, 49, 85, 0.08); }
+.jump a:hover { background: #fff; }
+.jump a span { font-weight: 500; color: var(--muted); }
+section[id] { scroll-margin-top: 84px; }
+.group-lead { color: #fff; opacity: 0.92; font-size: 14px; margin: -6px 4px 14px; }
+.archive { list-style: none; padding-left: 0 !important; display: grid; gap: 10px; }
+.archive time { display: inline-block; min-width: 92px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.more-link { margin-top: 18px; text-align: center; }

@@ -71,6 +71,33 @@ var u=new SpeechSynthesisUtterance(b.getAttribute('data-say'));u.lang='ko-KR';u.
 speechSynthesis.cancel();speechSynthesis.speak(u);});})();</script>"""
 
 
+# Eras of the World History Quiz, used to group the history reading list: (anchor, name, range, last year).
+ERAS = [("ancient", "고대", "476년까지", 476), ("medieval", "중세", "476~1453년", 1453),
+        ("early-modern", "근대", "1453~1800년", 1800), ("modern-1", "현대 1", "1800~1945년", 1945),
+        ("modern-2", "현대 2", "1945년 이후", float("inf"))]
+LEARN_TOPICS = ["hangul", "grammar", "situations", "words"]
+NEWS_PER_PAGE = 20
+
+
+def era_of(a):
+    """The quiz era of a history article, from its order (the year it is about)."""
+    return next(era for era in ERAS if a["order"] <= era[3])
+
+
+def breadcrumbs(lang, trail):
+    """A visible breadcrumb trail plus its BreadcrumbList JSON-LD. trail: [(label, path or None for the current page)]."""
+    t = UI[lang]
+    links = [f'<a href="{url(lang)}">{e(t["home"])}</a>'] + [f'<a href="{p}">{e(label)}</a>' for label, p in trail if p]
+    nav = (f'<nav class="crumbs" aria-label="{e(t["breadcrumb"])}">'
+           + '<span aria-hidden="true">›</span>'.join(links) + "</nav>")
+    items = [(t["home"], url(lang))] + [(label, p) for label, p in trail]
+    ld = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": label,
+                               **({"item": STUDIO["domain"] + p} if p else {})}
+                              for i, (label, p) in enumerate(items)]}
+    return nav, ld_json(ld)
+
+
 def load_articles(section="learn", lang="en"):
     """Hangul guides: _src/learn/<slug>.html, each starting with an HTML comment holding JSON metadata
     (title, description, date, updated, order). {{say:한글}} becomes a listen button."""
@@ -410,13 +437,41 @@ def build_play(lang):
 
 
 def build_news(lang):
+    """/news/ shows the latest items in full; everything older is listed compactly on /news/archive/."""
     t = UI[lang]
-    items = "\n".join(news_item(lang, n) for n in published_news())
+    news = published_news()
+    latest, older = news[:NEWS_PER_PAGE], news[NEWS_PER_PAGE:]
+    items = "\n".join(news_item(lang, n) for n in latest)
+    more = (f'<p class="more-link"><a class="btn light" href="{url(lang, "news/archive/")}">{e(t["news_earlier"])} →</a></p>'
+            if older else "")
     body = f"""<section class="container"><h1 class="page-title">{e(t['news_title'])}</h1></section>
 <section class="section container"><div class="news-list">
 {items}
-</div></section>"""
+</div>{more}</section>"""
     page(lang, "news/", t["news_title"], t["news_title"], body, active="news")
+    if not older:
+        return []
+    rows = []
+    for n in older:
+        title = e(n[lang]["title"])
+        if n.get("link"):
+            title = f'<a href="{n["link"]["href"]}">{title}</a>'
+        elif n.get("game"):
+            web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
+            href = f"/play/{web['slug']}/" if web else url(lang, f"games/{n['game']}/")
+            title = f'<a href="{href}">{title}</a>'
+        rows.append(f'<li><time datetime="{n["date"]}">{n["date"]}</time> {title}</li>')
+    nav, ld = breadcrumbs(lang, [(t["news_title"], url(lang, "news/")), (t["news_archive_title"], None)])
+    body = f"""<section class="container article-head">
+  {nav}
+  <h1 class="page-title">{e(t['news_archive_title'])}</h1>
+  <p class="page-lead">{e(t['news_archive_lead'])}</p>
+</section>
+<section class="section container"><div class="card prose"><ul class="archive">
+{chr(10).join(rows)}
+</ul></div></section>"""
+    page(lang, "news/archive/", t["news_archive_title"], t["news_archive_lead"], body, active="news", head_extra=ld)
+    return [url(lang, "news/archive/")]
 
 
 def build_about(lang):
@@ -483,17 +538,26 @@ def learn_apps():
 
 def build_learn():
     t = UI["en"]
-    cards = "\n".join(article_card(a) for a in ARTICLES)
+    for a in ARTICLES:
+        if a.get("topic") not in LEARN_TOPICS:
+            sys.exit(f"_src/learn/{a['slug']}.html needs a \"topic\": one of {', '.join(LEARN_TOPICS)}")
+    groups = [(k, [a for a in ARTICLES if a["topic"] == k]) for k in LEARN_TOPICS]
+    groups = [(k, items) for k, items in groups if items]
+    jump = "".join(f'<a href="#topic-{k}">{e(t["learn_topic_names"][k])} <span>{len(items)}</span></a>'
+                   for k, items in groups)
+    sections = "".join(f"""
+<section class="section container" id="topic-{k}">
+  <div class="section-head"><h2>{e(t['learn_topic_names'][k])}</h2><p>{e(t['guide_count'].format(n=len(items)))}</p></div>
+  <p class="group-lead">{e(t['learn_topic_leads'][k])}</p>
+  <div class="guide-list">
+{chr(10).join(article_card(a) for a in items)}
+  </div>
+</section>""" for k, items in groups)
     paras = "".join(f"<p>{e(p)}</p>" for p in t["learn_intro"])
     body = f"""<section class="container"><h1 class="page-title">{e(t['learn_title'])}</h1>
 <p class="page-lead">{e(t['learn_lead'])}</p></section>
 <section class="section container"><div class="card prose">{paras}</div></section>
-<section class="section container">
-  <div class="section-head"><h2>{e(t['learn_guides'])}</h2></div>
-  <div class="guide-list">
-{cards}
-  </div>
-</section>
+<section class="section container"><nav class="jump" aria-label="{e(t['learn_topics'])}">{jump}</nav></section>{sections}
 <section class="section container">{learn_apps()}</section>"""
     page("en", "learn/", t["learn_title"], t["learn_lead"], body, active="learn", translated=False)
     for i, a in enumerate(ARTICLES):
@@ -507,8 +571,11 @@ def build_learn():
         dates = f'<time datetime="{a["date"]}">{a["date"]}</time>'
         if a.get("updated") and a["updated"] != a["date"]:
             dates += f' · {e(t["last_updated"])} <time datetime="{a["updated"]}">{a["updated"]}</time>'
+        nav, crumbs_ld = breadcrumbs("en", [(t["learn_title"], "/learn/"),
+                                             (t["learn_topic_names"][a["topic"]], f"/learn/#topic-{a['topic']}"),
+                                             (a["title"], None)])
         body = f"""<section class="container article-head">
-  <a class="crumb" href="/learn/">{e(t['learn_title'])}</a>
+  {nav}
   <h1 class="page-title">{e(a['title'])}</h1>
   <p class="article-meta">{dates} · {a['minutes']} {e(t['min_read'])} · {e(STUDIO['name'])}</p>
 </section>
@@ -525,7 +592,7 @@ def build_learn():
               "publisher": {"@type": "Organization", "name": STUDIO["name"],
                             "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
         page("en", f"learn/{a['slug']}/", a["title"], a["description"], body, active="learn", translated=False,
-             head_extra=ld_json(ld) + SAY_SCRIPT)
+             head_extra=ld_json(ld) + crumbs_ld + SAY_SCRIPT)
 
 
 def history_quiz_card():
@@ -542,17 +609,21 @@ def build_history():
     if not HISTORY:
         return []
     t = UI["ko"]
-    cards = "\n".join(article_card(a, "ko", url("ko", "history/"), "ko") for a in HISTORY)
+    groups = [(era, [a for a in HISTORY if era_of(a) is era]) for era in ERAS]
+    groups = [(era, items) for era, items in groups if items]
+    jump = "".join(f'<a href="#era-{era[0]}">{e(era[1])} <span>{len(items)}</span></a>' for era, items in groups)
+    sections = "".join(f"""
+<section class="section container" id="era-{era[0]}">
+  <div class="section-head"><h2>{e(era[1])}</h2><p>{e(era[2])} · {e(t['history_era_count'].format(n=len(items)))}</p></div>
+  <div class="guide-list">
+{chr(10).join(article_card(a, "ko", url("ko", "history/"), "ko") for a in items)}
+  </div>
+</section>""" for era, items in groups)
     paras = "".join(f"<p>{e(p)}</p>" for p in t["history_intro"])
     body = f"""<section class="container"><h1 class="page-title">{e(t['history_title'])}</h1>
 <p class="page-lead">{e(t['history_lead'])}</p></section>
 <section class="section container"><div class="card prose">{paras}</div></section>
-<section class="section container">
-  <div class="section-head"><h2>{e(t['history_list'])}</h2></div>
-  <div class="guide-list">
-{cards}
-  </div>
-</section>
+<section class="section container"><nav class="jump" aria-label="{e(t['history_eras'])}">{jump}</nav></section>{sections}
 <section class="section container">{history_quiz_card()}</section>"""
     page("ko", "history/", t["history_title"], t["history_lead"], body, active="history", translated=False)
     urls = [url("ko", "history/")]
@@ -567,8 +638,11 @@ def build_history():
             next_href = url("ko", "history/" + nxt["slug"] + "/")
             pager += f'<a class="next" href="{next_href}"><span>{e(t["next_article"])} →</span>{e(nxt["title"])}</a>'
         path = f"history/{a['slug']}/"
+        era = era_of(a)
+        nav, crumbs_ld = breadcrumbs("ko", [(t["history_title"], url("ko", "history/")),
+                                            (era[1], url("ko", "history/") + f"#era-{era[0]}"), (a["title"], None)])
         body = f"""<section class="container article-head">
-  <a class="crumb" href="{url('ko', 'history/')}">{e(t['history_title'])}</a>
+  {nav}
   <h1 class="page-title">{e(a['title'])}</h1>
   <p class="article-meta"><time datetime="{a['date']}">{a['date']}</time> · {e(t['read_time_same'].format(n=a['minutes']))} · {e(STUDIO['name'])}</p>
 </section>
@@ -584,7 +658,8 @@ def build_history():
               "author": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"},
               "publisher": {"@type": "Organization", "name": STUDIO["name"],
                             "logo": {"@type": "ImageObject", "url": f"{STUDIO['domain']}/assets/logo-256.png"}}}
-        page("ko", path, a["title"], a["description"], body, active="history", translated=False, head_extra=ld_json(ld))
+        page("ko", path, a["title"], a["description"], body, active="history", translated=False,
+             head_extra=ld_json(ld) + crumbs_ld)
         urls.append(url("ko", path))
     return urls
 
@@ -692,8 +767,10 @@ def main():
             urls.append(url(lang, f"games/{g['slug']}/"))
         for fn, path in [(build_play, "play/"), (build_news, "news/"), (build_about, "about/"), (build_support, "support/"),
                          (build_terms, "terms/")]:
-            fn(lang)
+            extra = fn(lang)
             urls.append(url(lang, path))
+            if isinstance(extra, list):
+                urls += extra
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     for g in WEB_GAMES:
         urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
