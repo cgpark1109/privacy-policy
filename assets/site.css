@@ -66,8 +66,8 @@ main { flex: 1; padding-bottom: 48px; }
 /* Section headings */
 .section { margin-top: 44px; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 4px 14px; }
-.section-head h2 { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; }
-.section-head p, .section-head a { font-size: 14px; color: #fff; opacity: 0.9; }
+.section-head h2 { font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); }
+.section-head p, .section-head a { font-size: 14px; color: var(--navy-soft); font-weight: 500; }
 .page-title { color: #fff; font-size: clamp(26px, 4.5vw, 36px); font-weight: 700; padding-top: 44px; text-shadow: 0 2px 10px rgba(43, 49, 85, 0.2); }
 .page-lead { color: #fff; opacity: 0.95; margin-top: 6px; }
 

@@ -105,7 +105,7 @@ a.tl-label:hover { text-decoration: underline; }
 .card .tl-item { background: var(--soft); box-shadow: none; }
 
 /* all events page */
-.tl-events h2 { margin: 26px 4px 12px; color: #fff; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; }
+.tl-events h2 { margin: 26px 4px 12px; color: var(--navy); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; }
 html[lang="ko"] .tl-events h2 { letter-spacing: 0.04em; font-size: 15px; }
 .tl-events h2 span { opacity: 0.85; font-weight: 600; }
 .tl-events .tl-other { font-size: 13.5px; color: var(--muted); }
