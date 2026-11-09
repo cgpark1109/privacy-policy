@@ -904,8 +904,8 @@ UD_TEXT = {
         "how": "How to play",
         "how_steps": ["The angle line swings up and down. Tap (or press Space) to set your launch angle.",
                       "The power gauge fills and empties. Tap again to stop it: a fuller gauge throws harder.",
-                      "Once the plane leaves your hand, there's no steering. Light arrows show updrafts that lift your plane; "
-                      "dark ones show downdrafts that push it down.",
+                      "Once the plane leaves your hand, there's no steering: the camera follows it from behind. Light columns with arrows "
+                      "pointing up are updrafts that lift your plane; dark ones pointing down are downdrafts that push it down.",
                       "Collect coins and earn more for every 10 m you fly, then spend them on upgrades and fly again."],
         "zones": "Five zones",
         "zones_list": ["Park (from 0 m): low trees.", "City (from 300 m): tall buildings.",
@@ -918,8 +918,8 @@ UD_TEXT = {
                       "Sturdy fold lets you bounce off a tree or building instead of crashing, which matters most in the city.",
                       "The sky is the same for everyone on the same day, and changes at midnight: today's wind and today's goal are shown under the button."],
         "about": "About this version",
-        "about_body": ["This is a browser version of our Android game Updraft: Paper Plane Launch, with the same idea: one throw, "
-                       "no steering, and the air decides the rest. Your coins, upgrades and best distance are saved in this "
+        "about_body": ["This is a browser version of our Android game Updraft: Paper Plane Launch, seen from behind the plane like the app, "
+                       "with the same idea: one throw, no steering, and the air decides the rest. Your coins, upgrades and best distance are saved in this "
                        "browser only.",
                        "The app has more: daily rewards and missions, pre-launch skills and its own five-zone world."],
         "app_link": "About the Android app",
@@ -933,7 +933,7 @@ UD_TEXT = {
         "how": "하는 방법",
         "how_steps": ["각도 선이 위아래로 움직여요. 화면을 누르거나 스페이스 키를 눌러 발사 각도를 정하세요.",
                       "힘 게이지가 차올랐다 줄어들어요. 한 번 더 눌러 멈추세요. 게이지가 많이 찰수록 세게 던져요.",
-                      "비행기가 손을 떠나면 조종할 수 없어요. 밝은 화살표는 비행기를 띄워 주는 상승기류, 어두운 화살표는 끌어내리는 하강기류예요.",
+                      "비행기가 손을 떠나면 조종할 수 없고, 카메라가 비행기 뒤를 따라가요. 위쪽 화살표가 있는 밝은 기둥은 비행기를 띄워 주는 상승기류, 아래쪽 화살표가 있는 어두운 기둥은 끌어내리는 하강기류예요.",
                       "코인을 모으고 10m마다 코인을 더 받아요. 코인으로 업그레이드하고 다시 날려 보세요."],
         "zones": "다섯 구역",
         "zones_list": ["공원(0m부터): 낮은 나무", "도시(300m부터): 높은 건물",
@@ -945,7 +945,7 @@ UD_TEXT = {
                       "튼튼한 접기가 있으면 나무나 건물에 부딪혀도 튕겨 나와 계속 날 수 있어요. 도시 구역에서 특히 쓸모 있어요.",
                       "하늘은 같은 날이면 모두에게 같고, 자정에 바뀌어요. 오늘의 바람과 목표는 버튼 아래에 나와요."],
         "about": "이 버전에 대해",
-        "about_body": ["Android 게임 Updraft: Paper Plane Launch의 브라우저 버전이에요. 한 번 던지면 조종할 수 없고 바람이 나머지를 "
+        "about_body": ["Android 게임 Updraft: Paper Plane Launch를 앱처럼 비행기 뒤에서 보는 시점으로 옮긴 브라우저 버전이에요. 한 번 던지면 조종할 수 없고 바람이 나머지를 "
                        "결정한다는 규칙은 같아요. 코인, 업그레이드, 최고 기록은 이 브라우저에만 저장돼요.",
                        "앱에는 매일 출석 보상과 일일 미션, 발사 전 스킬, 앱만의 다섯 구역 월드가 더 있어요."],
         "app_link": "Android 앱 소개 보기",
@@ -961,50 +961,60 @@ HR_TEXT = {
     "en": {
         "title": "Hilltop Roll",
         "app": "hilltop-roll",
-        "lead": "Hold to roll heavy down the hills, let go to fly off the tops, and land along the slope for a PERFECT boost.",
-        "description": "Play Hilltop Roll free in your browser: hold to roll heavy and race down the hills, let go to fly off "
-                       "the hilltops, jump the gaps from the ramps and land along the slope for PERFECT boosts and combos. "
-                       "Endless pastel hills that speed up as you go.",
+        "lead": "Roll down an endless road in the sky. Hold to roll heavy, let go to fly off the hilltops, and steer through zigzags, tilted roads and forks.",
+        "description": "Play Hilltop Roll free in your browser: a ball rolls down an endless floating road, seen from behind. Hold to "
+                       "roll heavy down the hills, let go to fly off the tops, steer through zigzag roads, tilted roads and forks, "
+                       "and land along the slope for PERFECT boosts and combos.",
         "noscript": "This game needs JavaScript.",
         "sections": [
-            ("How to play", ["Press Start, then hold the button, the screen or the Space key: the ball turns heavy and races down the hills.",
-                             "Let go as you reach a hilltop: the ball turns light and flies off the top.",
-                             "Before each gap there's a ramp with a red edge. Build speed on the way to it and fly across.",
-                             "Land along the slope, not flat against it, for a PERFECT boost. Chain them to build a combo.",
-                             "The road speeds up every few seconds. Fall into a gap and the run is over."], "ol"),
+            ("How to play", ["Press Start. The camera follows the ball from behind as it rolls down the road.",
+                             "Hold the screen, the button or the Space key: the ball turns heavy and races down the hills. "
+                             "Let go as you reach a hilltop: it turns light and flies off the top.",
+                             "Steer to stay on the road: drag sideways while you hold the screen, or use the arrow keys (or A and D).",
+                             "The road zigzags, tilts to one side and splits around holes. Follow its turns, lean against the tilt and pick a lane at each fork.",
+                             "Before each gap there's a ramp with a red lip. Build speed on the way to it and fly across. "
+                             "Land along the slope, not flat against it, for a PERFECT boost.",
+                             "The road speeds up every few seconds. Roll off the edge or fall into a gap and the run is over."], "ol"),
             ("Tips", ["Hold on the way down, let go on the way up: that rhythm is the whole game.",
+                      "Short, small moves steer best. On a tilted road the ball slides toward the low side, so keep steering against it.",
                       "In the air, holding makes you drop faster. Use it to meet a downhill slope at the right angle.",
                       "A PERFECT landing adds speed, and a longer combo adds more. A bumpy landing costs speed.",
                       "Sound effects are short tones; switch them off with the Sound button under the game."], "ul"),
         ],
         "about": "About this version",
-        "about_body": ["This is a browser take on our Android game Hilltop Roll. The heavy-and-light rolling, the jumps over the gaps "
-                       "and the PERFECT landings are the same idea, drawn from the side. Your best distance is saved in this browser only.",
-                       "The Android app is a different, full game: you also steer through zigzag roads, tilted roads and forks, with music and its own worlds."],
+        "about_body": ["This is a browser take on our Android game Hilltop Roll, seen from behind the ball like the app: heavy-and-light "
+                       "rolling, jumps over the gaps, PERFECT landings and steering through zigzags, tilted roads and forks. "
+                       "Your best distance is saved in this browser only.",
+                       "The Android app is the full game, with music and its own worlds."],
         "app_link": "About the Android app",
     },
     "ko": {
         "title": "Hilltop Roll",
         "app": "hilltop-roll",
-        "lead": "누르고 있으면 무겁게 언덕을 내려가고, 떼면 언덕 꼭대기에서 날아올라요. 경사를 따라 착지하면 PERFECT 가속!",
-        "description": "브라우저에서 무료로 즐기는 Hilltop Roll: 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가고, 떼면 가벼워져 "
-                       "꼭대기에서 날아올라요. 점프대로 낭떠러지를 건너고, 경사를 따라 착지해 PERFECT 가속과 콤보를 쌓아 보세요.",
+        "lead": "하늘 위 끝없는 길을 굴러가요. 누르면 무겁게 내려가고, 떼면 언덕 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종해 나가세요.",
+        "description": "브라우저에서 무료로 즐기는 Hilltop Roll: 공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 누르면 무거워져 "
+                       "언덕을 빠르게 내려가고, 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고 경사를 따라 착지해 "
+                       "PERFECT 가속과 콤보를 쌓아 보세요.",
         "noscript": "이 게임은 자바스크립트가 필요해요.",
         "sections": [
-            ("하는 방법", ["시작하기를 누른 뒤 버튼이나 화면, 스페이스 키를 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가요.",
-                       "언덕 꼭대기에 가까워지면 손을 떼세요. 공이 가벼워져 꼭대기에서 날아올라요.",
-                       "낭떠러지 앞에는 끝이 빨간 점프대가 있어요. 내려가면서 속도를 모아 건너가세요.",
-                       "경사를 따라 착지하면 PERFECT 가속을 받아요. 연속으로 성공하면 콤보가 쌓여요.",
-                       "몇 초마다 길이 빨라져요. 낭떠러지에 떨어지면 게임이 끝나요."], "ol"),
+            ("하는 방법", ["시작하기를 누르세요. 카메라가 공 뒤를 따라가며 길을 보여 줘요.",
+                       "화면이나 버튼, 스페이스 키를 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가요. 언덕 꼭대기에 가까워지면 손을 떼세요. "
+                       "공이 가벼워져 꼭대기에서 날아올라요.",
+                       "길 위에 남도록 조종하세요. 화면을 누른 채로 옆으로 드래그하거나 방향키(또는 A, D)를 쓰면 돼요.",
+                       "길은 지그재그로 휘고, 한쪽으로 기울고, 구멍을 사이에 두고 갈라져요. 길을 따라가고, 기울어진 반대쪽으로 버티고, "
+                       "갈림길에서는 한쪽 길을 고르세요.",
+                       "낭떠러지 앞에는 끝이 빨간 점프대가 있어요. 내려가면서 속도를 모아 건너가세요. 경사를 따라 착지하면 PERFECT 가속을 받아요.",
+                       "몇 초마다 길이 빨라져요. 길 밖으로 굴러떨어지거나 낭떠러지에 빠지면 게임이 끝나요."], "ol"),
             ("요령", ["내리막에서는 누르고, 오르막에서는 떼세요. 이 리듬이 핵심이에요.",
+                     "짧고 작게 움직여야 잘 조종돼요. 기울어진 길에서는 공이 낮은 쪽으로 미끄러지니 반대쪽으로 계속 버티세요.",
                      "공중에서 누르면 더 빨리 떨어져요. 내리막 경사에 맞춰 착지할 때 써 보세요.",
                      "PERFECT 착지는 속도를 올려 주고, 콤보가 길수록 더 빨라져요. 덜컹 착지하면 속도가 줄어요.",
                      "효과음은 짧은 소리예요. 게임 아래 소리 버튼으로 끌 수 있어요."], "ul"),
         ],
         "about": "이 버전에 대해",
-        "about_body": ["Android 게임 Hilltop Roll을 옆에서 본 2D 화면으로 옮긴 브라우저 버전이에요. 무겁게·가볍게 굴리기, 낭떠러지 점프, "
-                       "PERFECT 착지는 같은 아이디어예요. 최고 기록은 이 브라우저에만 저장돼요.",
-                       "Android 앱은 지그재그 길, 기울어진 길, 갈림길을 조종하는 별도의 완전한 게임이고, 음악과 앱만의 월드가 있어요."],
+        "about_body": ["Android 게임 Hilltop Roll을 앱처럼 공 뒤에서 보는 시점으로 옮긴 브라우저 버전이에요. 무겁게·가볍게 굴리기, "
+                       "낭떠러지 점프, PERFECT 착지, 지그재그 길·기울어진 길·갈림길 조종을 즐길 수 있어요. 최고 기록은 이 브라우저에만 저장돼요.",
+                       "Android 앱은 음악과 앱만의 월드가 있는 완전한 게임이에요."],
         "app_link": "Android 앱 소개 보기",
     },
 }

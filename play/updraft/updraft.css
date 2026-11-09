@@ -15,7 +15,7 @@
 .ud h2 { font-size: 19px; line-height: 1.3; }
 
 .ud-stage { position: relative; padding: 0; overflow: hidden; }
-#ud-canvas { display: block; width: 100%; height: clamp(280px, 52vw, 420px); touch-action: manipulation; cursor: pointer; }
+#ud-canvas { display: block; width: 100%; height: clamp(360px, 62vw, 480px); touch-action: manipulation; cursor: pointer; }
 .ud-hud { position: absolute; top: 10px; right: 12px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; max-width: 70%; }
 .ud-hud span { background: rgba(255, 255, 255, 0.88); border-radius: 999px; padding: 4px 10px; font-size: 13px; font-weight: 700; color: var(--navy); }
 .ud-msg { position: absolute; left: 50%; top: 56px; transform: translateX(-50%); width: min(90%, 420px); text-align: center; pointer-events: none;
@@ -45,7 +45,7 @@
 .ud-static p { color: var(--navy-soft); }
 .ud-static p + p { margin-top: 10px; }
 @media (max-width: 520px) {
-  .ud-hud { left: 10px; right: 10px; max-width: none; justify-content: flex-start; top: auto; bottom: 10px; }
+  .ud-hud { left: 10px; right: 10px; max-width: none; justify-content: flex-start; }
   .ud-hud span { font-size: 12px; padding: 3px 8px; }
   .ud-msg { top: 44px; }
 }
