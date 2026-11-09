@@ -1081,6 +1081,56 @@ PS_TEXT = {
 }
 
 
+LN_TEXT = {
+    "en": {
+        "title": "Lantern Lights",
+        "lead": "Turn the tiles so the light from the flame reaches every lantern. A new puzzle every day.",
+        "description": "Play Lantern Lights free in your browser: a daily puzzle where you turn path tiles so the light from the "
+                       "flame reaches every lantern, plus unlimited practice puzzles in three sizes. Keep your streak going.",
+        "noscript": "This puzzle needs JavaScript.",
+        "sections": [
+            ("How to play", ["Each tile holds a piece of path: an end, a straight, a corner, a three-way or a crossing.",
+                             "Click or tap a tile to turn it a quarter turn. (Right-click, or hold Shift, to turn it back.)",
+                             "The flame in the middle sends out light. Any path connected to it glows.",
+                             "Connect every tile so that no path ends in the dark and every lantern is lit."], "ol"),
+            ("Today's puzzle and practice", ["Today's puzzle is a 6 × 6 board, the same for everyone, and a new one arrives at midnight.",
+                                              "Solve it on consecutive days to build a streak, and copy your time to share it.",
+                                              "Practice gives you as many puzzles as you like, in 5 × 5, 6 × 6 and 7 × 7."], "ul"),
+            ("Tips", ["Start at the edges: a path can never point off the board, so edge and corner tiles often have only one way to turn.",
+                      "Lanterns are dead ends: they connect to exactly one neighbor.",
+                      "Paths never form a loop, so if two tiles would close a circle, one of them is turned the wrong way.",
+                      "On a keyboard, use the arrow keys to move between tiles and Enter or Space to turn them."], "ul"),
+        ],
+        "about": "About Lantern Lights",
+        "about_body": ["Lantern Lights is a small logic puzzle made for this site. Every board is a single network of paths with no loops, "
+                       "so there is always a way to light every lantern. Your streak and best times are saved in this browser only."],
+    },
+    "ko": {
+        "title": "랜턴 잇기",
+        "lead": "칸을 돌려 불씨의 빛이 모든 랜턴에 닿게 하세요. 매일 새 퍼즐이 나와요.",
+        "description": "브라우저에서 무료로 즐기는 랜턴 잇기: 길 조각을 돌려 가운데 불씨의 빛이 모든 랜턴에 닿게 하는 매일의 퍼즐과, "
+                       "세 가지 크기의 연습 퍼즐이 있어요. 매일 풀어 연속 기록을 이어 가 보세요.",
+        "noscript": "이 퍼즐은 자바스크립트가 필요해요.",
+        "sections": [
+            ("하는 방법", ["각 칸에는 길 조각이 있어요. 끝, 직선, 꺾인 길, 세 갈래 길, 네 갈래 길이 있어요.",
+                       "칸을 누르면 90도 돌아가요. 마우스 오른쪽 버튼이나 Shift를 누르고 돌리면 반대로 돌아요.",
+                       "가운데 불씨에서 빛이 나와요. 불씨와 이어진 길은 노랗게 빛나요.",
+                       "모든 칸을 이어서 끊긴 길 없이 모든 랜턴에 불을 켜면 성공이에요."], "ol"),
+            ("오늘의 퍼즐과 연습", ["오늘의 퍼즐은 6 × 6 크기이고, 같은 날에는 모두에게 같으며 자정에 바뀌어요.",
+                              "날마다 풀면 연속 기록이 쌓이고, 기록 시간을 복사해 공유할 수 있어요.",
+                              "연습 모드에서는 5 × 5, 6 × 6, 7 × 7 퍼즐을 원하는 만큼 풀 수 있어요."], "ul"),
+            ("요령", ["가장자리부터 시작하세요. 길은 판 밖을 향할 수 없어서, 가장자리와 모서리 칸은 돌릴 방법이 하나뿐인 경우가 많아요.",
+                     "랜턴은 막다른 끝이에요. 이웃 칸 하나와만 이어져요.",
+                     "길은 고리를 만들지 않아요. 두 칸이 원을 닫게 된다면 그중 하나가 잘못 돌아간 거예요.",
+                     "키보드에서는 방향키로 칸을 옮기고 Enter나 스페이스로 돌릴 수 있어요."], "ul"),
+        ],
+        "about": "랜턴 잇기 소개",
+        "about_body": ["랜턴 잇기는 이 사이트를 위해 만든 작은 논리 퍼즐이에요. 모든 판은 고리 없이 하나로 이어진 길이라서, "
+                       "언제나 모든 랜턴에 불을 켤 방법이 있어요. 연속 기록과 최고 기록은 이 브라우저에만 저장돼요."],
+    },
+}
+
+
 def canvas_game(slug, src_name, files, text, p):
     """A canvas browser game as a site page in each language: copies its script and styles from _src/<src_name>/ to
     play/<slug>/ and wraps them in the site template. p is the CSS prefix of its elements (ud, hr)."""
@@ -1111,7 +1161,7 @@ def canvas_game(slug, src_name, files, text, p):
   <div class="{p}-static" id="{p}-static">
     {sections}
     <section class="card"><h2>{e(u['about'])}</h2>{''.join(f'<p>{e(x)}</p>' for x in u['about_body'])}
-      <p><a href="{url(lang, 'games/' + u['app'] + '/')}">{e(u['app_link'])} →</a></p></section>
+      {f'<p><a href="{url(lang, "games/" + u["app"] + "/")}">{e(u["app_link"])} →</a></p>' if u.get('app') else ''}</section>
   </div>
 </section>
 <div id="live" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
@@ -1138,6 +1188,11 @@ def build_updraft():
 def build_pass_or_splash():
     """The Pass or Splash browser game (see canvas_game)."""
     return canvas_game("pass-or-splash", "pass-or-splash", ("app.js", "ps.css"), PS_TEXT, "ps")
+
+
+def build_lantern():
+    """Lantern Lights, a puzzle game made for the site (see canvas_game)."""
+    return canvas_game("lantern-lights", "lantern", ("app.js", "ln.css"), LN_TEXT, "ln")
 
 
 def build_hilltop():
@@ -1265,6 +1320,7 @@ def main():
     urls += build_updraft()
     urls += build_hilltop()
     urls += build_pass_or_splash()
+    urls += build_lantern()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
