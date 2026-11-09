@@ -15,17 +15,29 @@ const require = createRequire(path.join(deps, 'node_modules', 'x.js'));
 const topo = require('topojson-client');
 const world = require('world-atlas/countries-110m.json');
 
+// Rings that cross the date line (eastern Russia, Fiji, Antarctica) jump from one edge of the map to the other;
+// split them there into pieces that close along the map's edge, or they draw a stripe across the whole map.
+function pieces(ring, closed) {
+  const out = [[ring[0]]];
+  for (let i = 1; i < ring.length; i++) {
+    if (Math.abs(ring[i][0] - ring[i - 1][0]) > 180) out.push([]);
+    out[out.length - 1].push(ring[i]);
+  }
+  if (closed && out.length > 1) out[0] = out.pop().concat(out[0]);  // the ring's end continues its start
+  return out;
+}
 function pathOf(geom) {
-  const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.type === 'MultiPolygon' ? geom.coordinates : geom.type === 'MultiLineString' ? [geom.coordinates] : [[geom.coordinates]];
+  const polygon = geom.type.endsWith('Polygon');
+  const lines = geom.type === 'Polygon' ? geom.coordinates : geom.type === 'MultiPolygon' ? geom.coordinates.flat() : geom.type === 'MultiLineString' ? geom.coordinates : [geom.coordinates];
   let d = '';
-  for (const poly of polys) for (const ring of poly) {
+  for (const line of lines) for (const part of pieces(line, polygon)) {
     let last = '', n = 0, seg = '';
-    for (const [lon, lat] of ring) {
+    for (const [lon, lat] of part) {
       const p = `${+lon.toFixed(1)} ${+(-lat).toFixed(1)}`;
       if (p === last) continue;
       seg += (n ? 'L' : 'M') + p; last = p; n++;
     }
-    if (n >= 2) d += seg + (geom.type.endsWith('Polygon') ? 'Z' : '');
+    if (n >= 2) d += seg + (polygon ? 'Z' : '');
   }
   return d.replace(/ -/g, '-');
 }

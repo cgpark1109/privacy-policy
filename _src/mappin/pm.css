@@ -27,7 +27,7 @@
 .pm-sub { color: var(--muted); font-weight: 600; margin-top: 2px; }
 
 .pm-map { position: relative; padding: 0; overflow: hidden; }
-#pm-svg { display: block; width: 100%; height: clamp(250px, 58vw, 520px); background: var(--sea); touch-action: none; user-select: none; -webkit-user-select: none; cursor: crosshair; }
+#pm-svg { display: block; width: 100%; height: clamp(260px, min(60vw, 66vh), 540px); background: var(--sea); touch-action: none; user-select: none; -webkit-user-select: none; cursor: crosshair; }
 #pm-svg:focus-visible { outline-offset: -4px; }
 #pm-svg.pointer:focus, #pm-svg.pointer:focus-visible { outline: none; }
 #pm-svg .sea { fill: var(--sea); }
@@ -43,13 +43,16 @@
 .pm-zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 6px; }
 .pm-zoom button { width: 40px; height: 40px; border: 0; border-radius: 12px; background: rgba(255, 255, 255, 0.92); color: var(--navy); font: inherit; font-size: 20px; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px rgba(43, 49, 85, 0.15); }
 
-.pm-result { padding: 14px 18px; color: var(--navy-soft); }
+.pm-over { position: absolute; left: 10px; right: 10px; bottom: 10px; display: grid; justify-items: center; gap: 8px; pointer-events: none; }
+.pm-over > * { pointer-events: auto; }
+.pm-over .btn { width: min(100%, 320px); font-size: 16px; box-shadow: 0 4px 14px rgba(43, 49, 85, 0.25); }
+.pm-over .btn:disabled { opacity: 1; background: rgba(255, 255, 255, 0.92); color: var(--navy-soft); }
+.pm-over .btn[hidden] { display: none; }
+.pm-result { width: min(100%, 560px); padding: 12px 16px; border-radius: 16px; background: rgba(255, 255, 255, 0.96); color: var(--navy-soft);
+  font-size: 14.5px; line-height: 1.5; box-shadow: 0 4px 14px rgba(43, 49, 85, 0.18); }
 .pm-result[hidden] { display: none; }
-.pm-dist { color: var(--navy); font-size: 17px; margin-bottom: 4px; }
+.pm-dist { color: var(--navy); font-size: 17px; margin-bottom: 2px; }
 .pm-dist b { color: #C8392B; }
-.pm-actions { display: grid; justify-items: center; }
-.pm-actions .btn { width: min(100%, 360px); font-size: 16px; }
-.pm-actions .btn[hidden] { display: none; }
 .pm-help { text-align: center; font-size: 13px; color: var(--navy-soft); }
 
 .pm-end { display: grid; gap: 8px; }
