@@ -47,7 +47,9 @@
   /* ---------- text ---------- */
   var COMMON = {
     en: {
-      skip: 'Skip to content', settings: 'Settings', studio: "ggook's studio", games: 'Browser games', privacy: 'Privacy Policy',
+      skip: 'Skip to content', settings: 'Settings', studio: "ggook's studio", games: 'Play in your browser', privacy: 'Privacy Policy',
+      nav_games: 'Games', nav_learn: 'Learn Hangul', nav_history: '세계사', nav_calc: 'Calculators', nav_news: 'News', nav_about: 'About', nav_support: 'Support',
+      menu: 'Menu', terms: 'Terms of Service', calc_link: 'Calculators', contact: 'Contact', rights: 'All rights reserved.',
       flag_credit: 'Flag images', lang_switch: '한국어', lang_switch_label: '한국어로 보기',
       levels: 'Levels', levels_range: 'Levels {a}–{b}', level_n: 'Level {n}', continue_level: 'Play level {n}', unlocked: 'Unlocked', completed: 'Completed', stars: 'Stars',
       perfect: 'Perfect levels', progress: 'Progress', mode: 'Quiz mode', overall: '{a} of {b} stars',
@@ -72,7 +74,9 @@
       r_africa: 'Africa', 'r_asia': 'Asia', 'r_europe': 'Europe', 'r_north-america': 'North America', 'r_south-america': 'South America', r_oceania: 'Oceania',
     },
     ko: {
-      skip: '본문으로 건너뛰기', settings: '설정', studio: 'ggook\'s studio', games: '브라우저 게임', privacy: '개인정보처리방침',
+      skip: '본문으로 건너뛰기', settings: '설정', studio: 'ggook\'s studio', games: '브라우저에서 바로 하기', privacy: '개인정보처리방침',
+      nav_games: '게임', nav_learn: '한글 가이드', nav_history: '세계사', nav_calc: '계산기', nav_news: '소식', nav_about: '소개', nav_support: '지원',
+      menu: '메뉴', terms: '이용약관', calc_link: '계산만물상', contact: '문의', rights: 'All rights reserved.',
       flag_credit: '국기 이미지', lang_switch: 'English', lang_switch_label: 'View in English',
       levels: '레벨', levels_range: '레벨 {a}–{b}', level_n: '레벨 {n}', continue_level: '레벨 {n} 플레이', unlocked: '열린 레벨', completed: '완료', stars: '별',
       perfect: '만점 레벨', progress: '진행 상황', mode: '퀴즈 모드', overall: '별 {b}개 중 {a}개',
@@ -148,10 +152,7 @@
 
   /* ---------- theme, language, document meta ---------- */
   var root = document.documentElement;
-  function applyTheme() {
-    if (settings.theme === 'system') root.removeAttribute('data-theme');
-    else root.setAttribute('data-theme', settings.theme);
-  }
+  function applyTheme() { root.removeAttribute('data-theme'); }  // light only, like the rest of the site
   function setMeta(sel, attr, value) {
     var el = document.querySelector(sel);
     if (el) el.setAttribute(attr, value);
@@ -172,6 +173,13 @@
     for (var j = 0; j < attrs.length; j++) {
       var spec = attrs[j].getAttribute('data-t-attr').split(':');
       attrs[j].setAttribute(spec[0], t(spec[1]));
+    }
+    // Site links point to the page in the current language (the English href is kept in data-href-en).
+    var links = document.querySelectorAll('[data-href-ko]');
+    for (var k = 0; k < links.length; k++) {
+      var a = links[k];
+      if (!a.hasAttribute('data-href-en')) a.setAttribute('data-href-en', a.getAttribute('href'));
+      a.setAttribute('href', a.getAttribute(settings.lang === 'ko' ? 'data-href-ko' : 'data-href-en'));
     }
     var about = document.getElementById('about');
     if (about && G.str[settings.lang].about_html) about.innerHTML = G.str[settings.lang].about_html;
@@ -310,11 +318,10 @@
 
     view.innerHTML =
       '<div class="wrap">' +
-      '<nav class="crumbs" aria-label="Breadcrumb"><a href="/">' + esc(t('studio')) + '</a><span aria-hidden="true">›</span><a href="/play/">' + esc(t('games')) + '</a><span aria-hidden="true">›</span><span aria-current="page">' + esc(t('title')) + '</span></nav>' +
       '<div class="home">' +
       '<div class="side">' +
       '<section class="card">' +
-      '<div class="hero"><img src="favicon.svg" alt="" width="64" height="64"><div><h1 tabindex="-1" id="home-title">' + esc(t('title')) + '</h1><p>' + esc(t('tagline')) + '</p></div></div>' +
+      '<div class="hero"><img src="favicon.svg" alt="" width="56" height="56"><h2 tabindex="-1" id="home-title">' + esc(t('mode')) + '</h2></div>' +
       '<div class="modes" role="radiogroup" aria-label="' + esc(t('mode')) + '">' + modesHtml + '</div>' +
       '<div class="progress-box" aria-label="' + esc(t('progress')) + '">' +
       '<div class="bar-label"><span>' + esc(t('progress')) + '</span><span>' + esc(t('overall', { a: sum.stars, b: sum.maxStars })) + '</span></div>' +
@@ -609,7 +616,7 @@
       '<div class="res-left">' +
       '<div class="quiz-top"><a class="icon-btn" href="#/" aria-label="' + esc(t('back_levels')) + '">' + ICON.back + '</a><div class="qtitle">' + esc(t('result')) + '<small>' + esc(t('mode_' + R.mode)) + '</small></div></div>' +
       '<section class="card res-hero"><span class="res-level">' + esc(t('level_complete', { n: R.level })) + '</span>' +
-      '<h1 tabindex="-1" id="res-title">' + esc(t('msg' + R.stars)) + '</h1>' + starsHtml(R.stars, t('level_aria', { n: R.level, s: R.stars })) +
+      '<h2 tabindex="-1" id="res-title">' + esc(t('msg' + R.stars)) + '</h2>' + starsHtml(R.stars, t('level_aria', { n: R.level, s: R.stars })) +
       '<p>' + esc(R.stars === 3 ? t('sub3') : R.stars === 2 ? t('sub2') : t('sub1', { n: R.wrong })) + '</p></section>' +
       '<div class="res-stats"><div class="stat ok card"><b>' + (n - R.wrong) + '/' + n + '</b><span>' + esc(t('correct_label')) + '</span></div>' +
       '<div class="stat bad card"><b>' + R.wrong + '</b><span>' + esc(t('wrong_label')) + '</span></div>' +
@@ -649,18 +656,18 @@
     var vib = 'vibrate' in navigator ? sw('vibration', 'set_vibration', 'set_vibration_desc') : '';
     view.innerHTML =
       '<div class="wrap"><div class="settings">' +
-      '<div class="page-head"><a class="icon-btn" href="#/" aria-label="' + esc(t('back_levels')) + '">' + ICON.back + '</a><h1 tabindex="-1" id="set-title">' + esc(t('settings')) + '</h1></div>' +
+      '<div class="page-head"><a class="icon-btn" href="#/" aria-label="' + esc(t('back_levels')) + '">' + ICON.back + '</a><h2 tabindex="-1" id="set-title">' + esc(t('settings')) + '</h2></div>' +
       '<section class="card set-group"><h2>' + esc(t('set_display')) + '</h2>' +
       '<div class="set-row"><span class="s-label">' + esc(t('set_lang')) + '</span>' + seg('lang', settings.lang, [['en', 'English', 'en'], ['ko', '한국어', 'ko']]) + '</div>' +
-      '<div class="set-row"><span class="s-label">' + esc(t('set_theme')) + '</span>' + seg('theme', settings.theme, [['system', t('theme_system')], ['light', t('theme_light')], ['dark', t('theme_dark')]]) + '</div></section>' +
+      '</section>' +
       '<section class="card set-group"><h2>' + esc(t('set_play')) + '</h2>' + sw('autoNext', 'set_auto', 'set_auto_desc') + sw('sound', 'set_sound', 'set_sound_desc') + vib + '</section>' +
       '<section class="card set-group"><h2>' + esc(t('set_data')) + '</h2><div class="set-row"><span><span class="s-label">' + esc(t('reset')) + '</span><span class="s-desc">' + esc(t('reset_desc')) + '</span></span>' +
       '<button class="btn danger" data-action="reset">' + esc(t('reset')) + '</button></div></section>' +
       '<section class="card set-group"><h2>' + esc(t('set_about')) + '</h2><ul class="links-list">' +
       '<li><a href="' + G.listPage + '">' + esc(t('browse')) + ICON.chev + '</a></li>' +
-      '<li><a href="/play/">' + esc(t('games')) + ICON.chev + '</a></li>' +
-      '<li><a href="/">' + esc(t('studio')) + ICON.chev + '</a></li>' +
-      '<li><a href="/privacy.html">' + esc(t('privacy')) + ICON.chev + '</a></li>' +
+      '<li><a href="' + (settings.lang === 'ko' ? '/ko/play/' : '/play/') + '">' + esc(t('games')) + ICON.chev + '</a></li>' +
+      '<li><a href="' + (settings.lang === 'ko' ? '/ko/' : '/') + '">' + esc(t('studio')) + ICON.chev + '</a></li>' +
+      '<li><a href="' + (settings.lang === 'ko' ? '/ko/privacy/' : '/privacy.html') + '">' + esc(t('privacy')) + ICON.chev + '</a></li>' +
       '<li><a href="LICENSE-flags.txt">' + esc(t('flag_credit')) + ' (flag-icons, MIT)' + ICON.chev + '</a></li></ul>' +
       '<p class="credit">' + esc(t('saved_note')) + ' ' + esc(t('version')) + ' ' + esc(G.version) + '</p></section>' +
       '</div></div>' +
@@ -673,7 +680,7 @@
   }
 
   function focusView() {
-    var h = view.querySelector('h1[tabindex="-1"]');
+    var h = view.querySelector('h1[tabindex="-1"], h2[tabindex="-1"]');
     if (h) h.focus({ preventScroll: true });
   }
 
