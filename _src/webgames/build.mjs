@@ -285,7 +285,7 @@ const BROWSER_GAMES = [
     desc_en: 'Solve the puzzle and pass through the right hole.', desc_ko: '문제를 풀고 정답 구멍으로 통과하세요.' },
   { slug: 'hilltop-roll', en: 'Hilltop Roll', ko: 'Hilltop Roll', ko_href: '/ko/play/hilltop-roll/',
     icon: '/play/hilltop-roll/icon.png',
-    desc_en: 'Roll heavy down the hills and fly off the tops.', desc_ko: '언덕을 무겁게 내려가고 꼭대기에서 날아올라요.' },
+    desc_en: 'Steer a rolling ball down an endless road in the sky.', desc_ko: '하늘 위 끝없는 길을 굴러가는 공을 조종해요.' },
   { slug: 'updraft', en: 'Updraft: Paper Plane', ko: 'Updraft: 종이비행기', ko_href: '/ko/play/updraft/',
     icon: '/play/updraft/icon.png',
     desc_en: 'Launch a paper plane and ride the updrafts as far as it goes.', desc_ko: '종이비행기를 날려 상승기류를 타고 멀리 날아 보세요.' },

@@ -51,5 +51,4 @@
 }
 #hr-canvas { touch-action: none; user-select: none; -webkit-user-select: none; }
 .hr-main { user-select: none; -webkit-user-select: none; touch-action: none; }
-.hr-main.down { background: var(--coral); }
 .hr-sound { background: rgba(255, 255, 255, 0.85); color: var(--navy); border: 0; border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }

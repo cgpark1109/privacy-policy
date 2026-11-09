@@ -961,60 +961,57 @@ HR_TEXT = {
     "en": {
         "title": "Hilltop Roll",
         "app": "hilltop-roll",
-        "lead": "Roll down an endless road in the sky. Hold to roll heavy, let go to fly off the hilltops, and steer through zigzags, tilted roads and forks.",
-        "description": "Play Hilltop Roll free in your browser: a ball rolls down an endless floating road, seen from behind. Hold to "
-                       "roll heavy down the hills, let go to fly off the tops, steer through zigzag roads, tilted roads and forks, "
-                       "and land along the slope for PERFECT boosts and combos.",
+        "lead": "A ball rolls down an endless road in the sky. Steer it through zigzags, tilted roads and forks, and land in the middle of the road for a PERFECT boost.",
+        "description": "Play Hilltop Roll free in your browser: a ball rolls down an endless floating road, seen from behind. Steer it "
+                       "through zigzag roads, tilted roads and forks, fly over the gaps from the ramps, and land in the middle of the "
+                       "road for PERFECT boosts and combos.",
         "noscript": "This game needs JavaScript.",
         "sections": [
-            ("How to play", ["Press Start. The camera follows the ball from behind as it rolls down the road.",
-                             "Hold the screen, the button or the Space key: the ball turns heavy and races down the hills. "
-                             "Let go as you reach a hilltop: it turns light and flies off the top.",
-                             "Steer to stay on the road: drag sideways while you hold the screen, or use the arrow keys (or A and D).",
+            ("How to play", ["Press Start (or tap the game). The camera follows the ball from behind as it rolls down the road on its own.",
+                             "Steer to stay on the road: drag sideways on the game, or use the arrow keys (or A and D).",
                              "The road zigzags, tilts to one side and splits around holes. Follow its turns, lean against the tilt and pick a lane at each fork.",
-                             "Before each gap there's a ramp with a red lip. Build speed on the way to it and fly across. "
-                             "Land along the slope, not flat against it, for a PERFECT boost.",
+                             "The ball flies off the hilltops by itself, and the ramps with a red lip throw it across the gaps. "
+                             "Line it up with the road before it comes down.",
+                             "Land in the middle of the road (or of your lane at a fork) for a PERFECT boost; chain them to build a combo.",
                              "The road speeds up every few seconds. Roll off the edge or fall into a gap and the run is over."], "ol"),
-            ("Tips", ["Hold on the way down, let go on the way up: that rhythm is the whole game.",
-                      "Short, small moves steer best. On a tilted road the ball slides toward the low side, so keep steering against it.",
-                      "In the air, holding makes you drop faster. Use it to meet a downhill slope at the right angle.",
-                      "A PERFECT landing adds speed, and a longer combo adds more. A bumpy landing costs speed.",
+            ("Tips", ["Short, small moves steer best. Look ahead and start turning before the road does.",
+                      "On a tilted road the ball slides toward the low side, so keep steering against it.",
+                      "In the air you can still steer a little: use it to line up a PERFECT landing.",
+                      "A PERFECT landing adds speed, and a longer combo adds more. Landing near the edge costs speed.",
                       "Sound effects are short tones; switch them off with the Sound button under the game."], "ul"),
         ],
         "about": "About this version",
-        "about_body": ["This is a browser take on our Android game Hilltop Roll, seen from behind the ball like the app: heavy-and-light "
-                       "rolling, jumps over the gaps, PERFECT landings and steering through zigzags, tilted roads and forks. "
+        "about_body": ["This is a browser take on our Android game Hilltop Roll, seen from behind the ball like the app. Here the ball "
+                       "rolls and jumps on its own and you only steer it, so the game plays well with a mouse, the keyboard or one finger. "
                        "Your best distance is saved in this browser only.",
-                       "The Android app is the full game, with music and its own worlds."],
+                       "The Android app is the full game: you also hold to roll heavy and let go to fly, with music and its own worlds."],
         "app_link": "About the Android app",
     },
     "ko": {
         "title": "Hilltop Roll",
         "app": "hilltop-roll",
-        "lead": "하늘 위 끝없는 길을 굴러가요. 누르면 무겁게 내려가고, 떼면 언덕 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종해 나가세요.",
-        "description": "브라우저에서 무료로 즐기는 Hilltop Roll: 공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 누르면 무거워져 "
-                       "언덕을 빠르게 내려가고, 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고 경사를 따라 착지해 "
-                       "PERFECT 가속과 콤보를 쌓아 보세요.",
+        "lead": "하늘 위 끝없는 길을 굴러가는 공을 조종하세요. 지그재그 길, 기울어진 길, 갈림길을 지나 길 한가운데에 착지하면 PERFECT 가속!",
+        "description": "브라우저에서 무료로 즐기는 Hilltop Roll: 공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 지그재그 길, "
+                       "기울어진 길, 갈림길을 조종하고, 점프대로 낭떠러지를 건너 길 한가운데에 착지해 PERFECT 가속과 콤보를 쌓아 보세요.",
         "noscript": "이 게임은 자바스크립트가 필요해요.",
         "sections": [
-            ("하는 방법", ["시작하기를 누르세요. 카메라가 공 뒤를 따라가며 길을 보여 줘요.",
-                       "화면이나 버튼, 스페이스 키를 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가요. 언덕 꼭대기에 가까워지면 손을 떼세요. "
-                       "공이 가벼워져 꼭대기에서 날아올라요.",
-                       "길 위에 남도록 조종하세요. 화면을 누른 채로 옆으로 드래그하거나 방향키(또는 A, D)를 쓰면 돼요.",
+            ("하는 방법", ["시작하기를 누르거나 게임 화면을 누르세요. 공이 저절로 굴러가고, 카메라가 공 뒤를 따라가요.",
+                       "길 위에 남도록 조종하세요. 게임 화면을 옆으로 드래그하거나 방향키(또는 A, D)를 쓰면 돼요.",
                        "길은 지그재그로 휘고, 한쪽으로 기울고, 구멍을 사이에 두고 갈라져요. 길을 따라가고, 기울어진 반대쪽으로 버티고, "
                        "갈림길에서는 한쪽 길을 고르세요.",
-                       "낭떠러지 앞에는 끝이 빨간 점프대가 있어요. 내려가면서 속도를 모아 건너가세요. 경사를 따라 착지하면 PERFECT 가속을 받아요.",
+                       "공은 언덕 꼭대기에서 저절로 날아오르고, 끝이 빨간 점프대는 공을 낭떠러지 건너편으로 던져 줘요. 내려오기 전에 길에 맞춰 두세요.",
+                       "길 한가운데(갈림길에서는 고른 길의 가운데)에 착지하면 PERFECT 가속을 받아요. 연속으로 성공하면 콤보가 쌓여요.",
                        "몇 초마다 길이 빨라져요. 길 밖으로 굴러떨어지거나 낭떠러지에 빠지면 게임이 끝나요."], "ol"),
-            ("요령", ["내리막에서는 누르고, 오르막에서는 떼세요. 이 리듬이 핵심이에요.",
-                     "짧고 작게 움직여야 잘 조종돼요. 기울어진 길에서는 공이 낮은 쪽으로 미끄러지니 반대쪽으로 계속 버티세요.",
-                     "공중에서 누르면 더 빨리 떨어져요. 내리막 경사에 맞춰 착지할 때 써 보세요.",
-                     "PERFECT 착지는 속도를 올려 주고, 콤보가 길수록 더 빨라져요. 덜컹 착지하면 속도가 줄어요.",
+            ("요령", ["짧고 작게 움직여야 잘 조종돼요. 앞을 보고 길이 꺾이기 전에 미리 움직이세요.",
+                     "기울어진 길에서는 공이 낮은 쪽으로 미끄러지니 반대쪽으로 계속 버티세요.",
+                     "공중에서도 조금은 조종할 수 있어요. PERFECT 착지를 노려 보세요.",
+                     "PERFECT 착지는 속도를 올려 주고, 콤보가 길수록 더 빨라져요. 가장자리에 착지하면 속도가 줄어요.",
                      "효과음은 짧은 소리예요. 게임 아래 소리 버튼으로 끌 수 있어요."], "ul"),
         ],
         "about": "이 버전에 대해",
-        "about_body": ["Android 게임 Hilltop Roll을 앱처럼 공 뒤에서 보는 시점으로 옮긴 브라우저 버전이에요. 무겁게·가볍게 굴리기, "
-                       "낭떠러지 점프, PERFECT 착지, 지그재그 길·기울어진 길·갈림길 조종을 즐길 수 있어요. 최고 기록은 이 브라우저에만 저장돼요.",
-                       "Android 앱은 음악과 앱만의 월드가 있는 완전한 게임이에요."],
+        "about_body": ["Android 게임 Hilltop Roll을 앱처럼 공 뒤에서 보는 시점으로 옮긴 브라우저 버전이에요. 여기서는 공이 저절로 구르고 "
+                       "날아올라서 조종만 하면 돼요. 그래서 마우스, 키보드, 손가락 하나로 편하게 할 수 있어요. 최고 기록은 이 브라우저에만 저장돼요.",
+                       "Android 앱은 누르면 무겁게, 떼면 날아오르는 조작까지 있고 음악과 앱만의 월드가 있는 완전한 게임이에요."],
         "app_link": "Android 앱 소개 보기",
     },
 }
