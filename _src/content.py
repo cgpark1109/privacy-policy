@@ -1,7 +1,8 @@
 # Site content in English and Korean. Edit here, then run: python _src/build.py
 # To add a game: add an entry to GAMES (and its screenshots to screenshots.json).
 # A game with a browser version sets "web" to its path (/play/<slug>/, filled by _src/sync_webapps.py);
-# it is then listed on the /play/ page.
+# it is then listed on the /play/ page. The browser versions of Korean Word Quiz, Learn Korean – Hangul and
+# World History Quiz were taken off this site on 2026-11-09 (play/<slug>/ now only redirects to the game page).
 
 STUDIO = {
     "name": "ggook's studio",
@@ -52,10 +53,10 @@ UI = {
         "play_lead": "Play some of our games right in your web browser. No install needed.",
         "play_now": "Play now",
         "play_get_app": "Get the app",
-        "play_note": "Browser progress is saved on this device only. On your phone, the Android app is the easiest way to play.",
+        "play_note": "Your progress and best scores are saved in this browser only.",
         "play_intro": [
             "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
-            "Three of them are browser versions of our learning apps, for Korean vocabulary, the Korean alphabet and world history. The other three are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, and History Timeline asks you to put world history events in order.",
+            "All three are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, and History Timeline asks you to put world history events in order, with a short reading for every event.",
         ],
         "play_reference": "Reference pages",
         "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters, and the whole history timeline.",
@@ -63,13 +64,11 @@ UI = {
             ("Do I need to install anything?",
              "No. The games run in your web browser on a phone, a tablet or a computer. There's nothing to download and no sign-up."),
             ("Is my progress saved?",
-             "Yes, in your browser on this device. It isn't sent to us, so it doesn't carry over to another browser, another device or our Android apps. Clearing this site's data in your browser deletes it."),
+             "Yes, in your browser on this device. It isn't sent to us, so it doesn't carry over to another browser or another device. Clearing this site's data in your browser deletes it."),
             ("Can I play with a keyboard?",
              "Yes. On a computer, most of the games let you choose an answer with the number keys 1 to 4 and continue with Enter."),
-            ("Should I use the browser version or the app?",
-             "The browser versions are the quickest way to try a game. On a phone, the Android apps are easier to use and keep your progress inside the app."),
         ],
-        "play_teaser": "Try some of our learning games right in your web browser.",
+        "play_teaser": "Play quiz and history games right in your web browser.",
         "play_teaser_cta": "Browser games",
         "calc_teaser": "계산만물상: free calculators (in Korean) for take-home pay, severance, loans, units and dates.",
         "calc_teaser_cta": "Open calculators",
@@ -121,7 +120,7 @@ UI = {
         "home_points": [
             ("games", "Games", "{games} games and learning apps, from one-finger arcade and puzzle games to Korean and world history quizzes, all free on Google Play."),
             ("guides", "Learn Hangul", "{guides} step-by-step guides to reading and speaking Korean, from the alphabet to greetings, numbers and polite speech, with audio for every example."),
-            ("web", "Play in your browser", "{web} games you can play right here without installing anything, including Flag Quiz and Capital Quiz."),
+            ("web", "Play in your browser", "{web} games you can play right here without installing anything: Flag Quiz, Capital Quiz and History Timeline."),
         ],
         "home_guides_title": "Latest Hangul guides",
         "home_guides_all": "All guides",
@@ -161,10 +160,10 @@ UI = {
         "play_lead": "일부 게임은 설치 없이 웹 브라우저에서 바로 즐길 수 있어요.",
         "play_now": "바로 하기",
         "play_get_app": "앱 받기",
-        "play_note": "브라우저 기록은 이 기기에만 저장돼요. 휴대폰에서는 Android 앱으로 더 편하게 즐길 수 있어요.",
+        "play_note": "진행 상황과 최고 기록은 이 브라우저에만 저장돼요.",
         "play_intro": [
             "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
-            "세 게임은 한국어 단어, 한글, 세계사를 공부하는 학습 앱의 브라우저 버전이고, 나머지 세 게임은 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임입니다.",
+            "세 게임 모두 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓으며 사건마다 읽을거리로 이어지는 게임입니다.",
         ],
         "play_reference": "참고 페이지",
         "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아보거나, 연표 전체를 볼 수 있어요.",
@@ -172,13 +171,11 @@ UI = {
             ("설치해야 하나요?",
              "아니요. 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 내려받을 것도, 가입할 것도 없습니다."),
             ("기록이 저장되나요?",
-             "네, 이 기기의 브라우저에 저장됩니다. 저희에게 전송되지 않기 때문에 다른 브라우저나 다른 기기, Android 앱으로는 이어지지 않습니다. 브라우저에서 이 사이트의 데이터를 지우면 기록도 삭제됩니다."),
+             "네, 이 기기의 브라우저에 저장됩니다. 저희에게 전송되지 않기 때문에 다른 브라우저나 다른 기기로는 이어지지 않습니다. 브라우저에서 이 사이트의 데이터를 지우면 기록도 삭제됩니다."),
             ("키보드로 할 수 있나요?",
              "네. 컴퓨터에서는 대부분의 게임에서 숫자 키 1~4로 답을 고르고 Enter 키로 넘어갈 수 있습니다."),
-            ("브라우저 버전과 앱 중 무엇이 좋나요?",
-             "브라우저 버전은 게임을 바로 해 보기에 가장 빠른 방법입니다. 휴대폰에서는 Android 앱이 더 편하고, 기록도 앱 안에 저장됩니다."),
         ],
-        "play_teaser": "일부 학습 게임은 웹 브라우저에서 바로 해볼 수 있어요.",
+        "play_teaser": "퀴즈와 역사 게임을 웹 브라우저에서 바로 해볼 수 있어요.",
         "play_teaser_cta": "웹에서 하기",
         "calc_teaser": "계산만물상: 연봉 실수령액, 퇴직금, 대출 이자, 단위 변환, 날짜 계산을 무료로 할 수 있어요.",
         "calc_teaser_cta": "계산기 열기",
@@ -235,7 +232,7 @@ UI = {
             ("games", "게임", "손가락 하나로 즐기는 아케이드·퍼즐 게임부터 한국어·세계사 퀴즈까지, Google Play에서 무료로 받을 수 있는 게임과 학습 앱 {games}개가 있습니다."),
             ("guides", "한글 가이드", "한글 읽기부터 인사말, 숫자, 존댓말까지 한국어를 배우는 외국인을 위한 영어 가이드 {guides}편이 있습니다. 모든 예시를 소리로 들을 수 있으니, 한국어를 배우는 친구에게 소개해 주세요."),
             ("history", "세계사 읽을거리", "로마 제국의 멸망처럼 세계사의 흐름을 바꾼 순간을 차근차근 풀어 쓴 한국어 글 {history}편이 있습니다."),
-            ("web", "브라우저 게임", "국기 퀴즈, 수도 퀴즈처럼 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
+            ("web", "브라우저 게임", "국기 퀴즈, 수도 퀴즈, 연표 맞추기까지 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
         ],
         "home_guides_title": "최신 한글 가이드 (영어)",
         "home_guides_all": "전체 가이드",
@@ -374,7 +371,6 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/AmFiq2sLfUjl2qCMfJov8JXxs0sVrfp2mDCH-PllkmFIoH0gSvHuRHL6SX52uEqNTj6s-yC4Mr389z8nIQZleg",
         "shots_key": "hangulchallenge",
-        "web": "/play/korean-word-quiz/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "Korean Word Quiz",
@@ -405,7 +401,6 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/TuC7Vxs38vg6m7UVCqVxTrSj5w-AEeXTS-VIPdR9PrC9Py9jXItkD1TuryYZpEqQ_9_8N7nBoaygpu4UJRs-XA",
         "shots_key": "learnkorean",
-        "web": "/play/learn-korean-hangul/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "Learn Korean – Hangul",
@@ -434,7 +429,6 @@ GAMES = [
         "new": False,
         "icon": "https://play-lh.googleusercontent.com/ophYn6TYAePAphxGpziA5mKIXHBm1BxTsOXb9x1LHwlCF0EHNDU3teC9-OBKPkeUQSYQ0w6ARZUpSvMmyjtuelk",
         "shots_key": "historychallenge",
-        "web": "/play/world-history-quiz/",  # browser version, copied in by sync_webapps.py
         "youtube": None,
         "en": {
             "name": "World History Quiz",
@@ -479,7 +473,7 @@ WEB_GAMES = [
     {
         "slug": "history-timeline",
         "icon": "/play/history-timeline/apple-touch-icon.png",
-        "pages": ["all-events.html"],
+        "site_page": True,  # built as site pages in both languages by build_timeline() in build.py
         "en": {"name": "History Timeline", "short": "Put world history in order, from the pyramids to 2002, one event card at a time."},
         "ko": {"name": "연표 맞추기", "short": "피라미드부터 2002년까지, 세계사 사건 카드를 순서대로 연표에 놓아 보세요."},
     },
@@ -1983,8 +1977,6 @@ GUIDES = {
                  "When you answer it correctly. If you've missed the word before, you need to get it right twice in a row."),
                 ("Can I reset my progress?",
                  "Yes. In Settings you can reset your wrong words, your learned words or all of your progress."),
-                ("Is there a browser version?",
-                 "Yes. Use the \"Play in your browser\" button above. Progress in the browser is saved in that browser only and is separate from the app."),
             ],
         },
         "ko": {
@@ -2011,8 +2003,6 @@ GUIDES = {
                  "맞히면 학습한 단어가 됩니다. 전에 틀린 적이 있는 단어는 두 번 연속 맞혀야 합니다."),
                 ("기록을 초기화할 수 있나요?",
                  "네. 설정에서 오답, 학습한 단어, 전체 기록을 각각 초기화할 수 있습니다."),
-                ("브라우저 버전도 있나요?",
-                 "네. 위의 \"브라우저에서 하기\" 버튼을 누르세요. 브라우저 기록은 그 브라우저에만 저장되며 앱과는 따로 관리됩니다."),
             ],
         },
     },
@@ -2156,5 +2146,6 @@ PLAY_DETAILS = {
 PLAY_REFERENCE = [
     {"href": "/play/flag-quiz/all-flags.html", "en": "All flags of the world", "ko": "세계 국기 전체 보기"},
     {"href": "/play/capital-quiz/all-capitals.html", "en": "World capitals", "ko": "세계 수도 전체 보기"},
-    {"href": "/play/history-timeline/all-events.html", "en": "World history timeline: all events", "ko": "세계사 연표: 전체 사건 보기"},
+    {"href": "/play/history-timeline/events/", "href_ko": "/ko/play/history-timeline/events/",
+     "en": "World history timeline: all events", "ko": "세계사 연표: 전체 사건 보기"},
 ]
