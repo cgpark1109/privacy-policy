@@ -42,7 +42,7 @@ main { flex: 1; padding-bottom: 48px; }
 .menu-toggle { display: none; background: none; border: 0; color: #fff; padding: 8px; cursor: pointer; border-radius: 10px; }
 .menu-toggle svg { width: 24px; height: 24px; display: block; }
 
-@media (max-width: 720px) {
+@media (max-width: 920px) {  /* the full menu needs about 900px */
   .menu-toggle { display: block; }
   .nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; align-items: stretch;
     padding: 8px 16px 16px; background: rgba(110, 145, 214, 0.97); }

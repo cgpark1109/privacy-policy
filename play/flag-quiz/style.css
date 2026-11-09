@@ -82,7 +82,7 @@ a { color: inherit; }
 html[lang="en"] .nav .ko-only { display: none; }
 .menu-toggle { display: none; color: #fff; padding: 8px; border-radius: 10px; }
 .menu-toggle svg { width: 24px; height: 24px; display: block; }
-@media (max-width: 720px) {
+@media (max-width: 920px) {  /* the full menu needs about 900px */
   .menu-toggle { display: block; }
   .nav { display: none; position: absolute; top: 60px; left: 0; right: 0; flex-direction: column; align-items: stretch;
     padding: 8px 16px 16px; background: rgba(110, 145, 214, 0.97); }
