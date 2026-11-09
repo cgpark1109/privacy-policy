@@ -199,14 +199,15 @@ const LINKS = { calc: 'https://calc.kysystemstudio.com/', email: 'admin@kysystem
 const ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 function header() {
   const link = (href, ko, key, label, cls = '') =>
-    `<a${cls ? ` class="${cls}"` : ''} href="${href}"${ko ? ` data-href-ko="${ko}"` : ''} data-t="${key}">${label}</a>`;
+    `<a${cls ? ` class="${cls}"` : ''}${cls === 'current' ? ' aria-current="page"' : ''} href="${href}"${ko ? ` data-href-ko="${ko}"` : ''} data-t="${key}">${label}</a>`;
   return `<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/" data-href-ko="/ko/"><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
     <button class="menu-toggle" aria-label="Menu" data-t-attr="aria-label:menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">${ICON_MENU}</button>
     <nav class="nav" id="nav">${[
-      link('/#games', '/ko/#games', 'nav_games', 'Games'),
+      link('/#games', '/ko/#games', 'nav_games', 'Apps'),
+      link('/play/', '/ko/play/', 'nav_play', 'Browser games', 'current'),
       link('/learn/', '', 'nav_learn', 'Learn Hangul'),
       link('/ko/history/', '', 'nav_history', '세계사', 'ko-only'),
       link(LINKS.calc, '', 'nav_calc', 'Calculators'),
@@ -239,6 +240,25 @@ function footer() {
 <div id="toast" class="toast" role="status" hidden></div>`;
 }
 
+// "More browser games": the site's other browser games, linked in both languages.
+const BROWSER_GAMES = [
+  { slug: 'history-timeline', en: 'History Timeline', ko: '연표 맞추기', ko_href: '/ko/play/history-timeline/',
+    icon: '/play/history-timeline/apple-touch-icon.png',
+    desc_en: 'Put world history events in order, from the pyramids to 2002.', desc_ko: '피라미드부터 2002년까지, 세계사 사건을 순서대로 놓아 보세요.' },
+  { slug: 'flag-quiz', en: 'Flag Quiz', ko: '국기 퀴즈', icon: '/play/flag-quiz/apple-touch-icon.png',
+    desc_en: 'Guess the flags of all 195 countries.', desc_ko: '세계 195개국 국기를 맞혀 보세요.' },
+  { slug: 'capital-quiz', en: 'Capital Quiz', ko: '수도 퀴즈', icon: '/play/capital-quiz/apple-touch-icon.png',
+    desc_en: 'Match 193 countries with their capital cities.', desc_ko: '193개국과 수도를 짝지어 보세요.' },
+];
+function moreGames(game) {
+  const items = BROWSER_GAMES.filter((g) => g.slug !== game.slug).map((g) =>
+    `<li><a href="/play/${g.slug}/"${g.ko_href ? ` data-href-ko="${g.ko_href}"` : ''}><img src="${g.icon}" alt="" width="56" height="56" loading="lazy">` +
+    `<span><b><span class="lang-en">${esc(g.en)}</span><span class="lang-ko">${esc(g.ko)}</span></b>` +
+    `<small><span class="lang-en">${esc(g.desc_en)}</span><span class="lang-ko">${esc(g.desc_ko)}</span></small></span></a></li>`).join('');
+  return `  <div class="wrap"><section class="card more-games"><div class="more-head"><h2 data-t="more_games">More browser games</h2>` +
+    `<a href="/play/" data-href-ko="/ko/play/" data-t="all_games">All browser games</a></div><ul>${items}</ul></section></div>`;
+}
+
 function indexHtml(game, en, v) {
   return `${head(game, en, v, 'index')}
 <body data-page="game">
@@ -258,6 +278,7 @@ ${header()}
     </div></div>
   </div>
   <div class="wrap"><section id="about" class="card about">${en.about_html}</section></div>
+${moreGames(game)}
 </main>
 ${footer()}
 </body>

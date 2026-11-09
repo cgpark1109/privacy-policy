@@ -214,7 +214,8 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
     card = "summary_large_image" if "/assets/og-" in image or image.endswith("/og-image.png") else "summary"  # wide images
     feed = (f'<link rel="alternate" type="application/rss+xml" title="{e(t["feed_learn"] if lang == "en" else t["feed_history"])}" '
             f'href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">')
-    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("learn", t["nav_learn"], "/learn/"),
+    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("play", t["nav_play"], url(lang, "play/")),
+                 ("learn", t["nav_learn"], "/learn/"),
                  *([("history", t["nav_history"], url(lang, "history/"))] if lang == "ko" else []),
                  ("calc", t["nav_calc"], STUDIO["calc"]),
                  ("news", t["nav_news"], url(lang, "news/")),
@@ -319,13 +320,8 @@ def build_home(lang):
     t = UI[lang]
     cards = "\n".join(game_card(lang, g) for g in GAMES)
     news = "\n".join(news_item(lang, n) for n in published_news()[:2])
-    # Teaser cards under the game list: browser games (if any) and the 계산만물상 calculators site.
+    # Teaser card under the game list: the 계산만물상 calculators site.
     teasers = []
-    if any(g.get("web") for g in GAMES):
-        teasers.append(f"""<div class="card play-teaser">
-  <p>{ICON_WEB} {e(t['play_teaser'])}</p>
-  <a class="btn light" href="{url(lang, 'play/')}">{e(t['play_teaser_cta'])} →</a>
-</div>""")
     teasers.append(f"""<div class="card play-teaser">
   <p>{ICON_CALC} {e(t['calc_teaser'])}</p>
   <a class="btn light" href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_teaser_cta'])} →</a>
@@ -363,6 +359,12 @@ def build_home(lang):
   </div>
 </section>
 {intro}
+<section class="section container" id="play">
+  <div class="section-head"><h2>{e(t['nav_play'])}</h2><a href="{url(lang, 'play/')}">{e(t['play_all'])} →</a></div>
+  <div class="games">
+{web_game_cards(lang, details=False)}
+  </div>
+</section>
 <section class="section container">
   <div class="section-head"><h2>{e(t['home_guides_title'])}</h2><a href="/learn/" hreflang="en">{e(t['home_guides_all'])} →</a></div>
   <div class="guide-list">
@@ -460,16 +462,18 @@ def build_game(lang, g):
          og_image=f"{g['icon']}=s512")
 
 
-def build_play(lang):
-    """Browser versions, kept on their own page so game pages lead with the app."""
+def web_game_cards(lang, exclude=None, details=True):
+    """Cards for the browser games (the /play/ page, the home page and "more games" under each game)."""
     t = UI[lang]
 
     def detail(g):
+        if not details:
+            return ""
         d = PLAY_DETAILS.get(g["slug"], {}).get(lang)
         return f'<p class="detail">{e(d)}</p>' if d else ""
 
     cards = ""
-    for g in (g for g in GAMES if g.get("web")):
+    for g in (g for g in GAMES if g.get("web")):  # app games with a browser version (none at the moment)
         c = g[lang]
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}=s192" alt="" width="76" height="76" loading="lazy">
@@ -478,7 +482,7 @@ def build_play(lang):
   <a class="text-link" href="{e(play_url(g, "website", lang))}" target="_blank" rel="noopener">{ICON_PLAY} {e(t['play_get_app'])}</a></div></div>
 </div>
 """
-    for g in WEB_GAMES:
+    for g in (w for w in WEB_GAMES if w["slug"] != exclude):
         c = g[lang]
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}" alt="" width="76" height="76" loading="lazy">
@@ -486,6 +490,13 @@ def build_play(lang):
   <div class="play-actions"><a class="btn" href="{web_href(g, lang)}">{ICON_WEB} {e(t['play_now'])}</a></div></div>
 </div>
 """
+    return cards
+
+
+def build_play(lang):
+    """The browser games."""
+    t = UI[lang]
+    cards = web_game_cards(lang)
     intro = "".join(f"<p>{e(p)}</p>" for p in t["play_intro"])
     refs = "".join(f'<li><a href="{r.get("href_" + lang, r["href"])}">{e(r[lang])}</a></li>' for r in PLAY_REFERENCE)
     faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in t["play_faq"])
@@ -496,7 +507,7 @@ def build_play(lang):
 <p class="play-note">{e(t['play_note'])}</p></section>
 <section class="section container"><div class="card prose guide"><h2>{e(t['play_reference'])}</h2><p>{e(t['play_reference_lead'])}</p><ul>{refs}</ul></div></section>
 <section class="section container"><div class="card faq"><h2>{e(t['faq_title'])}</h2>{faq}</div></section>"""
-    page(lang, "play/", t["play_title"], t["play_lead"], body)
+    page(lang, "play/", t["play_title"], t["play_lead"], body, active="play")
 
 
 def build_news(lang):
@@ -759,12 +770,15 @@ def build_timeline():
               "applicationCategory": "GameApplication", "operatingSystem": "Any", "inLanguage": lang,
               "isAccessibleForFree": True, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
               "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
+        more = (f'<section class="section container tl-wrap"><div class="section-head"><h2>{e(UI[lang]["play_more"])}</h2>'
+                f'<a href="{url(lang, "play/")}">{e(UI[lang]["play_all"])} →</a></div>'
+                f'<div class="games">{web_game_cards(lang, exclude="history-timeline", details=False)}</div></section>')
         page(lang, "play/history-timeline/", name, tl.text(lang, "description"),
-             tl.game_body(lang, url(lang, "play/"), events), head_extra=tl.head_css + tl.head_js + ld_json(ld),
-             og_image="/play/history-timeline/og-image.png")
+             tl.game_body(lang, url(lang, "play/"), events) + more, active="play",
+             head_extra=tl.head_css + tl.head_js + ld_json(ld), og_image="/play/history-timeline/og-image.png")
         page(lang, "play/history-timeline/events/", tl.text(lang, "list_h1") + " – " + name, tl.text(lang, "list_desc"),
              tl.list_body(lang, url(lang, "play/"), game, ERAS, era_of_year, url("ko", "history/")),
-             head_extra=tl.head_css, og_image="/play/history-timeline/og-image.png")
+             active="play", head_extra=tl.head_css, og_image="/play/history-timeline/og-image.png")
         urls += [game, events]
     return urls
 

@@ -16,7 +16,10 @@ const SITE = 'https://kysystemstudio.com';
 // The site header and footer (the same as the main site's) link to these pages, in English and Korean.
 const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn/', '/news/', '/about/', '/support/', '/terms/',
   '/ko/', '/ko/play/', '/ko/privacy/', '/ko/#games', '/ko/history/', '/ko/news/', '/ko/about/', '/ko/support/', '/ko/terms/',
-  '/assets/logo-256.png']);
+  '/assets/logo-256.png',
+  // "More browser games" links to the other games and their icons
+  ...['history-timeline', 'flag-quiz', 'capital-quiz'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
+  '/ko/play/history-timeline/']);
 const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);
 const ADSENSE_TAG = '<meta name="google-adsense-account" content="ca-pub-4148553154486992">';

@@ -77,7 +77,7 @@ a { color: inherit; }
 .brand img { width: 34px; height: 34px; border-radius: 50%; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a, .nav .lang { color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 7px 11px; border-radius: 999px; white-space: nowrap; }
-.nav a:hover, .nav .lang:hover { background: rgba(255, 255, 255, 0.25); }
+.nav a:hover, .nav .lang:hover, .nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.25); }
 .nav .lang { border: 1px solid rgba(255, 255, 255, 0.55); margin-left: 6px; }
 html[lang="en"] .nav .ko-only { display: none; }
 .menu-toggle { display: none; color: #fff; padding: 8px; border-radius: 10px; }
@@ -403,3 +403,15 @@ html[lang="ko"] div.lang-ko, html[lang="en"] div.lang-en, html[lang="ko"] p.lang
 .level.current { border-color: var(--coral); }
 .bar i { background: var(--coral); }
 .hero h2 { font-size: 19px; }
+
+/* "More browser games" under the game */
+.more-games { margin-top: 14px; }
+.more-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.more-head h2 { font-size: 17px; }
+.more-head a { font-size: 14px; font-weight: 600; color: var(--navy); }
+.more-games ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.more-games li a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: var(--radius-sm); background: var(--surface-2); text-decoration: none; color: inherit; }
+.more-games li a:hover { background: var(--surface-3); }
+.more-games img { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; }
+.more-games b { display: block; font-size: 15px; }
+.more-games small { display: block; font-size: 13px; color: var(--muted); }

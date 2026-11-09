@@ -48,8 +48,8 @@
   var COMMON = {
     en: {
       skip: 'Skip to content', settings: 'Settings', studio: "ggook's studio", games: 'Play in your browser', privacy: 'Privacy Policy',
-      nav_games: 'Games', nav_learn: 'Learn Hangul', nav_history: '세계사', nav_calc: 'Calculators', nav_news: 'News', nav_about: 'About', nav_support: 'Support',
-      menu: 'Menu', terms: 'Terms of Service', calc_link: 'Calculators', contact: 'Contact', rights: 'All rights reserved.',
+      nav_games: 'Apps', nav_play: 'Browser games', nav_learn: 'Learn Hangul', nav_history: '세계사', nav_calc: 'Calculators', nav_news: 'News', nav_about: 'About', nav_support: 'Support',
+      more_games: 'More browser games', all_games: 'All browser games', menu: 'Menu', terms: 'Terms of Service', calc_link: 'Calculators', contact: 'Contact', rights: 'All rights reserved.',
       flag_credit: 'Flag images', lang_switch: '한국어', lang_switch_label: '한국어로 보기',
       levels: 'Levels', levels_range: 'Levels {a}–{b}', level_n: 'Level {n}', continue_level: 'Play level {n}', unlocked: 'Unlocked', completed: 'Completed', stars: 'Stars',
       perfect: 'Perfect levels', progress: 'Progress', mode: 'Quiz mode', overall: '{a} of {b} stars',
@@ -75,8 +75,8 @@
     },
     ko: {
       skip: '본문으로 건너뛰기', settings: '설정', studio: 'ggook\'s studio', games: '브라우저에서 바로 하기', privacy: '개인정보처리방침',
-      nav_games: '게임', nav_learn: '한글 가이드', nav_history: '세계사', nav_calc: '계산기', nav_news: '소식', nav_about: '소개', nav_support: '지원',
-      menu: '메뉴', terms: '이용약관', calc_link: '계산만물상', contact: '문의', rights: 'All rights reserved.',
+      nav_games: '앱', nav_play: '브라우저 게임', nav_learn: '한글 가이드', nav_history: '세계사', nav_calc: '계산기', nav_news: '소식', nav_about: '소개', nav_support: '지원',
+      more_games: '다른 브라우저 게임', all_games: '브라우저 게임 전체 보기', menu: '메뉴', terms: '이용약관', calc_link: '계산만물상', contact: '문의', rights: 'All rights reserved.',
       flag_credit: '국기 이미지', lang_switch: 'English', lang_switch_label: 'View in English',
       levels: '레벨', levels_range: '레벨 {a}–{b}', level_n: '레벨 {n}', continue_level: '레벨 {n} 플레이', unlocked: '열린 레벨', completed: '완료', stars: '별',
       perfect: '만점 레벨', progress: '진행 상황', mode: '퀴즈 모드', overall: '별 {b}개 중 {a}개',
