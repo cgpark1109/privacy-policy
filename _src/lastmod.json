@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "7b2fd429d0c34b1f85ab365de576048372c1051d"
+  "hash": "ba4d52367323edc55aadbae6d2016910e5f29468"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "1c478b7eac95900ed39bd847f7caae3f34cb0224"
+  "hash": "17cef8e0e8570b862cda55ce863dbae4842e958f"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -409,7 +409,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-09",
-  "hash": "c20d7384ecf09d83cdd1358eab5568871b147d6a"
+  "hash": "3530cbaee73d91e9f395e486b63fbe8416e10737"
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
@@ -417,11 +417,11 @@
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "2e2da96e902bc0ef1082a88d449f104322767d6f"
+  "hash": "695514920e3060492b48377c8092207084d8dda2"
  },
  "/ko/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "9cf98ddcf02d25fbb830e50fd5f9de2b17fb77fb"
+  "hash": "af1f9916a3b63433eaa3a781d6355613764f4cc6"
  },
  "/ko/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
@@ -429,7 +429,7 @@
  },
  "/ko/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "4956b808eb5a771b076d8e00bc9bd561f8f96127"
+  "hash": "92056fee031b548414707128b9a76d21e80d870b"
  },
  "/ko/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
@@ -437,11 +437,11 @@
  },
  "/ko/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "0b1273e37ff996fd512ba1353fa22ee6b8727bd3"
+  "hash": "8a03fe0252befd30af3c2ef37aaf116489b20226"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "e359696a99a954701faab750c567260dfce28d0c"
+  "hash": "f4768aea42d21a72f06de9c489d3cef8a9abd88b"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -449,15 +449,15 @@
  },
  "/ko/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "8a5ce2151a3faf8ae20921342e137bb595a36e3c"
+  "hash": "c2c54ee1f4a2ad7c8ce4805cd07da71add8c8939"
  },
  "/ko/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "64240180114c23a4a25fa8c4f5c27e1c477ed2af"
+  "hash": "2c0bff38b4df029af9ae12f52239155e83c6da47"
  },
  "/ko/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "f5afe28d2f9b7ae6dbd7a62ad579aa916053e784"
+  "hash": "b003eb4a5f65900007ba92d841edb7948a846d45"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
@@ -529,7 +529,7 @@
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "906cf738cedd917ed8cc571b15b37ad11bc17323"
+  "hash": "06d704e124649b2cbafc440ff852a81037554003"
  },
  "/news/archive/": {
   "date": "2026-11-09",
@@ -537,11 +537,11 @@
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "0962390135a6789e9d3cfc6849b513883ec6f67a"
+  "hash": "e480dd5cc96df0f38ef07255e73afdb3ef106d31"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "b2ace96a143386ba778f9139c86bb86ded815a96"
+  "hash": "d54e1e068cbe6bbf281ea7d908c06c6f1f47431e"
  },
  "/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
@@ -549,7 +549,7 @@
  },
  "/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "7363868e68cce0c7c76e86831b7c5e3411b44173"
+  "hash": "dd5ae9e2f35e2972108f5b11ce310ccefc1758c7"
  },
  "/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
@@ -557,15 +557,15 @@
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "1f37bea981807b394f0ca8ef6543706b95de9981"
+  "hash": "3597bd493782ea13425dfc347cdd39ce15cbab71"
  },
  "/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "b95da8ce251a6a634c6acfe9a5e9553dec5a4d31"
+  "hash": "73f7ecd7ddf1cf9bfe77c4b5e8b0090a7adf2e2e"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "edc608c17428616105f0911b909c476b4e842012"
+  "hash": "633d5aa5199739f390e4dd07dbb3f9b833b33b42"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -573,15 +573,15 @@
  },
  "/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "3df8b6dac47edc937287cdc38443a16c97f1fb5a"
+  "hash": "785c9dbe1c4461178175c15fd3fe2ffe9e1f65ba"
  },
  "/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "830764bd63bda76b156b611a513bb4f84ccbbf95"
+  "hash": "20885970bc9bf7914e04f75cb7f6eb6a8b8ff42d"
  },
  "/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "4b74b811892ea15e7b3ccb8240b959070276fc1a"
+  "hash": "2ca0971c36e3f3d7cfd004a80e9dd74874009dfb"
  },
  "/privacy.html": {
   "date": "2026-11-09",

@@ -1,7 +1,6 @@
 /* Hilltop Roll (browser version): a ball rolls down an endless floating road, seen from behind.
-   Hold to roll heavy down the hills, let go to fly off the tops, land along the slope for a PERFECT boost,
-   and steer (drag or arrow keys) through zigzag roads, tilted roads and forks. A take on our Android game,
-   not a copy of it.
+   The ball rolls and jumps on its own; you steer it (drag or arrow keys) through zigzag roads, tilted roads
+   and forks, and land in the middle of the road for a PERFECT boost. A take on our Android game, not a copy of it.
    Source: _src/hilltop/app.js, copied to play/hilltop-roll/ by build.py. The page is an ordinary site page
    (/play/hilltop-roll/ and /ko/play/hilltop-roll/); this script draws the game on a canvas in #hr-app.
    World units are meters and seconds: s runs forward along the road, x is sideways, y is up. */
@@ -11,27 +10,27 @@
   var LANG = document.documentElement.lang === 'ko' ? 'ko' : 'en';
   var T = {
     en: {
-      start: 'Start', again: 'Roll again', hold: 'Hold', release: 'Let go',
-      tip: 'Hold to roll heavy, let go to fly. Drag or use ← → to steer.',
+      start: 'Start', again: 'Roll again', rolling: 'Rolling…',
+      tip: 'Drag sideways or use ← → to steer. Stay on the road!',
       distance: 'Distance', best: 'Best', combo: 'Combo',
       perfect: 'PERFECT', good: 'Nice', rough: 'Bumpy',
       over_gap: 'You fell into a gap', over_edge: 'You rolled off the road',
       new_best: 'New best!', perfects: '{n} perfect landings', max_combo: 'Best combo: {n}',
-      canvas: 'Hilltop Roll game, seen from behind the ball. Hold the screen, the button or the Space key to roll heavy; let go to fly. Drag sideways or use the arrow keys to steer.',
-      keys: 'Hold Space to roll heavy, let go to fly. Steer with ← → (or A and D).',
-      touch: 'Hold the screen to roll heavy, let go to fly. Drag sideways while holding to steer.',
+      canvas: 'Hilltop Roll game, seen from behind the ball. Drag sideways on the game or use the arrow keys to steer.',
+      keys: 'Steer with ← → (or A and D), or drag sideways with the mouse. Space starts a run.',
+      touch: 'Drag sideways on the game to steer.',
       sound: 'Sound', on: 'On', off: 'Off',
     },
     ko: {
-      start: '시작하기', again: '다시 굴리기', hold: '누르는 중', release: '떼는 중',
-      tip: '누르면 무겁게, 떼면 날아올라요. 드래그나 ← →로 조종하세요.',
+      start: '시작하기', again: '다시 굴리기', rolling: '굴러가는 중…',
+      tip: '옆으로 드래그하거나 ← →로 조종하세요. 길에서 떨어지지 마세요!',
       distance: '거리', best: '최고', combo: '콤보',
       perfect: 'PERFECT', good: '좋아요', rough: '덜컹',
       over_gap: '낭떠러지에 떨어졌어요', over_edge: '길 밖으로 굴러떨어졌어요',
       new_best: '최고 기록!', perfects: 'PERFECT 착지 {n}번', max_combo: '최고 콤보: {n}',
-      canvas: 'Hilltop Roll 게임 화면. 공 뒤에서 보는 시점이에요. 화면이나 버튼, 스페이스 키를 누르고 있으면 무겁게 구르고, 떼면 날아올라요. 옆으로 드래그하거나 방향키로 조종해요.',
-      keys: '스페이스를 누르고 있으면 무겁게, 떼면 날아올라요. ← →(또는 A, D)로 조종해요.',
-      touch: '화면을 누르고 있으면 무겁게, 떼면 날아올라요. 누른 채로 옆으로 드래그하면 조종돼요.',
+      canvas: 'Hilltop Roll 게임 화면. 공 뒤에서 보는 시점이에요. 게임 화면을 옆으로 드래그하거나 방향키로 조종해요.',
+      keys: '← →(또는 A, D)나 마우스 드래그로 조종해요. 스페이스로 시작해요.',
+      touch: '게임 화면을 옆으로 드래그하면 조종돼요.',
       sound: '소리', on: '켜짐', off: '꺼짐',
     },
   }[LANG];
@@ -66,9 +65,9 @@
   }
   function more() {
     var last = segs[segs.length - 1], s = last.s1, y = last.y1, X = last.X1;
-    var difficulty = Math.min(1.8, s / 1800);  // more gaps, narrower roads and sharper turns the farther you go
-    var w = Math.max(5, 8 - 1.7 * difficulty);
-    if (s > 250 && rand() < 0.15 + 0.12 * difficulty && last.kind !== 'gap' && !last.fork) {
+    var difficulty = Math.min(1.8, s / 1500);  // more gaps, narrower roads and sharper turns the farther you go
+    var w = Math.max(5, 7.4 - 1.6 * difficulty);
+    if (s > 180 && rand() < 0.15 + 0.12 * difficulty && last.kind !== 'gap' && !last.fork) {
       // a straight downhill run-up, a ramp, the gap, and a long downhill to land on
       var low = y - rr(10, 16), rampUp = rr(5, 8);
       addSeg('hill', rr(38, 52), low, { w: w + 1 });
@@ -79,11 +78,11 @@
     }
     var len = rr(30, 55), ny = Math.max(-30, Math.min(40, y + (rand() < 0.5 ? -1 : 1) * rr(3, 8 + 5 * difficulty)));
     var r = rand(), o = { w: w, X: X };
-    if (s > 420 && r < 0.16 && !last.fork && Math.abs(last.b1) < 0.01) {
+    if (s > 300 && r < 0.16 && !last.fork && Math.abs(last.b1) < 0.01) {
       // a fork: the road widens and splits around a hole; pick a lane
-      o.w = w + 4.5; o.fork = rr(2.4, 3.2) + difficulty * 0.4; len = rr(45, 60);
+      o.w = w + 5; o.fork = rr(2.4, 3.2) + difficulty * 0.4; len = rr(45, 60);
       ny = y + rr(-4, 2);
-    } else if (s > 300 && r < 0.36) {
+    } else if (s > 200 && r < 0.36) {
       o.b = (rand() < 0.5 ? -1 : 1) * rr(0.14, 0.22 + 0.06 * difficulty);  // a tilted road
     } else if (s > 60 && r < 0.78) {
       // a zigzag: the road swings sideways, so steer to follow it
@@ -111,7 +110,7 @@
   function shape(sg, s) {
     var t = Math.max(0, Math.min(1, (s - sg.s0) / (sg.s1 - sg.s0))), e = ease(t);
     var h = 0;
-    if (sg.fork) h = sg.fork / 2 * Math.max(0, Math.min(1, t / 0.18, (1 - t) / 0.18));  // pointed at both ends, like a split in the road
+    if (sg.fork) h = sg.fork / 2 * Math.max(0, Math.min(1, t / 0.25, (1 - t) / 0.25));  // pointed at both ends, like a split in the road
     return { X: sg.X0 + (sg.X1 - sg.X0) * e, w: sg.w0 + (sg.w1 - sg.w0) * e, b: sg.b0 + (sg.b1 - sg.b0) * e, h: h };
   }
   // the road under (s, x): its height there, the slope along s and the tilt; null if there's no road under you
@@ -124,8 +123,8 @@
   }
 
   /* ---------- the ball ---------- */
-  var G = 18, HEAVY = 2.6, R = 1.2;
-  var b, holding = false, state = 'ready', time = 0, minSpeed = 12, stats, popups = [];
+  var G = 26, R = 1.2;
+  var b, state = 'ready', time = 0, minSpeed = 12, stats, popups = [];
   var steerKeys = 0, dragDX = 0;  // -1/0/1 from the arrow keys; meters dragged since the last step
   function reset() {
     resetTerrain((Date.now() & 0xffffff) + 7);
@@ -150,7 +149,7 @@
     minSpeed = Math.min(18, 10 + Math.floor(time / 10));  // the road speeds up every 10 seconds
     while (segs[segs.length - 1].s1 < b.s + 400) more();
     while (segs.length > 4 && segs[1].s1 < b.s - 80) segs.shift();
-    var g = G * (holding ? HEAVY : 1);
+    var g = G;
     steer(dt);
     if (!b.air) {
       var gr = ground(b.s, b.x);
@@ -166,6 +165,8 @@
       var curv = gr.ddy / Math.pow(1 + gr.dy * gr.dy, 1.5);
       if (!ng || (curv < 0 && b.v * b.v * -curv > g * cos)) {
         b.air = true; b.airT = 0; b.vs = b.v * cos; b.vy = b.v * Math.sin(th);
+        var here = segAt(b.s);
+        if (here && here.kind === 'ramp') overGap(here, th);
         b.s = ns; b.x = nx;
       } else {
         b.s = ns; b.x = nx; b.y = ng.y + R; b.vs = b.v * cos; b.vy = b.v * Math.sin(Math.atan(ng.dy)); b.lastY = ng.y;
@@ -183,25 +184,39 @@
     }
     b.spin += (b.air ? b.vs : b.v) * dt / R;
   }
+  // a ramp throws the ball just hard enough to reach the first third of the landing slope across the gap
+  function overGap(ramp, th) {
+    var gap = segAt(ramp.s1 + 0.01), landing = gap && gap.kind === 'gap' ? segAt(gap.s1 + 0.01) : null;
+    if (!landing || landing.kind === 'gap') return;
+    var at = gap.s1 + (landing.s1 - landing.s0) * 0.3, D = at - b.s, dh = profile(landing, at).y + R - b.y;
+    var c = Math.cos(th), den = 2 * c * c * (D * Math.tan(th) - dh);
+    if (den <= 0) return;
+    var v = Math.max(Math.hypot(b.vs, b.vy), Math.sqrt(G * D * D / den) * 1.03);  // a little extra for the air drag
+    b.vs = v * c; b.vy = v * Math.sin(th);
+  }
+  // landings are judged by where you come down: the middle of the road (or of your lane at a fork) is PERFECT
   function land(gr) {
-    var th = Math.atan(gr.dy), va = Math.atan2(b.vy, b.vs), diff = Math.abs(va - th) * 180 / Math.PI;
-    var sp = Math.hypot(b.vs, b.vy);
+    var th = Math.atan(gr.dy), va = Math.atan2(b.vy, b.vs), diff = Math.abs(va - th);
+    var sp = Math.hypot(b.vs, b.vy) * Math.cos(Math.min(diff, 1.2));
     b.air = false; b.y = gr.y + R; b.lastY = gr.y;
-    if (b.airT < 0.35) { b.v = sp * Math.cos(diff * Math.PI / 180); return; }  // a small hop, not a landing
-    if (diff < 14) {
+    if (b.airT < 0.35) { b.v = sp; return; }  // a small hop, not a landing
+    var sg = segAt(b.s), c = shape(sg, b.s), off = b.x - c.X, mid = 0, half = c.w / 2;
+    if (c.h > 0) { half = (c.w / 2 - c.h) / 2; mid = (off < 0 ? -1 : 1) * (c.h + half); }
+    var rel = Math.abs(off - mid) / half;
+    if (rel < 0.3) {
       stats.combo++; stats.perfect++; stats.maxCombo = Math.max(stats.maxCombo, stats.combo);
-      b.v = Math.min(maxSpeed(), sp * Math.cos(diff * Math.PI / 180) * 1.06 + 1.2 + Math.min(stats.combo, 8) * 0.4);
+      b.v = Math.min(maxSpeed(), sp * 1.04 + 1.2 + Math.min(stats.combo, 8) * 0.4);
       popup(T.perfect + (stats.combo > 1 ? ' ×' + stats.combo : ''), '#FF6B5B'); beep(880, 0.08);
-    } else if (diff < 32) {
-      stats.combo = 0; b.v = sp * Math.cos(diff * Math.PI / 180); popup(T.good, '#2B3155'); beep(520, 0.05);
+    } else if (rel < 0.7) {
+      stats.combo = 0; b.v = sp; popup(T.good, '#2B3155'); beep(520, 0.05);
     } else {
-      stats.combo = 0; b.v = Math.max(sp * 0.55, sp * Math.cos(diff * Math.PI / 180) * 0.85); popup(T.rough, '#6B7192'); beep(200, 0.06);
+      stats.combo = 0; b.v = Math.max(minSpeed, sp * 0.85); popup(T.rough, '#6B7192'); beep(200, 0.06);
     }
   }
   function popup(text, color) { popups = [{ text: text, color: color, t: 0 }]; }
   function over() {
     if (state !== 'play') return;
-    state = 'over'; holding = false; btn.classList.remove('down');
+    state = 'over'; btn.disabled = false;
     var sg = segAt(b.s), why = sg && sg.kind === 'gap' ? T.over_gap : T.over_edge;
     var d = Math.round(b.s), nb = d > best;
     if (nb) { best = d; save(); }
@@ -250,21 +265,17 @@
   }
 
   function start() {
-    reset(); state = 'play'; holding = false; msg.innerHTML = ''; btn.textContent = T.release; cam = null;
+    if (state === 'play') return;
+    reset(); state = 'play'; msg.innerHTML = ''; btn.textContent = T.rolling; btn.disabled = true; cam = null;
     say(T.tip);
   }
-  function press(on) {
-    if (state !== 'play') { if (on) start(); return; }
-    holding = on;
-    btn.textContent = on ? T.hold : T.release;
-    btn.classList.toggle('down', on);
-  }
+  // touching the game only steers; it starts a run when none is going
   var dragX = null;
-  btn.addEventListener('pointerdown', function (e) { e.preventDefault(); press(true); });
+  btn.addEventListener('click', start);
   canvas.addEventListener('pointerdown', function (e) {
     e.preventDefault(); dragX = e.clientX;
     try { canvas.setPointerCapture(e.pointerId); } catch (err) { /* old browser */ }
-    press(true);
+    if (state !== 'play') start();
   });
   canvas.addEventListener('pointermove', function (e) {
     if (dragX == null || state !== 'play') return;
@@ -272,24 +283,21 @@
     dragDX += (e.clientX - dragX) * 1.3 * (cam ? cam.d : BACK) / F;
     dragX = e.clientX;
   });
-  function up() { dragX = null; if (state === 'play') press(false); }
+  function up() { dragX = null; }
   window.addEventListener('pointerup', up);
   window.addEventListener('pointercancel', up);
-  btn.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.repeat) { e.preventDefault(); press(true); } });
-  btn.addEventListener('keyup', function (e) { if (e.key === 'Enter') press(false); });
   var held = {};
   function keyDir() { steerKeys = (held.r ? 1 : 0) - (held.l ? 1 : 0); }
   document.addEventListener('keydown', function (e) {
     var tg = e.target.closest ? e.target : document.body;
     if (tg.closest('input,textarea')) return;
     var k = e.key;
-    if (k === ' ' && !e.repeat && !tg.closest('a')) { e.preventDefault(); press(true); }
+    if (k === ' ' && !e.repeat && !tg.closest('a,button')) { e.preventDefault(); start(); }
     if (k === 'ArrowLeft' || k === 'a' || k === 'A') { if (state === 'play') e.preventDefault(); held.l = true; keyDir(); }
     if (k === 'ArrowRight' || k === 'd' || k === 'D') { if (state === 'play') e.preventDefault(); held.r = true; keyDir(); }
   });
   document.addEventListener('keyup', function (e) {
     var k = e.key;
-    if (k === ' ') { e.preventDefault(); if (state === 'play') press(false); }
     if (k === 'ArrowLeft' || k === 'a' || k === 'A') { held.l = false; keyDir(); }
     if (k === 'ArrowRight' || k === 'd' || k === 'D') { held.r = false; keyDir(); }
   });
@@ -344,14 +352,14 @@
     });
   }
   function drawBall(gy) {
-    var c = P(b.s, b.x, b.y), k = F / Math.max(0.3, b.s - cam.s), r = R * k * (holding ? 1.05 : 1);
+    var c = P(b.s, b.x, b.y), k = F / Math.max(0.3, b.s - cam.s), r = R * k;
     if (gy && !b.under) {  // shadow on the road, smaller the higher you are
       var sh = P(b.s, b.x, gy.y), hgt = Math.max(0, b.y - R - gy.y), sc = Math.max(0.3, 1 - hgt / 14);
       ctx.fillStyle = 'rgba(43,49,85,' + (0.22 * sc).toFixed(3) + ')';
       ctx.beginPath(); ctx.ellipse(sh[0], sh[1], r * sc * 1.05, r * sc * 0.32, 0, 0, 7); ctx.fill();
     }
     var g2 = ctx.createRadialGradient(c[0] - r * 0.35, c[1] - r * 0.4, r * 0.1, c[0], c[1], r);
-    g2.addColorStop(0, holding ? '#5A6290' : '#FFFFFF'); g2.addColorStop(1, holding ? '#1E2342' : '#C9CEE6');
+    g2.addColorStop(0, '#FFFFFF'); g2.addColorStop(1, '#C9CEE6');
     ctx.fillStyle = g2; ctx.beginPath(); ctx.arc(c[0], c[1], r, 0, 7); ctx.fill();
     // a coral band rolling away from the camera shows the spin
     var ph = b.spin % (Math.PI * 2), by = Math.cos(ph);
@@ -456,6 +464,6 @@
 
   // for automated tests only
   window.__hilltop = { start: start, physics: physics, ball: function () { return b; }, ground: ground, segAt: segAt, shape: shape,
-    profile: profile, snapCam: function () { cam = null; }, setHold: function (h) { holding = h; }, setSteer: function (d) { steerKeys = d; },
+    profile: profile, snapCam: function () { cam = null; }, setSteer: function (d) { steerKeys = d; },
     state: function () { return state; }, stats: function () { return stats; } };
 })();

@@ -68,7 +68,7 @@ UI = {
         "play_note": "Your progress and best scores are saved in this browser only.",
         "play_intro": [
             "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
-            "Pass or Splash, Updraft and Hilltop Roll are browser versions of our arcade games: puzzle walls that rush toward you, a paper plane that rides the updrafts, and a ball that rolls heavy down the hills and flies off the tops. The quiz games are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, History Timeline asks you to put world history events in order, and Hangul Quiz teaches you to read Korean. Lantern Lights is a daily logic puzzle made just for this site.",
+            "Pass or Splash, Updraft and Hilltop Roll are browser versions of our arcade games: puzzle walls that rush toward you, a paper plane that rides the updrafts, and a ball you steer down an endless road in the sky. The quiz games are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, History Timeline asks you to put world history events in order, and Hangul Quiz teaches you to read Korean. Lantern Lights is a daily logic puzzle made just for this site.",
         ],
         "play_reference": "Reference pages",
         "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters, and the whole history timeline.",
@@ -506,7 +506,7 @@ WEB_GAMES = [
     {
         "slug": "updraft",
         "app": "updraft",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192",
+        "icon": "/play/updraft/icon.png",
         "site_page": True,  # built as site pages in both languages by build_updraft() in build.py
         "en": {"name": "Updraft: Paper Plane", "short": "Aim, power up and launch a paper plane. Ride the updrafts through five zones and see how far it flies."},
         "ko": {"name": "Updraft: 종이비행기", "short": "각도와 힘을 정해 종이비행기를 날리세요. 상승기류를 타고 다섯 구역을 지나 얼마나 멀리 갈까요?"},
@@ -521,7 +521,7 @@ WEB_GAMES = [
     {
         "slug": "pass-or-splash",
         "app": "pass-or-splash",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g=s192",
+        "icon": "/play/pass-or-splash/icon.png",
         "site_page": True,  # built as site pages in both languages by build_pass_or_splash() in build.py
         "en": {"name": "Pass or Splash", "short": "Read the puzzle and slide in front of the right hole before the wall hits. Wrong answer? Splash!"},
         "ko": {"name": "Pass or Splash", "short": "문제를 읽고 벽이 닥치기 전에 정답 구멍 앞으로! 틀리면 풍덩!"},
@@ -529,10 +529,10 @@ WEB_GAMES = [
     {
         "slug": "hilltop-roll",
         "app": "hilltop-roll",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192",
+        "icon": "/play/hilltop-roll/icon.png",
         "site_page": True,  # built as site pages in both languages by build_hilltop() in build.py
-        "en": {"name": "Hilltop Roll", "short": "Hold to roll heavy, let go to fly, and steer through zigzags and forks. Land along the slope for PERFECT boosts."},
-        "ko": {"name": "Hilltop Roll", "short": "누르면 무겁게 구르고, 떼면 날아올라요. 지그재그 길과 갈림길을 조종하고 경사를 따라 착지해 PERFECT 가속을 받으세요."},
+        "en": {"name": "Hilltop Roll", "short": "Steer a rolling ball through zigzags, tilted roads and forks in the sky. Land in the middle for PERFECT boosts."},
+        "ko": {"name": "Hilltop Roll", "short": "하늘 위 길을 굴러가는 공을 조종해 지그재그 길과 갈림길을 지나가요. 한가운데에 착지하면 PERFECT 가속!"},
     },
     {
         "slug": "hangul-quiz",
@@ -845,9 +845,9 @@ NEWS = [
         "game": "hilltop-roll",
         "web": True,  # link to the browser version, not the app page
         "en": {"title": "Hilltop Roll is now playable in your browser",
-               "body": "Roll down an endless road in the sky, seen from behind the ball: hold to roll heavy down the hills, let go to fly off the tops, steer through zigzags, tilted roads and forks, and land along the slope for PERFECT boosts."},
+               "body": "Roll down an endless road in the sky, seen from behind the ball: steer through zigzags, tilted roads and forks, fly over the gaps from the ramps, and land in the middle of the road for PERFECT boosts."},
         "ko": {"title": "Hilltop Roll을 브라우저에서 즐겨 보세요",
-               "body": "공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 누르면 무겁게 언덕을 내려가고, 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고, 경사를 따라 착지해 PERFECT 가속을 받아 보세요."},
+               "body": "공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 지그재그 길, 기울어진 길, 갈림길을 조종하고, 점프대로 낭떠러지를 건너 길 한가운데에 착지해 PERFECT 가속을 받아 보세요."},
     },
     {
         "date": "2026-11-09",
@@ -2310,8 +2310,8 @@ PLAY_DETAILS = {
         "ko": "5개 월드, 30개 스테이지: 계산, 가장 큰 수·작은 수, 도형, 점 세기, 혼합 계산, 섞이는 컵. 스테이지마다 벽 6개, 기회 3번.",
     },
     "hilltop-roll": {
-        "en": "Hold to roll heavy down the hills, let go to fly off the tops, and steer through zigzag roads, tilted roads and forks, seen from behind the ball. Jump the gaps from the ramps and land along the slope for PERFECT boosts and combos.",
-        "ko": "공 뒤에서 보는 시점으로, 누르면 무겁게 언덕을 내려가고 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고, 점프대로 낭떠러지를 건너 경사를 따라 착지하면 PERFECT 가속과 콤보!",
+        "en": "Seen from behind the ball: steer it through zigzag roads, tilted roads and forks while it rolls and flies off the hilltops on its own. Ramps throw it across the gaps; land in the middle of the road for PERFECT boosts and combos.",
+        "ko": "공 뒤에서 보는 시점으로, 저절로 구르고 날아오르는 공을 조종해 지그재그 길, 기울어진 길, 갈림길을 지나가요. 점프대가 낭떠러지 건너편으로 던져 주고, 길 한가운데에 착지하면 PERFECT 가속과 콤보!",
     },
     "updraft": {
         "en": "Set the angle, stop the power gauge and throw. Ride updrafts through the park, the city, the sea, the mountains and above the clouds, collect coins and buy six upgrades. A new sky every day.",
