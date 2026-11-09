@@ -18,9 +18,9 @@ const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn
   '/ko/', '/ko/play/', '/ko/privacy/', '/ko/#games', '/ko/history/', '/ko/news/', '/ko/about/', '/ko/support/', '/ko/terms/',
   '/assets/logo-256.png',
   // "More browser games" links to the other games and their icons
-  ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz', 'updraft'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
-  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/']);
-const ALLOWED_EXTERNAL = new Set(['https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192', 'https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
+  ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz', 'updraft', 'hilltop-roll'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
+  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/', '/ko/play/hilltop-roll/']);
+const ALLOWED_EXTERNAL = new Set(['https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192', 'https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192', 'https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);
 const ADSENSE_TAG = '<meta name="google-adsense-account" content="ca-pub-4148553154486992">';
 const GAMES = [['flag-quiz', 'all-flags.html'], ['capital-quiz', 'all-capitals.html']];

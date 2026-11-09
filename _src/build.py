@@ -953,36 +953,94 @@ UD_TEXT = {
 }
 
 
-def build_updraft():
-    """The Updraft browser game: a site page in each language, with the script and styles from _src/updraft/."""
-    src, out = os.path.join(ROOT, "_src", "updraft"), os.path.join(ROOT, "play", "updraft")
+for _u in UD_TEXT.values():
+    _u["app"] = "updraft"
+    _u["sections"] = [(_u["how"], _u["how_steps"], "ol"), (_u["zones"], _u["zones_list"], "ul"), (_u["tips"], _u["tips_list"], "ul")]
+
+HR_TEXT = {
+    "en": {
+        "title": "Hilltop Roll",
+        "app": "hilltop-roll",
+        "lead": "Hold to roll heavy down the hills, let go to fly off the tops, and land along the slope for a PERFECT boost.",
+        "description": "Play Hilltop Roll free in your browser: hold to roll heavy and race down the hills, let go to fly off "
+                       "the hilltops, jump the gaps from the ramps and land along the slope for PERFECT boosts and combos. "
+                       "Endless pastel hills that speed up as you go.",
+        "noscript": "This game needs JavaScript.",
+        "sections": [
+            ("How to play", ["Press Start, then hold the button, the screen or the Space key: the ball turns heavy and races down the hills.",
+                             "Let go as you reach a hilltop: the ball turns light and flies off the top.",
+                             "Before each gap there's a ramp with a red edge. Build speed on the way to it and fly across.",
+                             "Land along the slope, not flat against it, for a PERFECT boost. Chain them to build a combo.",
+                             "The road speeds up every few seconds. Fall into a gap and the run is over."], "ol"),
+            ("Tips", ["Hold on the way down, let go on the way up: that rhythm is the whole game.",
+                      "In the air, holding makes you drop faster. Use it to meet a downhill slope at the right angle.",
+                      "A PERFECT landing adds speed, and a longer combo adds more. A bumpy landing costs speed.",
+                      "Sound effects are short tones; switch them off with the Sound button under the game."], "ul"),
+        ],
+        "about": "About this version",
+        "about_body": ["This is a browser take on our Android game Hilltop Roll. The heavy-and-light rolling, the jumps over the gaps "
+                       "and the PERFECT landings are the same idea, drawn from the side. Your best distance is saved in this browser only.",
+                       "The Android app is a different, full game: you also steer through zigzag roads, tilted roads and forks, with music and its own worlds."],
+        "app_link": "About the Android app",
+    },
+    "ko": {
+        "title": "Hilltop Roll",
+        "app": "hilltop-roll",
+        "lead": "누르고 있으면 무겁게 언덕을 내려가고, 떼면 언덕 꼭대기에서 날아올라요. 경사를 따라 착지하면 PERFECT 가속!",
+        "description": "브라우저에서 무료로 즐기는 Hilltop Roll: 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가고, 떼면 가벼워져 "
+                       "꼭대기에서 날아올라요. 점프대로 낭떠러지를 건너고, 경사를 따라 착지해 PERFECT 가속과 콤보를 쌓아 보세요.",
+        "noscript": "이 게임은 자바스크립트가 필요해요.",
+        "sections": [
+            ("하는 방법", ["시작하기를 누른 뒤 버튼이나 화면, 스페이스 키를 누르고 있으면 공이 무거워져 언덕을 빠르게 내려가요.",
+                       "언덕 꼭대기에 가까워지면 손을 떼세요. 공이 가벼워져 꼭대기에서 날아올라요.",
+                       "낭떠러지 앞에는 끝이 빨간 점프대가 있어요. 내려가면서 속도를 모아 건너가세요.",
+                       "경사를 따라 착지하면 PERFECT 가속을 받아요. 연속으로 성공하면 콤보가 쌓여요.",
+                       "몇 초마다 길이 빨라져요. 낭떠러지에 떨어지면 게임이 끝나요."], "ol"),
+            ("요령", ["내리막에서는 누르고, 오르막에서는 떼세요. 이 리듬이 핵심이에요.",
+                     "공중에서 누르면 더 빨리 떨어져요. 내리막 경사에 맞춰 착지할 때 써 보세요.",
+                     "PERFECT 착지는 속도를 올려 주고, 콤보가 길수록 더 빨라져요. 덜컹 착지하면 속도가 줄어요.",
+                     "효과음은 짧은 소리예요. 게임 아래 소리 버튼으로 끌 수 있어요."], "ul"),
+        ],
+        "about": "이 버전에 대해",
+        "about_body": ["Android 게임 Hilltop Roll을 옆에서 본 2D 화면으로 옮긴 브라우저 버전이에요. 무겁게·가볍게 굴리기, 낭떠러지 점프, "
+                       "PERFECT 착지는 같은 아이디어예요. 최고 기록은 이 브라우저에만 저장돼요.",
+                       "Android 앱은 지그재그 길, 기울어진 길, 갈림길을 조종하는 별도의 완전한 게임이고, 음악과 앱만의 월드가 있어요."],
+        "app_link": "Android 앱 소개 보기",
+    },
+}
+
+
+def canvas_game(slug, src_name, files, text, p):
+    """A canvas browser game as a site page in each language: copies its script and styles from _src/<src_name>/ to
+    play/<slug>/ and wraps them in the site template. p is the CSS prefix of its elements (ud, hr)."""
+    src, out = os.path.join(ROOT, "_src", src_name), os.path.join(ROOT, "play", slug)
     os.makedirs(out, exist_ok=True)
     ver = {}
-    for f in ("app.js", "updraft.css"):
-        text = open(os.path.join(src, f), encoding="utf-8").read()
+    for f in files:
+        content = open(os.path.join(src, f), encoding="utf-8").read()
         with open(os.path.join(out, f), "w", encoding="utf-8", newline="\n") as fh:
-            fh.write(text)
-        ver[f] = hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
+            fh.write(content)
+        ver[f] = hashlib.sha1(content.encode("utf-8")).hexdigest()[:10]
+    css = next(f for f in files if f.endswith(".css"))
     urls = []
     for lang in LANGS:
-        t, u = UI[lang], UD_TEXT[lang]
-        game_url = url(lang, "play/updraft/")
+        t, u = UI[lang], text[lang]
+        game_url = url(lang, f"play/{slug}/")
         li = lambda items: "".join(f"<li>{e(x)}</li>" for x in items)  # noqa: E731
-        more = (f'<section class="section container ud-wrap"><div class="section-head"><h2>{e(t["play_more"])}</h2>'
+        more = (f'<section class="section container {p}-wrap"><div class="section-head"><h2>{e(t["play_more"])}</h2>'
                 f'<a href="{url(lang, "play/")}">{e(t["play_all"])} →</a></div>'
-                f'<div class="games">{web_game_cards(lang, exclude="updraft", details=False)}</div></section>')
-        body = f"""<div class="ud">
-<section class="container ud-wrap">
+                f'<div class="games">{web_game_cards(lang, exclude=slug, details=False)}</div></section>')
+        sections = "".join(f'<div class="card"><h2>{e(h)}</h2><{tag}>{li(items)}</{tag}></div>' for h, items, tag in u["sections"])
+        body = f"""<div class="{p}">
+<section class="container {p}-wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="{url(lang, 'play/')}">{e(t['play_title'])}</a><span aria-hidden="true">›</span><span>{e(u['title'])}</span></nav>
   <h1 class="page-title">{e(u['title'])}</h1>
   <p class="page-lead">{e(u['lead'])}</p>
-  <div id="ud-app" class="ud-app"><div class="card"><noscript><p>{e(u['noscript'])}</p></noscript></div></div>
-  <div class="ud-static">
-    <div class="card"><h2>{e(u['how'])}</h2><ol>{li(u['how_steps'])}</ol></div>
-    <div class="card"><h2>{e(u['zones'])}</h2><ul>{li(u['zones_list'])}</ul></div>
-    <div class="card"><h2>{e(u['tips'])}</h2><ul>{li(u['tips_list'])}</ul></div>
-    <section class="card"><h2>{e(u['about'])}</h2>{''.join(f'<p>{e(p)}</p>' for p in u['about_body'])}
-      <p><a href="{url(lang, 'games/updraft/')}">{e(u['app_link'])} →</a></p></section>
+  <div id="{p}-app" class="{p}-app"><div class="card"><noscript><p>{e(u['noscript'])}</p></noscript></div></div>
+  <div class="{p}-static">
+    {sections}
+    <section class="card"><h2>{e(u['about'])}</h2>{''.join(f'<p>{e(x)}</p>' for x in u['about_body'])}
+      <p><a href="{url(lang, 'games/' + u['app'] + '/')}">{e(u['app_link'])} →</a></p></section>
   </div>
 </section>
 <div id="live" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
@@ -993,12 +1051,22 @@ def build_updraft():
               "inLanguage": lang, "isAccessibleForFree": True,
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
               "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
-        head = (f'<link rel="stylesheet" href="/play/updraft/updraft.css?v={ver["updraft.css"]}">'
-                f'<script src="/play/updraft/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld)
+        head = (f'<link rel="stylesheet" href="/play/{slug}/{css}?v={ver[css]}">'
+                f'<script src="/play/{slug}/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld)
                 + breadcrumbs(lang, [(t["play_title"], url(lang, "play/")), (u["title"], None)])[1])
-        page(lang, "play/updraft/", u["title"], u["description"], body, active="play", head_extra=head)
+        page(lang, f"play/{slug}/", u["title"], u["description"], body, active="play", head_extra=head)
         urls.append(game_url)
     return urls
+
+
+def build_updraft():
+    """The Updraft browser game (see canvas_game)."""
+    return canvas_game("updraft", "updraft", ("app.js", "updraft.css"), UD_TEXT, "ud")
+
+
+def build_hilltop():
+    """The Hilltop Roll browser game (see canvas_game)."""
+    return canvas_game("hilltop-roll", "hilltop", ("app.js", "hilltop.css"), HR_TEXT, "hr")
 
 
 def build_404():
@@ -1119,6 +1187,7 @@ def main():
     urls += build_timeline()
     urls += build_hangul_quiz()
     urls += build_updraft()
+    urls += build_hilltop()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]

@@ -278,6 +278,9 @@ function footer() {
 
 // "More browser games": the site's other browser games, linked in both languages.
 const BROWSER_GAMES = [
+  { slug: 'hilltop-roll', en: 'Hilltop Roll', ko: 'Hilltop Roll', ko_href: '/ko/play/hilltop-roll/',
+    icon: 'https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192',
+    desc_en: 'Roll heavy down the hills and fly off the tops.', desc_ko: '언덕을 무겁게 내려가고 꼭대기에서 날아올라요.' },
   { slug: 'updraft', en: 'Updraft: Paper Plane', ko: 'Updraft: 종이비행기', ko_href: '/ko/play/updraft/',
     icon: 'https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192',
     desc_en: 'Launch a paper plane and ride the updrafts as far as it goes.', desc_ko: '종이비행기를 날려 상승기류를 타고 멀리 날아 보세요.' },
