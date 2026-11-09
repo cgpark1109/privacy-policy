@@ -242,6 +242,8 @@ function footer() {
 
 // "More browser games": the site's other browser games, linked in both languages.
 const BROWSER_GAMES = [
+  { slug: 'hangul-quiz', en: 'Hangul Quiz', ko: '한글 퀴즈 (영어)', icon: '/play/hangul-quiz/apple-touch-icon.png',
+    desc_en: 'Learn to read Korean, from single letters to whole words.', desc_ko: '한글 자모부터 단어 읽기까지, 외국인 학습자용 퀴즈예요.' },
   { slug: 'history-timeline', en: 'History Timeline', ko: '연표 맞추기', ko_href: '/ko/play/history-timeline/',
     icon: '/play/history-timeline/apple-touch-icon.png',
     desc_en: 'Put world history events in order, from the pyramids to 2002.', desc_ko: '피라미드부터 2002년까지, 세계사 사건을 순서대로 놓아 보세요.' },

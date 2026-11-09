@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "ea5bf6adb6342551d775bca84c1352c9097a68b5"
+  "hash": "d418c76141a4184dc61cd42a72d7a4c2d59f8234"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "c23ac8fd4484c4a92632ab4f2859968b77580635"
+  "hash": "e83276d1af9a05ff9188f6ead2d5487f59381996"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -409,19 +409,19 @@
  },
  "/ko/news/": {
   "date": "2026-11-09",
-  "hash": "7416683d81569b6d9ffed089da8d51acb16f59c2"
+  "hash": "1f65037d2a9d253574c319b31ebd939a119b9e0f"
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
-  "hash": "32506c6211275a233f46226510ae45a37cc0413d"
+  "hash": "2515c151f531729fc072dce72006bb0ca94b4859"
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "2a03d2077bf482f21d17b8afda29b0ed7971d0c1"
+  "hash": "f3fb0c6e1fc27ba5627b6c61e78901251b1dcfb0"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "7ae0c9fb97d540e154a39ae042b989633b346960"
+  "hash": "68825df80724cda8246fafb52c290ee17d7c269a"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -441,71 +441,71 @@
  },
  "/learn/": {
   "date": "2026-11-09",
-  "hash": "0a95327f40463951343593ffa8cf55f901ddb1f4"
+  "hash": "e40ee3fd74d6c4d44cf937d1daf65da20bb2af0d"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
-  "hash": "cdc6f2f3b09d9a681d65a2a69780f5d3ad151d69"
+  "hash": "24529e29e390234b865389d22215e7baeaea3aa5"
  },
  "/learn/days-and-dates/": {
   "date": "2026-11-09",
-  "hash": "47ae668ed5455b16d4249b0ca04b4937e1a1ca9a"
+  "hash": "f7af91744f84015eb7a55cbd756eb11516f838cb"
  },
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
-  "hash": "b244574095dd7c49002c80ad7c23fdd748ad76c4"
+  "hash": "708581d7515c7339c3ba4a1931cfabebc04e44e6"
  },
  "/learn/korean-consonants/": {
   "date": "2026-11-09",
-  "hash": "c568d2bafdf3025094dd938486b5868da0dbecf0"
+  "hash": "63c787b451447a8f3c813a17012ef5da157633cb"
  },
  "/learn/korean-family-terms/": {
   "date": "2026-11-09",
-  "hash": "b6565bd74fe290303176178a326cffff0afc9fc7"
+  "hash": "271ced1941fa1185b8c97c1d9d7fce3a20b091b1"
  },
  "/learn/korean-greetings/": {
   "date": "2026-11-09",
-  "hash": "2ab914a6c449612a6b25f3615c5504ceee63286d"
+  "hash": "be3fd5de9611074367d36db789eabfd4a0bf6a31"
  },
  "/learn/korean-numbers/": {
   "date": "2026-11-09",
-  "hash": "991c64f6258a3278d8c43eac52ddfb2c940350d8"
+  "hash": "82418f8051d44edcd708bdc26e88031f40296a22"
  },
  "/learn/korean-politeness/": {
   "date": "2026-11-09",
-  "hash": "efceacee07a1f0e91f9714cc8fca24c67ab78c12"
+  "hash": "44564acb96dab046ac032ee48598dee3af566821"
  },
  "/learn/korean-vowels/": {
   "date": "2026-11-09",
-  "hash": "383580bafb5ff32a734c9b762ccb6064f2671e73"
+  "hash": "8bbab93c83f92fe06e05e24eea65bc10c196d2cc"
  },
  "/learn/ordering-at-a-restaurant/": {
   "date": "2026-11-09",
-  "hash": "fa4272244e666bf166bed58eb0d2ed69c9566d65"
+  "hash": "bd312f92c931ec29127203986aaa06c868a57210"
  },
  "/learn/plain-aspirated-tense/": {
   "date": "2026-11-09",
-  "hash": "e0d0e4e5981b9d2b8f81d830408709ed29368a43"
+  "hash": "d80b097602bbfb5eec398bce1296c2b01d823a0d"
  },
  "/learn/topic-and-subject-particles/": {
   "date": "2026-11-09",
-  "hash": "853e9de32f62282644dae4f731622371c51cf934"
+  "hash": "ca018b188dd58f275e1e63f2a5bdcd6f5f6f62d6"
  },
  "/learn/two-week-plan/": {
   "date": "2026-11-09",
-  "hash": "d4104be7c93940e00bfbe2448cda2cd3a6cfd29d"
+  "hash": "28b2b8ec62581fe6db8eb828fca1bc4599a63a7f"
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "977c23950b8ec50bb9dce1f39750f4944bcb183f"
+  "hash": "2d2dc18cdb798a18710755af059809752ce1b91e"
  },
  "/news/archive/": {
   "date": "2026-11-09",
-  "hash": "ba1698b2e2acd82d4a4bef28483b40e47426e984"
+  "hash": "60f3be5ec1ec87f2c5155b1b93f73017313bdbf7"
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "74ef5b8b05040b87748f4bc2198891c3a6a18b5b"
+  "hash": "d6206b34534d944565bb3116f6b5c1e8ab5c45b4"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
@@ -523,9 +523,13 @@
   "date": "2026-11-09",
   "hash": "debfa260e558df405fea7fdfc2d4bad3e5fd6680"
  },
+ "/play/hangul-quiz/": {
+  "date": "2026-11-09",
+  "hash": "48954cd9cb6e59467b6c9c18b5b38ca91aea8f93"
+ },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "27472d6bf780eee75b29a6089a03635060a986b7"
+  "hash": "9df3b97931c500b1a08af1ce18f952b8838cece8"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",

@@ -18,7 +18,7 @@ const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn
   '/ko/', '/ko/play/', '/ko/privacy/', '/ko/#games', '/ko/history/', '/ko/news/', '/ko/about/', '/ko/support/', '/ko/terms/',
   '/assets/logo-256.png',
   // "More browser games" links to the other games and their icons
-  ...['history-timeline', 'flag-quiz', 'capital-quiz'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
+  ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
   '/ko/play/history-timeline/']);
 const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);

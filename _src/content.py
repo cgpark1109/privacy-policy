@@ -60,7 +60,7 @@ UI = {
         "play_note": "Your progress and best scores are saved in this browser only.",
         "play_intro": [
             "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
-            "All three are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, and History Timeline asks you to put world history events in order, with a short reading for every event.",
+            "All of them are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, History Timeline asks you to put world history events in order, and Hangul Quiz teaches you to read Korean.",
         ],
         "play_reference": "Reference pages",
         "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters, and the whole history timeline.",
@@ -111,7 +111,8 @@ UI = {
             "These guides take you from zero to reading Korean words. Read them in order, tap the speaker buttons to hear the examples, and use our free apps to practice what you've learned. Most people can read Hangul within a week or two of short daily practice.",
         ],
         "learn_guides": "Guides",
-        "learn_practice": "Practice with our apps",
+        "learn_practice": "Practice what you've learned",
+        "learn_quiz_text": "Test your reading in your browser, from single letters to whole words, in eight short stages.",
         "learn_prev": "Previous",
         "learn_next": "Next",
         "min_read": "min read",
@@ -122,7 +123,7 @@ UI = {
         "home_points": [
             ("games", "Games", "{games} games and learning apps, from one-finger arcade and puzzle games to Korean and world history quizzes, all free on Google Play."),
             ("guides", "Learn Hangul", "{guides} step-by-step guides to reading and speaking Korean, from the alphabet to greetings, numbers and polite speech, with audio for every example."),
-            ("web", "Play in your browser", "{web} games you can play right here without installing anything: Flag Quiz, Capital Quiz and History Timeline."),
+            ("web", "Play in your browser", "{web} games you can play right here without installing anything: Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline."),
         ],
         "home_guides_title": "Latest Hangul guides",
         "home_guides_all": "All guides",
@@ -169,7 +170,7 @@ UI = {
         "play_note": "진행 상황과 최고 기록은 이 브라우저에만 저장돼요.",
         "play_intro": [
             "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
-            "세 게임 모두 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓으며 사건마다 읽을거리로 이어지는 게임입니다.",
+            "모두 브라우저용으로 만든 게임입니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임, 한글 퀴즈는 한글 읽기를 익히는 외국인 학습자용 퀴즈입니다.",
         ],
         "play_reference": "참고 페이지",
         "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아보거나, 연표 전체를 볼 수 있어요.",
@@ -236,7 +237,7 @@ UI = {
             ("games", "게임", "손가락 하나로 즐기는 아케이드·퍼즐 게임부터 한국어·세계사 퀴즈까지, Google Play에서 무료로 받을 수 있는 게임과 학습 앱 {games}개가 있습니다."),
             ("guides", "한글 가이드", "한글 읽기부터 인사말, 숫자, 존댓말까지 한국어를 배우는 외국인을 위한 영어 가이드 {guides}편이 있습니다. 모든 예시를 소리로 들을 수 있으니, 한국어를 배우는 친구에게 소개해 주세요."),
             ("history", "세계사 읽을거리", "로마 제국의 멸망처럼 세계사의 흐름을 바꾼 순간을 차근차근 풀어 쓴 한국어 글 {history}편이 있습니다."),
-            ("web", "브라우저 게임", "국기 퀴즈, 수도 퀴즈, 연표 맞추기까지 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
+            ("web", "브라우저 게임", "한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기까지 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
         ],
         "home_guides_title": "최신 한글 가이드 (영어)",
         "home_guides_all": "전체 가이드",
@@ -475,6 +476,14 @@ WEB_GAMES = [
         "ko": {"name": "수도 퀴즈", "short": "193개국과 수도를 짝지어 보세요. 거꾸로 풀기도 있어요."},
     },
     {
+        "slug": "hangul-quiz",
+        "icon": "/play/hangul-quiz/apple-touch-icon.png",
+        "site_page": True,  # built as a site page by build_hangul_quiz() in build.py
+        "en_only": True,  # in English, like the Learn Hangul guides
+        "en": {"name": "Hangul Quiz", "short": "Learn to read Korean in eight stages, from single letters to whole words."},
+        "ko": {"name": "한글 퀴즈", "short": "한글 자모부터 단어 읽기까지 8단계로 익혀요. 외국인 학습자를 위해 영어로 진행돼요."},
+    },
+    {
         "slug": "history-timeline",
         "icon": "/play/history-timeline/apple-touch-icon.png",
         "site_page": True,  # built as site pages in both languages by build_timeline() in build.py
@@ -700,6 +709,14 @@ NEWS = [
                "body": "Subway, bus and taxi phrases: station signs and announcements, transport cards, telling a taxi driver where to go and asking for directions."},
         "ko": {"title": "새 한글 가이드: 지하철·버스·택시 타기",
                "body": "역과 출구 표시, 안내 방송, 교통카드 충전, 택시에서 목적지 말하기, 길 묻기까지 외국인 학습자를 위한 교통 표현을 정리했습니다."},
+    },
+    {
+        "date": "2026-11-09",
+        "game": "hangul-quiz",
+        "en": {"title": "New browser game: Hangul Quiz",
+               "body": "Learn to read Korean in eight short stages, from the basic vowels and consonants to syllables with final consonants and real words. Every answer comes with a short note, and each stage links to the guide that teaches it."},
+        "ko": {"title": "새 브라우저 게임: 한글 퀴즈",
+               "body": "기본 모음과 자음부터 받침 있는 글자, 실제 단어까지 8단계로 한글 읽기를 익히는 퀴즈예요. 외국인 학습자를 위해 영어로 진행되고, 단계마다 관련 한글 가이드로 이어져요."},
     },
     {
         "date": "2026-11-09",
@@ -2135,6 +2152,10 @@ PLAY_DETAILS = {
     "flag-quiz": {
         "en": "195 flags in 39 levels, from famous flags to look-alikes like Chad and Romania. Name the country from its flag, or the other way around.",
         "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
+    },
+    "hangul-quiz": {
+        "en": "Vowels, consonants, tense and aspirated sounds, compound vowels, syllables with and without final consonants, then real words and their meanings, with a note after every answer.",
+        "ko": "모음, 자음, 된소리·거센소리, 이중모음, 받침 없는 글자와 받침 있는 글자, 단어 읽기와 뜻까지. 답할 때마다 짧은 설명이 나와요.",
     },
     "history-timeline": {
         "en": "83 events from the pyramids to 2002, in three decks: all of history, world history and Korean history. Three hearts, and a short reading (in Korean) for every event.",
