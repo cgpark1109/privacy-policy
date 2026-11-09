@@ -514,6 +514,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2027-02-05",
+        "game": None,
+        "link": {"href": "/learn/taking-the-train/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: taking the train in Korea",
+               "body": "Buying a KTX or other train ticket, one way or round trip, seat types and car numbers, finding your platform, and what to say if someone is in your seat."},
+        "ko": {"title": "새 한글 가이드: 기차 타기",
+               "body": "KTX 기차표 사기, 편도와 왕복, 좌석 종류와 호차, 타는 곳 찾기, 자리가 겹칠 때 하는 말을 정리했습니다."},
+    },
+    {
+        "date": "2027-02-02",
+        "game": None,
+        "link": {"href": "/learn/wearing-clothes/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: wearing clothes in Korean",
+               "body": "Words for clothes and accessories, the different verbs for wearing them (입다, 신다, 쓰다, 끼다, 차다, 하다), taking them off, and describing what someone is wearing."},
+        "ko": {"title": "새 한글 가이드: 옷 입는 동사",
+               "body": "옷과 소품 단어, 입다·신다·쓰다·끼다·차다·하다, 벗다·빼다·풀다, -고 있어요로 옷차림 말하기를 정리했습니다."},
+    },
+    {
+        "date": "2027-01-30",
+        "game": None,
+        "link": {"href": "/learn/describing-things/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: describing things in Korean",
+               "body": "Putting a describing word before a noun: -(으)ㄴ for most adjectives, -는 for 있다 and 없다 words, irregular forms like 추운 and 긴, and two descriptions with -고."},
+        "ko": {"title": "새 한글 가이드: 명사를 꾸미는 말",
+               "body": "예쁜 가방, 맛있는 음식처럼 명사 앞에 오는 형용사의 -(으)ㄴ과 -는, 추운·긴 같은 불규칙, -고로 두 가지 꾸미기를 정리했습니다."},
+    },
+    {
         "date": "2027-01-27",
         "game": None,
         "link": {"href": "/learn/convenience-store/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
