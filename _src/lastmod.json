@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "7b2fd429d0c34b1f85ab365de576048372c1051d"
+  "hash": "e0ff943b888c685e89ccfd0c09393ce536722d85"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "1c478b7eac95900ed39bd847f7caae3f34cb0224"
+  "hash": "dfaa0e8e00d7e966a2aca9019fe49a0d4c22dd0a"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -417,7 +417,7 @@
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "2e2da96e902bc0ef1082a88d449f104322767d6f"
+  "hash": "06af17a58c04ee78c3d7083ac65caa6bd835a274"
  },
  "/ko/play/capital-quiz/": {
   "date": "2026-11-09",
@@ -437,11 +437,11 @@
  },
  "/ko/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "0b1273e37ff996fd512ba1353fa22ee6b8727bd3"
+  "hash": "0df60736ddd747f1da14a0a8617d1799e62ba6c7"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "e359696a99a954701faab750c567260dfce28d0c"
+  "hash": "c0526bd4131bbf2e43fc02e2e300356a1e60948f"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -449,15 +449,15 @@
  },
  "/ko/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "8a5ce2151a3faf8ae20921342e137bb595a36e3c"
+  "hash": "41f3fd2693f35b8dc56a34f56fca5349ff095c6f"
  },
  "/ko/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "64240180114c23a4a25fa8c4f5c27e1c477ed2af"
+  "hash": "87529b557b5c56c625289ec4214c054a3adad27c"
  },
  "/ko/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "f5afe28d2f9b7ae6dbd7a62ad579aa916053e784"
+  "hash": "41335407298f08f9efdf0025c1dba89d9be498e6"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
@@ -537,7 +537,7 @@
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "0962390135a6789e9d3cfc6849b513883ec6f67a"
+  "hash": "cdb37d6770e14870b0af010959b08a963dc95ac0"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
@@ -557,15 +557,15 @@
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "1f37bea981807b394f0ca8ef6543706b95de9981"
+  "hash": "21f5c7251109333f1db51fbd85d99486b598a5d9"
  },
  "/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "b95da8ce251a6a634c6acfe9a5e9553dec5a4d31"
+  "hash": "1b085ae6b15715be49da9fb3c5cb6139125e679f"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "edc608c17428616105f0911b909c476b4e842012"
+  "hash": "bee668db275d9f06da4f06b8f3e89d978cbff654"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -573,15 +573,15 @@
  },
  "/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "3df8b6dac47edc937287cdc38443a16c97f1fb5a"
+  "hash": "548e2f3dfa11cfb152c475dc840d945bd19700c1"
  },
  "/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "830764bd63bda76b156b611a513bb4f84ccbbf95"
+  "hash": "f5a865a01fc46324eb07879232e32e3a276ec0c1"
  },
  "/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "4b74b811892ea15e7b3ccb8240b959070276fc1a"
+  "hash": "966164f35ce6e257868cbd32ffe51f74bf221640"
  },
  "/privacy.html": {
   "date": "2026-11-09",

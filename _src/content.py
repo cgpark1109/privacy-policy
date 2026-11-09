@@ -506,7 +506,7 @@ WEB_GAMES = [
     {
         "slug": "updraft",
         "app": "updraft",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192",
+        "icon": "/play/updraft/icon.png",
         "site_page": True,  # built as site pages in both languages by build_updraft() in build.py
         "en": {"name": "Updraft: Paper Plane", "short": "Aim, power up and launch a paper plane. Ride the updrafts through five zones and see how far it flies."},
         "ko": {"name": "Updraft: 종이비행기", "short": "각도와 힘을 정해 종이비행기를 날리세요. 상승기류를 타고 다섯 구역을 지나 얼마나 멀리 갈까요?"},
@@ -521,7 +521,7 @@ WEB_GAMES = [
     {
         "slug": "pass-or-splash",
         "app": "pass-or-splash",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g=s192",
+        "icon": "/play/pass-or-splash/icon.png",
         "site_page": True,  # built as site pages in both languages by build_pass_or_splash() in build.py
         "en": {"name": "Pass or Splash", "short": "Read the puzzle and slide in front of the right hole before the wall hits. Wrong answer? Splash!"},
         "ko": {"name": "Pass or Splash", "short": "문제를 읽고 벽이 닥치기 전에 정답 구멍 앞으로! 틀리면 풍덩!"},
@@ -529,7 +529,7 @@ WEB_GAMES = [
     {
         "slug": "hilltop-roll",
         "app": "hilltop-roll",  # browser version of this app (its app page links here)
-        "icon": "https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192",
+        "icon": "/play/hilltop-roll/icon.png",
         "site_page": True,  # built as site pages in both languages by build_hilltop() in build.py
         "en": {"name": "Hilltop Roll", "short": "Hold to roll heavy, let go to fly, and steer through zigzags and forks. Land along the slope for PERFECT boosts."},
         "ko": {"name": "Hilltop Roll", "short": "누르면 무겁게 구르고, 떼면 날아올라요. 지그재그 길과 갈림길을 조종하고 경사를 따라 착지해 PERFECT 가속을 받으세요."},

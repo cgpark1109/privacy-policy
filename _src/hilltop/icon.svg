@@ -1,0 +1,16 @@
+<!-- Source of play/hilltop-roll/icon.png (the browser version's own icon, not the app icon), rendered at 192x192. -->
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FC3F2"/><stop offset=".45" stop-color="#FDE3EC"/><stop offset="1" stop-color="#D7D0F2"/></linearGradient>
+  <radialGradient id="ball" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#C9CEE6"/></radialGradient></defs>
+  <rect width="192" height="192" fill="url(#sky2)"/>
+  <path d="M0 70 Q40 52 80 64 T160 58 T192 62 V76 H0Z" fill="#C9C7F0"/>
+  <ellipse cx="34" cy="132" rx="22" ry="7" fill="#fff" opacity=".85"/><ellipse cx="162" cy="118" rx="18" ry="6" fill="#fff" opacity=".85"/>
+  <path d="M84 70 L108 70 L192 192 L0 192Z" fill="#6FBF85"/>
+  <path d="M86 66 L106 66 L178 176 L14 176Z" fill="#A8E0B4"/>
+  <path d="M93 80 L100 80 L104 96 L89 96Z M86 112 L106 112 L112 136 L80 136Z" fill="#9AD6A8"/>
+  <path d="M86 66 L89 66 L20 176 L14 176Z M103 66 L106 66 L178 176 L172 176Z" fill="#fff"/>
+  <ellipse cx="96" cy="160" rx="30" ry="8" fill="#2B3155" opacity=".18"/>
+  <circle cx="96" cy="128" r="32" fill="url(#ball)"/>
+  <path d="M66 120 Q96 132 126 120 L126 128 Q96 140 66 128Z" fill="#FF6B5B"/>
+  <circle cx="96" cy="128" r="32" fill="none" stroke="#2B3155" stroke-width="3" opacity=".25"/>
+</svg>

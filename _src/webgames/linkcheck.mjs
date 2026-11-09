@@ -19,8 +19,9 @@ const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn
   '/assets/logo-256.png',
   // "More browser games" links to the other games and their icons
   ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz', 'updraft', 'hilltop-roll', 'pass-or-splash', 'lantern-lights'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
-  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/', '/ko/play/hilltop-roll/', '/ko/play/pass-or-splash/', '/ko/play/lantern-lights/', '/play/lantern-lights/icon.png']);
-const ALLOWED_EXTERNAL = new Set(['https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g=s192', 'https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192', 'https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192', 'https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
+  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/', '/ko/play/hilltop-roll/', '/ko/play/pass-or-splash/', '/ko/play/lantern-lights/', '/play/lantern-lights/icon.png',
+  '/play/updraft/icon.png', '/play/hilltop-roll/icon.png', '/play/pass-or-splash/icon.png']);
+const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);
 const ADSENSE_TAG = '<meta name="google-adsense-account" content="ca-pub-4148553154486992">';
 const GAMES = [['flag-quiz', 'all-flags.html'], ['capital-quiz', 'all-capitals.html']];
