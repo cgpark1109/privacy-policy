@@ -278,6 +278,9 @@ function footer() {
 
 // "More browser games": the site's other browser games, linked in both languages.
 const BROWSER_GAMES = [
+  { slug: 'updraft', en: 'Updraft: Paper Plane', ko: 'Updraft: 종이비행기', ko_href: '/ko/play/updraft/',
+    icon: 'https://play-lh.googleusercontent.com/khOGY-bR04FHAUyTEaxtXyn6bQNWoyhN6IVsPL1C8hTj00TSI8hC5brClVFr3-93mpnVz6OBQoFu6sNgoGMg=s192',
+    desc_en: 'Launch a paper plane and ride the updrafts as far as it goes.', desc_ko: '종이비행기를 날려 상승기류를 타고 멀리 날아 보세요.' },
   { slug: 'hangul-quiz', en: 'Hangul Quiz', ko: '한글 퀴즈 (영어)', icon: '/play/hangul-quiz/apple-touch-icon.png',
     desc_en: 'Learn to read Korean, from single letters to whole words.', desc_ko: '한글 자모부터 단어 읽기까지, 외국인 학습자용 퀴즈예요.' },
   { slug: 'history-timeline', en: 'History Timeline', ko: '연표 맞추기', ko_href: '/ko/play/history-timeline/',

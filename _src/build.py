@@ -309,7 +309,7 @@ def news_item(lang, n, link_game=True):
         more = f'<a class="more" href="{n["link"]["href"]}">{e(n["link"][lang])} →</a>'
     elif link_game and n.get("game"):
         web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
-        if web:  # browser-only game: link straight to it
+        if web and (n.get("web") or not any(g["slug"] == n["game"] for g in GAMES)):  # browser game: link straight to it
             more = f'<a class="more" href="{web_href(web, lang)}">{e(web[lang]["name"])} →</a>'
         else:
             g = game_by_slug(n["game"])
@@ -404,8 +404,10 @@ def build_game(lang, g):
   <div class="video{" wide" if g.get("video_wide") else ""}"><iframe src="https://www.youtube-nocookie.com/embed/{g['youtube']}" title="{e(c['name'])}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 </section>"""
     others = "\n".join(game_card(lang, o) for o in GAMES if o is not g)
-    web_btn = (f' <a class="btn light" href="{g["web"]}">{ICON_WEB} {e(t["play_now_web"])}</a>'
-               if g.get("web") else "")
+    web_game = next((w for w in WEB_GAMES if w.get("app") == g["slug"]), None)  # a browser version of this app
+    web_link = g.get("web") or (web_href(web_game, lang) if web_game else None)
+    web_btn = (f' <a class="btn light" href="{web_link}">{ICON_WEB} {e(t["play_now_web"])}</a>'
+               if web_link else "")
     guide = ""
     if c.get("howto") or c.get("tips"):
         steps = "".join(f"<li>{e(s)}</li>" for s in c.get("howto", []))
@@ -546,6 +548,8 @@ def build_news(lang):
             title = f'<a href="{n["link"]["href"]}">{title}</a>'
         elif n.get("game"):
             web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
+            if web and not n.get("web") and any(g["slug"] == n["game"] for g in GAMES):
+                web = None  # news about the app links to the app page
             href = web_href(web, lang) if web else url(lang, f"games/{n['game']}/")
             title = f'<a href="{href}">{title}</a>'
         rows.append(f'<li><time datetime="{n["date"]}">{n["date"]}</time> {title}</li>')
@@ -889,6 +893,114 @@ def build_hangul_quiz():
     return ["/play/hangul-quiz/"]
 
 
+UD_TEXT = {
+    "en": {
+        "title": "Updraft: Paper Plane",
+        "lead": "Aim, power up and launch your paper plane. Ride the updrafts and see how far it flies.",
+        "description": "Play Updraft free in your browser: set the angle, stop the power gauge and launch a paper plane through "
+                       "the park, the city, the sea, the mountains and above the clouds. Ride updrafts, dodge obstacles and buy "
+                       "six upgrades.",
+        "noscript": "This game needs JavaScript.",
+        "how": "How to play",
+        "how_steps": ["The angle line swings up and down. Tap (or press Space) to set your launch angle.",
+                      "The power gauge fills and empties. Tap again to stop it: a fuller gauge throws harder.",
+                      "Once the plane leaves your hand, there's no steering. Light arrows show updrafts that lift your plane; "
+                      "dark ones show downdrafts that push it down.",
+                      "Collect coins and earn more for every 10 m you fly, then spend them on upgrades and fly again."],
+        "zones": "Five zones",
+        "zones_list": ["Park (from 0 m): low trees.", "City (from 300 m): tall buildings.",
+                       "Sea (from 750 m): ship masts, and nowhere to land but the water.",
+                       "Mountains (from 1,250 m): rising ground and rocky peaks.",
+                       "Above the Clouds (from 1,900 m): storm clouds and strong updrafts over the cloud sea."],
+        "tips": "Tips",
+        "tips_list": ["A medium angle (about 25 to 35 degrees) with a full gauge is a good start; on a tailwind day, a lower angle can go farther.",
+                      "Wide wings and Light paper keep you in the air longer, so they help every flight.",
+                      "Sturdy fold lets you bounce off a tree or building instead of crashing, which matters most in the city.",
+                      "The sky is the same for everyone on the same day, and changes at midnight: today's wind and today's goal are shown under the button."],
+        "about": "About this version",
+        "about_body": ["This is a browser version of our Android game Updraft: Paper Plane Launch, with the same idea: one throw, "
+                       "no steering, and the air decides the rest. Your coins, upgrades and best distance are saved in this "
+                       "browser only.",
+                       "The app has more: daily rewards and missions, pre-launch skills and its own five-zone world."],
+        "app_link": "About the Android app",
+    },
+    "ko": {
+        "title": "Updraft: 종이비행기",
+        "lead": "각도를 정하고, 힘을 모아 종이비행기를 날리세요. 상승기류를 타고 얼마나 멀리 갈까요?",
+        "description": "브라우저에서 무료로 즐기는 Updraft: 각도를 정하고 힘 게이지를 멈춰 종이비행기를 날려 보세요. 공원, 도시, "
+                       "바다, 산, 구름 위를 지나며 상승기류를 타고 장애물을 피하고, 업그레이드 6종으로 더 멀리 날 수 있어요.",
+        "noscript": "이 게임은 자바스크립트가 필요해요.",
+        "how": "하는 방법",
+        "how_steps": ["각도 선이 위아래로 움직여요. 화면을 누르거나 스페이스 키를 눌러 발사 각도를 정하세요.",
+                      "힘 게이지가 차올랐다 줄어들어요. 한 번 더 눌러 멈추세요. 게이지가 많이 찰수록 세게 던져요.",
+                      "비행기가 손을 떠나면 조종할 수 없어요. 밝은 화살표는 비행기를 띄워 주는 상승기류, 어두운 화살표는 끌어내리는 하강기류예요.",
+                      "코인을 모으고 10m마다 코인을 더 받아요. 코인으로 업그레이드하고 다시 날려 보세요."],
+        "zones": "다섯 구역",
+        "zones_list": ["공원(0m부터): 낮은 나무", "도시(300m부터): 높은 건물",
+                       "바다(750m부터): 배 돛대, 내려앉을 곳은 바다뿐", "산(1,250m부터): 높아지는 땅과 바위 봉우리",
+                       "구름 위(1,900m부터): 구름 바다 위의 먹구름과 강한 상승기류"],
+        "tips": "요령",
+        "tips_list": ["중간 각도(25~35도)에 게이지를 가득 채우는 것부터 시작해 보세요. 뒷바람이 부는 날에는 낮은 각도가 더 멀리 가기도 해요.",
+                      "넓은 날개와 가벼운 종이는 오래 떠 있게 해 줘서 어떤 비행에도 도움이 돼요.",
+                      "튼튼한 접기가 있으면 나무나 건물에 부딪혀도 튕겨 나와 계속 날 수 있어요. 도시 구역에서 특히 쓸모 있어요.",
+                      "하늘은 같은 날이면 모두에게 같고, 자정에 바뀌어요. 오늘의 바람과 목표는 버튼 아래에 나와요."],
+        "about": "이 버전에 대해",
+        "about_body": ["Android 게임 Updraft: Paper Plane Launch의 브라우저 버전이에요. 한 번 던지면 조종할 수 없고 바람이 나머지를 "
+                       "결정한다는 규칙은 같아요. 코인, 업그레이드, 최고 기록은 이 브라우저에만 저장돼요.",
+                       "앱에는 매일 출석 보상과 일일 미션, 발사 전 스킬, 앱만의 다섯 구역 월드가 더 있어요."],
+        "app_link": "Android 앱 소개 보기",
+    },
+}
+
+
+def build_updraft():
+    """The Updraft browser game: a site page in each language, with the script and styles from _src/updraft/."""
+    src, out = os.path.join(ROOT, "_src", "updraft"), os.path.join(ROOT, "play", "updraft")
+    os.makedirs(out, exist_ok=True)
+    ver = {}
+    for f in ("app.js", "updraft.css"):
+        text = open(os.path.join(src, f), encoding="utf-8").read()
+        with open(os.path.join(out, f), "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(text)
+        ver[f] = hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
+    urls = []
+    for lang in LANGS:
+        t, u = UI[lang], UD_TEXT[lang]
+        game_url = url(lang, "play/updraft/")
+        li = lambda items: "".join(f"<li>{e(x)}</li>" for x in items)  # noqa: E731
+        more = (f'<section class="section container ud-wrap"><div class="section-head"><h2>{e(t["play_more"])}</h2>'
+                f'<a href="{url(lang, "play/")}">{e(t["play_all"])} →</a></div>'
+                f'<div class="games">{web_game_cards(lang, exclude="updraft", details=False)}</div></section>')
+        body = f"""<div class="ud">
+<section class="container ud-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="{url(lang, 'play/')}">{e(t['play_title'])}</a><span aria-hidden="true">›</span><span>{e(u['title'])}</span></nav>
+  <h1 class="page-title">{e(u['title'])}</h1>
+  <p class="page-lead">{e(u['lead'])}</p>
+  <div id="ud-app" class="ud-app"><div class="card"><noscript><p>{e(u['noscript'])}</p></noscript></div></div>
+  <div class="ud-static">
+    <div class="card"><h2>{e(u['how'])}</h2><ol>{li(u['how_steps'])}</ol></div>
+    <div class="card"><h2>{e(u['zones'])}</h2><ul>{li(u['zones_list'])}</ul></div>
+    <div class="card"><h2>{e(u['tips'])}</h2><ul>{li(u['tips_list'])}</ul></div>
+    <section class="card"><h2>{e(u['about'])}</h2>{''.join(f'<p>{e(p)}</p>' for p in u['about_body'])}
+      <p><a href="{url(lang, 'games/updraft/')}">{e(u['app_link'])} →</a></p></section>
+  </div>
+</section>
+<div id="live" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
+</div>
+{more}"""
+        ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": u["title"], "url": STUDIO["domain"] + game_url,
+              "description": u["description"], "applicationCategory": "GameApplication", "operatingSystem": "Any",
+              "inLanguage": lang, "isAccessibleForFree": True,
+              "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+              "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
+        head = (f'<link rel="stylesheet" href="/play/updraft/updraft.css?v={ver["updraft.css"]}">'
+                f'<script src="/play/updraft/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld)
+                + breadcrumbs(lang, [(t["play_title"], url(lang, "play/")), (u["title"], None)])[1])
+        page(lang, "play/updraft/", u["title"], u["description"], body, active="play", head_extra=head)
+        urls.append(game_url)
+    return urls
+
+
 def build_404():
     t = UI["en"]
     body = f"""<section class="container" style="text-align:center"><h1 class="page-title">{e(t['not_found_title'])}</h1>
@@ -1006,6 +1118,7 @@ def main():
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     urls += build_timeline()
     urls += build_hangul_quiz()
+    urls += build_updraft()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]

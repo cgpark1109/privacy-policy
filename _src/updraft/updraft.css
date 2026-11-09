@@ -1,0 +1,51 @@
+/* Updraft (browser version): styles on top of the site stylesheet (/assets/site.css).
+   Source: _src/updraft/updraft.css, copied to play/updraft/ by build.py. */
+.ud { --soft: #F4F5FB; }
+.ud .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 36px; color: #fff; font-size: 14px; font-weight: 600; }
+.ud .crumbs a { color: #fff; text-decoration: none; opacity: 0.9; }
+.ud .crumbs a:hover { text-decoration: underline; opacity: 1; }
+.ud .crumbs span { opacity: 0.6; }
+.ud .page-title { padding-top: 6px; }
+.ud-wrap { max-width: 860px; }
+.ud-app { margin-top: 24px; display: grid; gap: 14px; }
+.ud .btn { justify-content: center; border: 0; cursor: pointer; font-family: inherit; min-height: 48px; }
+.ud .btn.ghost { background: var(--soft); color: var(--navy); }
+.ud .btn:disabled { cursor: default; opacity: 0.75; }
+.ud :focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.ud h2 { font-size: 19px; line-height: 1.3; }
+
+.ud-stage { position: relative; padding: 0; overflow: hidden; }
+#ud-canvas { display: block; width: 100%; height: clamp(280px, 52vw, 420px); touch-action: manipulation; cursor: pointer; }
+.ud-hud { position: absolute; top: 10px; right: 12px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; max-width: 70%; }
+.ud-hud span { background: rgba(255, 255, 255, 0.88); border-radius: 999px; padding: 4px 10px; font-size: 13px; font-weight: 700; color: var(--navy); }
+.ud-msg { position: absolute; left: 50%; top: 56px; transform: translateX(-50%); width: min(90%, 420px); text-align: center; pointer-events: none;
+  color: var(--navy); font-weight: 600; font-size: 15px; display: grid; gap: 2px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+.ud-msg:empty { display: none; }
+.ud-msg b { font-size: 34px; line-height: 1.15; }
+.ud-msg span { font-size: 14px; }
+
+.ud-controls { display: grid; gap: 6px; justify-items: center; }
+.ud-main { width: min(100%, 360px); font-size: 17px; }
+.ud-info { color: var(--navy); font-weight: 600; font-size: 14px; text-align: center; }
+.ud-keys { font-size: 12.5px; color: var(--navy-soft); }
+@media (hover: none) { .ud-keys { display: none; } }
+
+.ud-up-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.ud-up-head span { font-weight: 700; color: var(--navy-soft); }
+#ud-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+#ud-list li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-radius: 16px; background: var(--soft); }
+#ud-list b { font-size: 15px; }
+#ud-list .lv { font-size: 12.5px; font-weight: 700; color: #C8392B; margin-left: 4px; }
+#ud-list small { display: block; font-size: 13px; color: var(--muted); }
+#ud-list .btn { min-height: 40px; padding: 8px 14px; font-size: 13.5px; white-space: nowrap; flex-shrink: 0; }
+
+.ud-static { display: grid; gap: 14px; margin-top: 14px; }
+.ud-static ol, .ud-static ul { margin-left: 20px; display: grid; gap: 6px; color: var(--navy-soft); }
+.ud-static li::marker { color: var(--coral); font-weight: 700; }
+.ud-static p { color: var(--navy-soft); }
+.ud-static p + p { margin-top: 10px; }
+@media (max-width: 520px) {
+  .ud-hud { left: 10px; right: 10px; max-width: none; justify-content: flex-start; top: auto; bottom: 10px; }
+  .ud-hud span { font-size: 12px; padding: 3px 8px; }
+  .ud-msg { top: 44px; }
+}
