@@ -130,9 +130,9 @@
     '<path class="land" d="' + D.land + '"/><path class="borders" d="' + D.borders + '"/>' +
     '<g id="pm-marks"></g></svg>' +
     '<div class="pm-zoom"><button data-z="in" aria-label="' + esc(T.zoom_in) + '">+</button><button data-z="out" aria-label="' + esc(T.zoom_out) + '">−</button>' +
-    '<button data-z="all" aria-label="' + esc(T.zoom_all) + '">⤢</button></div></div>' +
-    '<div class="pm-result card" id="pm-result" hidden></div>' +
-    '<div class="pm-actions"><button class="btn" id="pm-go"></button></div>' +
+    '<button data-z="all" aria-label="' + esc(T.zoom_all) + '">⤢</button></div>' +
+    // the confirm button and the answer sit on the map, so they're always in view next to the pin
+    '<div class="pm-over" id="pm-over"><div class="pm-result" id="pm-result" hidden></div><button class="btn" id="pm-go"></button></div></div>' +
     '<p class="pm-help" id="pm-help"></p>';
   var svg = document.getElementById('pm-svg'), marks = document.getElementById('pm-marks'), grid = document.getElementById('pm-grid');
   var qEl = document.getElementById('pm-q'), resEl = document.getElementById('pm-result'), goBtn = document.getElementById('pm-go');
@@ -276,13 +276,15 @@
     if (phase !== 'guess' || !guess) return;
     var q = qs[idx], d = distance({ lat: -guess.y, lon: guess.x }, q), p = pointsFor(d);
     results.push([Math.round(d), p]);
-    phase = 'reveal'; render();
+    phase = 'reveal'; render(); showMapBottom();
     say(fmt(T.dist_said, { d: num(d), p: num(p) }) + ' ' + note(q));
     // show both the pin and the answer
     var x0 = Math.min(guess.x, q.lon), x1 = Math.max(guess.x, q.lon), y0 = Math.min(guess.y, -q.lat), y1 = Math.max(guess.y, -q.lat);
-    var w = Math.max(24, (x1 - x0) * 1.5), h = Math.max(w * pxH / pxW, (y1 - y0) * 1.5);
-    w = Math.max(w, h * pxW / pxH); h = w * pxH / pxW;
-    animateTo({ x: (x0 + x1) / 2 - w / 2, y: (y0 + y1) / 2 - h / 2, w: w, h: h });
+    // fit them into the part of the map above the answer card
+    var avail = Math.max(0.35, 1 - (document.getElementById('pm-over').offsetHeight + 16) / pxH), aspect = pxW / (pxH * avail);
+    var w = Math.max(24, (x1 - x0) * 1.5), ha = Math.max(w / aspect, (y1 - y0) * 1.5);
+    w = Math.max(w, ha * aspect); ha = w / aspect;
+    animateTo({ x: (x0 + x1) / 2 - w / 2, y: (y0 + y1) / 2 - ha / 2, w: w, h: ha / avail });
     goBtn.focus();
   }
   function next() {
@@ -300,8 +302,15 @@
     return T.share_title + ' ' + today() + ' · ' + num(total()) + '/' + num(qs.length * 1000) + '\n' +
       results.map(function (r) { return mark(r[0]); }).join('') + '\n' + location.origin + location.pathname;
   }
+  // if the bottom of the map (with the confirm button) is below the window, scroll just enough to show it,
+  // without pushing the top of the map under the site header
+  function showMapBottom() {
+    var r = mapEl.getBoundingClientRect(), over = r.bottom + 12 - window.innerHeight;
+    if (over > 0) window.scrollBy({ top: Math.min(over, Math.max(0, r.top - 72)), behavior: 'smooth' });
+  }
   function place(pt) {
     if (phase !== 'guess') return;
+    if (!guess) setTimeout(showMapBottom, 50);
     guess = { x: Math.max(-180, Math.min(180, pt.x)), y: Math.max(-85, Math.min(85, pt.y)) };
     goBtn.textContent = T.confirm; goBtn.disabled = false;
     drawMarks();
