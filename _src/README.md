@@ -45,3 +45,12 @@ marked noindex), app-ads.txt, ads.txt, CNAME.
 AdSense: every page carries the google-adsense-account tag (STUDIO["adsense"] in content.py; sync_webapps.py
 adds it to the web games). ads.txt and app-ads.txt hold the same publisher line.
 GitHub Pages (Jekyll) does not publish folders starting with "_", so this folder stays private.
+
+## History Timeline (browser game)
+
+`/play/history-timeline/` is built by `python _src/build.py` (through `_src/timeline_build.py`): one event per
+article in `_src/history/`, listed in `_src/timeline.py` (year range, display year and card label in Korean and
+English, and whether it belongs to the Korean history deck). The game script and styles are `_src/timeline/app.js`
+and `_src/timeline/extra.css` (appended to the shared web game stylesheet). After changing the look, run
+`node _src/timeline/make_images.js` to redraw `og-image.png` and `apple-touch-icon.png`. When you add history
+articles, add their events to `_src/timeline.py` and update the event counts ("83") in `_src/content.py`.
