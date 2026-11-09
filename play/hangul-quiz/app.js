@@ -1,4 +1,4 @@
-/* Hangul Quiz (browser game): eight stages from single letters to whole words.
+/* Hangul Quiz (browser game): twelve stages, from single letters to whole words and everyday vocabulary.
    Source: _src/hangul_quiz/app.js, copied to play/hangul-quiz/ by build.py (build_hangul_quiz). The page is an
    ordinary site page in English (/play/hangul-quiz/); this script renders the game into #hq-app.
    Romanization follows the Revised Romanization of Korean, as in the Learn Hangul guides. No frameworks. */
@@ -79,6 +79,46 @@
     { k: '산', m: 'mountain' }, { k: '별', m: 'star' }, { k: '달', m: 'moon' }, { k: '이름', m: 'name' },
   ];
 
+  // Stages 9-12: everyday words, matching four of the guides. g = items that mean the same thing (never offered as
+  // each other's wrong choice), so every question has exactly one right answer.
+  var SINO = ['일', '이', '삼', '사', '오', '육', '칠', '팔', '구', '십'];
+  var NATIVE = ['하나', '둘', '셋', '넷', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
+  var NUMBERS = SINO.map(function (k, i) {
+    return { k: k, m: String(i + 1), g: 'n' + (i + 1), n: 'Sino-Korean number, used for dates, money, minutes and phone numbers.' };
+  }).concat(NATIVE.map(function (k, i) {
+    return { k: k, m: String(i + 1), g: 'n' + (i + 1), n: 'Native Korean number, used for counting things and people, and for hours.' };
+  })).concat([
+    { k: '백', m: '100', n: 'Sino-Korean: 100 is just 백, not "one hundred".' },
+    { k: '천', m: '1,000', n: 'Sino-Korean: 1,000 is just 천.' },
+    { k: '만', m: '10,000', n: 'Korean counts big numbers in units of 10,000 (만).' },
+    { k: '스물', m: '20', n: 'Native Korean number: 스물 is 20.' },
+  ]);
+  var DAYS = [
+    { k: '월요일', m: 'Monday' }, { k: '화요일', m: 'Tuesday' }, { k: '수요일', m: 'Wednesday' }, { k: '목요일', m: 'Thursday' },
+    { k: '금요일', m: 'Friday' }, { k: '토요일', m: 'Saturday' }, { k: '일요일', m: 'Sunday' }, { k: '오늘', m: 'today' },
+    { k: '내일', m: 'tomorrow' }, { k: '어제', m: 'yesterday' }, { k: '모레', m: 'the day after tomorrow' },
+    { k: '주말', m: 'weekend' }, { k: '평일', m: 'weekday' }, { k: '아침', m: 'morning' }, { k: '저녁', m: 'evening' },
+    { k: '봄', m: 'spring' }, { k: '여름', m: 'summer' }, { k: '가을', m: 'fall, autumn' }, { k: '겨울', m: 'winter' },
+  ];
+  var FAMILY = [
+    { k: '가족', m: 'family' }, { k: '어머니', m: 'mother', g: 'mom' }, { k: '엄마', m: 'mom', g: 'mom' },
+    { k: '아버지', m: 'father', g: 'dad' }, { k: '아빠', m: 'dad', g: 'dad' }, { k: '부모님', m: 'parents' },
+    { k: '형', m: 'older brother (said by a male)', g: 'ob' }, { k: '오빠', m: 'older brother (said by a female)', g: 'ob' },
+    { k: '누나', m: 'older sister (said by a male)', g: 'os' }, { k: '언니', m: 'older sister (said by a female)', g: 'os' },
+    { k: '동생', m: 'younger sibling', g: 'ys' }, { k: '남동생', m: 'younger brother', g: 'ys' },
+    { k: '할머니', m: 'grandmother' }, { k: '할아버지', m: 'grandfather' }, { k: '아들', m: 'son' }, { k: '딸', m: 'daughter' },
+    { k: '남편', m: 'husband' }, { k: '이모', m: "aunt (mother's sister)", g: 'aunt' }, { k: '고모', m: "aunt (father's sister)", g: 'aunt' },
+  ];
+  var GREETINGS = [
+    { k: '안녕하세요', m: 'hello' }, { k: '감사합니다', m: 'thank you', g: 'thanks' }, { k: '고맙습니다', m: 'thank you (warmer)', g: 'thanks' },
+    { k: '죄송합니다', m: "I'm sorry (formal)", g: 'sorry' }, { k: '미안해요', m: "I'm sorry", g: 'sorry' },
+    { k: '안녕히 가세요', m: 'goodbye (to someone who is leaving)' }, { k: '안녕히 계세요', m: 'goodbye (to someone who is staying)' },
+    { k: '괜찮아요', m: "it's OK" }, { k: '처음 뵙겠습니다', m: 'nice to meet you (formal)', g: 'meet' },
+    { k: '만나서 반가워요', m: 'nice to meet you', g: 'meet' }, { k: '잘 먹겠습니다', m: 'thanks for the food (before eating)' },
+    { k: '잘 먹었습니다', m: 'thanks for the meal (after eating)' }, { k: '어서 오세요', m: 'welcome' },
+    { k: '축하해요', m: 'congratulations' }, { k: '수고하셨습니다', m: 'thanks for your hard work' },
+  ];
+
   // Vowels that most speakers now pronounce the same: never offered as each other's wrong choice
   var SAME = { 'ㅐ': 'e', 'ㅔ': 'e', 'ㅒ': 'ye', 'ㅖ': 'ye', 'ㅚ': 'we', 'ㅙ': 'we', 'ㅞ': 'we' };
 
@@ -92,6 +132,10 @@
     { title: 'Final consonants', desc: 'Syllables with batchim: 밥, 국, 꽃', kind: 'read', items: CLOSED, guide: ['batchim', 'Batchim'] },
     { title: 'Reading words', desc: '한국, 서울, 김치 and more', kind: 'read', items: WORDS, guide: ['two-week-plan', 'A Two-Week Plan to Learn Hangul'] },
     { title: 'Word meanings', desc: 'Read the word, pick its meaning', kind: 'mean', items: MEANINGS, guide: ['', 'all Learn Hangul guides'] },
+    { title: 'Numbers', desc: 'Sino-Korean 일, 이, 삼 and native 하나, 둘, 셋', kind: 'mean', ask: 'What number is this?', items: NUMBERS, guide: ['korean-numbers', 'Korean Numbers'] },
+    { title: 'Days and seasons', desc: '월요일, 오늘, 내일, 봄 and more', kind: 'mean', items: DAYS, guide: ['days-and-dates', 'Days, Weeks and Dates'] },
+    { title: 'Family', desc: '엄마, 아빠, 형, 오빠, 누나, 언니', kind: 'mean', items: FAMILY, guide: ['korean-family-terms', 'Korean Family Terms'] },
+    { title: 'Greetings', desc: '안녕하세요, 감사합니다, 괜찮아요', kind: 'mean', ask: 'What does this mean?', items: GREETINGS, guide: ['korean-greetings', 'Everyday Korean Greetings'] },
   ];
 
   /* ---------- storage ---------- */
@@ -159,6 +203,7 @@
       var wrong = shuffle(pool.filter(function (x) {
         if (x.readOnly && write) return false;
         if (SAME[x.k] && SAME[x.k] === SAME[item.k]) return false;
+        if (item.g && x.g === item.g) return false;
         var v = key(x);
         if (seen[v]) return false;
         seen[v] = true;
@@ -200,7 +245,7 @@
     var cons = st.items === CONSONANTS || st.items === TENSE;
     if (q.write) return { ask: cons ? 'Which letter makes this sound at the start of a syllable?' : 'Which letter makes this sound?', big: q.item.r, latin: true, say: q.say };
     if (st.kind === 'letter') return { ask: cons ? 'What sound does this letter make at the start of a syllable?' : 'What sound does this letter make?', big: q.item.k, say: q.say };
-    if (st.kind === 'mean') return { ask: 'What does this word mean?', big: q.item.k, say: q.item.k };
+    if (st.kind === 'mean') return { ask: st.ask || 'What does this word mean?', big: q.item.k, say: q.item.k };
     return { ask: 'How do you read this?', big: q.item.k, say: q.item.k };
   }
 
@@ -212,7 +257,7 @@
     }).join('');
     var answered = S.picked != null;
     var choices = q.choices.map(function (c, i) {
-      var cls = 'hq-choice' + (q.write ? ' ko' : '');
+      var cls = 'hq-choice' + (q.write ? ' ko' : '') + (c.length > 14 ? ' long' : '');
       if (answered) {
         if (c === q.answer) cls += ' ok';
         else if (c === S.picked) cls += ' bad';
@@ -237,7 +282,7 @@
       '<span class="hq-where">Stage ' + (S.stage + 1) + ': ' + esc(st.title) + ' · ' + (S.i + 1) + '/' + S.qs.length + '</span></div>' +
       '<div class="hq-dots" aria-hidden="true">' + dots + '</div>' +
       '<div class="card hq-q"><p class="hq-ask" id="hq-ask" tabindex="-1">' + esc(p.ask) + '</p>' +
-      '<p class="hq-big' + (p.latin ? ' latin' : '') + '" lang="' + (p.latin ? 'en' : 'ko') + '">' + esc(p.big) + sayBtn + '</p></div>' +
+      '<p class="hq-big' + (p.latin ? ' latin' : '') + (!p.latin && p.big.length > 3 ? ' long' : '') + '" lang="' + (p.latin ? 'en' : 'ko') + '">' + esc(p.big) + sayBtn + '</p></div>' +
       '<div class="hq-choices">' + choices + '</div>' + fb +
       '<p class="hq-keys">Keys 1–4 to answer, Enter for next.</p></div>';
   }
@@ -309,7 +354,7 @@
   });
 
   // Links from the guides open a stage directly: /play/hangul-quiz/#stage-3 (locked or not, for practice)
-  var m = /^#stage-([1-8])$/.exec(location.hash);
+  var m = /^#stage-([1-9]|1[0-2])$/.exec(location.hash);
   if (m) {
     if (history.replaceState) history.replaceState(null, '', location.pathname);
     start(+m[1] - 1);

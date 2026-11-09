@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "509616789ac6f9354b0cf9e0ad662b79175db3ee"
+  "hash": "482a0e0beccef15fe037b984e3517a743ffdfd00"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -9,35 +9,35 @@
  },
  "/games/bust-below/": {
   "date": "2026-11-09",
-  "hash": "13fdab7f9943e945d8535b47e1aecb29fb888b8c"
+  "hash": "3eb5ee27bc00f9848a05d68bfc0d0e99c6b6d30a"
  },
  "/games/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "cb583c857dda97351ef5de23b4dcc240dc9e855d"
+  "hash": "36331c6dbfd78829fb67e8743117855a87bbaa66"
  },
  "/games/korean-word-quiz/": {
   "date": "2026-11-09",
-  "hash": "757281c05806967062bef0f4bff1f99e779bb955"
+  "hash": "7f74457489345723b52f845aa40a24cb94bdcd75"
  },
  "/games/learn-korean-hangul/": {
   "date": "2026-11-09",
-  "hash": "2bcc0c9c2c289b40f44e1d4ad12f6c18262e67e6"
+  "hash": "70d3ee5a89b8a8592c343a6e6f248244b38246bc"
  },
  "/games/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "6ff21813037be28d973bc9d0c1008454e51d82de"
+  "hash": "4b57c160a3a3a96e031f7faaa00e977d719bd48e"
  },
  "/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "ca2adde83a1dadd4d29803241832c8d5346b6534"
+  "hash": "54f2bfbfc450c827563d785e22f682e1280e3d77"
  },
  "/games/world-history-quiz/": {
   "date": "2026-11-09",
-  "hash": "b89a2e0e3fee688bc1cf48e1b0f545b87f554a2d"
+  "hash": "b110246e432dd0c930192279327eaace5002920f"
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "582e0b7444e18d0a13c81cb104e86a7abba94665"
+  "hash": "80216d6d90ab8248881582ce0adc8cce372a0d38"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -45,35 +45,35 @@
  },
  "/ko/games/bust-below/": {
   "date": "2026-11-09",
-  "hash": "dac57fd0814917da3cde549f0a907831546287d3"
+  "hash": "7715ae166da4bbac5f2999669a6a99e6b4ca92d3"
  },
  "/ko/games/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "499c5cfa6aa81f1c82a132d541a2ecdf6ae6833b"
+  "hash": "754968b745758d471fc86822fa14d30c81d57564"
  },
  "/ko/games/korean-word-quiz/": {
   "date": "2026-11-09",
-  "hash": "eecca1ffa92646b633953f73161531804ce3ab40"
+  "hash": "8ddf56a7dc8f081025fafb44bb1f4ccac4f8e0f7"
  },
  "/ko/games/learn-korean-hangul/": {
   "date": "2026-11-09",
-  "hash": "e85822afc81aa9cd4dda856a3b037f7dac1b0169"
+  "hash": "ad5efbef552c5cca53a2f451d709de09bcf2be18"
  },
  "/ko/games/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "4a37c0bf0db596cd71b50c0989c98395374db44f"
+  "hash": "4783835cadad489ccccbe914db64c4f146652f69"
  },
  "/ko/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "57ec5f42a85a610d16492cd6c25f638c4bd724ce"
+  "hash": "ace8666fc2a1f0bb1a817ae09886fff8adc110a7"
  },
  "/ko/games/world-history-quiz/": {
   "date": "2026-11-09",
-  "hash": "65d6a201d4f9e4141cb45b6d76d7ae8b0867de52"
+  "hash": "37a75797060a28a0bc4f12574cde0a38bfa0e273"
  },
  "/ko/history/": {
   "date": "2026-11-09",
-  "hash": "553f8ef15fe26054c2bc7c1bfaf7bed029a7acdc"
+  "hash": "c756cc1a672649b23b273459d7efa53d717468f0"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-09",
@@ -413,35 +413,35 @@
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
-  "hash": "5243957a1d91c9076e3791a95e6bc78b3a081fc4"
+  "hash": "2bfe5d00fa2f3c665c94e99329f892fd7021150b"
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "5f21144a742fc2d2a698d35560eddbd779636653"
+  "hash": "f8722be6cfe43c92d957061ffbc759db6bbaecc2"
  },
  "/ko/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "66e61058881ab140fb982b4185321008a17a33a3"
+  "hash": "235c1a7cadc39ae88ef4d4cd76f3e9051270f36a"
  },
  "/ko/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
-  "hash": "d0d4af4d32bbcb5c92249d49d761ce892f68c7de"
+  "hash": "eff39b6dd46872e6cdba0283b6361058d08ba2e6"
  },
  "/ko/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "b3af37565781a0f5cb128e8a3a94347d4b881409"
+  "hash": "92b882041cc8137e322f81a71d5a110694cfabab"
  },
  "/ko/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
-  "hash": "596ec07f19d0019753aa29c7d342113d554034c6"
+  "hash": "7a924f1e50adcfe80bac463fbb817d5a97ded5c1"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "43ed29f12f5084fea9df812eb2baa9d767a61523"
+  "hash": "e2dfd0d0b7fa730e155ddf994e100482cb1744c2"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
-  "hash": "67c9c01e82340d4de6f31706cd50a767eeae49b9"
+  "hash": "2f2855c7c13e092cde48d37c0bb04d3104c2209d"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
@@ -453,63 +453,63 @@
  },
  "/ko/terms/": {
   "date": "2026-11-09",
-  "hash": "85fe7d2acde4194e85a487be691bb67730ae0d3b"
+  "hash": "120f607c4763cc3f19722f82f2748d80307c6839"
  },
  "/learn/": {
   "date": "2026-11-09",
-  "hash": "17419c127714b2e86cac72ec92a62405765c3719"
+  "hash": "80c89e04f0bdc1d1eb2f29ec1a90372ac7145d95"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
-  "hash": "d3eaba347d9c51e1cae674cb48195b4ffb76028c"
+  "hash": "a50ff1e2c65105e3928ad60a0163e6998f97b440"
  },
  "/learn/days-and-dates/": {
   "date": "2026-11-09",
-  "hash": "e96de1bcd2c2762338ad26288d24574d2e0c9f75"
+  "hash": "3db5e29de128fbe20335b6269fc55f794f855354"
  },
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
-  "hash": "c545f803709488b40daed9fe645ef36a7dcae0ab"
+  "hash": "f3babf78948bad55c4eeae1cd2cd43c9aa028992"
  },
  "/learn/korean-consonants/": {
   "date": "2026-11-09",
-  "hash": "c4214335edcc6539fdbce2f73afd8481e82f475f"
+  "hash": "bde95616ac57d688f44ea0977df0bc743a38bac0"
  },
  "/learn/korean-family-terms/": {
   "date": "2026-11-09",
-  "hash": "111d8367ed8a6b11e84dbf27c06c915739f1124d"
+  "hash": "4dad90b9ee5d780a374745f5cf9149fcec1f1f3f"
  },
  "/learn/korean-greetings/": {
   "date": "2026-11-09",
-  "hash": "a761787456ea80512c79ce81ef80f1464652cb9d"
+  "hash": "bc8b27aeb8874c50374f3153e120b549009eb95b"
  },
  "/learn/korean-numbers/": {
   "date": "2026-11-09",
-  "hash": "3c8d4ed35fe0ff6ef3438031a505cf52e65529f0"
+  "hash": "8cb281e31c7695a51c63f40cb705513650a5ef36"
  },
  "/learn/korean-politeness/": {
   "date": "2026-11-09",
-  "hash": "39e749d1702b28c0a853104410ca5d03d4733f15"
+  "hash": "e117be5216368b354a2c64cbd30d6df4819e154e"
  },
  "/learn/korean-vowels/": {
   "date": "2026-11-09",
-  "hash": "14377a095ad6dba627193b17094355e270cd5ce0"
+  "hash": "ff43827646cd75f7b8f4da93b61767e40cb2a192"
  },
  "/learn/ordering-at-a-restaurant/": {
   "date": "2026-11-09",
-  "hash": "3727a33bf68394229db574f187a3480013b2e6be"
+  "hash": "71ad55cf17b7ea5f7e6fe09152797f5a18eb4e3b"
  },
  "/learn/plain-aspirated-tense/": {
   "date": "2026-11-09",
-  "hash": "6077c92a630698a6a479032408c98776fb0af5e3"
+  "hash": "f4b6e7d28a092bbfd7e81eefbeac43c01c37bf2f"
  },
  "/learn/topic-and-subject-particles/": {
   "date": "2026-11-09",
-  "hash": "44797f61862582549f4650f4f53938ded0a73588"
+  "hash": "3f2d3f6a68a0f3008ea73b0d0970f06250e3974c"
  },
  "/learn/two-week-plan/": {
   "date": "2026-11-09",
-  "hash": "a1e84cc2fc28cc888388ac87ba238b6d34e8c981"
+  "hash": "9df424d7a06542f6e53bc8d2681960d516c62744"
  },
  "/news/": {
   "date": "2026-11-09",
@@ -517,39 +517,39 @@
  },
  "/news/archive/": {
   "date": "2026-11-09",
-  "hash": "d0a7af2a1df2ba14c90372c7700275915a6a2943"
+  "hash": "cbdbbe94db7437263a2aa25fe0aa70f2bb19e1ea"
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "bb72709ed86d54b66cc53298528a46cc34bde934"
+  "hash": "ad2a1e15f80ea45f8bf4b4ec28819a639270174a"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "266fc651f2400207571777c59e3ddbc3142f4d54"
+  "hash": "b2523e3123d24880cba87291376c645a530121e6"
  },
  "/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
-  "hash": "93b236f3c72ee21620a560c1d6299645aa74e8c4"
+  "hash": "84ac853d9f5ae24b656dc61f14b146be9c07e512"
  },
  "/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "02832766809bd45c4d55e9280d996fa22141ac99"
+  "hash": "08544b6c1a76275db72b508146eea1e4bacea197"
  },
  "/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
-  "hash": "f2ea1c26acc50206002d9782a2474374b908356b"
+  "hash": "6d9140a1bbf692032b399758d4471ac9da80de88"
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "62a31bb24e90108acee9fd76a5ae65195b586bcc"
+  "hash": "7e65999896ff99905aa01627e5d2f78f88ce753b"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "c5c2c2b9a918cee2544f0be81aa31f0117b3f3a2"
+  "hash": "c06bb256e468c5c514206a587fbbc0fec5a52570"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
-  "hash": "13757409894a242e0d1e596c525dd7fa4ca83a4f"
+  "hash": "2e0ca68db5601ea282fc5e407e7abee43b2fb51c"
  },
  "/privacy.html": {
   "date": "2026-11-09",
@@ -561,6 +561,6 @@
  },
  "/terms/": {
   "date": "2026-11-09",
-  "hash": "67ec671dd497ec3dd1b1b521a120e1cd144ea666"
+  "hash": "061ef58192a5503ad8fa7a0d013abe10264baff5"
  }
 }

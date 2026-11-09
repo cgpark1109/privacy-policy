@@ -178,6 +178,15 @@ function head(game, en, v, page) {
     isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     publisher: { '@type': 'Organization', name: "ggook's studio", url: `${SITE}/` },
   }).replace(/</g, '\\u003c')}</script>\n`;
+  // breadcrumb trail for search results: Home › Browser games › game (› list)
+  const ko = PAGE.lang === 'ko';
+  const trail = [[ko ? '홈' : 'Home', ko ? '/ko/' : '/'], [ko ? '브라우저 게임' : 'Browser games', ko ? '/ko/play/' : '/play/'],
+    [en.title, isList ? pagePath(game, PAGE.lang, false) : null]];
+  if (isList) trail.push([en.list_title, null]);
+  const crumbs = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: trail.map(([name, p], i) => ({ '@type': 'ListItem', position: i + 1, name, ...(p ? { item: SITE + p } : {}) })),
+  }).replace(/</g, '\\u003c')}</script>\n`;
   return `<!doctype html>
 <html lang="${PAGE.lang}" data-game="${game.id}" data-fixed-lang="${PAGE.lang}"${A ? ` data-base="${A}"` : ''}>
 <head>
@@ -215,7 +224,7 @@ ${alt}
 <script src="${A}data.js?v=${v['data.js']}" defer></script>
 <script src="${A}game.js?v=${v['game.js']}" defer></script>
 <script src="${A}app.js?v=${v['app.js']}" defer></script>
-${ld}</head>`;
+${ld}${crumbs}</head>`;
 }
 
 // Header and footer: the same as the main site's (see page() in _src/build.py). The game switches language in

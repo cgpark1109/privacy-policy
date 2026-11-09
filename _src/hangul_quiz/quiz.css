@@ -60,6 +60,7 @@
 .hq-q { text-align: center; }
 .hq-ask { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--coral-ink); }
 .hq-big { font-size: clamp(56px, 16vw, 84px); font-weight: 700; line-height: 1.2; margin: 6px 0 2px; font-family: 'Noto Sans KR', sans-serif; display: inline-flex; align-items: center; gap: 12px; }
+.hq-big.long { font-size: clamp(30px, 9vw, 52px); flex-wrap: wrap; justify-content: center; }
 .hq-big.latin { font-family: 'Poppins', sans-serif; font-size: clamp(42px, 12vw, 64px); }
 .hq-say { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--soft); color: var(--navy); display: inline-grid; place-items: center; cursor: pointer; }
 .hq-say:hover { background: #E6E9F4; }
@@ -67,6 +68,7 @@
 .hq-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .hq-choice { display: flex; align-items: center; gap: 10px; min-height: 60px; padding: 10px 14px; border-radius: 16px; background: var(--card);
   border: 2px solid transparent; box-shadow: var(--shadow); font: inherit; font-size: 17px; font-weight: 600; color: var(--navy); cursor: pointer; text-align: left; }
+.hq-choice.long { font-size: 14.5px; line-height: 1.35; }
 .hq-choice.ko { font-size: 26px; font-family: 'Noto Sans KR', sans-serif; }
 .hq-choice:hover:not(:disabled) { border-color: var(--coral); }
 .hq-choice:disabled { cursor: default; opacity: 0.75; }
