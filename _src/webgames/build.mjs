@@ -225,7 +225,7 @@ function footer() {
     <nav aria-label="Site">
       <a href="/privacy.html" data-href-ko="/ko/privacy/" data-t="privacy">Privacy Policy</a>
       <a href="/terms/" data-href-ko="/ko/terms/" data-t="terms">Terms of Service</a>
-      <a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a>
+      <a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a>
       <a href="${LINKS.calc}" data-t="calc_link">Calculators</a>
       <a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a>
       <a href="mailto:${LINKS.email}" data-t="contact">Contact</a>
@@ -267,7 +267,7 @@ function indexHtml(game, en, v) {
 ${header()}
 <main id="main">
   <div class="wrap game-head">
-    <div class="game-bar"><nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a><span aria-hidden="true">›</span><span data-t="title">${esc(en.title)}</span></nav>
+    <div class="game-bar"><nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><span data-t="title">${esc(en.title)}</span></nav>
     <a class="tool-link" href="#/settings">${ICON_GEAR}<span data-t="settings">Settings</span></a></div>
     <h1 data-t="title">${esc(en.title)}</h1>
     <p class="lead" data-t="tagline">${esc(en.tagline)}</p>
@@ -321,7 +321,7 @@ function listHtml(game, en, ko, entries, v) {
 ${header()}
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
     <div class="list-head">
       <h1 data-t="list_title">${esc(en.list_title)}</h1>
       <p class="lang-en">${esc(en.list_lead)}</p><p class="lang-ko">${esc(ko.list_lead)}</p>

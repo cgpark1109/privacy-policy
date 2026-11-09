@@ -1,550 +1,550 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "3627174a746fbdcf6bed2195df4ae4425f8870af"
+  "hash": "509616789ac6f9354b0cf9e0ad662b79175db3ee"
  },
  "/about/": {
   "date": "2026-11-09",
-  "hash": "89e4cee9c7868fd9ddbd686c7ba60c4b0615a51d"
+  "hash": "e9c91f2a38719b337c1b4b0b780a7ec1d5db2c98"
  },
  "/games/bust-below/": {
   "date": "2026-11-09",
-  "hash": "3470d985a34ece73c1a7780ccf8b56501a6ab0d4"
+  "hash": "13fdab7f9943e945d8535b47e1aecb29fb888b8c"
  },
  "/games/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "ff680bbf97940d44fc677214a24f069390313898"
+  "hash": "cb583c857dda97351ef5de23b4dcc240dc9e855d"
  },
  "/games/korean-word-quiz/": {
   "date": "2026-11-09",
-  "hash": "4eba0f379eabbc5d88fc5bb01b242036c47d4da2"
+  "hash": "757281c05806967062bef0f4bff1f99e779bb955"
  },
  "/games/learn-korean-hangul/": {
   "date": "2026-11-09",
-  "hash": "3f671ca49c35430b38c4d27117d60836e43e1344"
+  "hash": "2bcc0c9c2c289b40f44e1d4ad12f6c18262e67e6"
  },
  "/games/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "c9e8efba49a3cce19785ebe29b98981aa518e781"
+  "hash": "6ff21813037be28d973bc9d0c1008454e51d82de"
  },
  "/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "48d72d954655a04b73194f2329401ed4cd2a2b7a"
+  "hash": "ca2adde83a1dadd4d29803241832c8d5346b6534"
  },
  "/games/world-history-quiz/": {
   "date": "2026-11-09",
-  "hash": "b96a382baddc24dc4b2395104471f5dcdda3a94f"
+  "hash": "b89a2e0e3fee688bc1cf48e1b0f545b87f554a2d"
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "e83276d1af9a05ff9188f6ead2d5487f59381996"
+  "hash": "229972e646e7003ea617bf89b0cec05128ee58ca"
  },
  "/ko/about/": {
   "date": "2026-11-09",
-  "hash": "598a832f3399ee58aeab421e9a7cde967efa3f9e"
+  "hash": "4a434b7830ef91168fc832621e541047ecb7ad8e"
  },
  "/ko/games/bust-below/": {
   "date": "2026-11-09",
-  "hash": "3d035f0bffce767c61291ca28b9dba2fa72d1b1c"
+  "hash": "dac57fd0814917da3cde549f0a907831546287d3"
  },
  "/ko/games/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "41d5b0fc76bdd8a5850b351ca5e0dd9c63cc7fe5"
+  "hash": "499c5cfa6aa81f1c82a132d541a2ecdf6ae6833b"
  },
  "/ko/games/korean-word-quiz/": {
   "date": "2026-11-09",
-  "hash": "c5524f3992bbd0be0e4e06976ba3235e6ba446c2"
+  "hash": "eecca1ffa92646b633953f73161531804ce3ab40"
  },
  "/ko/games/learn-korean-hangul/": {
   "date": "2026-11-09",
-  "hash": "6c3323485bd052dc5031f0a981c2d974f285a737"
+  "hash": "e85822afc81aa9cd4dda856a3b037f7dac1b0169"
  },
  "/ko/games/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "80ea3f5a77fb45291784cdd52886712552beced1"
+  "hash": "4a37c0bf0db596cd71b50c0989c98395374db44f"
  },
  "/ko/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "2d47a3cdad98d75ebcea48b4cb007232845c4ceb"
+  "hash": "57ec5f42a85a610d16492cd6c25f638c4bd724ce"
  },
  "/ko/games/world-history-quiz/": {
   "date": "2026-11-09",
-  "hash": "43fca625134257f6a0d9b62761f10fbae92d1b4e"
+  "hash": "65d6a201d4f9e4141cb45b6d76d7ae8b0867de52"
  },
  "/ko/history/": {
   "date": "2026-11-09",
-  "hash": "54674595b502652917b8738a4fef44417ff3c69e"
+  "hash": "553f8ef15fe26054c2bc7c1bfaf7bed029a7acdc"
  },
  "/ko/history/alexander-334bc/": {
   "date": "2026-11-09",
-  "hash": "ed91fbfe03fdf6e530626c8486297f715f9dbaba"
+  "hash": "3060d7aa74f7af3f77e2fe82ff9dc355ebfa5f76"
  },
  "/ko/history/american-independence-1776/": {
   "date": "2026-11-09",
-  "hash": "0bc56cc5a6c038cf1cb599198606f9e9d98bbbc3"
+  "hash": "1130d8e5fa74f46706f9016afbbe310929479399"
  },
  "/ko/history/angkor-wat-1113/": {
   "date": "2026-11-09",
-  "hash": "e6d2153a9dcccdb6f0c0399f2dbdfc28877c2924"
+  "hash": "680b265708a51aba791d4bbbe5c20f09d0d8d90b"
  },
  "/ko/history/april-revolution-1960/": {
   "date": "2026-11-09",
-  "hash": "5759a7bad4784177fb7fd27d28244b555eeb9701"
+  "hash": "1691e25f86fe62d0a2a54d342bc6445b3d9544c1"
  },
  "/ko/history/asian-financial-crisis-1997/": {
   "date": "2026-11-09",
-  "hash": "cf5a00efdb4b55c704b1f3029fced613a4ab80ad"
+  "hash": "52fa739cf7f92c32e3b1fb3e928d88edb19f478e"
  },
  "/ko/history/athenian-democracy-508bc/": {
   "date": "2026-11-09",
-  "hash": "19de6f681265cbfb00306c9fee88b34e533f2b2c"
+  "hash": "5e3b7a48ce503d2f55567485b7f22ac10fe8640e"
  },
  "/ko/history/augustus-27bc/": {
   "date": "2026-11-09",
-  "hash": "b8a3729223c6da08e51a034f327a3284e4e5bc16"
+  "hash": "496914bd8d9eecde59adad36ad01e22e6f78fc5f"
  },
  "/ko/history/bandung-1955/": {
   "date": "2026-11-09",
-  "hash": "ac37b056170d185986aad88bd2ff54d90ef28a53"
+  "hash": "861924a67e63342c17c52b88e581c3ab76cee727"
  },
  "/ko/history/berlin-conference-1884/": {
   "date": "2026-11-09",
-  "hash": "aac59b8f1a944bb96f34739e43f6fdfd9ba8c6b7"
+  "hash": "844cfd14bee021fd471b33dd0c0fc7381beeb163"
  },
  "/ko/history/black-death-1347/": {
   "date": "2026-11-09",
-  "hash": "265da2ea810c1547c18ec8566e1d8e2c41342121"
+  "hash": "250060015214ca8b1d07fa3a71a692a2dd6024be"
  },
  "/ko/history/buddha-500bc/": {
   "date": "2026-11-09",
-  "hash": "93c566ab038201421cf9cb537185552450641030"
+  "hash": "e9b68dfa266d4b8af76d17aafa5ca161d25679d1"
  },
  "/ko/history/byeongja-horan-1636/": {
   "date": "2026-11-09",
-  "hash": "a91d41fb78872f71ddac03cd38594e1dc567427c"
+  "hash": "f74261eac098764df5eec8aa76c9fe52819bfebf"
  },
  "/ko/history/canossa-1077/": {
   "date": "2026-11-09",
-  "hash": "fb4de05f14ae1bc8c278707cebd8e8b058468fd8"
+  "hash": "72a9cea413a808e2eea7775a66b530a7567ae703"
  },
  "/ko/history/civil-rights-1963/": {
   "date": "2026-11-09",
-  "hash": "e1d25018cb5ebf24e01275389667b46f083a81b0"
+  "hash": "7a6c42d7762b3453574aa03697396758c7055ec3"
  },
  "/ko/history/columbus-1492/": {
   "date": "2026-11-09",
-  "hash": "9c91ed4c6a6e88bb2ed25d80388c4375982acd2d"
+  "hash": "5dc0e5630ccf17ccf490e5dd42f9fc03bc72e66d"
  },
  "/ko/history/confucius-551bc/": {
   "date": "2026-11-09",
-  "hash": "14f8da23a6ce9e01e44cf7f67a739be7da579520"
+  "hash": "1969294a717101736b7a0413ac92ab076d7168a5"
  },
  "/ko/history/copernicus-1543/": {
   "date": "2026-11-09",
-  "hash": "82a7aee0e5e754111eaa6a404b2de19a403e5dd4"
+  "hash": "d80dc2b28f44e2a0d3a1e1f45643d0364d965245"
  },
  "/ko/history/crusades-1096/": {
   "date": "2026-11-09",
-  "hash": "92cb4a5fae7cb99e5e84dd7afe3a19c426409282"
+  "hash": "f0257caef216ed176739ec9435f6115ef2ecfe9f"
  },
  "/ko/history/cuban-missile-crisis-1962/": {
   "date": "2026-11-09",
-  "hash": "daa59233cf216dd3ba98b4066e102103bd547682"
+  "hash": "91a59c6a7fc8c709f800d8648f90fd1c137ebacf"
  },
  "/ko/history/daedong-law-1608/": {
   "date": "2026-11-09",
-  "hash": "68e67b7f1e45b2cf4ce59998bd415e0c02a88ef6"
+  "hash": "9b49649f6c570d95dbfc9810359b6b1bf38b72f2"
  },
  "/ko/history/donghak-1894/": {
   "date": "2026-11-09",
-  "hash": "11277fc14b44cf7061f841eee26e106bba5dfe0c"
+  "hash": "0c4d621bc43a9a577e22945710acfda41dab5a23"
  },
  "/ko/history/emancipation-1863/": {
   "date": "2026-11-09",
-  "hash": "28478ec757d6744a04ac51ac3da3a7cf58e139d7"
+  "hash": "437f48c79d38f08711588decef0978079842e920"
  },
  "/ko/history/end-of-ww2-1945/": {
   "date": "2026-11-09",
-  "hash": "fb601f12d2ea092b50fa4ece83f973d32470da00"
+  "hash": "bea2c1159020b24af1d1e4f76db5fcf0c95c5737"
  },
  "/ko/history/fall-of-berlin-wall-1989/": {
   "date": "2026-11-09",
-  "hash": "d747752a2f4e2e47b096d3f3169fc95a3d8943d0"
+  "hash": "996fc61ad298249762214294e96c2964ff423827"
  },
  "/ko/history/fall-of-constantinople/": {
   "date": "2026-11-09",
-  "hash": "27df0bedc13008c2d3beaaf55af6abb29de174bd"
+  "hash": "71a99879a9de3cc0e9b1c326662face8d6026e93"
  },
  "/ko/history/fall-of-western-rome/": {
   "date": "2026-11-09",
-  "hash": "243adb884e1390e13307374579cd5282e40d3999"
+  "hash": "21e960fa067fd3a3a752b645a34d890309b625ad"
  },
  "/ko/history/french-revolution-1789/": {
   "date": "2026-11-09",
-  "hash": "46bac685cb80c7447ae691b52d69e90be1eaa4bf"
+  "hash": "dcc8c78902ec415f76d96d0bbf55a549b3cf81f4"
  },
  "/ko/history/ganghwa-treaty-1876/": {
   "date": "2026-11-09",
-  "hash": "c1b833056a108485bb7d83c66b2ae8199849fff3"
+  "hash": "ba2566980dc4154eea834ba0b1e6f59a3a543d4a"
  },
  "/ko/history/gapsin-coup-1884/": {
   "date": "2026-11-09",
-  "hash": "004afe771c466d35e1b7d3e3cfc0c59e85bae113"
+  "hash": "87665c836841a6e89b622fe8113e62c25d891c73"
  },
  "/ko/history/genghis-khan-1206/": {
   "date": "2026-11-09",
-  "hash": "27e39fb98a4d78e7e975d6a1cff13ad66e33d978"
+  "hash": "94a3923cfb525921706ca63be651c80ce3fdcc40"
  },
  "/ko/history/giza-pyramid-2560bc/": {
   "date": "2026-11-09",
-  "hash": "383ea619ccfd889bfdf7e5847349184d49e251ff"
+  "hash": "a862323653b6b440a98887ba76734412122bbf09"
  },
  "/ko/history/glorious-revolution-1688/": {
   "date": "2026-11-09",
-  "hash": "8745e0a77bd46be15af131cfe9a9684a81efb7ae"
+  "hash": "5bbb094f715b8b542098f5d0403c37e1f242c91b"
  },
  "/ko/history/gojoseon-2333bc/": {
   "date": "2026-11-09",
-  "hash": "c1aa36f6e313392a0d506850897996c954917831"
+  "hash": "63f1a7928041501a7e47873b3ed123b152b249e7"
  },
  "/ko/history/gojoseon-fall-108bc/": {
   "date": "2026-11-09",
-  "hash": "3051d62e4f4144a2f433020e0b29872bd25adff6"
+  "hash": "06ab2c68435e8a8bb18e4a2cec851df2bf1b7880"
  },
  "/ko/history/great-depression-1929/": {
   "date": "2026-11-09",
-  "hash": "c8d903cb1aaedb25e64c37e5f2d4bd4f187efbca"
+  "hash": "75867225965d08748c05a8b8056ade7444dd5819"
  },
  "/ko/history/great-kanto-earthquake-1923/": {
   "date": "2026-11-09",
-  "hash": "6b4814d086412dd5bd8b9bec120baf34278b0c45"
+  "hash": "743bc3549ba478c4b7c285788c6682bdb3abaddc"
  },
  "/ko/history/gutenberg-1450/": {
   "date": "2026-11-09",
-  "hash": "ea3478385c7b412545409924642ae84afe4e4384"
+  "hash": "23f8f1d51b1f3301ba3e56a2bfc9b421f6e56d19"
  },
  "/ko/history/hijra-622/": {
   "date": "2026-11-09",
-  "hash": "f925523b5e9ed7a4bca3cd183ae4752c27761e4e"
+  "hash": "376283e82bf99c92d06b353bb80ee2cee10b5e20"
  },
  "/ko/history/hunminjeongeum-1443/": {
   "date": "2026-11-09",
-  "hash": "5beb9e8f33031170fb8902a5a24a0c161c939de9"
+  "hash": "dc2aacc5e1c76100cdc83e5a421692cf038ac86b"
  },
  "/ko/history/hwaseong-1796/": {
   "date": "2026-11-09",
-  "hash": "4d36c763bcb83019766cd66e680db2d13a499f7c"
+  "hash": "ce004438af7d616a12170257d455fe049879483b"
  },
  "/ko/history/imjin-war-1592/": {
   "date": "2026-11-09",
-  "hash": "8dfb9876e14e5d36e87fb285ebcd5060a84b1174"
+  "hash": "02a9bb309d109a9756f8cbfbefb41ce2ebf1e2a7"
  },
  "/ko/history/imsul-uprising-1862/": {
   "date": "2026-11-09",
-  "hash": "12a3c7ace0479c5e741610adc38a28e726406356"
+  "hash": "e44b08aa42b9abe801274337f880c7091cde4f93"
  },
  "/ko/history/india-independence-1947/": {
   "date": "2026-11-09",
-  "hash": "907185105870cec6a46fee7a639d9bf62b201c06"
+  "hash": "2f69e47762a6d1211a45b73fbee67e36215b597d"
  },
  "/ko/history/industrial-revolution-1769/": {
   "date": "2026-11-09",
-  "hash": "f56f578cac13bdeb77186be149c68510dac48a46"
+  "hash": "dccc92a3777d93457eecd158eceffbb17141987e"
  },
  "/ko/history/iranian-revolution-1979/": {
   "date": "2026-11-09",
-  "hash": "93246d0342fcd8dcceaaee3c9d248245c0c5a8ac"
+  "hash": "19822f3c299ea00f4a2fc938f337705d11b68342"
  },
  "/ko/history/joan-of-arc-1429/": {
   "date": "2026-11-09",
-  "hash": "2e782bd8c011e509646a989b6a6bc2dcb2439022"
+  "hash": "b4eb24f7ca4e662a684da0f418af2f9e6362420c"
  },
  "/ko/history/joseon-founding-1392/": {
   "date": "2026-11-09",
-  "hash": "f5e9f4b16c02b6fe0cc1844086402a695aa8968e"
+  "hash": "44e072cb600560d70c4588ef900d839d59328a6c"
  },
  "/ko/history/july4-joint-statement-1972/": {
   "date": "2026-11-09",
-  "hash": "f08007c8b0443b59bdbedf7e4205be241c702580"
+  "hash": "f7110744783459f496b756cc275b15fae8a8e5aa"
  },
  "/ko/history/june-struggle-1987/": {
   "date": "2026-11-09",
-  "hash": "d7e600ed92d72435ea95705d7eb33c18202296dc"
+  "hash": "391ca0c24b854e84ab78ec3f8b1874a5ab3a2b0b"
  },
  "/ko/history/korean-empire-1910/": {
   "date": "2026-11-09",
-  "hash": "85e9dd8a9af4e395a40ffdc8637281e7d0d9d8fd"
+  "hash": "03dc3070068037961b5702591b7a559a40b86862"
  },
  "/ko/history/korean-war-1950/": {
   "date": "2026-11-09",
-  "hash": "60f9ee2bb1eb137e14be96b42a3da39557f3a477"
+  "hash": "fa7f589d4fae54f43b8ec90482653abd31b60a2e"
  },
  "/ko/history/latin-american-independence-1810/": {
   "date": "2026-11-09",
-  "hash": "e8d049cb816c722e7d6ae2ad7aa5edaba9f172a2"
+  "hash": "96db3871c50b1e70a5c0ad545793d3894d671400"
  },
  "/ko/history/magna-carta-1215/": {
   "date": "2026-11-09",
-  "hash": "2204f0135f86101bd0cc2c80c9026ac592d9bad4"
+  "hash": "e9e98fcd3e3c9314be1afc5d5f06e87fb6040e81"
  },
  "/ko/history/march-first-movement-1919/": {
   "date": "2026-11-09",
-  "hash": "5ee21576216d0dfb961e4fd52d27740002319983"
+  "hash": "75292c6ca1a24845b8d11068879982531dd8cec0"
  },
  "/ko/history/marco-polo-1271/": {
   "date": "2026-11-09",
-  "hash": "981eb5005426ccfdc954a8b5e09ba1edd219e1ff"
+  "hash": "c06a11d39fc6e572b324f96b2a8f58b075d53571"
  },
  "/ko/history/may-eighteenth-1980/": {
   "date": "2026-11-09",
-  "hash": "846644cd4a0ebbcaa9069f18083f2bb2619d3320"
+  "hash": "65827b67ff4cb3acaa3d7622a532ab202ffa6c01"
  },
  "/ko/history/may-fourth-1919/": {
   "date": "2026-11-09",
-  "hash": "d656fdf24f00ced9c2c2150550b11cf6536bc504"
+  "hash": "b49d415b1828342f34ae6a3e32d379ac5ec3e613"
  },
  "/ko/history/meiji-restoration-1868/": {
   "date": "2026-11-09",
-  "hash": "6d79b6b36aabc0298ca6807661fd655b354f2e42"
+  "hash": "d0b6fd073c0f15d30bce4dfb23efedcdc0080594"
  },
  "/ko/history/military-coup-1170/": {
   "date": "2026-11-09",
-  "hash": "437a4c310cfc3dcf9bb1caef694a2e805245f9d8"
+  "hash": "11cb24461f287a91b402147344f44dae4cf7fd6c"
  },
  "/ko/history/ming-qing-1644/": {
   "date": "2026-11-09",
-  "hash": "9567f8671d1e7156879e8e5bc9dbca23182b977c"
+  "hash": "6608909b6f71173304099a47ab961642f49c6bd7"
  },
  "/ko/history/moon-landing-1969/": {
   "date": "2026-11-09",
-  "hash": "dfc159c8a7ed7d2d1dc3d4a1e3f39f7d3de22188"
+  "hash": "715705182df8645774a52525c619e78370a69f2e"
  },
  "/ko/history/norman-conquest-1066/": {
   "date": "2026-11-09",
-  "hash": "042d9e270284d29919c8df4feeed7c07f55a1eda"
+  "hash": "7c5aac15fe9e324303b888cd530febb46010ecc4"
  },
  "/ko/history/olympics-776bc/": {
   "date": "2026-11-09",
-  "hash": "2f777f8017f45e8f1b7652d8b321bc49dcab3168"
+  "hash": "3ef3ead1cd022f71fc548993e0c4e2392ddb8e9b"
  },
  "/ko/history/opium-war-1840/": {
   "date": "2026-11-09",
-  "hash": "d16a8acdfae52209029cbc5ff8987f57be702eda"
+  "hash": "e1c56cf01a26dd49f4823318837c50c0a5f92582"
  },
  "/ko/history/panama-canal-1914/": {
   "date": "2026-11-09",
-  "hash": "4f4c1515c42f0bf1e520e03ece61a13adc6ea736"
+  "hash": "8036db81f982e7192af1073d5405bb36902722df"
  },
  "/ko/history/prc-founding-1949/": {
   "date": "2026-11-09",
-  "hash": "58b7e25e921a892955a91ac665cdc2f9221c883d"
+  "hash": "de05cf00c8c9738e7aeace3702037374ffc63fcb"
  },
  "/ko/history/qin-unification-221bc/": {
   "date": "2026-11-09",
-  "hash": "71e4d397470f3b4a4108ec9da0ce1494b441736c"
+  "hash": "93b39803f85dcbb0306db234267a7fe3dac07883"
  },
  "/ko/history/reformation-1517/": {
   "date": "2026-11-09",
-  "hash": "33480776caa3693224debc1e6b2b3fccf56df31d"
+  "hash": "09d4e9db37edb81cf04a8c49e0c848e1f6aa5f24"
  },
  "/ko/history/rok-government-1948/": {
   "date": "2026-11-09",
-  "hash": "22aa49e70993c4c0cd89842ddcd3c74175307a04"
+  "hash": "d9499c45fc3a0751776273579b48b490716e00d0"
  },
  "/ko/history/rome-founding-753bc/": {
   "date": "2026-11-09",
-  "hash": "feaad4869ddeb808725f7464e72b0016979a00d0"
+  "hash": "cd1ca9a35160db6be9e802a827d50ff18cb16323"
  },
  "/ko/history/russian-revolution-1917/": {
   "date": "2026-11-09",
-  "hash": "d296cbaa3e58dd47de82ebca910b54a7d2848773"
+  "hash": "c6745eb82e24cc57eb67198b91b88716eda6b5eb"
  },
  "/ko/history/sekigahara-1600/": {
   "date": "2026-11-09",
-  "hash": "38d80653f4a4edff2c33a9882656d13147696949"
+  "hash": "b9ddae9339772ac650b7ea16a6d11b7e856d2abe"
  },
  "/ko/history/seohui-diplomacy-993/": {
   "date": "2026-11-09",
-  "hash": "ec0b17bcc6bc7976c5ad2d7d99d554718b4f6f20"
+  "hash": "7a911d17a7a13d271e2b40bcf1753416da1ad16f"
  },
  "/ko/history/silk-road-139bc/": {
   "date": "2026-11-09",
-  "hash": "4a812041323af709deb9781afd0712d594cace61"
+  "hash": "77e97dd119005f4716ba52351d365c35dbf91767"
  },
  "/ko/history/silla-unification-676/": {
   "date": "2026-11-09",
-  "hash": "ed163100d8aeee6815d7299281b0488ecb66700b"
+  "hash": "cbd7cf9e907d03d2fc2cecc6a5bf2706e8c671e4"
  },
  "/ko/history/south-africa-1994/": {
   "date": "2026-11-09",
-  "hash": "75ea1953f61c4bf4b556f4b539e44557a6aa6a62"
+  "hash": "02696b6d7f23e1d130fda4d4c051c8ec0e507fef"
  },
  "/ko/history/spanish-armada-1588/": {
   "date": "2026-11-09",
-  "hash": "9f11b194f0e441a4913117a5aaa168f63ad0a000"
+  "hash": "4e9ea377b79e5580d9fb326c39d63dd22eccd742"
  },
  "/ko/history/tang-dynasty-618/": {
   "date": "2026-11-09",
-  "hash": "0841cde7f935db15bc5e3009a2908d1ad899dea7"
+  "hash": "e91c2aad39ba6eb52ce2a25ad3261f44c588dbb1"
  },
  "/ko/history/vasco-da-gama-1498/": {
   "date": "2026-11-09",
-  "hash": "0a1a48793a3b925ce59d977d6b2424684ba1e2e4"
+  "hash": "2ea63ea51b99ae37a02706628b288b52d9026ba8"
  },
  "/ko/history/waterloo-1815/": {
   "date": "2026-11-09",
-  "hash": "6994e44db1bedee101d246ec3c0295737e5e0aaa"
+  "hash": "b76f26f361a04a8c65d6b13e8c174b6ebc13c7fd"
  },
  "/ko/history/world-cup-2002/": {
   "date": "2026-11-09",
-  "hash": "92fcb1940383f0b865e349b335739f00ef19119b"
+  "hash": "a1c6923d88d0359af8e2be8a4a54252aaf364ea9"
  },
  "/ko/history/world-war-one-1914/": {
   "date": "2026-11-09",
-  "hash": "28158facf73595a0b0d5bc059bc226c7ca81f44c"
+  "hash": "33a91f57af5cb5797e20f6811ee0271b0d4cd933"
  },
  "/ko/history/xinhai-revolution-1911/": {
   "date": "2026-11-09",
-  "hash": "5d2491c1586e9419f4c26e0c33082b95a11a1e5e"
+  "hash": "7e2b725616e15284d62f18d10cdc0cbf4bdef437"
  },
  "/ko/news/": {
   "date": "2026-11-09",
-  "hash": "1f65037d2a9d253574c319b31ebd939a119b9e0f"
+  "hash": "a2b1f631384ab2226edce62f9849b5d7864aaee7"
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
-  "hash": "2515c151f531729fc072dce72006bb0ca94b4859"
+  "hash": "fe354b89a205f4181aa0b15922b807871acb610e"
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "38b927085bf270b2e20223b4cbfd282f6b896173"
+  "hash": "e8d3060f1f6416c20c1231660da3181a1231f38b"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "68825df80724cda8246fafb52c290ee17d7c269a"
+  "hash": "3f5c7cb590bbe3a6686948c3a11f51ffda401593"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
-  "hash": "9a703d4fa5eeff2df9eea1e678d8593b7794379c"
+  "hash": "67c9c01e82340d4de6f31706cd50a767eeae49b9"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
-  "hash": "011a0baf997ddee73f79ba52911110b0a0ed3b8b"
+  "hash": "b6a484696060cd85849a2184c123a0d15b99b01a"
  },
  "/ko/support/": {
   "date": "2026-11-09",
-  "hash": "8b4a25a9dc75de6fc9b1f4fd194ce1e532f963c4"
+  "hash": "66ca18aff588f9b9d86234c5cd261be0d73b2aa2"
  },
  "/ko/terms/": {
   "date": "2026-11-09",
-  "hash": "539d9a7c558c48a0f907f698e72573876cb238b3"
+  "hash": "85fe7d2acde4194e85a487be691bb67730ae0d3b"
  },
  "/learn/": {
   "date": "2026-11-09",
-  "hash": "e40ee3fd74d6c4d44cf937d1daf65da20bb2af0d"
+  "hash": "17419c127714b2e86cac72ec92a62405765c3719"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
-  "hash": "24529e29e390234b865389d22215e7baeaea3aa5"
+  "hash": "d3eaba347d9c51e1cae674cb48195b4ffb76028c"
  },
  "/learn/days-and-dates/": {
   "date": "2026-11-09",
-  "hash": "f7af91744f84015eb7a55cbd756eb11516f838cb"
+  "hash": "e96de1bcd2c2762338ad26288d24574d2e0c9f75"
  },
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
-  "hash": "708581d7515c7339c3ba4a1931cfabebc04e44e6"
+  "hash": "c545f803709488b40daed9fe645ef36a7dcae0ab"
  },
  "/learn/korean-consonants/": {
   "date": "2026-11-09",
-  "hash": "63c787b451447a8f3c813a17012ef5da157633cb"
+  "hash": "c4214335edcc6539fdbce2f73afd8481e82f475f"
  },
  "/learn/korean-family-terms/": {
   "date": "2026-11-09",
-  "hash": "271ced1941fa1185b8c97c1d9d7fce3a20b091b1"
+  "hash": "111d8367ed8a6b11e84dbf27c06c915739f1124d"
  },
  "/learn/korean-greetings/": {
   "date": "2026-11-09",
-  "hash": "be3fd5de9611074367d36db789eabfd4a0bf6a31"
+  "hash": "a761787456ea80512c79ce81ef80f1464652cb9d"
  },
  "/learn/korean-numbers/": {
   "date": "2026-11-09",
-  "hash": "82418f8051d44edcd708bdc26e88031f40296a22"
+  "hash": "3c8d4ed35fe0ff6ef3438031a505cf52e65529f0"
  },
  "/learn/korean-politeness/": {
   "date": "2026-11-09",
-  "hash": "44564acb96dab046ac032ee48598dee3af566821"
+  "hash": "39e749d1702b28c0a853104410ca5d03d4733f15"
  },
  "/learn/korean-vowels/": {
   "date": "2026-11-09",
-  "hash": "8bbab93c83f92fe06e05e24eea65bc10c196d2cc"
+  "hash": "14377a095ad6dba627193b17094355e270cd5ce0"
  },
  "/learn/ordering-at-a-restaurant/": {
   "date": "2026-11-09",
-  "hash": "bd312f92c931ec29127203986aaa06c868a57210"
+  "hash": "3727a33bf68394229db574f187a3480013b2e6be"
  },
  "/learn/plain-aspirated-tense/": {
   "date": "2026-11-09",
-  "hash": "d80b097602bbfb5eec398bce1296c2b01d823a0d"
+  "hash": "6077c92a630698a6a479032408c98776fb0af5e3"
  },
  "/learn/topic-and-subject-particles/": {
   "date": "2026-11-09",
-  "hash": "ca018b188dd58f275e1e63f2a5bdcd6f5f6f62d6"
+  "hash": "44797f61862582549f4650f4f53938ded0a73588"
  },
  "/learn/two-week-plan/": {
   "date": "2026-11-09",
-  "hash": "28b2b8ec62581fe6db8eb828fca1bc4599a63a7f"
+  "hash": "a1e84cc2fc28cc888388ac87ba238b6d34e8c981"
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "0aa32d9b16069bf239b561c6703cd724c87ece29"
+  "hash": "5b9d7f96cc0b1e19c31f4cafe57e090075550d77"
  },
  "/news/archive/": {
   "date": "2026-11-09",
-  "hash": "60f3be5ec1ec87f2c5155b1b93f73017313bdbf7"
+  "hash": "d0a7af2a1df2ba14c90372c7700275915a6a2943"
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "d6206b34534d944565bb3116f6b5c1e8ab5c45b4"
+  "hash": "16ca2fbb21fd3416eaf8e31b27e0b976e2a8e52c"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "3fcf159916ea0a5959a2678fdd330ba3a1553655"
+  "hash": "c1d30030c3c3212737a1596ad7966dffd3fe0f27"
  },
  "/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
-  "hash": "4f53305ececdde3eebcac987a965e2ebef6d4f16"
+  "hash": "93c185f3a9412ae096155557d84ef6593afd82c7"
  },
  "/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "4f9bae12550b8a27a5922e535cd7a814f08a9a4f"
+  "hash": "21114d60a6d3cc11f504c55344b289daa268505a"
  },
  "/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
-  "hash": "878e5c4887cf63bc9bde321606a6ef1d1117cfd4"
+  "hash": "511ae6153b98e8c5e245108c13fca85ef78a7781"
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "61d0ebca3a984719f4627f2e4658a254ab7205da"
+  "hash": "912071175eda8eeebd48c261c03edf6f463d3f14"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "9df3b97931c500b1a08af1ce18f952b8838cece8"
+  "hash": "087e5cbeba64e04f36f905686d226213625884c6"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
-  "hash": "324459fc939cf166c4b166277090bdd003bbfcd2"
+  "hash": "13757409894a242e0d1e596c525dd7fa4ca83a4f"
  },
  "/privacy.html": {
   "date": "2026-11-09",
-  "hash": "c9418f7449e95727813e6366d89e9c4378b3f10c"
+  "hash": "99745aad6a85901e20f950d77b61343db1143e05"
  },
  "/support/": {
   "date": "2026-11-09",
-  "hash": "03769e88d35aa8aa25bca8dff496d8d7dfcae979"
+  "hash": "321d8cf775bcfb2e7397b9c8cb8cf857e98833af"
  },
  "/terms/": {
   "date": "2026-11-09",
-  "hash": "a68411a94cc05f6d227f962a2dd09d4671edcc6a"
+  "hash": "67ec671dd497ec3dd1b1b521a120e1cd144ea666"
  }
 }
