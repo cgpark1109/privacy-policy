@@ -1,0 +1,50 @@
+/* Pass or Splash (browser version): styles on top of the site stylesheet (/assets/site.css).
+   Source: _src/pass-or-splash/ps.css, copied to play/pass-or-splash/ by build.py. */
+.ps { --soft: #F4F5FB; }
+.ps .crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 36px; color: #fff; font-size: 14px; font-weight: 600; }
+.ps .crumbs a { color: #fff; text-decoration: none; opacity: 0.9; }
+.ps .crumbs a:hover { text-decoration: underline; opacity: 1; }
+.ps .crumbs span { opacity: 0.6; }
+.ps .page-title { padding-top: 6px; }
+.ps-wrap { max-width: 860px; }
+.ps-app { margin-top: 24px; display: grid; gap: 12px; scroll-margin-top: 76px; }
+.ps .btn { justify-content: center; border: 0; cursor: pointer; font-family: inherit; min-height: 48px; }
+.ps .btn.ghost { background: var(--soft); color: var(--navy); }
+.ps :focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.ps h2 { font-size: 19px; line-height: 1.3; }
+.ps h2:focus { outline: none; }
+
+.ps-map-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+.ps-map-head span { font-weight: 700; color: var(--navy-soft); }
+.ps-world { font-size: 15px; margin: 14px 0 8px; }
+.ps-stages { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.ps-stage { aspect-ratio: 1; border-radius: 14px; border: 2px solid transparent; background: var(--soft); color: var(--navy); font: inherit; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 52px; }
+.ps-stage b { font-size: 17px; }
+.ps-stage.current { border-color: var(--coral); background: #FFF1EF; }
+.ps-stage:disabled { opacity: 0.55; cursor: default; }
+.ps-st { font-size: 11px; color: #CBD0E2; letter-spacing: -1px; }
+.ps-st i, .ps-stars i { font-style: normal; }
+.ps-st i.on, .ps-stars i.on { color: #F2A900; }
+.ps-go { width: 100%; margin-top: 16px; font-size: 16px; }
+.ps-sound { display: block; margin: 10px auto 0; background: var(--soft); color: var(--navy); border: 0; border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+.ps-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; color: #fff; font-weight: 600; font-size: 14px; text-shadow: 0 1px 6px rgba(43, 49, 85, 0.25); }
+.ps-back { background: rgba(255, 255, 255, 0.9); color: var(--navy); border: 0; border-radius: 999px; padding: 8px 14px; font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; min-height: 40px; text-shadow: none; }
+#ps-hearts { margin-left: auto; color: #FF6B5B; font-size: 20px; letter-spacing: 2px; }
+.ps-stage-box { padding: 0; overflow: hidden; }
+#ps-canvas { display: block; width: 100%; height: clamp(360px, 70vw, 520px); touch-action: none; user-select: none; -webkit-user-select: none; }
+.ps-hint { text-align: center; font-size: 13px; color: var(--navy-soft); }
+
+.ps-result { text-align: center; }
+.ps-result h2 { font-size: clamp(22px, 4.6vw, 28px); }
+.ps-stars { font-size: 40px; color: #CBD0E2; letter-spacing: 4px; margin: 6px 0; }
+.ps-result p { color: var(--navy-soft); }
+.ps-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 14px; }
+.ps-actions .btn { flex: 1 1 150px; }
+
+.ps-static { display: grid; gap: 14px; margin-top: 14px; }
+.ps-static ol, .ps-static ul { margin-left: 20px; display: grid; gap: 6px; color: var(--navy-soft); }
+.ps-static li::marker { color: var(--coral); font-weight: 700; }
+.ps-static p { color: var(--navy-soft); }
+.ps-static p + p { margin-top: 10px; }

@@ -278,6 +278,9 @@ function footer() {
 
 // "More browser games": the site's other browser games, linked in both languages.
 const BROWSER_GAMES = [
+  { slug: 'pass-or-splash', en: 'Pass or Splash', ko: 'Pass or Splash', ko_href: '/ko/play/pass-or-splash/',
+    icon: 'https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g=s192',
+    desc_en: 'Solve the puzzle and pass through the right hole.', desc_ko: '문제를 풀고 정답 구멍으로 통과하세요.' },
   { slug: 'hilltop-roll', en: 'Hilltop Roll', ko: 'Hilltop Roll', ko_href: '/ko/play/hilltop-roll/',
     icon: 'https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192',
     desc_en: 'Roll heavy down the hills and fly off the tops.', desc_ko: '언덕을 무겁게 내려가고 꼭대기에서 날아올라요.' },

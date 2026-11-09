@@ -1010,6 +1010,67 @@ HR_TEXT = {
 }
 
 
+PS_TEXT = {
+    "en": {
+        "title": "Pass or Splash",
+        "app": "pass-or-splash",
+        "lead": "A wall full of holes is rushing toward you. Read the puzzle and slide in front of the right answer. Wrong hole? Splash!",
+        "description": "Play Pass or Splash free in your browser: solve sums, find the biggest number, match shapes, count dots and "
+                       "follow the shuffling cups, then slide your buddy in front of the right hole before the wall arrives. "
+                       "30 stages in five worlds, each with its own silly splash.",
+        "noscript": "This game needs JavaScript.",
+        "sections": [
+            ("How to play", ["Pick a stage. A wall with three or four holes starts far away and comes closer.",
+                             "Read the puzzle at the top: each hole shows a possible answer.",
+                             "Drag your buddy, tap a hole, or use the ← → keys (or 1 to 4) to stand in front of the right hole.",
+                             "When the wall arrives, the right hole lets you pass. The wrong one pushes you in: splash!",
+                             "Each stage has 6 walls and 3 tries. Pass with no mistakes for 3 stars; clearing a stage opens the next one."], "ol"),
+            ("Five worlds", ["Pool: adding, taking away and counting dots.",
+                             "Mud: bigger sums, and the biggest or smallest number.",
+                             "Cream: times tables, matching shapes and three-digit numbers.",
+                             "Ball pit: order of operations (multiply first!), shapes and counting.",
+                             "Springs: follow the star as the cups shuffle, plus everything you've learned."], "ul"),
+            ("Tips", ["Move early: the wall gets faster in later stages and worlds.",
+                      "In order-of-operations walls, one hole always shows the answer you'd get by adding first. Don't fall for it.",
+                      "For the cups, watch the cup with the star, not the star itself: it's hidden once the shuffling starts."], "ul"),
+        ],
+        "about": "About this version",
+        "about_body": ["This is a browser take on our Android game Pass or Splash: the same rushing walls, puzzles and splashes, in 30 stages. "
+                       "Your stars are saved in this browser only.",
+                       "The Android app has 100 stages, more puzzle types and its own silly penalties in each world."],
+        "app_link": "About the Android app",
+    },
+    "ko": {
+        "title": "Pass or Splash",
+        "app": "pass-or-splash",
+        "lead": "구멍 뚫린 벽이 다가와요. 문제를 읽고 정답 구멍 앞으로 이동하세요. 틀리면 풍덩!",
+        "description": "브라우저에서 무료로 즐기는 Pass or Splash: 계산하고, 가장 큰 수를 찾고, 같은 도형을 고르고, 점을 세고, "
+                       "섞이는 컵을 따라간 뒤 벽이 닥치기 전에 정답 구멍 앞으로 이동하세요. 5개 월드, 30개 스테이지.",
+        "noscript": "이 게임은 자바스크립트가 필요해요.",
+        "sections": [
+            ("하는 방법", ["스테이지를 고르세요. 구멍이 3~4개 뚫린 벽이 멀리서 다가와요.",
+                       "위쪽 문제를 읽으세요. 구멍마다 답이 하나씩 적혀 있어요.",
+                       "캐릭터를 드래그하거나 구멍을 누르거나 ← → 키(또는 1~4)로 정답 구멍 앞에 서세요.",
+                       "벽이 도착했을 때 정답 구멍이면 통과, 틀린 구멍이면 벽에 밀려 풍덩!",
+                       "스테이지마다 벽 6개, 기회 3번이에요. 실수 없이 통과하면 별 3개, 클리어하면 다음 스테이지가 열려요."], "ol"),
+            ("다섯 월드", ["수영장: 덧셈, 뺄셈, 점 세기",
+                        "진흙탕: 더 큰 수의 계산, 가장 큰 수·작은 수",
+                        "크림: 곱셈, 같은 도형 찾기, 세 자리 수",
+                        "볼풀: 혼합 계산(곱셈 먼저!), 도형, 점 세기",
+                        "스프링: 섞이는 컵 따라가기와 지금까지 배운 모든 문제"], "ul"),
+            ("요령", ["일찍 움직이세요. 뒤 스테이지와 월드일수록 벽이 빨라져요.",
+                     "혼합 계산 벽에는 덧셈을 먼저 한 오답이 꼭 하나 있어요. 속지 마세요.",
+                     "컵 문제는 별이 아니라 별이 든 컵을 눈으로 쫓으세요. 섞이기 시작하면 별이 숨어요."], "ul"),
+        ],
+        "about": "이 버전에 대해",
+        "about_body": ["Android 게임 Pass or Splash를 브라우저로 옮긴 버전이에요. 다가오는 벽, 문제, 풍덩 벌칙은 같고 스테이지는 30개예요. "
+                       "별 기록은 이 브라우저에만 저장돼요.",
+                       "Android 앱에는 100개 스테이지와 더 많은 문제 유형, 월드마다 다른 웃긴 벌칙이 있어요."],
+        "app_link": "Android 앱 소개 보기",
+    },
+}
+
+
 def canvas_game(slug, src_name, files, text, p):
     """A canvas browser game as a site page in each language: copies its script and styles from _src/<src_name>/ to
     play/<slug>/ and wraps them in the site template. p is the CSS prefix of its elements (ud, hr)."""
@@ -1037,7 +1098,7 @@ def canvas_game(slug, src_name, files, text, p):
   <h1 class="page-title">{e(u['title'])}</h1>
   <p class="page-lead">{e(u['lead'])}</p>
   <div id="{p}-app" class="{p}-app"><div class="card"><noscript><p>{e(u['noscript'])}</p></noscript></div></div>
-  <div class="{p}-static">
+  <div class="{p}-static" id="{p}-static">
     {sections}
     <section class="card"><h2>{e(u['about'])}</h2>{''.join(f'<p>{e(x)}</p>' for x in u['about_body'])}
       <p><a href="{url(lang, 'games/' + u['app'] + '/')}">{e(u['app_link'])} →</a></p></section>
@@ -1062,6 +1123,11 @@ def canvas_game(slug, src_name, files, text, p):
 def build_updraft():
     """The Updraft browser game (see canvas_game)."""
     return canvas_game("updraft", "updraft", ("app.js", "updraft.css"), UD_TEXT, "ud")
+
+
+def build_pass_or_splash():
+    """The Pass or Splash browser game (see canvas_game)."""
+    return canvas_game("pass-or-splash", "pass-or-splash", ("app.js", "ps.css"), PS_TEXT, "ps")
 
 
 def build_hilltop():
@@ -1188,6 +1254,7 @@ def main():
     urls += build_hangul_quiz()
     urls += build_updraft()
     urls += build_hilltop()
+    urls += build_pass_or_splash()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]

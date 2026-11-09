@@ -35,7 +35,7 @@ UI = {
         "home_more_learn": "Free guides to reading and speaking Korean, from the alphabet up, with audio for every example. Practice them with Hangul Quiz.",
         "home_more_history": "Short Korean-language articles on turning points in world history, linked to History Timeline.",
         "home_desc": "ggook's studio makes free mobile games and learning apps, plus browser games you can play right here and free guides for people learning to read and speak Korean.",
-        "play_desc": "Free games that run right in your browser, on a phone, tablet or computer: Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline. No install, no sign-up.",
+        "play_desc": "Free games that run right in your browser, on a phone, tablet or computer: Pass or Splash, Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline. No install, no sign-up.",
         "news_archive_desc": "Every earlier update from ggook's studio, newest first: new games and app updates, new Learn Hangul guides and new world history articles.",
         "games_title": "Our apps",
         "games_lead": "Free on Google Play.",
@@ -68,7 +68,7 @@ UI = {
         "play_note": "Your progress and best scores are saved in this browser only.",
         "play_intro": [
             "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
-            "Updraft and Hilltop Roll are browser versions of our arcade games: a paper plane that rides the updrafts, and a ball that rolls heavy down the hills and flies off the tops. The quiz games are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, History Timeline asks you to put world history events in order, and Hangul Quiz teaches you to read Korean.",
+            "Pass or Splash, Updraft and Hilltop Roll are browser versions of our arcade games: puzzle walls that rush toward you, a paper plane that rides the updrafts, and a ball that rolls heavy down the hills and flies off the tops. The quiz games are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, History Timeline asks you to put world history events in order, and Hangul Quiz teaches you to read Korean.",
         ],
         "play_reference": "Reference pages",
         "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters, and the whole history timeline.",
@@ -104,7 +104,7 @@ UI = {
         "not_found_title": "Page not found",
         "not_found_text": "The page you're looking for doesn't exist.",
         "not_found_try": "Try one of these",
-        "not_found_play": "Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline, free in your browser.",
+        "not_found_play": "Pass or Splash, Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline, free in your browser.",
         "not_found_learn": "Free guides to reading and speaking Korean, from the alphabet up.",
         "quiz_cta_title": "Test yourself",
         "quiz_cta_text": "Check what you've learned in this guide with a short round of the Hangul Quiz: 8 questions, right in your browser.",
@@ -135,7 +135,7 @@ UI = {
         "home_intro_title": "What you'll find here",
         "home_intro": "ggook's studio is a small game studio in Seoul. We make free games you can play right here in your browser and on Android: quick arcade and puzzle games, plus quiz games about flags, capitals, Korean and world history.",
         "home_points": [
-            ("web", "Browser games", "{web} games you can play right here without installing anything: Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline."),
+            ("web", "Browser games", "{web} games you can play right here without installing anything: Pass or Splash, Updraft, Hilltop Roll, Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline."),
             ("games", "Apps", "{games} games and learning apps, from one-finger arcade and puzzle games to Korean and world history quizzes, all free on Google Play."),
             ("guides", "Learn Hangul", "{guides} free guides for people learning Korean, which go with Hangul Quiz."),
         ],
@@ -165,7 +165,7 @@ UI = {
         "home_more_learn": "Learn Hangul: 한국어를 배우는 외국인을 위한 영어 한글 가이드예요. 한글 퀴즈로 연습할 수 있어요.",
         "home_more_history": "세계사의 흐름을 바꾼 순간들을 한 편씩 풀어 쓴 읽을거리예요. 연표 맞추기 게임과 이어져 있어요.",
         "home_desc": "ggook's studio는 잠깐 즐기고 매일 다시 찾고 싶은 무료 모바일 게임과 학습 앱을 만듭니다. 설치 없이 하는 브라우저 게임과 세계사 읽을거리도 함께 소개해요.",
-        "play_desc": "설치 없이 브라우저에서 바로 하는 무료 게임 모음이에요. Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기를 휴대폰, 태블릿, 컴퓨터에서 가입 없이 즐겨 보세요.",
+        "play_desc": "설치 없이 브라우저에서 바로 하는 무료 게임 모음이에요. Pass or Splash, Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기를 휴대폰, 태블릿, 컴퓨터에서 가입 없이 즐겨 보세요.",
         "news_archive_desc": "ggook's studio의 지난 소식을 최신순으로 모두 모았어요. 새 게임과 앱 업데이트, 한글 가이드와 세계사 읽을거리 연재 소식을 볼 수 있습니다.",
         "history_desc": "기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사의 흐름을 바꾼 순간 {n}편을 한 편씩 쉽게 풀어 쓴 한국어 세계사 읽을거리 연재입니다.",
         "app_page": "앱 소개",
@@ -194,7 +194,7 @@ UI = {
         "play_note": "진행 상황과 최고 기록은 이 브라우저에만 저장돼요.",
         "play_intro": [
             "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
-            "Updraft와 Hilltop Roll은 아케이드 게임의 브라우저 버전이에요. 상승기류를 타는 종이비행기, 언덕을 무겁게 내려가고 꼭대기에서 날아오르는 공을 즐겨 보세요. 퀴즈 게임은 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임이고, 한글 퀴즈는 한글 읽기를 익히는 외국인 학습자용 퀴즈입니다.",
+            "Pass or Splash, Updraft, Hilltop Roll은 아케이드 게임의 브라우저 버전이에요. 문제를 풀며 다가오는 벽을 통과하고, 상승기류를 타는 종이비행기와 언덕을 굴러 날아오르는 공을 즐겨 보세요. 퀴즈 게임은 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임이고, 한글 퀴즈는 한글 읽기를 익히는 외국인 학습자용 퀴즈입니다.",
         ],
         "play_reference": "참고 페이지",
         "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아보거나, 연표 전체를 볼 수 있어요.",
@@ -230,7 +230,7 @@ UI = {
         "not_found_title": "페이지를 찾을 수 없습니다",
         "not_found_text": "요청하신 페이지가 없습니다.",
         "not_found_try": "이런 곳은 어떠세요",
-        "not_found_play": "Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기를 설치 없이 바로 즐겨 보세요.",
+        "not_found_play": "Pass or Splash, Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기를 설치 없이 바로 즐겨 보세요.",
         "not_found_history": "고대부터 현대까지, 세계사의 흐름을 바꾼 순간들을 한 편씩 읽어 보세요.",
         "back_home": "홈으로",
         "rights": "All rights reserved.",
@@ -261,7 +261,7 @@ UI = {
         "home_intro_title": "이 사이트에서는",
         "home_intro": "ggook's studio는 서울에 있는 작은 게임 스튜디오입니다. 이 사이트에서 바로 하는 브라우저 게임과 Android 앱으로, 가볍게 즐기는 아케이드·퍼즐 게임과 국기·수도·한국어·세계사 퀴즈 게임을 무료로 만듭니다.",
         "home_points": [
-            ("web", "브라우저 게임", "Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기까지 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
+            ("web", "브라우저 게임", "Pass or Splash, Updraft, Hilltop Roll, 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기까지 설치 없이 이 사이트에서 바로 할 수 있는 게임 {web}개가 있습니다."),
             ("games", "앱", "손가락 하나로 즐기는 아케이드·퍼즐 게임부터 한국어·세계사 퀴즈까지, Google Play에서 무료로 받을 수 있는 게임과 학습 앱 {games}개가 있습니다."),
             ("history", "세계사 읽을거리", "연표 맞추기 게임과 이어지는, 세계사의 흐름을 바꾼 순간을 풀어 쓴 글 {history}편이 있습니다."),
         ],
@@ -510,6 +510,14 @@ WEB_GAMES = [
         "site_page": True,  # built as site pages in both languages by build_updraft() in build.py
         "en": {"name": "Updraft: Paper Plane", "short": "Aim, power up and launch a paper plane. Ride the updrafts through five zones and see how far it flies."},
         "ko": {"name": "Updraft: 종이비행기", "short": "각도와 힘을 정해 종이비행기를 날리세요. 상승기류를 타고 다섯 구역을 지나 얼마나 멀리 갈까요?"},
+    },
+    {
+        "slug": "pass-or-splash",
+        "app": "pass-or-splash",  # browser version of this app (its app page links here)
+        "icon": "https://play-lh.googleusercontent.com/72gCmCGgDmlfmDwJfdx5CqhpENtnNpU-_r1uVHbD3UJmKMYLKQ9MmsBwFua-7t6ULdLOGmzOmglSmUN2nVpc9g=s192",
+        "site_page": True,  # built as site pages in both languages by build_pass_or_splash() in build.py
+        "en": {"name": "Pass or Splash", "short": "Read the puzzle and slide in front of the right hole before the wall hits. Wrong answer? Splash!"},
+        "ko": {"name": "Pass or Splash", "short": "문제를 읽고 벽이 닥치기 전에 정답 구멍 앞으로! 틀리면 풍덩!"},
     },
     {
         "slug": "hilltop-roll",
@@ -807,6 +815,15 @@ NEWS = [
                "body": "Subway, bus and taxi phrases: station signs and announcements, transport cards, telling a taxi driver where to go and asking for directions."},
         "ko": {"title": "새 한글 가이드: 지하철·버스·택시 타기",
                "body": "역과 출구 표시, 안내 방송, 교통카드 충전, 택시에서 목적지 말하기, 길 묻기까지 외국인 학습자를 위한 교통 표현을 정리했습니다."},
+    },
+    {
+        "date": "2026-11-09",
+        "game": "pass-or-splash",
+        "web": True,  # link to the browser version, not the app page
+        "en": {"title": "Pass or Splash is now playable in your browser",
+               "body": "Read the puzzle, slide in front of the right hole and pass through the wall, or splash! 30 stages in five worlds, from sums and shapes to shuffling cups."},
+        "ko": {"title": "Pass or Splash를 브라우저에서 즐겨 보세요",
+               "body": "문제를 읽고 정답 구멍 앞으로 이동해 벽을 통과하세요. 틀리면 풍덩! 계산과 도형부터 섞이는 컵까지, 5개 월드 30개 스테이지가 있어요."},
     },
     {
         "date": "2026-11-09",
@@ -2268,6 +2285,10 @@ PLAY_DETAILS = {
     "flag-quiz": {
         "en": "195 flags in 39 levels, from famous flags to look-alikes like Chad and Romania. Name the country from its flag, or the other way around.",
         "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
+    },
+    "pass-or-splash": {
+        "en": "30 stages in five worlds: sums, biggest and smallest numbers, shapes, counting dots, order of operations and shuffling cups. Six walls and three tries per stage.",
+        "ko": "5개 월드, 30개 스테이지: 계산, 가장 큰 수·작은 수, 도형, 점 세기, 혼합 계산, 섞이는 컵. 스테이지마다 벽 6개, 기회 3번.",
     },
     "hilltop-roll": {
         "en": "Hold to roll heavy down the hills, let go to fly off the tops, jump the gaps from the ramps and land along the slope for PERFECT boosts and combos. Endless pastel hills that speed up as you go.",
