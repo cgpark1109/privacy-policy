@@ -1078,6 +1078,60 @@ PS_TEXT = {
 }
 
 
+PM_TEXT = {
+    "en": {
+        "title": "Pin the Map",
+        "lead": "A capital, a city or a landmark appears: drop your pin where you think it is on the world map. The closer you get, the more points you score.",
+        "description": "Play Pin the Map free in your browser: find capitals, big cities and famous landmarks on a world map, see how "
+                       "many kilometers off you were and learn a short fact about each place. Five new places every day, plus "
+                       "practice sets by region.",
+        "noscript": "This game needs JavaScript.",
+        "sections": [
+            ("How to play", ["A place appears at the top: a capital, a big city or a famous landmark, with the country it's in.",
+                             "Tap or click the world map to drop your pin. Drag to move around, and pinch, scroll or use + and − to zoom in for a closer guess.",
+                             "Press \"Pin it here\". The map shows the real spot, how many kilometers off you were and a short fact about the place.",
+                             "Each place is worth up to 1,000 points: within 25 km scores the full 1,000, and the score drops the farther away you are."], "ol"),
+            ("Today's challenge and practice", ["Today's challenge has five places, the same for everyone, and a new set arrives at midnight.",
+                                                "It always mixes two capitals, a big city and two landmarks. Play every day to build a streak, then copy your result to share it.",
+                                                "Practice gives you sets of ten: capitals of the whole world or of one region, big cities or landmarks. Your best score in each is saved."], "ul"),
+            ("Tips", ["The country name is a big clue: find the country first, then zoom in.",
+                      "Many capitals sit on a coast or a big river; landmarks can be far from any city.",
+                      "On a keyboard, focus the map and use the arrow keys to move the pin, + and − to zoom and Enter to confirm."], "ul"),
+        ],
+        "about": "About Pin the Map",
+        "about_body": ["Pin the Map is a geography game made for this site. It uses the same list of countries and capitals as our "
+                       "Flag Quiz and Capital Quiz, plus 49 big cities and 50 landmarks from every continent, each with a short note. "
+                       "Your streak and best scores are saved in this browser only.",
+                       "The world map comes from Natural Earth (public domain), and the coordinates of capitals and cities from "
+                       "GeoNames (CC BY 4.0). Distances are measured along the Earth's surface."],
+    },
+    "ko": {
+        "title": "지도 핀 꽂기",
+        "lead": "수도, 도시, 명소의 이름이 나오면 세계 지도에서 그곳이라고 생각하는 자리에 핀을 꽂으세요. 가까울수록 점수가 높아요.",
+        "description": "브라우저에서 무료로 즐기는 지도 핀 꽂기: 세계 지도에서 수도, 큰 도시, 유명한 명소를 찾아 핀을 꽂고, 몇 km "
+                       "차이였는지와 장소마다 짧은 이야기를 확인해 보세요. 매일 새로운 다섯 곳과 지역별 연습 문제가 있어요.",
+        "noscript": "이 게임은 자바스크립트가 필요해요.",
+        "sections": [
+            ("하는 방법", ["위쪽에 장소가 나와요. 수도, 큰 도시, 유명한 명소 중 하나이고, 어느 나라에 있는지도 함께 나와요.",
+                       "세계 지도를 누르거나 클릭해 핀을 꽂으세요. 끌어서 지도를 움직이고, 두 손가락이나 마우스 휠, + −로 확대하면 더 정확하게 꽂을 수 있어요.",
+                       "\"여기로 정하기\"를 누르면 실제 위치, 몇 km 차이였는지, 그 장소의 짧은 이야기가 나와요.",
+                       "장소마다 최대 1,000점이에요. 25km 안이면 1,000점을 모두 받고, 멀어질수록 점수가 줄어요."], "ol"),
+            ("오늘의 도전과 연습", ["오늘의 도전은 다섯 곳이고, 같은 날에는 모두에게 같으며 자정에 바뀌어요.",
+                              "수도 두 곳, 큰 도시 한 곳, 명소 두 곳이 섞여 나와요. 날마다 하면 연속 기록이 쌓이고, 결과를 복사해 공유할 수 있어요.",
+                              "연습은 10문제씩이에요. 전 세계나 지역별 수도, 큰 도시, 명소 중에서 골라요. 모드마다 최고 점수가 저장돼요."], "ul"),
+            ("요령", ["나라 이름이 큰 힌트예요. 먼저 나라를 찾고 확대해 보세요.",
+                     "수도는 바닷가나 큰 강가에 있는 경우가 많고, 명소는 도시에서 멀리 떨어져 있기도 해요.",
+                     "키보드에서는 지도를 선택한 뒤 방향키로 핀을 옮기고, + −로 확대·축소하고, Enter로 정해요."], "ul"),
+        ],
+        "about": "지도 핀 꽂기 소개",
+        "about_body": ["지도 핀 꽂기는 이 사이트를 위해 만든 지리 게임이에요. 국기 퀴즈, 수도 퀴즈와 같은 나라·수도 목록에 "
+                       "대륙마다 고른 큰 도시 49곳과 명소 50곳을 더했고, 장소마다 짧은 설명이 있어요. 연속 기록과 최고 점수는 이 브라우저에만 저장돼요.",
+                       "세계 지도는 Natural Earth(퍼블릭 도메인), 수도와 도시의 좌표는 GeoNames(CC BY 4.0) 자료를 썼어요. "
+                       "거리는 지구 표면을 따라 잰 거리예요."],
+    },
+}
+
+
 LN_TEXT = {
     "en": {
         "title": "Lantern Lights",
@@ -1169,7 +1223,8 @@ def canvas_game(slug, src_name, files, text, p):
               "inLanguage": lang, "isAccessibleForFree": True,
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
               "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
-        head = (f'<link rel="stylesheet" href="/play/{slug}/{css}?v={ver[css]}">'
+        data = "".join(f'<script src="/play/{slug}/{f}?v={ver[f]}" defer></script>' for f in files if f.endswith(".js") and f != "app.js")
+        head = (f'<link rel="stylesheet" href="/play/{slug}/{css}?v={ver[css]}">' + data +  # data scripts run before app.js
                 f'<script src="/play/{slug}/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld)
                 + breadcrumbs(lang, [(t["play_title"], url(lang, "play/")), (u["title"], None)])[1])
         page(lang, f"play/{slug}/", u["title"], u["description"], body, active="play", head_extra=head)
@@ -1185,6 +1240,11 @@ def build_updraft():
 def build_pass_or_splash():
     """The Pass or Splash browser game (see canvas_game)."""
     return canvas_game("pass-or-splash", "pass-or-splash", ("app.js", "ps.css"), PS_TEXT, "ps")
+
+
+def build_pin_the_map():
+    """Pin the Map, a geography game made for the site (see canvas_game). data.js is generated by _src/mappin/make_data.mjs."""
+    return canvas_game("pin-the-map", "mappin", ("data.js", "app.js", "pm.css"), PM_TEXT, "pm")
 
 
 def build_lantern():
@@ -1318,6 +1378,7 @@ def main():
     urls += build_hilltop()
     urls += build_pass_or_splash()
     urls += build_lantern()
+    urls += build_pin_the_map()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]

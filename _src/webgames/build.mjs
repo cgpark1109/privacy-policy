@@ -278,6 +278,8 @@ function footer() {
 
 // "More browser games": the site's other browser games, linked in both languages.
 const BROWSER_GAMES = [
+  { slug: 'pin-the-map', en: 'Pin the Map', ko: '지도 핀 꽂기', ko_href: '/ko/play/pin-the-map/', icon: '/play/pin-the-map/icon.png',
+    desc_en: 'Drop a pin on the world map: find capitals, cities and landmarks.', desc_ko: '세계 지도에 핀을 꽂아 수도, 도시, 명소를 찾아요.' },
   { slug: 'lantern-lights', en: 'Lantern Lights', ko: '랜턴 잇기', ko_href: '/ko/play/lantern-lights/', icon: '/play/lantern-lights/icon.png',
     desc_en: 'A daily puzzle: turn the tiles to light every lantern.', desc_ko: '매일의 퍼즐: 칸을 돌려 모든 랜턴에 불을 켜세요.' },
   { slug: 'pass-or-splash', en: 'Pass or Splash', ko: 'Pass or Splash', ko_href: '/ko/play/pass-or-splash/',
