@@ -29,28 +29,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=a9db4477f9">
-<script>(function(){try{var s=JSON.parse(localStorage.getItem('kys_flag_settings')||'{}');var d=document.documentElement;if(s.theme==='light'||s.theme==='dark')d.setAttribute('data-theme',s.theme);var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
-<script src="logic.js?v=af4ef35bc5" defer></script>
+<link rel="stylesheet" href="style.css?v=be859cc3fe">
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('kys_flag_settings')||'{}');var d=document.documentElement;var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
+<script src="logic.js?v=c057f5aea6" defer></script>
 <script src="data.js?v=370c60b6e8" defer></script>
-<script src="game.js?v=1706d0c048" defer></script>
-<script src="app.js?v=ecee5f53bb" defer></script>
+<script src="game.js?v=afafdb5b6b" defer></script>
+<script src="app.js?v=1a63c6ae00" defer></script>
 </head>
 <body data-page="list">
 <a class="skip-link" href="#main" data-t="skip">Skip to content</a>
-<header class="top">
+<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./#/"><img src="favicon.svg" alt="" width="32" height="32"><span data-t="title">Flag Quiz</span></a>
-    <nav class="top-links" aria-label="Game">
-      <a class="top-link" href="./"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-t="play">Play</span></a>
-      <button class="top-link lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button>
-      
-    </nav>
+    <a class="brand" href="/" data-href-ko="/ko/"><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
+    <button class="menu-toggle" aria-label="Menu" data-t-attr="aria-label:menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <nav class="nav" id="nav"><a href="/#games" data-href-ko="/ko/#games" data-t="nav_games">Games</a><a href="/learn/" data-t="nav_learn">Learn Hangul</a><a class="ko-only" href="/ko/history/" data-t="nav_history">세계사</a><a href="https://calc.kysystemstudio.com/" data-t="nav_calc">Calculators</a><a href="/news/" data-href-ko="/ko/news/" data-t="nav_news">News</a><a href="/about/" data-href-ko="/ko/about/" data-t="nav_about">About</a><a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a><button class="lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button></nav>
   </div>
 </header>
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/" data-t="studio">ggook's studio</a><span aria-hidden="true">›</span><a href="/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">Flag Quiz</a></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a><span aria-hidden="true">›</span><a href="./" data-t="title">Flag Quiz</a></nav>
     <div class="list-head">
       <h1 data-t="list_title">All flags of the world</h1>
       <p class="lang-en">The flags of all 195 countries: the 193 UN member states plus the two observer states, Vatican City and Palestine. Search in English or Korean, filter by region, and check which flags are easy to mix up.</p><p class="lang-ko">유엔 회원국 193개국과 옵서버 국가인 바티칸 시국, 팔레스타인까지 195개국의 국기예요. 영어나 한국어로 검색하고, 지역별로 보고, 헷갈리기 쉬운 국기도 확인해 보세요.</p>
@@ -1041,15 +1038,20 @@
     <p class="empty card" id="empty" hidden data-t="none">No countries match your search.</p>
   </div>
 </main>
-<footer class="foot">
+<footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Site">
-      <a href="/" data-t="studio">ggook's studio</a>
-      <a href="/play/" data-t="games">Browser games</a>
-      <a href="/privacy.html" data-t="privacy">Privacy Policy</a>
-      <a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a>
+      <a href="/privacy.html" data-href-ko="/ko/privacy/" data-t="privacy">Privacy Policy</a>
+      <a href="/terms/" data-href-ko="/ko/terms/" data-t="terms">Terms of Service</a>
+      <a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a>
+      <a href="https://calc.kysystemstudio.com/" data-t="calc_link">Calculators</a>
+      <a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a>
+      <a href="mailto:admin@kysystemstudio.com" data-t="contact">Contact</a>
+      <a href="https://www.youtube.com/@ggooksstudio" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/ggooksstudio/" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <p>© 2026 ggook's studio</p>
+    <p>© 2026 ggook's studio. <span data-t="rights">All rights reserved.</span></p>
+    <p class="credit"><a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a></p>
   </div>
 </footer>
 <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>

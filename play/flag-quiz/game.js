@@ -36,7 +36,7 @@ window.GAME={
    "list_desc": "The flags of all 195 countries (193 UN member states plus Vatican City and Palestine) with their names in English and Korean. Search, filter by region and see which flags look alike.",
    "list_lead": "The flags of all 195 countries: the 193 UN member states plus the two observer states, Vatican City and Palestine. Search in English or Korean, filter by region, and check which flags are easy to mix up.",
    "list_play": "Play the Flag Quiz",
-   "about_html": "<h2>About Flag Quiz</h2><p>Flag Quiz is a free browser game for learning the flags of the world. It starts with 75 well-known flags in 15 levels and then tours the rest of the world, 39 levels and 195 countries in all, from familiar flags to rare ones.</p><p>Each level has 5 questions. Answer all 5 correctly for 3 stars; finishing a level unlocks the next one. In higher levels the wrong choices include flags that look alike, such as Chad and Romania or Indonesia and Monaco.</p><ul><li>Two modes: Flag → Country and Country → Flag, with separate progress</li><li>A 50:50 hint once per level</li><li>Review your mistakes after every level</li><li>Browse all flags with search and region filters</li><li>English and Korean, light and dark themes, keyboard controls</li></ul>"
+   "about_html": "<h2>About Flag Quiz</h2><p>Flag Quiz is a free browser game for learning the flags of the world. It starts with 75 well-known flags in 15 levels and then tours the rest of the world, 39 levels and 195 countries in all, from familiar flags to rare ones.</p><p>Each level has 5 questions. Answer all 5 correctly for 3 stars; finishing a level unlocks the next one. In higher levels the wrong choices include flags that look alike, such as Chad and Romania or Indonesia and Monaco.</p><ul><li>Two modes: Flag → Country and Country → Flag, with separate progress</li><li>A 50:50 hint once per level</li><li>Review your mistakes after every level</li><li>Browse all flags with search and region filters</li><li>English and Korean, keyboard controls</li></ul>"
   },
   "ko": {
    "title": "국기 퀴즈",
@@ -66,7 +66,7 @@ window.GAME={
    "list_desc": "세계 195개국(유엔 회원국 193개국과 바티칸 시국, 팔레스타인)의 국기를 영어와 한국어 이름으로 보여 줘요. 지역별로 보고, 검색하고, 비슷한 국기도 확인해 보세요.",
    "list_lead": "유엔 회원국 193개국과 옵서버 국가인 바티칸 시국, 팔레스타인까지 195개국의 국기예요. 영어나 한국어로 검색하고, 지역별로 보고, 헷갈리기 쉬운 국기도 확인해 보세요.",
    "list_play": "국기 퀴즈 하러 가기",
-   "about_html": "<h2>국기 퀴즈 소개</h2><p>국기 퀴즈는 세계의 국기를 배우는 무료 브라우저 게임이에요. 잘 알려진 국기 75개(15개 레벨)로 시작해서 나머지 나라들까지, 모두 39개 레벨 195개국의 국기를 익숙한 것부터 낯선 것 순서로 만나요.</p><p>레벨마다 5문제가 나와요. 모두 맞히면 별 3개, 레벨을 끝내면 다음 레벨이 열려요. 높은 레벨에서는 차드와 루마니아, 인도네시아와 모나코처럼 비슷한 국기가 보기로 나와요.</p><ul><li>두 가지 모드: 국기 → 나라, 나라 → 국기 (진행 상황은 따로 저장)</li><li>레벨마다 한 번 쓸 수 있는 50:50 힌트</li><li>레벨이 끝나면 틀린 문제 복습</li><li>모든 국기를 검색하고 지역별로 둘러보기</li><li>영어·한국어, 라이트·다크 테마, 키보드 조작 지원</li></ul>"
+   "about_html": "<h2>국기 퀴즈 소개</h2><p>국기 퀴즈는 세계의 국기를 배우는 무료 브라우저 게임이에요. 잘 알려진 국기 75개(15개 레벨)로 시작해서 나머지 나라들까지, 모두 39개 레벨 195개국의 국기를 익숙한 것부터 낯선 것 순서로 만나요.</p><p>레벨마다 5문제가 나와요. 모두 맞히면 별 3개, 레벨을 끝내면 다음 레벨이 열려요. 높은 레벨에서는 차드와 루마니아, 인도네시아와 모나코처럼 비슷한 국기가 보기로 나와요.</p><ul><li>두 가지 모드: 국기 → 나라, 나라 → 국기 (진행 상황은 따로 저장)</li><li>레벨마다 한 번 쓸 수 있는 50:50 힌트</li><li>레벨이 끝나면 틀린 문제 복습</li><li>모든 국기를 검색하고 지역별로 둘러보기</li><li>영어·한국어, 키보드 조작 지원</li></ul>"
   }
  }
 };

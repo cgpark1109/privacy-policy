@@ -3,7 +3,7 @@
 //   node _src/webgames/linkcheck.mjs [http://localhost:8931]
 // Fetches every page, every asset referenced by the HTML and JS (all flag SVGs listed in data.js), checks
 // the page head (AdSense account tag, canonical, og:image) and fails on any 404 or on root-absolute paths
-// other than the allowed links to the studio site.
+// other than the allowed links to the studio site (each of those must exist on the local server too).
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -13,7 +13,12 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
 const BASE = (process.argv[2] || 'http://localhost:8931').replace(/\/$/, '');
 const SITE = 'https://kysystemstudio.com';
-const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html']);
+// The site header and footer (the same as the main site's) link to these pages, in English and Korean.
+const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn/', '/news/', '/about/', '/support/', '/terms/',
+  '/ko/', '/ko/play/', '/ko/privacy/', '/ko/#games', '/ko/history/', '/ko/news/', '/ko/about/', '/ko/support/', '/ko/terms/',
+  '/assets/logo-256.png']);
+const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
+  'https://www.instagram.com/ggooksstudio/']);
 const ADSENSE_TAG = '<meta name="google-adsense-account" content="ca-pub-4148553154486992">';
 const GAMES = [['flag-quiz', 'all-flags.html'], ['capital-quiz', 'all-capitals.html']];
 
@@ -89,7 +94,7 @@ for (const [slug, listPage] of GAMES) {
     for (const ref of htmlRefs(html)) {
       if (/^https?:\/\//.test(ref)) {
         if (ref === canonical) { await mustGet(BASE + ref.slice(SITE.length), `${name} canonical`); continue; }
-        if (!/^https:\/\/fonts\.(googleapis|gstatic)\.com(\/|$)/.test(ref)) fail(`${name}: external reference ${ref}`);
+        if (!ALLOWED_EXTERNAL.has(ref) && !/^https:\/\/fonts\.(googleapis|gstatic)\.com(\/|$)/.test(ref)) fail(`${name}: external reference ${ref}`);
         continue;
       }
       if (ref.startsWith('#') || ref.startsWith('mailto:')) continue;

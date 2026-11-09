@@ -137,7 +137,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 /* ---------- page parts ---------- */
 const ICON_GEAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6a3.6 3.6 0 1 1 0-7.2 3.6 3.6 0 0 1 0 7.2z"/></svg>';
-const ICON_GAMES = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-2.9a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h2.9c.3 1.3.8 2.5 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.3-3.6C8.8 5.5 8.3 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h2.9a8 8 0 0 1-4.3 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4z"/></svg>';
 const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 const ICON_SEARCH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>';
 
@@ -185,7 +184,7 @@ function head(game, en, v, page) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="style.css?v=${v['style.css']}">
-<script>(function(){try{var s=JSON.parse(localStorage.getItem('${game.prefix}settings')||'{}');var d=document.documentElement;if(s.theme==='light'||s.theme==='dark')d.setAttribute('data-theme',s.theme);var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('${game.prefix}settings')||'{}');var d=document.documentElement;var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
 <script src="logic.js?v=${v['logic.js']}" defer></script>
 <script src="data.js?v=${v['data.js']}" defer></script>
 <script src="game.js?v=${v['game.js']}" defer></script>
@@ -193,33 +192,47 @@ function head(game, en, v, page) {
 ${ld}</head>`;
 }
 
-function header(game, en, page) {
-  const home = page === 'list'
-    ? `<a class="top-link" href="./">${ICON_PLAY}<span data-t="play">Play</span></a>`
-    : `<a class="top-link hide-sm" href="/play/">${ICON_GAMES}<span data-t="games">Browser games</span></a>`;
+// Header and footer: the same as the main site's (see page() in _src/build.py). The game switches language in
+// place, so every site link carries its Korean address in data-href-ko (app.js swaps them).
+const LINKS = { calc: 'https://calc.kysystemstudio.com/', email: 'admin@kysystemstudio.com',
+  youtube: 'https://www.youtube.com/@ggooksstudio', instagram: 'https://www.instagram.com/ggooksstudio/' };
+const ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+function header() {
+  const link = (href, ko, key, label, cls = '') =>
+    `<a${cls ? ` class="${cls}"` : ''} href="${href}"${ko ? ` data-href-ko="${ko}"` : ''} data-t="${key}">${label}</a>`;
   return `<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
-<header class="top">
+<header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./#/"><img src="favicon.svg" alt="" width="32" height="32"><span data-t="title">${esc(en.title)}</span></a>
-    <nav class="top-links" aria-label="Game">
-      ${home}
-      <button class="top-link lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button>
-      ${page === 'list' ? '' : `<a class="top-link icon-only" href="#/settings" data-t-attr="aria-label:settings" aria-label="Settings">${ICON_GEAR}</a>`}
-    </nav>
+    <a class="brand" href="/" data-href-ko="/ko/"><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
+    <button class="menu-toggle" aria-label="Menu" data-t-attr="aria-label:menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">${ICON_MENU}</button>
+    <nav class="nav" id="nav">${[
+      link('/#games', '/ko/#games', 'nav_games', 'Games'),
+      link('/learn/', '', 'nav_learn', 'Learn Hangul'),
+      link('/ko/history/', '', 'nav_history', '세계사', 'ko-only'),
+      link(LINKS.calc, '', 'nav_calc', 'Calculators'),
+      link('/news/', '/ko/news/', 'nav_news', 'News'),
+      link('/about/', '/ko/about/', 'nav_about', 'About'),
+      link('/support/', '/ko/support/', 'nav_support', 'Support'),
+    ].join('')}<button class="lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button></nav>
   </div>
 </header>`;
 }
 
 function footer() {
-  return `<footer class="foot">
+  return `<footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Site">
-      <a href="/" data-t="studio">ggook's studio</a>
-      <a href="/play/" data-t="games">Browser games</a>
-      <a href="/privacy.html" data-t="privacy">Privacy Policy</a>
-      <a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a>
+      <a href="/privacy.html" data-href-ko="/ko/privacy/" data-t="privacy">Privacy Policy</a>
+      <a href="/terms/" data-href-ko="/ko/terms/" data-t="terms">Terms of Service</a>
+      <a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a>
+      <a href="${LINKS.calc}" data-t="calc_link">Calculators</a>
+      <a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a>
+      <a href="mailto:${LINKS.email}" data-t="contact">Contact</a>
+      <a href="${LINKS.youtube}" target="_blank" rel="noopener">YouTube</a>
+      <a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <p>© 2026 ggook's studio</p>
+    <p>© 2026 ggook's studio. <span data-t="rights">All rights reserved.</span></p>
+    <p class="credit"><a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a></p>
   </div>
 </footer>
 <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
@@ -229,8 +242,14 @@ function footer() {
 function indexHtml(game, en, v) {
   return `${head(game, en, v, 'index')}
 <body data-page="game">
-${header(game, en, 'index')}
+${header()}
 <main id="main">
+  <div class="wrap game-head">
+    <div class="game-bar"><nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a><span aria-hidden="true">›</span><span data-t="title">${esc(en.title)}</span></nav>
+    <a class="tool-link" href="#/settings">${ICON_GEAR}<span data-t="settings">Settings</span></a></div>
+    <h1 data-t="title">${esc(en.title)}</h1>
+    <p class="lead" data-t="tagline">${esc(en.tagline)}</p>
+  </div>
   <div id="view" class="view" tabindex="-1">
     <div class="wrap"><div class="card" style="text-align:center">
       <h1>${esc(en.title)}</h1>
@@ -276,10 +295,10 @@ function listHtml(game, en, ko, entries, v) {
     `<button type="button" data-region="${r[0]}" aria-pressed="${i === 0}"><span class="lang-en">${r[1]}</span><span class="lang-ko">${r[2]}</span></button>`).join('');
   return `${head(game, en, v, 'list')}
 <body data-page="list">
-${header(game, en, 'list')}
+${header()}
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/" data-t="studio">ggook's studio</a><span aria-hidden="true">›</span><a href="/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Play in your browser</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
     <div class="list-head">
       <h1 data-t="list_title">${esc(en.list_title)}</h1>
       <p class="lang-en">${esc(en.list_lead)}</p><p class="lang-ko">${esc(ko.list_lead)}</p>
