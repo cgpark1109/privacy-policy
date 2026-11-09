@@ -65,9 +65,9 @@
   }
   function more() {
     var last = segs[segs.length - 1], s = last.s1, y = last.y1, X = last.X1;
-    var difficulty = Math.min(1.8, s / 1800);  // more gaps, narrower roads and sharper turns the farther you go
-    var w = Math.max(5, 8 - 1.7 * difficulty);
-    if (s > 250 && rand() < 0.15 + 0.12 * difficulty && last.kind !== 'gap' && !last.fork) {
+    var difficulty = Math.min(1.8, s / 1500);  // more gaps, narrower roads and sharper turns the farther you go
+    var w = Math.max(5, 7.4 - 1.6 * difficulty);
+    if (s > 180 && rand() < 0.15 + 0.12 * difficulty && last.kind !== 'gap' && !last.fork) {
       // a straight downhill run-up, a ramp, the gap, and a long downhill to land on
       var low = y - rr(10, 16), rampUp = rr(5, 8);
       addSeg('hill', rr(38, 52), low, { w: w + 1 });
@@ -78,11 +78,11 @@
     }
     var len = rr(30, 55), ny = Math.max(-30, Math.min(40, y + (rand() < 0.5 ? -1 : 1) * rr(3, 8 + 5 * difficulty)));
     var r = rand(), o = { w: w, X: X };
-    if (s > 420 && r < 0.16 && !last.fork && Math.abs(last.b1) < 0.01) {
+    if (s > 300 && r < 0.16 && !last.fork && Math.abs(last.b1) < 0.01) {
       // a fork: the road widens and splits around a hole; pick a lane
-      o.w = w + 4.5; o.fork = rr(2.4, 3.2) + difficulty * 0.4; len = rr(45, 60);
+      o.w = w + 5; o.fork = rr(2.4, 3.2) + difficulty * 0.4; len = rr(45, 60);
       ny = y + rr(-4, 2);
-    } else if (s > 300 && r < 0.36) {
+    } else if (s > 200 && r < 0.36) {
       o.b = (rand() < 0.5 ? -1 : 1) * rr(0.14, 0.22 + 0.06 * difficulty);  // a tilted road
     } else if (s > 60 && r < 0.78) {
       // a zigzag: the road swings sideways, so steer to follow it
@@ -110,7 +110,7 @@
   function shape(sg, s) {
     var t = Math.max(0, Math.min(1, (s - sg.s0) / (sg.s1 - sg.s0))), e = ease(t);
     var h = 0;
-    if (sg.fork) h = sg.fork / 2 * Math.max(0, Math.min(1, t / 0.18, (1 - t) / 0.18));  // pointed at both ends, like a split in the road
+    if (sg.fork) h = sg.fork / 2 * Math.max(0, Math.min(1, t / 0.25, (1 - t) / 0.25));  // pointed at both ends, like a split in the road
     return { X: sg.X0 + (sg.X1 - sg.X0) * e, w: sg.w0 + (sg.w1 - sg.w0) * e, b: sg.b0 + (sg.b1 - sg.b0) * e, h: h };
   }
   // the road under (s, x): its height there, the slope along s and the tilt; null if there's no road under you
