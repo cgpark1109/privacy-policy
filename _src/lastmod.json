@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "ba11ef93c0411d557bafe7c75bd32de80e4c1cf3"
+  "hash": "2c1fb4851919f6631c2a4939b4a99bd0aca70101"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -29,7 +29,7 @@
  },
  "/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "23daac12c2e8c62cf79d48fd922628c0609883f5"
+  "hash": "94ccc670554c57ab12836bb92830cdd0289f145b"
  },
  "/games/world-history-quiz/": {
   "date": "2026-11-09",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "953196204323b32922f5ad386e35e9a2999139bd"
+  "hash": "dbb6d80e0df5fac57d96122d1e0cd5459db9b257"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -65,7 +65,7 @@
  },
  "/ko/games/updraft/": {
   "date": "2026-11-09",
-  "hash": "50279e267757d2c564eaa982dcaeb6249ecd5b5c"
+  "hash": "8abd5b2caea81ed2262a34c15b6119d236248d1e"
  },
  "/ko/games/world-history-quiz/": {
   "date": "2026-11-09",
@@ -409,19 +409,19 @@
  },
  "/ko/news/": {
   "date": "2026-11-09",
-  "hash": "2a00b2d840ed0be637fa75dfe0dbe8238a9b077a"
+  "hash": "84ef5932235149b2d5c230134cd08f510dfbce9b"
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
-  "hash": "cf040291799e3d4ab938ac6798ed59230e4e09e0"
+  "hash": "b609f2fc3e1aac399f884ac5c1a83f3f491abcf2"
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "f8ade1cc801936993954295cb8630046ee5ec2c3"
+  "hash": "0772dc62ec9afbf0f9fd1d42f9b1accf4b1585bf"
  },
  "/ko/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "235c1a7cadc39ae88ef4d4cd76f3e9051270f36a"
+  "hash": "af23a37d941e068c01322d930d2c3bb72aed3dae"
  },
  "/ko/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
@@ -429,7 +429,7 @@
  },
  "/ko/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "92b882041cc8137e322f81a71d5a110694cfabab"
+  "hash": "c40388d07cb8f9d59579f3ed29507ad908ff9ca7"
  },
  "/ko/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
@@ -437,11 +437,15 @@
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "43babc25b22b56f65d754edb28112c4372e6f245"
+  "hash": "6e52ed7b095db4b31a80c3fdfcfc3862f624500b"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
   "hash": "cc7eda682c4b589eeb92169afc2b0e84f3968ef5"
+ },
+ "/ko/play/updraft/": {
+  "date": "2026-11-09",
+  "hash": "9fa3a0963195686cb38c0e1e5665ef6a695d7c6f"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
@@ -513,19 +517,19 @@
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "69237c09bc05efd90b6f94835f94155452a44d32"
+  "hash": "e0f30f0fb9175579d7dfee8637a27b63fed33701"
  },
  "/news/archive/": {
   "date": "2026-11-09",
-  "hash": "313c8e0c85a6a4e69efa14cfe661367cbfcd2b50"
+  "hash": "58c1db32e05173abf7050319c69681175d0593b0"
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "89dc8665d6ada961bc96d02e6add42eb18bc0cbf"
+  "hash": "d75f149ffd1ceda9161c02faae0bdc83018bae33"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "b2523e3123d24880cba87291376c645a530121e6"
+  "hash": "415292ed793629137a17f53788f426b357e6a464"
  },
  "/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
@@ -533,7 +537,7 @@
  },
  "/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "08544b6c1a76275db72b508146eea1e4bacea197"
+  "hash": "586a33124aa7d8e02b7b21a8de803ac9b01e9682"
  },
  "/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
@@ -541,15 +545,19 @@
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "1784d4ff88728d79c4f76a3cf2e6d31e0f6a6335"
+  "hash": "12f0ea00748326688ef719698f548fae39c64898"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "6f7e5c1324036e5e9f3925cce0da5006bf766ee3"
+  "hash": "25956fe4013044e7077633ee9a1a1a464a5f88ad"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
   "hash": "a5fd736d428883e53804903d94867a1cdccff57c"
+ },
+ "/play/updraft/": {
+  "date": "2026-11-09",
+  "hash": "f50987c8c7ec5ee8a8a9ec49a89384cc3f6a95a7"
  },
  "/privacy.html": {
   "date": "2026-11-09",
