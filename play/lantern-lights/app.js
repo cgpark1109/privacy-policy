@@ -9,7 +9,7 @@
   var T = {
     en: {
       daily: "Today's puzzle", practice: 'Practice', size: '{n} × {n}', newp: 'New puzzle', restart: 'Start over',
-      time: 'Time', moves: 'Moves', lit: 'Lanterns lit', streak: 'Streak: {n} days', best: "Today's best: {t}",
+      time: 'Time', moves: 'Moves', lit: 'Lanterns lit', streak: 'Streak: {n} days', streak1: 'Streak: 1 day', best: "Today's best: {t}",
       solved: 'All lanterns are lit!', solved_sub: '{t} · {m} moves', share: 'Copy result', copied: 'Copied!',
       share_text: 'Lantern Lights {d}: {t}, {m} moves', come_back: 'A new puzzle arrives at midnight.',
       cell: 'Row {r}, column {c}: {kind}{lit}', lit_on: ', lit', kinds: { source: 'flame', lantern: 'lantern', end: 'end', straight: 'straight path', corner: 'corner', tee: 'three-way path', cross: 'crossing' },
@@ -134,10 +134,13 @@
     return '<svg viewBox="0 0 100 100" aria-hidden="true"><g class="arms" style="transform:rotate(' + p.deg[i] + 'deg)">' + arms + '</g>' + center + '</svg>';
   }
 
+  function streakText() { var n = streak(); return fmt(n === 1 && T.streak1 ? T.streak1 : T.streak, { n: n }); }
+  function statsHTML() {
+    if (mode !== 'daily') return '';
+    return '<span>' + streakText() + '</span>' + (P.days[today()] != null ? '<span>' + fmt(T.best, { t: clock(P.days[today()]) }) + '</span>' : '');
+  }
   function render() {
-    var stats = mode === 'daily'
-      ? '<span>' + fmt(T.streak, { n: streak() }) + '</span>' + (P.days[today()] != null ? '<span>' + fmt(T.best, { t: clock(P.days[today()]) }) + '</span>' : '')
-      : '';
+    var stats = '<span id="ln-stats">' + statsHTML() + '</span>';
     var sizes = mode === 'practice' ? '<div class="ln-sizes" role="group">' + [5, 6, 7].map(function (n) {
       return '<button class="ln-chip" data-size="' + n + '" aria-pressed="' + (size === n) + '">' + fmt(T.size, { n: n }) + '</button>'; }).join('') +
       '<button class="ln-chip" data-act="new">' + T.newp + '</button></div>' : '';
@@ -183,11 +186,11 @@
     done = true; clearInterval(timer);
     var secs = Math.max(1, (Date.now() - start) / 1000), t = clock(secs);
     document.getElementById('ln-time').textContent = t;
-    if (mode === 'daily') { var prev = P.days[today()]; if (prev == null || secs < prev) P.days[today()] = Math.round(secs); var keys = Object.keys(P.days).sort(); while (keys.length > 60) delete P.days[keys.shift()]; save(); }
+    if (mode === 'daily') { var prev = P.days[today()]; if (prev == null || secs < prev) P.days[today()] = Math.round(secs); var keys = Object.keys(P.days).sort(); while (keys.length > 60) delete P.days[keys.shift()]; save(); document.getElementById('ln-stats').innerHTML = statsHTML(); }
     var w = document.getElementById('ln-win');
     w.hidden = false;
     w.innerHTML = '<b>' + T.solved + '</b><span>' + fmt(T.solved_sub, { t: t, m: game.moves }) + '</span>' +
-      (mode === 'daily' ? '<span>' + fmt(T.streak, { n: streak() }) + ' · ' + T.come_back + '</span>' + (navigator.clipboard ? '<button class="btn" data-act="share">' + T.share + '</button>' : '') :
+      (mode === 'daily' ? '<span>' + streakText() + ' · ' + T.come_back + '</span>' + (navigator.clipboard ? '<button class="btn" data-act="share">' + T.share + '</button>' : '') :
         '<button class="btn" data-act="new">' + T.newp + '</button>');
     app.querySelector('.ln-board').classList.add('won');
     say(T.solved + ' ' + fmt(T.solved_sub, { t: t, m: game.moves }));

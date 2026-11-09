@@ -48,6 +48,7 @@
 .ln-win .btn { margin-top: 6px; }
 .ln-foot { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; color: var(--navy); font-weight: 600; font-size: 14px; }
 .ln-foot span { background: rgba(255, 255, 255, 0.7); border-radius: 999px; padding: 5px 12px; }
+#ln-stats { display: contents; }
 .ln-help { text-align: center; font-size: 13px; color: var(--navy-soft); }
 
 .ln-static { display: grid; gap: 14px; margin-top: 14px; }

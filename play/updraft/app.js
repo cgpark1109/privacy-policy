@@ -1,7 +1,7 @@
 /* Updraft (browser version): aim, power up and launch a paper plane, then ride the air as far as it goes.
    Source: _src/updraft/app.js, copied to play/updraft/ by build.py (build_updraft). The page is an ordinary site page
    (/play/updraft/ in English, /ko/play/updraft/ in Korean); this script draws the game on a canvas in #ud-app.
-   World units are meters and seconds. The sky (layout and wind) is the same for everyone on a given day. */
+   The camera follows the plane from behind. World units are meters and seconds. The sky (layout and wind) is the same for everyone on a given day. */
 (function () {
   'use strict';
 
@@ -242,12 +242,7 @@
   }
 
   /* ---------- loop ---------- */
-  function tick(now) {
-    var dt = Math.min(0.05, (now - (last || now)) / 1000);
-    last = now;
-    osc += dt;
-    if (phase === 'aim') angle = 32 + 27 * Math.sin(osc * 1.6);        // 5..59 degrees
-    if (phase === 'power') power = 0.5 - 0.5 * Math.cos(osc * 2.4);     // 0..1
+  function fly(dt) {
     if (phase === 'fly') {
       for (var i = 0; i < 4 && phase === 'fly'; i++) {
         step(plane, k, dt / 4);
@@ -264,138 +259,242 @@
             if (flight.shields > 0) {
               flight.shields--; ob.hit = true; plane.rx *= 0.55; plane.ry = Math.abs(plane.ry) * 0.3 + 2;
               msgEl.textContent = T.hit;
-            } else { land(ob.k); return requestAnimationFrame(tick); }
+            } else { land(ob.k); return; }
           }
         }
-        if (plane.y <= groundAt(plane.x) || plane.x < -5 || plane.x > LENGTH - 50) { land(null); return requestAnimationFrame(tick); }
+        if (plane.y <= groundAt(plane.x) || plane.x < -5 || plane.x > LENGTH - 50) { land(null); return; }
       }
       hud();
     }
+  }
+  function tick(now) {
+    var dt = Math.min(0.05, (now - (last || now)) / 1000);
+    last = now;
+    osc += dt;
+    if (phase === 'aim') angle = 32 + 27 * Math.sin(osc * 1.6);        // 5..59 degrees
+    if (phase === 'power') power = 0.5 - 0.5 * Math.cos(osc * 2.4);     // 0..1
+    fly(dt);
     draw();
     requestAnimationFrame(tick);
   }
 
-  /* ---------- drawing ---------- */
+  /* ---------- drawing: a chase camera behind the plane ---------- */
+  // x runs forward (the distance), y is up and z is sideways; the flight itself only uses x and y, and the plane
+  // just sways a little sideways for the look of it. Scenery beside the flight line is decoration.
   var SKY = [['#9CC7F0', '#E8F4FF'], ['#8FB3E6', '#E3ECFA'], ['#7FB8E6', '#DFF3FF'], ['#8AA6D8', '#E9E3F5'], ['#5F7BD0', '#C9C7F0']];
+  var LAND = [['#86CC84', '#7CC47A'], ['#A3ABBE', '#9AA3B8'], ['#4FA3E0', '#4597D6'], ['#959383', '#8C8A78'], ['#FFFFFF', '#F1F0FA']];
+  var F = 1, HZ = 0, BACK = 10, FAR = 320, cam = null;
   function resize() {
     var r = canvas.getBoundingClientRect();
     dpr = Math.min(2, window.devicePixelRatio || 1);
-    W = Math.max(300, r.width); H = Math.max(220, r.height);
+    W = Math.max(300, r.width); H = Math.max(240, r.height);
     canvas.width = W * dpr; canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    F = Math.min(W * 0.9, H * 1.05);
   }
+  function hash(n) { var v = Math.sin(n * 127.1 + 311.7) * 43758.5453; return v - Math.floor(v); }
+  function sway(t) { return { z: Math.sin(t * 0.8) * 0.9, roll: Math.cos(t * 0.8) * 0.18 }; }
+  function pj(x, y, z) { var dz = Math.max(0.4, x - cam.x), k = F / dz; return [W / 2 + (z - cam.z) * k, HZ - (y - cam.y) * k, k]; }
+  function poly(pts, color) {
+    ctx.fillStyle = color; ctx.beginPath(); ctx.moveTo(pts[0][0], pts[0][1]);
+    for (var i = 1; i < pts.length; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+    ctx.closePath(); ctx.fill();
+  }
+  function fogA(x) { return Math.max(0, Math.min(1, (x - cam.x) / FAR)); }
   function draw() {
-    var px = plane ? plane.x : 0, py = plane ? plane.y : 2;
-    var ppm = H / 42;                                     // pixels per meter
-    var camX = px - (W * 0.32) / ppm;
-    var camY = Math.max(-2.5, py - 26, groundAt(px) - 6);  // bottom of the view, in meters
-    function sx(x) { return (x - camX) * ppm; }
-    function sy(y) { return H - (y - camY) * ppm; }
+    var px = plane ? plane.x : 0, py = plane ? plane.y : 2, sw = plane ? sway(plane.t) : { z: 0, roll: 0 };
+    var pitch = plane ? Math.atan2(plane.ry, plane.rx) : (phase === 'aim' || phase === 'power' ? angle * Math.PI / 180 * 0.5 : 0);
+    if (!cam || !plane) cam = { x: px - BACK, y: py + 2.4, z: 0, p: pitch };
+    cam.x = px - BACK; cam.y += (Math.max(py + 2.4, groundAt(px) + 3) - cam.y) * 0.15; cam.z += (sw.z * 0.5 - cam.z) * 0.1;
+    cam.p += (Math.max(-0.5, Math.min(0.5, pitch)) - cam.p) * 0.06;
+    HZ = H * 0.42 + cam.p * H * 0.3;  // tilting with the flight: climbing shows more sky, diving more ground
     var z = zoneOf(Math.max(0, px));
-    var grad = ctx.createLinearGradient(0, 0, 0, H);
+    // sky, with clouds drifting past
+    var grad = ctx.createLinearGradient(0, 0, 0, Math.max(10, HZ));
     grad.addColorStop(0, SKY[z][0]); grad.addColorStop(1, SKY[z][1]);
     ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
-    var x0 = camX - 10, x1 = camX + W / ppm + 10;
-    // distant clouds, moving at a third of the speed (parallax)
-    if (z < 4) {
-      ctx.fillStyle = 'rgba(255,255,255,0.75)';
-      for (var ci = 0; ci < 7; ci++) {
-        var cxp = ((ci * 173 - camX * ppm * 0.3) % (W + 200) + W + 200) % (W + 200) - 100, cyp = 30 + (ci * 47) % (H * 0.45);
-        ctx.beginPath(); ctx.ellipse(cxp, cyp, 38, 13, 0, 0, 7); ctx.ellipse(cxp + 24, cyp - 7, 26, 12, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.75)';
+    for (var ci = 0; ci < 6; ci++) {
+      var cxp = ((ci * 173 - cam.z * 40 - px * 0.6) % (W + 200) + W + 200) % (W + 200) - 100, cyp = HZ - 30 - (ci * 47) % Math.max(20, HZ * 0.8);
+      if (cyp < -20) continue;
+      ctx.beginPath(); ctx.ellipse(cxp, cyp, 38, 12, 0, 0, 7); ctx.ellipse(cxp + 24, cyp - 7, 26, 11, 0, 0, 7); ctx.fill();
+    }
+    // far hills on the horizon (none over the sea or above the clouds)
+    if (z !== 2 && z !== 4) {
+      ctx.fillStyle = z === 3 ? '#A9A6C4' : z === 1 ? '#B4BBD0' : '#A7CFA0';
+      ctx.beginPath(); ctx.moveTo(0, HZ + 1);
+      for (var fx = 0; fx <= W + 8; fx += 8) {
+        var u = fx + cam.z * 30 + px * 0.05;
+        ctx.lineTo(fx, HZ - Math.max(0, Math.sin(u * 0.012) * (z === 3 ? 34 : 16) + Math.sin(u * 0.031) * 7));
+      }
+      ctx.lineTo(W, HZ + 1); ctx.fill();
+    }
+    // the ground (or sea, or cloud sea) in bands from far to near, each filled down to the bottom of the view
+    var xs = [], gx = cam.x + 1;
+    while (gx < cam.x + FAR) { xs.push(gx); gx += 1.2 + (gx - cam.x) * 0.04; }
+    xs.push(cam.x + FAR);
+    for (var bi = xs.length - 2; bi >= 0; bi--) {
+      var xa = xs[bi], xb = xs[bi + 1], gz = zoneOf(Math.max(0, xa));
+      var ya = pj(xa, groundAt(xa), 0)[1], yb = pj(xb, groundAt(xb), 0)[1];
+      var top = Math.min(ya, yb);
+      if (top > H) continue;
+      var band = Math.floor((xa + xb) / 2 / 10) % 2;
+      ctx.fillStyle = LAND[gz][band];
+      ctx.fillRect(0, top, W, H - top + 1);
+      ctx.globalAlpha = fogA(xa) * 0.75; ctx.fillStyle = SKY[gz][1]; ctx.fillRect(0, top, W, H - top + 1); ctx.globalAlpha = 1;
+    }
+    // the things in the world, from far to near; the plane goes in at its own distance
+    var items = [];
+    var CH = 14;
+    for (var c = Math.floor(cam.x / CH); c * CH < cam.x + FAR; c++) {
+      if (c * CH < -40) continue;
+      items.push({ x: c * CH + hash(c) * CH, f: scenery, c: c });
+    }
+    drafts.forEach(function (d) { if (d.x > cam.x + 2 && d.x < cam.x + FAR) items.push({ x: d.x, f: drawDraft, o: d }); });
+    obstacles.forEach(function (ob) { if (ob.x + ob.w > cam.x + 1 && ob.x < cam.x + FAR) items.push({ x: ob.x + ob.w, f: drawObstacle, o: ob }); });  // sorted by the far side, so a plane inside one stays in view
+    coinsW.forEach(function (cn) { if (!cn.got && cn.x > cam.x + 1 && cn.x < cam.x + FAR * 0.6) items.push({ x: cn.x, f: drawCoin, o: cn }); });
+    for (var zi = 1; zi < ZONE_AT.length; zi++) if (ZONE_AT[zi] > cam.x + 2 && ZONE_AT[zi] < cam.x + FAR) items.push({ x: ZONE_AT[zi], f: drawGate, o: zi });
+    items.push({ x: px, f: drawPlane });
+    items.sort(function (a, b2) { return b2.x - a.x; });
+    items.forEach(function (it) { it.f(it); });
+
+    function scenery(it) {
+      // a pair of things on either side of the flight line: trees, buildings, buoys, rocks or cloud puffs
+      var x = it.x, gzz = zoneOf(Math.max(0, x)), g = groundAt(x), fa = fogA(x);
+      for (var side = -1; side <= 1; side += 2) {
+        var h1 = hash(it.c * 2 + side), h2 = hash(it.c * 3 + side * 7);
+        var zz = side * (9 + h1 * 45), base = pj(x, g, zz), k = base[2];
+        if (base[0] < -200 || base[0] > W + 200) continue;
+        ctx.globalAlpha = 1 - fa * 0.8;
+        if (gzz === 0) {
+          var th = (4 + h2 * 4) * k;
+          ctx.fillStyle = '#8A5A3B'; ctx.fillRect(base[0] - 0.3 * k, base[1] - th * 0.5, 0.6 * k, th * 0.5);
+          ctx.fillStyle = h2 > 0.5 ? '#3F9B4F' : '#58AE5C'; ctx.beginPath(); ctx.arc(base[0], base[1] - th * 0.62, th * 0.36, 0, 7); ctx.fill();
+        } else if (gzz === 1) {
+          var bw = (6 + h2 * 8) * k, bh = (10 + h1 * 30) * k;
+          ctx.fillStyle = h2 > 0.5 ? '#6B7596' : '#7F89A8'; ctx.fillRect(base[0] - bw / 2, base[1] - bh, bw, bh);
+          if (k > 2) {
+            ctx.fillStyle = 'rgba(255,230,150,0.7)';
+            for (var wy = base[1] - bh + 0.8 * k; wy < base[1] - k; wy += 2.4 * k) for (var wx = base[0] - bw / 2 + 0.8 * k; wx < base[0] + bw / 2 - k; wx += 2 * k) ctx.fillRect(wx, wy, 0.9 * k, 1.1 * k);
+          }
+        } else if (gzz === 2) {
+          if (h2 < 0.6) { ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.fillRect(base[0] - 2 * k, base[1] - 0.15 * k, 4 * k, 0.3 * k); }
+          else { ctx.fillStyle = '#FF6B5B'; ctx.beginPath(); ctx.arc(base[0], base[1] - 0.5 * k, 0.6 * k, 0, 7); ctx.fill(); }
+        } else if (gzz === 3) {
+          var rh = (6 + h2 * 18) * k, rw = (8 + h1 * 10) * k;
+          poly([[base[0] - rw / 2, base[1]], [base[0], base[1] - rh], [base[0] + rw / 2, base[1]]], h2 > 0.5 ? '#7B7967' : '#8C8A78');
+          poly([[base[0] - rw * 0.14, base[1] - rh * 0.72], [base[0], base[1] - rh], [base[0] + rw * 0.14, base[1] - rh * 0.72]], '#FFFFFF');
+        } else {
+          var cr = (2.5 + h2 * 3) * k;
+          ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.ellipse(base[0], base[1] - cr * 0.2, cr * 1.6, cr * 0.6, 0, 0, 7); ctx.fill();
+        }
+        ctx.globalAlpha = 1;
       }
     }
-    // drafts
-    drafts.forEach(function (d) {
-      if (d.x + d.w < x0 || d.x - d.w > x1) return;
-      ctx.fillStyle = d.s > 0 ? 'rgba(255,255,255,0.22)' : 'rgba(43,49,85,0.12)';
-      ctx.fillRect(sx(d.x - d.w / 2), sy(d.top), d.w * ppm, (d.top - camY + 5) * ppm);
-      ctx.strokeStyle = d.s > 0 ? 'rgba(255,255,255,0.7)' : 'rgba(43,49,85,0.35)';
-      ctx.lineWidth = 2;
-      for (var j = 0; j < 3; j++) {
-        var ax = d.x - d.w / 4 + j * d.w / 4, phaseY = ((osc * 6 * Math.sign(d.s)) % 10 + 10) % 10;
-        for (var yy = camY + phaseY; yy < Math.min(d.top, camY + 75); yy += 10) {
-          var dir = d.s > 0 ? 1 : -1;
-          ctx.beginPath(); ctx.moveTo(sx(ax) - 4, sy(yy)); ctx.lineTo(sx(ax), sy(yy + 2.5 * dir)); ctx.lineTo(sx(ax) + 4, sy(yy)); ctx.stroke();
+    function drawDraft(it) {
+      var d = it.o, near = pj(d.x, groundAt(d.x), 0), topP = pj(d.x, d.top, 0), k = near[2];
+      var half = Math.max(3, d.w * 0.3) * k, up = d.s > 0;
+      var y0 = Math.max(-10, topP[1]), y1 = Math.min(H + 10, near[1]);
+      if (y1 <= y0) return;
+      var gr = ctx.createLinearGradient(near[0] - half, 0, near[0] + half, 0);
+      var c1 = up ? 'rgba(255,255,255,' : 'rgba(43,49,85,';
+      gr.addColorStop(0, c1 + '0)'); gr.addColorStop(0.5, c1 + (up ? '0.32)' : '0.16)')); gr.addColorStop(1, c1 + '0)');
+      ctx.fillStyle = gr; ctx.fillRect(near[0] - half, y0, half * 2, y1 - y0);
+      // chevrons moving up (or down) the column
+      ctx.strokeStyle = up ? 'rgba(255,255,255,0.85)' : 'rgba(43,49,85,0.4)'; ctx.lineWidth = Math.max(1.2, Math.min(3, k * 0.25));
+      var step = 6, ph = ((osc * 5 * (up ? 1 : -1)) % step + step) % step, ar = Math.min(half * 0.5, 2 * k);
+      for (var yy = groundAt(d.x) + ph; yy < d.top; yy += step) {
+        var q = pj(d.x, yy, 0);
+        if (q[1] < -10 || q[1] > H + 10) continue;
+        var dir = up ? -1 : 1;
+        ctx.beginPath(); ctx.moveTo(q[0] - ar, q[1]); ctx.lineTo(q[0], q[1] + dir * ar * 0.6); ctx.lineTo(q[0] + ar, q[1]); ctx.stroke();
+      }
+    }
+    function drawObstacle(it) {
+      var ob = it.o, x = Math.max(ob.x, cam.x + 1), fa = fogA(x);
+      ctx.globalAlpha = 1 - fa * 0.7;
+      if (ob.k === 'building') {
+        var hw = 7, A = pj(x, ob.y, -hw), B = pj(x, ob.y + ob.h, hw), back = pj(ob.x + ob.w, ob.y + ob.h, -hw), backR = pj(ob.x + ob.w, ob.y + ob.h, hw);
+        if (cam.y > ob.y + ob.h) poly([[A[0], B[1]], [B[0], B[1]], [backR[0], backR[1]], [back[0], back[1]]], '#8A93B0');  // the roof
+        ctx.fillStyle = '#5B6584'; ctx.fillRect(A[0], B[1], B[0] - A[0], A[1] - B[1]);
+        var k = A[2];
+        if (k > 1.5) {
+          ctx.fillStyle = 'rgba(255,230,150,0.75)';
+          for (var wy = B[1] + k; wy < A[1] - k; wy += 3 * k) for (var wx = A[0] + k; wx < B[0] - k; wx += 2.6 * k) ctx.fillRect(wx, wy, 1.2 * k, 1.5 * k);
+        }
+      } else {
+        var mid = pj(ob.x + ob.w / 2, ob.y, 0), k2 = mid[2], top = mid[1] - ob.h * k2;
+        if (ob.k === 'tree') {
+          ctx.fillStyle = '#8A5A3B'; ctx.fillRect(mid[0] - 0.45 * k2, mid[1] - ob.h * 0.5 * k2, 0.9 * k2, ob.h * 0.5 * k2);
+          ctx.fillStyle = '#2F8A45'; ctx.beginPath(); ctx.arc(mid[0], top + ob.h * 0.36 * k2, ob.h * 0.4 * k2, 0, 7); ctx.fill();
+        } else if (ob.k === 'mast') {
+          ctx.fillStyle = '#FFFFFF'; ctx.fillRect(mid[0] - 3 * k2, mid[1] - 1.2 * k2, 6 * k2, 1.2 * k2);
+          ctx.fillStyle = '#6B4A35'; ctx.fillRect(mid[0] - 0.2 * k2, top, 0.4 * k2, ob.h * k2);
+          poly([[mid[0] + 0.3 * k2, top + 0.5 * k2], [mid[0] + 3.5 * k2, top + ob.h * 0.55 * k2], [mid[0] + 0.3 * k2, top + ob.h * 0.65 * k2]], '#FF6B5B');
+        } else if (ob.k === 'peak') {
+          var pw = (ob.w + 14) * k2 / 2;
+          poly([[mid[0] - pw, mid[1]], [mid[0], top], [mid[0] + pw, mid[1]]], '#6E6C5E');
+          poly([[mid[0] - pw * 0.24, top + ob.h * 0.24 * k2], [mid[0], top], [mid[0] + pw * 0.24, top + ob.h * 0.24 * k2]], '#FFFFFF');
+        } else {
+          ctx.fillStyle = '#5A5F7A';
+          for (var bb = 0; bb < 5; bb++) { ctx.beginPath(); ctx.arc(mid[0] + (bb - 2) * ob.h * 0.45 * k2, top + ob.h * (bb % 2 ? 0.4 : 0.6) * k2, ob.h * 0.45 * k2, 0, 7); ctx.fill(); }
         }
       }
-    });
-    // ground / sea / mountains / cloud floor
-    ctx.beginPath(); ctx.moveTo(0, H);
-    for (var gx = 0; gx <= W; gx += 6) { var wx = camX + gx / ppm; ctx.lineTo(gx, sy(groundAt(wx))); }
-    ctx.lineTo(W, H); ctx.closePath();
-    ctx.fillStyle = ['#7CC47A', '#9AA3B8', '#3E8ED0', '#8C8A78', '#FFFFFF'][z];
-    if (z === 2) { var sea = ctx.createLinearGradient(0, sy(0), 0, H); sea.addColorStop(0, '#4FA3E0'); sea.addColorStop(1, '#2E6FB0'); ctx.fillStyle = sea; }
-    ctx.fill();
-    // obstacles
-    obstacles.forEach(function (ob) {
-      if (ob.x + ob.w < x0 || ob.x > x1) return;
-      var X = sx(ob.x), Y = sy(ob.y + ob.h), Wd = ob.w * ppm, Hd = ob.h * ppm;
-      if (ob.k === 'tree') {
-        ctx.fillStyle = '#8A5A3B'; ctx.fillRect(X + Wd * 0.38, Y + Hd * 0.45, Wd * 0.24, Hd * 0.55);
-        ctx.fillStyle = '#3F9B4F'; ctx.beginPath(); ctx.arc(X + Wd / 2, Y + Hd * 0.35, Math.max(Wd, Hd * 0.45) * 0.75, 0, 7); ctx.fill();
-      } else if (ob.k === 'building') {
-        ctx.fillStyle = '#5B6584'; ctx.fillRect(X, Y, Wd, Hd);
-        ctx.fillStyle = 'rgba(255,230,150,0.75)';
-        for (var wy = Y + 6; wy < Y + Hd - 6; wy += 12) for (var wxx = X + 5; wxx < X + Wd - 6; wxx += 10) ctx.fillRect(wxx, wy, 5, 6);
-      } else if (ob.k === 'mast') {
-        ctx.fillStyle = '#FFFFFF'; ctx.fillRect(X - Wd * 2, sy(1.5), Wd * 5, 1.5 * ppm);
-        ctx.fillStyle = '#6B4A35'; ctx.fillRect(X + Wd * 0.3, Y, Wd * 0.4, Hd);
-        ctx.fillStyle = '#FF6B5B'; ctx.beginPath(); ctx.moveTo(X + Wd * 0.7, Y + 4); ctx.lineTo(X + Wd * 3, Y + Hd * 0.5); ctx.lineTo(X + Wd * 0.7, Y + Hd * 0.6); ctx.fill();
-      } else if (ob.k === 'peak') {
-        ctx.fillStyle = '#6E6C5E'; ctx.beginPath(); ctx.moveTo(X, sy(ob.y)); ctx.lineTo(X + Wd / 2, Y); ctx.lineTo(X + Wd, sy(ob.y)); ctx.fill();
-        ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.moveTo(X + Wd * 0.38, Y + Hd * 0.25); ctx.lineTo(X + Wd / 2, Y); ctx.lineTo(X + Wd * 0.62, Y + Hd * 0.25); ctx.fill();
-      } else {
-        ctx.fillStyle = '#5A5F7A';
-        for (var b = 0; b < 4; b++) { ctx.beginPath(); ctx.arc(X + Wd * (0.2 + b * 0.2), Y + Hd * (b % 2 ? 0.4 : 0.6), Hd * 0.45, 0, 7); ctx.fill(); }
-      }
-    });
-    // coins
-    coinsW.forEach(function (cn) {
-      if (cn.got || cn.x < x0 || cn.x > x1) return;
-      ctx.fillStyle = '#F2B300'; ctx.beginPath(); ctx.arc(sx(cn.x), sy(cn.y), Math.max(4, 0.9 * ppm), 0, 7); ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+    function drawCoin(it) {
+      var q = pj(it.o.x, it.o.y, 0), r = Math.max(2, 0.9 * q[2]);
+      if (q[1] < -r || q[1] > H + r) return;
+      ctx.fillStyle = '#F2B300'; ctx.beginPath(); ctx.ellipse(q[0], q[1], r * Math.abs(Math.cos(osc * 3 + it.o.x)) + 1, r, 0, 0, 7); ctx.fill();
       ctx.strokeStyle = '#C98A00'; ctx.lineWidth = 1.5; ctx.stroke();
-    });
-    // zone markers
-    for (var zi = 1; zi < ZONE_AT.length; zi++) {
-      var zx = ZONE_AT[zi];
-      if (zx < x0 || zx > x1) continue;
-      ctx.fillStyle = 'rgba(43,49,85,0.75)'; ctx.font = '600 13px Poppins, "Noto Sans KR", sans-serif';
-      ctx.fillText(T.zones[zi] + ' · ' + zx + ' m', sx(zx) + 4, 22);
-      ctx.fillRect(sx(zx), 0, 2, H);
     }
-    // launcher: a small figure at x = 0
-    if (0 > x0 && 0 < x1) {
-      ctx.fillStyle = '#2B3155';
-      ctx.beginPath(); ctx.arc(sx(-1), sy(2.6), 0.45 * ppm, 0, 7); ctx.fill();
-      ctx.fillRect(sx(-1.3), sy(2.1), 0.6 * ppm, 2.1 * ppm);
+    function drawGate(it) {
+      var x = it.x, g = groundAt(x), L = pj(x, g, -14), R2 = pj(x, g + 12, 14), k = L[2];
+      ctx.fillStyle = 'rgba(43,49,85,0.75)';
+      ctx.fillRect(L[0] - 0.4 * k, R2[1], 0.8 * k, L[1] - R2[1]); ctx.fillRect(R2[0] - 0.4 * k, R2[1], 0.8 * k, L[1] - R2[1]);
+      ctx.fillStyle = 'rgba(255,255,255,0.9)'; ctx.fillRect(L[0], R2[1], R2[0] - L[0], 2.2 * k);
+      if (k > 0.6) {
+        ctx.fillStyle = '#2B3155'; ctx.font = '700 ' + Math.min(26, Math.max(9, 1.5 * k)) + 'px Poppins, "Noto Sans KR", sans-serif'; ctx.textAlign = 'center';
+        ctx.fillText(T.zones[it.o] + ' · ' + ZONE_AT[it.o] + ' m', (L[0] + R2[0]) / 2, R2[1] + 1.65 * k); ctx.textAlign = 'left';
+      }
     }
-    // aim line and power gauge
+    function drawPlane() {
+      // its shadow on the ground, then the plane seen from behind: two wings and the fold below
+      var g = groundAt(px), sh = pj(px, g, sw.z), q = pj(px, py, sw.z), k = q[2];
+      if (sh[1] < H + 20 && sh[1] > q[1]) {
+        var fade = Math.max(0.15, 1 - (py - g) / 40);
+        ctx.fillStyle = 'rgba(43,49,85,' + (0.25 * fade).toFixed(3) + ')'; ctx.beginPath(); ctx.ellipse(sh[0], sh[1], 1.1 * k, 0.35 * k, 0, 0, 7); ctx.fill();
+      }
+      var s = 1.25 * k, lift = Math.sin(pitch) * 0.5;
+      ctx.save(); ctx.translate(q[0], q[1]); ctx.rotate(sw.roll);
+      ctx.lineJoin = 'round'; ctx.strokeStyle = '#2B3155'; ctx.lineWidth = Math.max(1.5, s * 0.05);
+      poly([[0, -s * 0.06], [0, s * (0.42 + lift * 0.3)], [-s * 0.08, s * 0.05]], '#D9DCEC'); ctx.stroke();
+      poly([[0, -s * 0.06], [-s, -s * (0.16 + lift * 0.2)], [-s * 0.95, -s * (0.05 + lift * 0.2)], [0, s * 0.12]], '#FFFFFF'); ctx.stroke();
+      poly([[0, -s * 0.06], [s, -s * (0.16 + lift * 0.2)], [s * 0.95, -s * (0.05 + lift * 0.2)], [0, s * 0.12]], '#F4F5FB'); ctx.stroke();
+      ctx.restore();
+    }
+
+    // aiming: a dotted path along the launch angle, the angle gauge and the power gauge
     if (phase === 'aim' || phase === 'power') {
-      var a = angle * Math.PI / 180, len = Math.min(110, W * 0.25);
-      ctx.strokeStyle = '#FF6B5B'; ctx.lineWidth = 3; ctx.setLineDash([6, 6]);
-      ctx.beginPath(); ctx.moveTo(sx(0), sy(2)); ctx.lineTo(sx(0) + Math.cos(a) * len, sy(2) - Math.sin(a) * len); ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = '#2B3155'; ctx.font = '700 14px Poppins, sans-serif';
-      ctx.fillText(Math.round(angle) + '°', sx(0) + Math.cos(a) * len + 6, sy(2) - Math.sin(a) * len);
+      var a = angle * Math.PI / 180;
+      ctx.fillStyle = '#FF6B5B';
+      for (var dd = 3; dd < 40; dd += 2.5) { var p3 = pj(dd * Math.cos(a), 2 + dd * Math.sin(a), 0); ctx.beginPath(); ctx.arc(p3[0], p3[1], Math.max(1.5, Math.min(5, 0.25 * p3[2])), 0, 7); ctx.fill(); }
+      var gx0 = 18, gy0 = H - 18, gr2 = Math.min(70, H * 0.2);
+      ctx.fillStyle = 'rgba(255,255,255,0.88)'; ctx.beginPath(); ctx.moveTo(gx0, gy0); ctx.arc(gx0, gy0, gr2 + 8, -Math.PI / 2, 0); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = '#2B3155'; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(gx0, gy0); ctx.lineTo(gx0 + Math.cos(a) * gr2, gy0 - Math.sin(a) * gr2); ctx.stroke();
+      ctx.fillStyle = '#2B3155'; ctx.font = '700 15px Poppins, sans-serif'; ctx.fillText(Math.round(angle) + '°', gx0 + 10, gy0 - 8);
       if (phase === 'power') {
-        var gxp = 14, gyp = 14, gw = Math.min(200, W * 0.45);
+        var gw = Math.min(200, W * 0.45), gxp = W / 2 - gw / 2, gyp = H - 34;
         ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(gxp, gyp, gw, 16);
         var pg = ctx.createLinearGradient(gxp, 0, gxp + gw, 0); pg.addColorStop(0, '#7FD18B'); pg.addColorStop(0.7, '#F2B300'); pg.addColorStop(1, '#FF6B5B');
         ctx.fillStyle = pg; ctx.fillRect(gxp, gyp, gw * power, 16);
         ctx.strokeStyle = '#2B3155'; ctx.lineWidth = 2; ctx.strokeRect(gxp, gyp, gw, 16);
       }
     }
-    // the plane
-    var pa = plane ? Math.atan2(plane.ry, plane.rx) : angle * Math.PI / 180;
-    var PX = sx(px), PY = sy(py);
-    ctx.save(); ctx.translate(PX, PY); ctx.rotate(-pa);
-    ctx.fillStyle = '#FFFFFF'; ctx.strokeStyle = '#2B3155'; ctx.lineWidth = 1.5;
-    ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(-10, -7); ctx.lineTo(-6, 0); ctx.lineTo(-10, 6); ctx.closePath(); ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(-6, 0); ctx.stroke();
-    ctx.restore();
     if (plane && phase === 'fly') {
-      ctx.fillStyle = 'rgba(43,49,85,0.8)'; ctx.font = '600 12px Poppins, sans-serif';
-      ctx.fillText(T.height + ' ' + Math.round(plane.y) + ' m', 12, H - 12);
+      ctx.fillStyle = 'rgba(255,255,255,0.85)'; ctx.fillRect(8, H - 30, 108, 22);
+      ctx.fillStyle = '#2B3155'; ctx.font = '600 12px Poppins, "Noto Sans KR", sans-serif';
+      ctx.fillText(T.height + ' ' + Math.round(plane.y - groundAt(plane.x)) + ' m', 16, H - 15);
     }
   }
 
@@ -419,5 +518,5 @@
   requestAnimationFrame(tick);
 
   // exposed for automated tests only
-  window.__updraft = { launchWith: function (a, pw) { angle = a; power = pw; launch(); }, C: C, step: step, params: params, P: P, groundAt: groundAt, drafts: drafts, obstacles: obstacles, WIND: WIND, GOAL: GOAL, zoneOf: zoneOf };
+  window.__updraft = { fly: fly, plane: function () { return plane; }, phase: function () { return phase; }, launchWith: function (a, pw) { angle = a; power = pw; launch(); }, C: C, step: step, params: params, P: P, groundAt: groundAt, drafts: drafts, obstacles: obstacles, WIND: WIND, GOAL: GOAL, zoneOf: zoneOf };
 })();

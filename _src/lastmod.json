@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "8085ab09010dec9117e895b30109d418fdae2ceb"
+  "hash": "7b2fd429d0c34b1f85ab365de576048372c1051d"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -37,7 +37,7 @@
  },
  "/ko/": {
   "date": "2026-11-09",
-  "hash": "3ee07095365a9bc23130b75a6391cc356e050768"
+  "hash": "1c478b7eac95900ed39bd847f7caae3f34cb0224"
  },
  "/ko/about/": {
   "date": "2026-11-09",
@@ -409,7 +409,7 @@
  },
  "/ko/news/": {
   "date": "2026-11-09",
-  "hash": "4a30fd0c02cca8ceedd00a29bf873e15a962d46d"
+  "hash": "c20d7384ecf09d83cdd1358eab5568871b147d6a"
  },
  "/ko/news/archive/": {
   "date": "2026-11-09",
@@ -417,7 +417,7 @@
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "e1c41d78481b6114f21846778151b464c56ee32e"
+  "hash": "2e2da96e902bc0ef1082a88d449f104322767d6f"
  },
  "/ko/play/capital-quiz/": {
   "date": "2026-11-09",
@@ -437,11 +437,11 @@
  },
  "/ko/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "cd2d44c619ed36c1101839a6714fb4d50f6894fc"
+  "hash": "0b1273e37ff996fd512ba1353fa22ee6b8727bd3"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "d729b82db92c829788c8a615be93f76299fec3b0"
+  "hash": "e359696a99a954701faab750c567260dfce28d0c"
  },
  "/ko/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -449,15 +449,15 @@
  },
  "/ko/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "6131ab59b74e00022093eec164f04391a8c0cfd6"
+  "hash": "8a5ce2151a3faf8ae20921342e137bb595a36e3c"
  },
  "/ko/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "501e8563614a277d43a69591ba255fa38974288e"
+  "hash": "64240180114c23a4a25fa8c4f5c27e1c477ed2af"
  },
  "/ko/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "cf00995208b76232a5c24d9a7bd0ffe151c4b2ad"
+  "hash": "f5afe28d2f9b7ae6dbd7a62ad579aa916053e784"
  },
  "/ko/privacy/": {
   "date": "2026-11-09",
@@ -529,7 +529,7 @@
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "5bd2bc5e8933a24f1972be804927cdd7d64e35be"
+  "hash": "906cf738cedd917ed8cc571b15b37ad11bc17323"
  },
  "/news/archive/": {
   "date": "2026-11-09",
@@ -537,7 +537,7 @@
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "1669f7f514a13b532bebd10d5cfe940d785564d6"
+  "hash": "0962390135a6789e9d3cfc6849b513883ec6f67a"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
@@ -557,15 +557,15 @@
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "2c9915f57339d0a561ff60a8499ceb886c4b9daa"
+  "hash": "1f37bea981807b394f0ca8ef6543706b95de9981"
  },
  "/play/hilltop-roll/": {
   "date": "2026-11-09",
-  "hash": "1315a1b831d16f369a70ce6369e74f2e9073f460"
+  "hash": "b95da8ce251a6a634c6acfe9a5e9553dec5a4d31"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "c23b738c531fe7b6a701f992be634d8018f2fb74"
+  "hash": "edc608c17428616105f0911b909c476b4e842012"
  },
  "/play/history-timeline/events/": {
   "date": "2026-11-09",
@@ -573,15 +573,15 @@
  },
  "/play/lantern-lights/": {
   "date": "2026-11-09",
-  "hash": "c1f7807149c9a42bd0a2eb53ab8f4a230d9f6b49"
+  "hash": "3df8b6dac47edc937287cdc38443a16c97f1fb5a"
  },
  "/play/pass-or-splash/": {
   "date": "2026-11-09",
-  "hash": "b57f4b60a4c52e1536e5bb4eecee821643151026"
+  "hash": "830764bd63bda76b156b611a513bb4f84ccbbf95"
  },
  "/play/updraft/": {
   "date": "2026-11-09",
-  "hash": "5df72c1dcc7e03b204617c05bfad39bd4b3bfaf4"
+  "hash": "4b74b811892ea15e7b3ccb8240b959070276fc1a"
  },
  "/privacy.html": {
   "date": "2026-11-09",

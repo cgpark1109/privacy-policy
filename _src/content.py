@@ -531,8 +531,8 @@ WEB_GAMES = [
         "app": "hilltop-roll",  # browser version of this app (its app page links here)
         "icon": "https://play-lh.googleusercontent.com/tGYEZyvIGvcaTSHyL7LfoSvJ6Z7WhSvP-YEazH95RkPSCKRptusGGlq3aTrZrOHR01ggYWuc9vkMWAH7uAsRENA=s192",
         "site_page": True,  # built as site pages in both languages by build_hilltop() in build.py
-        "en": {"name": "Hilltop Roll", "short": "Hold to roll heavy, let go to fly. Jump the gaps and land along the slope for PERFECT boosts."},
-        "ko": {"name": "Hilltop Roll", "short": "누르면 무겁게 구르고, 떼면 날아올라요. 낭떠러지를 건너고 경사를 따라 착지해 PERFECT 가속을 받으세요."},
+        "en": {"name": "Hilltop Roll", "short": "Hold to roll heavy, let go to fly, and steer through zigzags and forks. Land along the slope for PERFECT boosts."},
+        "ko": {"name": "Hilltop Roll", "short": "누르면 무겁게 구르고, 떼면 날아올라요. 지그재그 길과 갈림길을 조종하고 경사를 따라 착지해 PERFECT 가속을 받으세요."},
     },
     {
         "slug": "hangul-quiz",
@@ -845,9 +845,9 @@ NEWS = [
         "game": "hilltop-roll",
         "web": True,  # link to the browser version, not the app page
         "en": {"title": "Hilltop Roll is now playable in your browser",
-               "body": "A side-view take on our rolling game: hold to roll heavy down the hills, let go to fly off the tops, jump the gaps from the ramps and land along the slope for PERFECT boosts."},
+               "body": "Roll down an endless road in the sky, seen from behind the ball: hold to roll heavy down the hills, let go to fly off the tops, steer through zigzags, tilted roads and forks, and land along the slope for PERFECT boosts."},
         "ko": {"title": "Hilltop Roll을 브라우저에서 즐겨 보세요",
-               "body": "옆에서 보는 2D 화면으로 옮긴 Hilltop Roll이에요. 누르면 무겁게 언덕을 내려가고, 떼면 꼭대기에서 날아올라요. 점프대로 낭떠러지를 건너고, 경사를 따라 착지해 PERFECT 가속을 받아 보세요."},
+               "body": "공 뒤에서 따라가는 시점으로 하늘 위 끝없는 길을 굴러가요. 누르면 무겁게 언덕을 내려가고, 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고, 경사를 따라 착지해 PERFECT 가속을 받아 보세요."},
     },
     {
         "date": "2026-11-09",
@@ -2310,8 +2310,8 @@ PLAY_DETAILS = {
         "ko": "5개 월드, 30개 스테이지: 계산, 가장 큰 수·작은 수, 도형, 점 세기, 혼합 계산, 섞이는 컵. 스테이지마다 벽 6개, 기회 3번.",
     },
     "hilltop-roll": {
-        "en": "Hold to roll heavy down the hills, let go to fly off the tops, jump the gaps from the ramps and land along the slope for PERFECT boosts and combos. Endless pastel hills that speed up as you go.",
-        "ko": "누르면 무겁게 언덕을 내려가고, 떼면 꼭대기에서 날아올라요. 점프대로 낭떠러지를 건너고, 경사를 따라 착지해 PERFECT 가속과 콤보를 쌓아 보세요. 갈수록 빨라지는 끝없는 파스텔 언덕.",
+        "en": "Hold to roll heavy down the hills, let go to fly off the tops, and steer through zigzag roads, tilted roads and forks, seen from behind the ball. Jump the gaps from the ramps and land along the slope for PERFECT boosts and combos.",
+        "ko": "공 뒤에서 보는 시점으로, 누르면 무겁게 언덕을 내려가고 떼면 꼭대기에서 날아올라요. 지그재그 길, 기울어진 길, 갈림길을 조종하고, 점프대로 낭떠러지를 건너 경사를 따라 착지하면 PERFECT 가속과 콤보!",
     },
     "updraft": {
         "en": "Set the angle, stop the power gauge and throw. Ride updrafts through the park, the city, the sea, the mountains and above the clouds, collect coins and buy six upgrades. A new sky every day.",
