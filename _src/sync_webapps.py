@@ -16,10 +16,12 @@ DOMAIN = "https://kysystemstudio.com"
 ADSENSE_META = b'<meta name="google-adsense-account" content="ca-pub-4148553154486992">'
 OWNER = "cgpark1109"
 # (slug on this site, GitHub repo, branch)
+# The three browser versions below were taken off this site on 2026-11-09; play/<slug>/ only redirects to the
+# game page now. Put a line back here (and "web" in content.py) to publish one again.
 WEBAPPS = [
-    ("korean-word-quiz", "korean_word_quiz_web", "main"),
-    ("learn-korean-hangul", "korean_challenge_web", "master"),
-    ("world-history-quiz", "world_history_quiz_web", "main"),
+    # ("korean-word-quiz", "korean_word_quiz_web", "main"),
+    # ("learn-korean-hangul", "korean_challenge_web", "master"),
+    # ("world-history-quiz", "world_history_quiz_web", "main"),
 ]
 SKIP_DIRS = {"tools", "tests"}
 SKIP_FILES = {"README.md", ".gitignore", ".nojekyll", "_redirects"}

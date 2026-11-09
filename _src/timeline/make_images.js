@@ -18,14 +18,14 @@ padding:56px 64px;display:flex;gap:56px;align-items:center}
 .left{flex:1}
 .left img{width:110px;height:110px;border-radius:28px}
 h1{font-size:68px;line-height:1.1;margin-top:26px}
-h2{font-size:40px;font-weight:700;color:#B4492A;margin-top:6px}
+h2{font-size:40px;font-weight:700;color:#FF6B5B;margin-top:6px}
 p{font-size:28px;color:#565D80;margin-top:18px}
 ol{list-style:none;width:440px;display:grid;gap:14px;position:relative;padding-left:34px}
-ol:before{content:"";position:absolute;left:10px;top:10px;bottom:10px;width:5px;border-radius:5px;background:#E7A88C}
+ol:before{content:"";position:absolute;left:10px;top:10px;bottom:10px;width:5px;border-radius:5px;background:#F6C9C3}
 li{position:relative;background:#F2F4FA;border-radius:20px;padding:14px 20px;border:3px solid transparent}
-li:before{content:"";position:absolute;left:-32px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;background:#B4492A}
-li.q{border:3px dashed #B4492A;background:#FBE6DC}
-li b{display:block;font-size:20px;color:#9A3F1E}
+li:before{content:"";position:absolute;left:-32px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;background:#FF6B5B}
+li.q{border:3px dashed #FF6B5B;background:#FFF1EF}
+li b{display:block;font-size:20px;color:#C8392B}
 li span{font-size:23px;font-weight:600}
 </style></head><body><div class="card"><div class="left"><img src="${icon}" alt=""><h1>History Timeline</h1><h2>연표 맞추기</h2>
 <p>Put world history in order<br>세계사 사건을 순서대로 놓아 보세요</p></div>
@@ -37,7 +37,7 @@ li span{font-size:23px;font-weight:600}
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: path.join(out, 'og-image.png') });
   await page.setViewportSize({ width: 180, height: 180 });
-  await page.setContent(`<html><body style="margin:0;background:#B4492A"><img src="${icon}" style="width:180px;height:180px;display:block"></body></html>`);
+  await page.setContent(`<html><body style="margin:0;background:#2B3155"><img src="${icon}" style="width:180px;height:180px;display:block"></body></html>`);
   await page.screenshot({ path: path.join(out, 'apple-touch-icon.png') });
   await browser.close();
 })();

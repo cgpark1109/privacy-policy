@@ -178,7 +178,7 @@ main { flex: 1; padding-bottom: 48px; }
 .text-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--navy-soft); text-decoration: none; }
 .text-link:hover { text-decoration: underline; }
 .text-link svg { width: 16px; height: 16px; fill: currentColor; }
-.play-note { margin: 14px 4px 0; color: #fff; font-size: 14px; opacity: 0.95; }
+.play-note { margin: 14px 4px 0; color: var(--navy-soft); font-size: 14px; }
 .play-teaser { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; padding: 16px 20px; }
 .play-teaser p { display: flex; align-items: center; gap: 10px; color: var(--navy-soft); font-weight: 500; }
 .play-teaser p svg { width: 20px; height: 20px; flex-shrink: 0; fill: currentColor; }

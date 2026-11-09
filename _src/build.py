@@ -188,6 +188,11 @@ def privacy_url(lang):
     return "/privacy.html" if lang == "en" else url(lang, "privacy/")
 
 
+def web_href(w, lang):
+    """Link to a browser-only game: site-page games have a page per language, the others one page at /play/<slug>/."""
+    return url(lang, f"play/{w['slug']}/") if w.get("site_page") else f"/play/{w['slug']}/"
+
+
 def game_by_slug(slug):
     return next(g for g in GAMES if g["slug"] == slug)
 
@@ -206,7 +211,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
         alt += f'<link rel="alternate" hreflang="x-default" href="{STUDIO["domain"]}{url("en", path)}">'
     image = og_image or "/assets/logo.png"
     image = image if image.startswith("http") else STUDIO["domain"] + image
-    card = "summary_large_image" if "/assets/og-" in image else "summary"  # the wide share images
+    card = "summary_large_image" if "/assets/og-" in image or image.endswith("/og-image.png") else "summary"  # wide images
     feed = (f'<link rel="alternate" type="application/rss+xml" title="{e(t["feed_learn"] if lang == "en" else t["feed_history"])}" '
             f'href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">')
     nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("learn", t["nav_learn"], "/learn/"),
@@ -302,7 +307,7 @@ def news_item(lang, n, link_game=True):
     elif link_game and n.get("game"):
         web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
         if web:  # browser-only game: link straight to it
-            more = f'<a class="more" href="/play/{web["slug"]}/">{e(web[lang]["name"])} →</a>'
+            more = f'<a class="more" href="{web_href(web, lang)}">{e(web[lang]["name"])} →</a>'
         else:
             g = game_by_slug(n["game"])
             more = f'<a class="more" href="{url(lang, f"games/{g["slug"]}/")}">{e(g[lang]["name"])} →</a>'
@@ -477,12 +482,12 @@ def build_play(lang):
         c = g[lang]
         cards += f"""<div class="card play-card">
   <img src="{g['icon']}" alt="" width="76" height="76" loading="lazy">
-  <div><a class="title" href="/play/{g['slug']}/">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>{detail(g)}
-  <div class="play-actions"><a class="btn" href="/play/{g['slug']}/">{ICON_WEB} {e(t['play_now'])}</a></div></div>
+  <div><a class="title" href="{web_href(g, lang)}">{e(c['name'])}</a><div class="desc">{e(c['short'])}</div>{detail(g)}
+  <div class="play-actions"><a class="btn" href="{web_href(g, lang)}">{ICON_WEB} {e(t['play_now'])}</a></div></div>
 </div>
 """
     intro = "".join(f"<p>{e(p)}</p>" for p in t["play_intro"])
-    refs = "".join(f'<li><a href="{r["href"]}">{e(r[lang])}</a></li>' for r in PLAY_REFERENCE)
+    refs = "".join(f'<li><a href="{r.get("href_" + lang, r["href"])}">{e(r[lang])}</a></li>' for r in PLAY_REFERENCE)
     faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in t["play_faq"])
     body = f"""<section class="container"><h1 class="page-title">{e(t['play_title'])}</h1><p class="page-lead">{e(t['play_lead'])}</p></section>
 <section class="section container"><div class="card prose">{intro}</div></section>
@@ -516,7 +521,7 @@ def build_news(lang):
             title = f'<a href="{n["link"]["href"]}">{title}</a>'
         elif n.get("game"):
             web = next((w for w in WEB_GAMES if w["slug"] == n["game"]), None)
-            href = f"/play/{web['slug']}/" if web else url(lang, f"games/{n['game']}/")
+            href = web_href(web, lang) if web else url(lang, f"games/{n['game']}/")
             title = f'<a href="{href}">{title}</a>'
         rows.append(f'<li><time datetime="{n["date"]}">{n["date"]}</time> {title}</li>')
     nav, ld = breadcrumbs(lang, [(t["news_title"], url(lang, "news/")), (t["news_archive_title"], None)])
@@ -664,7 +669,7 @@ def history_quiz_card():
     t, g = UI["ko"], game_by_slug("world-history-quiz")
     web = f' · <a href="{g["web"]}">{e(t["play_now_web"])}</a>' if g.get("web") else ""
     tl = next((w for w in WEB_GAMES if w["slug"] == "history-timeline"), None)
-    timeline = (f'<li><a href="/play/history-timeline/"><strong>{e(tl["ko"]["name"])}</strong></a>: '
+    timeline = (f'<li><a href="{web_href(tl, "ko")}"><strong>{e(tl["ko"]["name"])}</strong></a>: '
                 f'{e(t["history_timeline_text"])}</li>') if tl else ""
     return (f'<div class="card prose guide"><h2>{e(t["history_practice"])}</h2><ul><li>'
             f'<a href="{url("ko", "games/world-history-quiz/")}"><strong>{e(g["ko"]["name"])}</strong></a>: '
@@ -736,6 +741,31 @@ def build_history():
         page("ko", path, a["title"], a["description"], body, active="history", translated=False,
              head_extra=ld_json(ld) + crumbs_ld, og_image="/assets/og-history.png")
         urls.append(url("ko", path))
+    return urls
+
+
+def build_timeline():
+    """The History Timeline game and its list of events, in both languages, as site pages (see timeline_build.py)."""
+    tl = timeline_build.Timeline(ROOT, {a["slug"] for a in HISTORY})
+    if tl.missing:
+        print(f"timeline: {len(tl.missing)} events skipped (article not published): {', '.join(tl.missing)}")
+    era_of_year = lambda y: next(era for era in ERAS if y <= era[3])  # noqa: E731
+    urls = []
+    for lang in LANGS:
+        game, events = url(lang, "play/history-timeline/"), url(lang, "play/history-timeline/events/")
+        name = tl.text(lang, "title")
+        ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": name,
+              "url": STUDIO["domain"] + game, "description": tl.text(lang, "description"),
+              "applicationCategory": "GameApplication", "operatingSystem": "Any", "inLanguage": lang,
+              "isAccessibleForFree": True, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+              "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
+        page(lang, "play/history-timeline/", name, tl.text(lang, "description"),
+             tl.game_body(lang, url(lang, "play/"), events), head_extra=tl.head_css + tl.head_js + ld_json(ld),
+             og_image="/play/history-timeline/og-image.png")
+        page(lang, "play/history-timeline/events/", tl.text(lang, "list_h1") + " – " + name, tl.text(lang, "list_desc"),
+             tl.list_body(lang, url(lang, "play/"), game, ERAS, era_of_year, url("ko", "history/")),
+             head_extra=tl.head_css, og_image="/play/history-timeline/og-image.png")
+        urls += [game, events]
     return urls
 
 
@@ -847,10 +877,10 @@ def main():
             if isinstance(extra, list):
                 urls += extra
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
-    timeline_build.build(ROOT, {a["slug"] for a in HISTORY}, ERAS, lambda y: next(era for era in ERAS if y <= era[3]),
-                         STUDIO["domain"], STUDIO["name"], STUDIO["adsense"])
+    urls += build_timeline()
     for g in WEB_GAMES:
-        urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
+        if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
+            urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_learn()
     urls += build_history()
     urls += ["/learn/"] + [f"/learn/{a['slug']}/" for a in ARTICLES]
