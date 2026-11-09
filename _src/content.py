@@ -55,10 +55,10 @@ UI = {
         "play_note": "Browser progress is saved on this device only. On your phone, the Android app is the easiest way to play.",
         "play_intro": [
             "These games run right in your web browser, on a phone, a tablet or a computer. There's nothing to install and no account to create: open a game and start playing.",
-            "Three of them are browser versions of our learning apps, for Korean vocabulary, the Korean alphabet and world history. The other two, Flag Quiz and Capital Quiz, are made for the browser and cover every country in the world.",
+            "Three of them are browser versions of our learning apps, for Korean vocabulary, the Korean alphabet and world history. The other three are made for the browser: Flag Quiz and Capital Quiz cover every country in the world, and History Timeline asks you to put world history events in order.",
         ],
         "play_reference": "Reference pages",
-        "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters.",
+        "play_reference_lead": "Look things up without playing: every flag and every capital, with search and region filters, and the whole history timeline.",
         "play_faq": [
             ("Do I need to install anything?",
              "No. The games run in your web browser on a phone, a tablet or a computer. There's nothing to download and no sign-up."),
@@ -164,10 +164,10 @@ UI = {
         "play_note": "브라우저 기록은 이 기기에만 저장돼요. 휴대폰에서는 Android 앱으로 더 편하게 즐길 수 있어요.",
         "play_intro": [
             "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
-            "세 게임은 한국어 단어, 한글, 세계사를 공부하는 학습 앱의 브라우저 버전이고, 국기 퀴즈와 수도 퀴즈는 브라우저용으로 만든 게임으로 세계 모든 나라를 다룹니다.",
+            "세 게임은 한국어 단어, 한글, 세계사를 공부하는 학습 앱의 브라우저 버전이고, 나머지 세 게임은 브라우저용으로 만들었습니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임입니다.",
         ],
         "play_reference": "참고 페이지",
-        "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아볼 수 있어요.",
+        "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아보거나, 연표 전체를 볼 수 있어요.",
         "play_faq": [
             ("설치해야 하나요?",
              "아니요. 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 내려받을 것도, 가입할 것도 없습니다."),
@@ -224,6 +224,7 @@ UI = {
         "history_list": "글 목록",
         "history_practice": "퀴즈로 확인하기",
         "history_practice_text": "고대부터 현대까지 다섯 시대, 150개 스테이지의 인물·연도·사건 문제로 읽은 내용을 확인해 보세요.",
+        "history_timeline_text": "이 연재에서 다룬 사건 83개를 시대순으로 연표에 놓아 보는 브라우저 게임이에요.",
         "home_history_title": "세계사 읽을거리",
         "home_history_all": "전체 글",
         "prev_article": "이전 글",
@@ -475,6 +476,13 @@ WEB_GAMES = [
         "en": {"name": "Capital Quiz", "short": "Match 193 countries with their capital cities, in both directions."},
         "ko": {"name": "수도 퀴즈", "short": "193개국과 수도를 짝지어 보세요. 거꾸로 풀기도 있어요."},
     },
+    {
+        "slug": "history-timeline",
+        "icon": "/play/history-timeline/apple-touch-icon.png",
+        "pages": ["all-events.html"],
+        "en": {"name": "History Timeline", "short": "Put world history in order, from the pyramids to 2002, one event card at a time."},
+        "ko": {"name": "연표 맞추기", "short": "피라미드부터 2002년까지, 세계사 사건 카드를 순서대로 연표에 놓아 보세요."},
+    },
 ]
 
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
@@ -694,6 +702,14 @@ NEWS = [
                "body": "Subway, bus and taxi phrases: station signs and announcements, transport cards, telling a taxi driver where to go and asking for directions."},
         "ko": {"title": "새 한글 가이드: 지하철·버스·택시 타기",
                "body": "역과 출구 표시, 안내 방송, 교통카드 충전, 택시에서 목적지 말하기, 길 묻기까지 외국인 학습자를 위한 교통 표현을 정리했습니다."},
+    },
+    {
+        "date": "2026-11-09",
+        "game": "history-timeline",
+        "en": {"title": "New browser game: History Timeline",
+               "body": "Put 83 events from world and Korean history in order, from the Great Pyramid of Giza to the 2002 World Cup. Pick a deck, place each card on the timeline, and open a short reading about every event."},
+        "ko": {"title": "새 브라우저 게임: 연표 맞추기",
+               "body": "기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사와 한국사 사건 83개를 순서대로 연표에 놓아 보세요. 카드 묶음을 고르고, 사건마다 세계사 읽을거리로 바로 이동할 수 있어요."},
     },
     {
         "date": "2026-11-07",
@@ -2126,6 +2142,10 @@ PLAY_DETAILS = {
         "en": "195 flags in 39 levels, from famous flags to look-alikes like Chad and Romania. Name the country from its flag, or the other way around.",
         "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
     },
+    "history-timeline": {
+        "en": "83 events from the pyramids to 2002, in three decks: all of history, world history and Korean history. Three hearts, and a short reading for every event.",
+        "ko": "피라미드부터 2002년까지 사건 83개, 역사 전체·세계사·한국사 세 가지 묶음. 하트 3개로 도전하고, 사건마다 읽을거리로 바로 갈 수 있어요.",
+    },
     "capital-quiz": {
         "en": "193 capitals in 38 levels. Name the capital or the country, with a short note for countries that have more than one capital.",
         "ko": "38개 레벨, 193개국 수도. 수도나 나라 이름을 맞히고, 수도가 여러 곳인 나라는 짧은 설명으로 확인하세요.",
@@ -2136,4 +2156,5 @@ PLAY_DETAILS = {
 PLAY_REFERENCE = [
     {"href": "/play/flag-quiz/all-flags.html", "en": "All flags of the world", "ko": "세계 국기 전체 보기"},
     {"href": "/play/capital-quiz/all-capitals.html", "en": "World capitals", "ko": "세계 수도 전체 보기"},
+    {"href": "/play/history-timeline/all-events.html", "en": "World history timeline: all events", "ko": "세계사 연표: 전체 사건 보기"},
 ]

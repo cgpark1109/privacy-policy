@@ -12,6 +12,7 @@ from email.utils import format_datetime
 from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(__file__))
+import timeline_build  # noqa: E402
 from content import ABOUT, FAQ, GAMES, GUIDES, NEWS, PLAY_DETAILS, PLAY_REFERENCE, STUDIO, TERMS, TERMS_DATE, UI, WEB_GAMES  # noqa: E402
 from qr import qr_svg  # noqa: E402
 
@@ -659,12 +660,15 @@ def build_learn():
 
 
 def history_quiz_card():
-    """'Test yourself' card under the history articles: the World History Quiz app and browser version."""
+    """'Test yourself' card under the history articles: the World History Quiz app and browser version, and History Timeline."""
     t, g = UI["ko"], game_by_slug("world-history-quiz")
     web = f' · <a href="{g["web"]}">{e(t["play_now_web"])}</a>' if g.get("web") else ""
+    tl = next((w for w in WEB_GAMES if w["slug"] == "history-timeline"), None)
+    timeline = (f'<li><a href="/play/history-timeline/"><strong>{e(tl["ko"]["name"])}</strong></a>: '
+                f'{e(t["history_timeline_text"])}</li>') if tl else ""
     return (f'<div class="card prose guide"><h2>{e(t["history_practice"])}</h2><ul><li>'
             f'<a href="{url("ko", "games/world-history-quiz/")}"><strong>{e(g["ko"]["name"])}</strong></a>: '
-            f'{e(t["history_practice_text"])}{web}</li></ul></div>')
+            f'{e(t["history_practice_text"])}{web}</li>{timeline}</ul></div>')
 
 
 def build_history():
@@ -843,6 +847,8 @@ def main():
             if isinstance(extra, list):
                 urls += extra
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
+    timeline_build.build(ROOT, {a["slug"] for a in HISTORY}, ERAS, lambda y: next(era for era in ERAS if y <= era[3]),
+                         STUDIO["domain"], STUDIO["name"], STUDIO["adsense"])
     for g in WEB_GAMES:
         urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_learn()
