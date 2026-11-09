@@ -216,7 +216,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
     card = "summary_large_image" if "/assets/og-" in image or image.endswith("/og-image.png") else "summary"  # wide images
     feed = (f'<link rel="alternate" type="application/rss+xml" title="{e(t["feed_learn"] if lang == "en" else t["feed_history"])}" '
             f'href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">')
-    nav_items = [("games", t["nav_games"], url(lang) + "#games"), ("play", t["nav_play"], url(lang, "play/")),
+    nav_items = [("play", t["nav_play"], url(lang, "play/")), ("games", t["nav_games"], url(lang) + "#games"),
                  ("learn", t["nav_learn"], "/learn/"),
                  *([("history", t["nav_history"], url(lang, "history/"))] if lang == "ko" else []),
                  ("calc", t["nav_calc"], STUDIO["calc"]),
@@ -321,7 +321,8 @@ def news_item(lang, n, link_game=True):
 def build_home(lang):
     t = UI[lang]
     cards = "\n".join(game_card(lang, g) for g in GAMES)
-    news = "\n".join(news_item(lang, n) for n in published_news()[:2])
+    # game news first: the home page shows the latest updates about games and apps
+    news = "\n".join(news_item(lang, n) for n in [n for n in published_news() if n.get("game")][:2])
     # Teaser card under the game list: the 계산만물상 calculators site.
     teasers = []
     teasers.append(f"""<div class="card play-teaser">
@@ -338,55 +339,50 @@ def build_home(lang):
     intro = f"""<section class="section container"><div class="card prose home-intro">
   <h2>{e(t['home_intro_title'])}</h2><p>{e(t['home_intro'])}</p><ul>{points}</ul>
 </div></section>"""
-    latest = sorted(ARTICLES, key=lambda a: (a.get("updated", a["date"]), a["order"]), reverse=True)[:3]
-    guides = "\n".join(article_card(a, lang) for a in latest)
-    history_section = ""
-    if lang == "ko" and HISTORY:
-        recent = sorted(HISTORY, key=lambda a: (a.get("updated", a["date"]), a["order"]), reverse=True)[:3]
-        history_cards = "\n".join(article_card(a, "ko", url("ko", "history/"), "ko") for a in recent)
-        history_section = f"""<section class="section container">
-  <div class="section-head"><h2>{e(t['home_history_title'])}</h2><a href="{url('ko', 'history/')}">{e(t['home_history_all'])} →</a></div>
-  <div class="guide-list">
-{history_cards}
-  </div>
-</section>"""
+    # Learning content is secondary on the home page: one card each, under the games
+    more = [f'''<a class="card guide-card" href="/learn/" hreflang="en"><span class="title">{e(t['nav_learn'])}</span>
+    <span class="desc">{e(t['home_more_learn'])}</span></a>''']
+    if HISTORY:
+        more.append(f'''<a class="card guide-card" href="{url('ko', 'history/')}" hreflang="ko"><span class="title">{e(UI['ko']['history_title'])}</span>
+    <span class="desc">{e(t['home_more_history'])}</span></a>''')
     body = f"""<section class="hero container">
   <img class="logo" src="/assets/logo-256.png" alt="{e(STUDIO['name'])} logo" width="116" height="116">
   <h1>{e(STUDIO['name'])}</h1>
   <p class="tagline">{e(t['tagline'])}</p>
   <p class="lead">{e(t['hero_text'])}</p>
+  <div class="hero-cta"><a class="btn" href="{url(lang, 'play/')}">{ICON_WEB} {e(t['hero_play'])}</a>
+  <a class="btn light" href="#games">{e(t['hero_apps'])}</a></div>
   <div class="social">
     <a href="{STUDIO['youtube']}" target="_blank" rel="noopener">{ICON_YT} YouTube</a>
     <a href="{STUDIO['instagram']}" target="_blank" rel="noopener">{ICON_IG} Instagram</a>
   </div>
 </section>
-{intro}
 <section class="section container" id="play">
   <div class="section-head"><h2>{e(t['nav_play'])}</h2><a href="{url(lang, 'play/')}">{e(t['play_all'])} →</a></div>
   <div class="games">
 {web_game_cards(lang, details=False)}
   </div>
 </section>
-<section class="section container">
-  <div class="section-head"><h2>{e(t['home_guides_title'])}</h2><a href="/learn/" hreflang="en">{e(t['home_guides_all'])} →</a></div>
-  <div class="guide-list">
-{guides}
-  </div>
-</section>
-{history_section}
 <section class="section container" id="games">
   <div class="section-head"><h2>{e(t['games_title'])}</h2><p>{e(t['games_lead'])}</p></div>
   <div class="games">
 {cards}
   </div>
 </section>
-{teaser_section}
 <section class="section container">
   <div class="section-head"><h2>{e(t['news_latest'])}</h2><a href="{url(lang, 'news/')}">{e(t['news_all'])} →</a></div>
   <div class="news-list">
 {news}
   </div>
-</section>"""
+</section>
+{intro}
+<section class="section container">
+  <div class="section-head"><h2>{e(t['home_more_title'])}</h2></div>
+  <div class="guide-list">
+{chr(10).join(more)}
+  </div>
+</section>
+{teaser_section}"""
     org = {"@context": "https://schema.org", "@type": "Organization", "name": STUDIO["name"],
            "url": STUDIO["domain"] + "/", "logo": f"{STUDIO['domain']}/assets/logo-256.png",
            "email": STUDIO["email"], "sameAs": [STUDIO["youtube"], STUDIO["instagram"]]}
