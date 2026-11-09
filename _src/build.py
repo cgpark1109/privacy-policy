@@ -189,8 +189,9 @@ def privacy_url(lang):
 
 
 def web_href(w, lang):
-    """Link to a browser-only game: site-page games have a page per language, the others one page at /play/<slug>/."""
-    return url(lang, f"play/{w['slug']}/") if w.get("site_page") else f"/play/{w['slug']}/"
+    """Link to a browser-only game: site-page games have a page per language (unless English only), the others one
+    page at /play/<slug>/."""
+    return url(lang, f"play/{w['slug']}/") if w.get("site_page") and not w.get("en_only") else f"/play/{w['slug']}/"
 
 
 def game_by_slug(slug):
@@ -599,9 +600,10 @@ def article_card(a, lang="en", base="/learn/", article_lang="en"):
 
 
 def learn_apps():
-    """'Practice with our apps' links under the guides: the two Korean learning apps."""
+    """'Practice with our apps' links under the guides: the Hangul Quiz browser game and the two Korean learning apps."""
     t = UI["en"]
-    items = []
+    hq = next((w for w in WEB_GAMES if w["slug"] == "hangul-quiz"), None)
+    items = [f'<li><a href="/play/hangul-quiz/"><strong>{e(hq["en"]["name"])}</strong></a>: {e(t["learn_quiz_text"])}</li>'] if hq else []
     for slug in ("learn-korean-hangul", "korean-word-quiz"):
         g = game_by_slug(slug)
         web = f' · <a href="{g["web"]}">{e(t["play_now_web"])}</a>' if g.get("web") else ""
@@ -783,6 +785,69 @@ def build_timeline():
     return urls
 
 
+HQ_STAGES = [("Basic vowels", "ㅏ, ㅑ, ㅓ, ㅕ, ㅗ, ㅛ, ㅜ, ㅠ, ㅡ, ㅣ", "korean-vowels", "Korean Vowels"),
+             ("Basic consonants", "the 14 basic consonants, from ㄱ to ㅎ", "korean-consonants", "Korean Consonants"),
+             ("Tense and aspirated", "ㄲ, ㄸ, ㅃ, ㅆ, ㅉ and ㅋ, ㅌ, ㅍ, ㅊ", "plain-aspirated-tense", "Plain, Aspirated and Tense"),
+             ("Compound vowels", "ㅐ, ㅒ, ㅔ, ㅖ, ㅘ, ㅙ, ㅚ, ㅝ, ㅞ, ㅟ, ㅢ", "korean-vowels", "Korean Vowels"),
+             ("First syllables", "a consonant and a vowel, like 가, 나, 도 and 휴", "how-hangul-works", "How Hangul Works"),
+             ("Final consonants", "syllables with batchim, like 밥, 국, 맛 and 꽃", "batchim", "Batchim"),
+             ("Reading words", "한국, 서울, 김치, 학교 and more, in romanization", "two-week-plan", "A Two-Week Plan to Learn Hangul"),
+             ("Word meanings", "everyday words like 물, 집, 친구, 하늘", "", "All guides")]
+
+
+def build_hangul_quiz():
+    """The Hangul Quiz browser game: one English page (like the guides), with the script and styles from _src/hangul_quiz/."""
+    src, out = os.path.join(ROOT, "_src", "hangul_quiz"), os.path.join(ROOT, "play", "hangul-quiz")
+    os.makedirs(out, exist_ok=True)
+    ver = {}
+    for f in ("app.js", "quiz.css"):
+        text = open(os.path.join(src, f), encoding="utf-8").read()
+        with open(os.path.join(out, f), "w", encoding="utf-8", newline="\n") as fh:
+            fh.write(text)
+        ver[f] = hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
+    t = UI["en"]
+    stages = "".join(
+        f'<li><strong>{e(name)}</strong>: {e(what)}. Review: <a href="/learn/{slug + "/" if slug else ""}">{e(guide)}</a></li>'
+        for name, what, slug, guide in HQ_STAGES)
+    more = (f'<section class="section container hq-wrap"><div class="section-head"><h2>{e(t["play_more"])}</h2>'
+            f'<a href="/play/">{e(t["play_all"])} →</a></div>'
+            f'<div class="games">{web_game_cards("en", exclude="hangul-quiz", details=False)}</div></section>')
+    body = f"""<div class="hq">
+<section class="container hq-wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/">{e(t['play_title'])}</a><span aria-hidden="true">›</span><span>Hangul Quiz</span></nav>
+  <h1 class="page-title">Hangul Quiz</h1>
+  <p class="page-lead">Learn to read Korean, from single letters to whole words, in eight short stages.</p>
+  <div id="hq-app" class="hq-app"><div class="card"><noscript><p>This quiz needs JavaScript. You can still learn the letters with our <a href="/learn/">Learn Hangul guides</a>.</p></noscript></div></div>
+  <div id="hq-static" class="hq-static">
+    <div class="card"><h2>How to play</h2><ol>
+      <li>Each stage has 8 questions with four choices. Read the Korean and pick its sound (or, in the last stage, its meaning), or see a sound in romanization and pick the letter.</li>
+      <li>Get at least 5 right to clear a stage and open the next one. All 8 right earns 3 stars.</li>
+      <li>After every answer, a short note explains the sound. On a computer, use the keys 1 to 4 and Enter.</li></ol></div>
+    <div class="card"><h2>The eight stages</h2><ol>{stages}</ol></div>
+    <section class="card"><h2>About Hangul Quiz</h2>
+      <p>Hangul Quiz is a free browser game for people learning to read Korean. It follows the same path as our Learn Hangul guides: the basic vowels and consonants first, then the tense and aspirated consonants and the compound vowels, then whole syllables, final consonants and real words.</p>
+      <p>Answers use the Revised Romanization of Korean, the system you see on Korean road signs, so 김치 is written gimchi. Romanization only approximates Korean sounds; use the listen button on syllables and words to hear them, and the guides to learn how each sound is made.</p>
+      <p>Your stars are saved in this browser only. Nothing is sent to us.</p></section>
+  </div>
+</section>
+<div id="live" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"></div>
+</div>
+{more}"""
+    ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": "Hangul Quiz",
+          "url": f"{STUDIO['domain']}/play/hangul-quiz/", "applicationCategory": "EducationalApplication",
+          "description": "A free browser quiz for learning to read Korean, from single Hangul letters to whole words, in eight stages.",
+          "operatingSystem": "Any", "inLanguage": "en", "isAccessibleForFree": True,
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+          "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
+    head = (f'<link rel="stylesheet" href="/play/hangul-quiz/quiz.css?v={ver["quiz.css"]}">'
+            f'<script src="/play/hangul-quiz/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld))
+    page("en", "play/hangul-quiz/", "Hangul Quiz",
+         "Play Hangul Quiz free in your browser: learn to read Korean in eight stages, from the vowels and consonants "
+         "to syllables with final consonants and real words, with a short note after every answer.",
+         body, active="play", translated=False, head_extra=head, og_image="/play/hangul-quiz/og-image.png")
+    return ["/play/hangul-quiz/"]
+
+
 def build_404():
     t = UI["en"]
     body = f"""<section class="container" style="text-align:center"><h1 class="page-title">{e(t['not_found_title'])}</h1>
@@ -892,6 +957,7 @@ def main():
                 urls += extra
     urls += [g["web"] for g in GAMES if g.get("web", "").startswith("/play/")]
     urls += build_timeline()
+    urls += build_hangul_quiz()
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
