@@ -392,7 +392,7 @@ def build_home(lang):
            "email": STUDIO["email"], "sameAs": [STUDIO["youtube"], STUDIO["instagram"]]}
     site = {"@context": "https://schema.org", "@type": "WebSite", "name": STUDIO["name"],
             "url": STUDIO["domain"] + url(lang), "inLanguage": lang}
-    page(lang, "", None, t["hero_text"], body, active=None, head_extra=ld_json(org) + ld_json(site))
+    page(lang, "", None, t["home_desc"], body, active=None, head_extra=ld_json(org) + ld_json(site))
 
 
 def build_game(lang, g):
@@ -420,7 +420,11 @@ def build_game(lang, g):
     <div class="card prose guide"><h2>{e(t['tips'])}</h2><ul class="tips">{tips}</ul></div>
   </div>
 </section>"""
+    faq_ld = ""
     if c.get("faq"):
+        faq_ld = ld_json({"@context": "https://schema.org", "@type": "FAQPage",
+                          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                                         for q, a in c["faq"]]})
         faq = "".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in c["faq"])
         guide += f"""
 <section class="section container"><div class="card faq"><h2>{e(t['faq_title'])}</h2>{faq}</div></section>"""
@@ -460,7 +464,15 @@ def build_game(lang, g):
            "image": f"{g['icon']}=s512", "screenshot": [f"{s}=h720" for s in SHOTS.get(g["shots_key"], [])],
            "installUrl": play_url(g), "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
            "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
-    page(lang, path, c["name"], c["short"], body, active="games", head_extra=ld_json(app),
+    # Title: the Korean page gets "앱 소개" so it differs from the English one; description: the short line plus
+    # the start of the description, about 150 characters
+    title = c["name"] if lang == "en" else f"{c['name']} – {t['app_page']}"
+    desc = c["short"]
+    for sentence in re.split(r"(?<=[.!?다요])\s+", " ".join(c["body"])):
+        if len(desc) + len(sentence) + 1 > 160:
+            break
+        desc += " " + sentence
+    page(lang, path, title, desc, body, active="games", head_extra=ld_json(app) + faq_ld,
          og_image=f"{g['icon']}=s512")
 
 
@@ -509,7 +521,11 @@ def build_play(lang):
 <p class="play-note">{e(t['play_note'])}</p></section>
 <section class="section container"><div class="card prose guide"><h2>{e(t['play_reference'])}</h2><p>{e(t['play_reference_lead'])}</p><ul>{refs}</ul></div></section>
 <section class="section container"><div class="card faq"><h2>{e(t['faq_title'])}</h2>{faq}</div></section>"""
-    page(lang, "play/", t["play_title"], t["play_lead"], body, active="play")
+    faq_ld = {"@context": "https://schema.org", "@type": "FAQPage",
+              "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                             for q, a in t["play_faq"]]}
+    page(lang, "play/", t["play_title"], t["play_desc"], body, active="play",
+         head_extra=ld_json(faq_ld) + breadcrumbs(lang, [(t["play_title"], None)])[1])
 
 
 def build_news(lang):
@@ -546,7 +562,7 @@ def build_news(lang):
 <section class="section container"><div class="card prose"><ul class="archive">
 {chr(10).join(rows)}
 </ul></div></section>"""
-    page(lang, "news/archive/", t["news_archive_title"], t["news_archive_lead"], body, active="news", head_extra=ld)
+    page(lang, "news/archive/", t["news_archive_title"], t["news_archive_desc"], body, active="news", head_extra=ld)
     return [url(lang, "news/archive/")]
 
 
@@ -602,7 +618,8 @@ def article_card(a, lang="en", base="/learn/", article_lang="en"):
 
 # Guides that teach what a Hangul Quiz stage tests: guide slug -> stage numbers (1-based, see HQ_STAGES)
 QUIZ_STAGES = {"korean-vowels": [1, 4], "korean-consonants": [2], "plain-aspirated-tense": [3],
-               "how-hangul-works": [5], "batchim": [6], "two-week-plan": [7]}
+               "how-hangul-works": [5], "batchim": [6], "two-week-plan": [7], "korean-numbers": [9],
+               "days-and-dates": [10], "korean-family-terms": [11], "korean-greetings": [12]}
 
 
 def quiz_cta(slug):
@@ -729,7 +746,7 @@ def build_history():
 <section class="section container"><nav class="jump" aria-label="{e(t['history_eras'])}">{jump}</nav>
 {list_search(t['search_history'], t['search_empty'])}</section>{sections}
 <section class="section container">{history_quiz_card()}</section>"""
-    page("ko", "history/", t["history_title"], t["history_lead"], body, active="history", translated=False,
+    page("ko", "history/", t["history_title"], t["history_desc"].format(n=len(HISTORY)), body, active="history", translated=False,
          og_image="/assets/og-history.png")
     newest = sorted(HISTORY, key=lambda a: (a["date"], a["order"]), reverse=True)
     build_feed(url("ko", "history/feed.xml"), f"{t['history_title']} – {STUDIO['name']}", t["history_lead"],
@@ -795,10 +812,14 @@ def build_timeline():
                 f'<div class="games">{web_game_cards(lang, exclude="history-timeline", details=False)}</div></section>')
         page(lang, "play/history-timeline/", name, tl.text(lang, "description"),
              tl.game_body(lang, url(lang, "play/"), events) + more, active="play",
-             head_extra=tl.head_css + tl.head_js + ld_json(ld), og_image="/play/history-timeline/og-image.png")
+             head_extra=tl.head_css + tl.head_js + ld_json(ld)
+             + breadcrumbs(lang, [(UI[lang]["play_title"], url(lang, "play/")), (name, None)])[1],
+             og_image="/play/history-timeline/og-image.png")
         page(lang, "play/history-timeline/events/", tl.text(lang, "list_h1") + " – " + name, tl.text(lang, "list_desc"),
              tl.list_body(lang, url(lang, "play/"), game, ERAS, era_of_year, url("ko", "history/")),
-             active="play", head_extra=tl.head_css, og_image="/play/history-timeline/og-image.png")
+             active="play", og_image="/play/history-timeline/og-image.png",
+             head_extra=tl.head_css + breadcrumbs(lang, [(UI[lang]["play_title"], url(lang, "play/")), (name, game),
+                                                         (tl.text(lang, "list_h1"), None)])[1])
         urls += [game, events]
     return urls
 
@@ -810,7 +831,11 @@ HQ_STAGES = [("Basic vowels", "ㅏ, ㅑ, ㅓ, ㅕ, ㅗ, ㅛ, ㅜ, ㅠ, ㅡ, ㅣ"
              ("First syllables", "a consonant and a vowel, like 가, 나, 도 and 휴", "how-hangul-works", "How Hangul Works"),
              ("Final consonants", "syllables with batchim, like 밥, 국, 맛 and 꽃", "batchim", "Batchim"),
              ("Reading words", "한국, 서울, 김치, 학교 and more, in romanization", "two-week-plan", "A Two-Week Plan to Learn Hangul"),
-             ("Word meanings", "everyday words like 물, 집, 친구, 하늘", "", "All guides")]
+             ("Word meanings", "everyday words like 물, 집, 친구, 하늘", "", "All guides"),
+             ("Numbers", "Sino-Korean 일, 이, 삼 and native 하나, 둘, 셋", "korean-numbers", "Korean Numbers"),
+             ("Days and seasons", "월요일, 오늘, 내일, 주말, 봄 and more", "days-and-dates", "Days, Weeks and Dates"),
+             ("Family", "엄마, 아빠, 형, 오빠, 누나, 언니 and more", "korean-family-terms", "Korean Family Terms"),
+             ("Greetings", "안녕하세요, 감사합니다, 괜찮아요 and more", "korean-greetings", "Everyday Korean Greetings")]
 
 
 def build_hangul_quiz():
@@ -834,7 +859,7 @@ def build_hangul_quiz():
 <section class="container hq-wrap">
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/">{e(t['play_title'])}</a><span aria-hidden="true">›</span><span>Hangul Quiz</span></nav>
   <h1 class="page-title">Hangul Quiz</h1>
-  <p class="page-lead">Learn to read Korean, from single letters to whole words, in eight short stages.</p>
+  <p class="page-lead">Learn to read Korean, from single letters to whole words and everyday vocabulary, in twelve short stages.</p>
   <div id="hq-app" class="hq-app"><div class="card"><noscript><p>This quiz needs JavaScript. You can still learn the letters with our <a href="/learn/">Learn Hangul guides</a>.</p></noscript></div></div>
   <div id="hq-static" class="hq-static">
     <div class="card"><h2>How to play</h2><ol>
@@ -842,7 +867,7 @@ def build_hangul_quiz():
       <li>Get at least 5 right to clear a stage and open the next one. All 8 right earns 3 stars.</li>
       <li>Tap the speaker to hear the sound. Letters are read inside a syllable, so ㄱ is heard as 가 and ㅓ as 어.</li>
       <li>After every answer, a short note explains the sound. On a computer, use the keys 1 to 4 and Enter.</li></ol></div>
-    <div class="card"><h2>The eight stages</h2><ol>{stages}</ol></div>
+    <div class="card"><h2>The twelve stages</h2><ol>{stages}</ol></div>
     <section class="card"><h2>About Hangul Quiz</h2>
       <p>Hangul Quiz is a free browser game for people learning to read Korean. It follows the same path as our Learn Hangul guides: the basic vowels and consonants first, then the tense and aspirated consonants and the compound vowels, then whole syllables, final consonants and real words.</p>
       <p>Answers use the Revised Romanization of Korean, the system you see on Korean road signs, so 김치 is written gimchi. Romanization only approximates Korean sounds; use the listen button to hear them, and the guides to learn how each sound is made.</p>
@@ -854,14 +879,15 @@ def build_hangul_quiz():
 {more}"""
     ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": "Hangul Quiz",
           "url": f"{STUDIO['domain']}/play/hangul-quiz/", "applicationCategory": "EducationalApplication",
-          "description": "A free browser quiz for learning to read Korean, from single Hangul letters to whole words, in eight stages.",
+          "description": "A free browser quiz for learning to read Korean, from single Hangul letters to whole words and everyday vocabulary, in twelve stages.",
           "operatingSystem": "Any", "inLanguage": "en", "isAccessibleForFree": True,
           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
           "publisher": {"@type": "Organization", "name": STUDIO["name"], "url": STUDIO["domain"] + "/"}}
     head = (f'<link rel="stylesheet" href="/play/hangul-quiz/quiz.css?v={ver["quiz.css"]}">'
-            f'<script src="/play/hangul-quiz/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld))
+            f'<script src="/play/hangul-quiz/app.js?v={ver["app.js"]}" defer></script>' + ld_json(ld)
+            + breadcrumbs("en", [(t["play_title"], "/play/"), ("Hangul Quiz", None)])[1])
     page("en", "play/hangul-quiz/", "Hangul Quiz",
-         "Play Hangul Quiz free in your browser: learn to read Korean in eight stages, from the vowels and consonants "
+         "Play Hangul Quiz free in your browser: learn to read Korean in twelve stages, from the vowels and consonants "
          "to syllables with final consonants and real words, with a short note after every answer.",
          body, active="play", translated=False, head_extra=head, og_image="/play/hangul-quiz/og-image.png")
     return ["/play/hangul-quiz/"]

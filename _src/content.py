@@ -29,6 +29,9 @@ UI = {
         "nav_support": "Support",
         "tagline": "Small, friendly mobile games",
         "hero_text": "We make simple games and learning apps you can enjoy in a minute and come back to every day.",
+        "home_desc": "ggook's studio makes free mobile games and learning apps, plus browser games you can play right here and free guides for people learning to read and speak Korean.",
+        "play_desc": "Free games that run right in your browser, on a phone, tablet or computer: Hangul Quiz, Flag Quiz, Capital Quiz and History Timeline. No install, no sign-up.",
+        "news_archive_desc": "Every earlier update from ggook's studio, newest first: new games and app updates, new Learn Hangul guides and new world history articles.",
         "games_title": "Our apps",
         "games_lead": "Free on Google Play.",
         "news_title": "News",
@@ -118,7 +121,7 @@ UI = {
         ],
         "learn_guides": "Guides",
         "learn_practice": "Practice what you've learned",
-        "learn_quiz_text": "Test your reading in your browser, from single letters to whole words, in eight short stages.",
+        "learn_quiz_text": "Test yourself in your browser, from single letters to whole words and everyday vocabulary, in twelve short stages.",
         "learn_prev": "Previous",
         "learn_next": "Next",
         "min_read": "min read",
@@ -135,7 +138,7 @@ UI = {
         "home_guides_all": "All guides",
         "tips": "Tips",
         "play_now_web": "Play in your browser",
-        "terms_desc": "The terms for using our website, browser games and mobile apps.",
+        "terms_desc": "The terms for using the ggook's studio website, browser games and mobile apps: using the services, ads, content rights, your progress, limits of liability and how to contact us.",
         "terms_date": "Effective date",
     },
     "ko": {
@@ -151,6 +154,11 @@ UI = {
         "nav_support": "지원",
         "tagline": "작고 친근한 모바일 게임",
         "hero_text": "잠깐 즐기고, 매일 다시 찾고 싶은 간단한 게임과 학습 앱을 만듭니다.",
+        "home_desc": "ggook's studio는 잠깐 즐기고 매일 다시 찾고 싶은 무료 모바일 게임과 학습 앱을 만듭니다. 설치 없이 하는 브라우저 게임과 세계사 읽을거리도 함께 소개해요.",
+        "play_desc": "설치 없이 브라우저에서 바로 하는 무료 게임 모음이에요. 한글 퀴즈, 국기 퀴즈, 수도 퀴즈, 연표 맞추기를 휴대폰, 태블릿, 컴퓨터에서 가입 없이 즐겨 보세요.",
+        "news_archive_desc": "ggook's studio의 지난 소식을 최신순으로 모두 모았어요. 새 게임과 앱 업데이트, 한글 가이드와 세계사 읽을거리 연재 소식을 볼 수 있습니다.",
+        "history_desc": "기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사의 흐름을 바꾼 순간 {n}편을 한 편씩 쉽게 풀어 쓴 한국어 세계사 읽을거리 연재입니다.",
+        "app_page": "앱 소개",
         "games_title": "앱",
         "games_lead": "Google Play에서 무료로 즐기세요.",
         "news_title": "소식",
@@ -252,7 +260,7 @@ UI = {
         "home_guides_all": "전체 가이드",
         "tips": "공략 팁",
         "play_now_web": "브라우저에서 하기",
-        "terms_desc": "웹사이트, 브라우저 게임, 모바일 앱의 이용약관입니다.",
+        "terms_desc": "ggook's studio의 웹사이트, 브라우저 게임, 모바일 앱 이용약관입니다. 서비스 이용과 광고, 콘텐츠의 권리, 진행 기록, 책임의 제한과 문의 방법을 안내합니다.",
         "terms_date": "시행일",
     },
 }
@@ -491,8 +499,8 @@ WEB_GAMES = [
         "icon": "/play/hangul-quiz/apple-touch-icon.png",
         "site_page": True,  # built as a site page by build_hangul_quiz() in build.py
         "en_only": True,  # in English, like the Learn Hangul guides
-        "en": {"name": "Hangul Quiz", "short": "Learn to read Korean in eight stages, from single letters to whole words."},
-        "ko": {"name": "한글 퀴즈", "short": "한글 자모부터 단어 읽기까지 8단계로 익혀요. 외국인 학습자를 위해 영어로 진행돼요."},
+        "en": {"name": "Hangul Quiz", "short": "Learn to read Korean in twelve stages, from single letters to everyday words."},
+        "ko": {"name": "한글 퀴즈", "short": "한글 자모부터 숫자, 요일, 가족, 인사말까지 12단계로 익혀요. 외국인 학습자를 위해 영어로 진행돼요."},
     },
     {
         "slug": "history-timeline",
@@ -2165,8 +2173,8 @@ PLAY_DETAILS = {
         "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
     },
     "hangul-quiz": {
-        "en": "Vowels, consonants, tense and aspirated sounds, compound vowels, syllables with and without final consonants, then real words and their meanings, with a note after every answer.",
-        "ko": "모음, 자음, 된소리·거센소리, 복합모음, 받침 없는 글자와 받침 있는 글자, 단어 읽기와 뜻까지. 답할 때마다 짧은 설명이 나와요.",
+        "en": "Vowels, consonants, tense and aspirated sounds, compound vowels, syllables with and without final consonants, real words, then numbers, days, family words and greetings, with a note after every answer.",
+        "ko": "모음, 자음, 된소리·거센소리, 복합모음, 받침 없는 글자와 받침 있는 글자, 단어 읽기와 뜻, 그리고 숫자·요일·가족·인사말까지. 답할 때마다 짧은 설명이 나와요.",
     },
     "history-timeline": {
         "en": "83 events from the pyramids to 2002: a new 10-card challenge every day, plus three decks for all of history, world history and Korean history. Three hearts, and a short reading (in Korean) for every event.",
