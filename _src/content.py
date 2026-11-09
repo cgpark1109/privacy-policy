@@ -170,7 +170,7 @@ UI = {
         "play_note": "진행 상황과 최고 기록은 이 브라우저에만 저장돼요.",
         "play_intro": [
             "이 게임들은 휴대폰, 태블릿, 컴퓨터의 웹 브라우저에서 바로 실행됩니다. 설치도, 가입도 필요 없이 게임을 열고 바로 시작하세요.",
-            "모두 브라우저용으로 만든 게임입니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임, 한글 퀴즈는 한글 읽기를 익히는 외국인 학습자용 퀴즈입니다.",
+            "모두 브라우저용으로 만든 게임입니다. 국기 퀴즈와 수도 퀴즈는 세계 모든 나라를 다루고, 연표 맞추기는 세계사 사건을 순서대로 놓는 게임이고, 한글 퀴즈는 한글 읽기를 익히는 외국인 학습자용 퀴즈입니다.",
         ],
         "play_reference": "참고 페이지",
         "play_reference_lead": "게임을 하지 않고도 세계의 모든 국기와 수도를 검색하고 지역별로 찾아보거나, 연표 전체를 볼 수 있어요.",
@@ -714,7 +714,7 @@ NEWS = [
         "date": "2026-11-09",
         "game": "hangul-quiz",
         "en": {"title": "New browser game: Hangul Quiz",
-               "body": "Learn to read Korean in eight short stages, from the basic vowels and consonants to syllables with final consonants and real words. Every answer comes with a short note, and each stage links to the guide that teaches it."},
+               "body": "Learn to read Korean in eight short stages, from the basic vowels and consonants to syllables with final consonants and real words. Every answer comes with a short note, and each stage links to a guide for review."},
         "ko": {"title": "새 브라우저 게임: 한글 퀴즈",
                "body": "기본 모음과 자음부터 받침 있는 글자, 실제 단어까지 8단계로 한글 읽기를 익히는 퀴즈예요. 외국인 학습자를 위해 영어로 진행되고, 단계마다 관련 한글 가이드로 이어져요."},
     },
@@ -2155,7 +2155,7 @@ PLAY_DETAILS = {
     },
     "hangul-quiz": {
         "en": "Vowels, consonants, tense and aspirated sounds, compound vowels, syllables with and without final consonants, then real words and their meanings, with a note after every answer.",
-        "ko": "모음, 자음, 된소리·거센소리, 이중모음, 받침 없는 글자와 받침 있는 글자, 단어 읽기와 뜻까지. 답할 때마다 짧은 설명이 나와요.",
+        "ko": "모음, 자음, 된소리·거센소리, 복합모음, 받침 없는 글자와 받침 있는 글자, 단어 읽기와 뜻까지. 답할 때마다 짧은 설명이 나와요.",
     },
     "history-timeline": {
         "en": "83 events from the pyramids to 2002, in three decks: all of history, world history and Korean history. Three hearts, and a short reading (in Korean) for every event.",

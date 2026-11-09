@@ -789,8 +789,8 @@ HQ_STAGES = [("Basic vowels", "ㅏ, ㅑ, ㅓ, ㅕ, ㅗ, ㅛ, ㅜ, ㅠ, ㅡ, ㅣ"
              ("Basic consonants", "the 14 basic consonants, from ㄱ to ㅎ", "korean-consonants", "Korean Consonants"),
              ("Tense and aspirated", "ㄲ, ㄸ, ㅃ, ㅆ, ㅉ and ㅋ, ㅌ, ㅍ, ㅊ", "plain-aspirated-tense", "Plain, Aspirated and Tense"),
              ("Compound vowels", "ㅐ, ㅒ, ㅔ, ㅖ, ㅘ, ㅙ, ㅚ, ㅝ, ㅞ, ㅟ, ㅢ", "korean-vowels", "Korean Vowels"),
-             ("First syllables", "a consonant and a vowel: 가, 나, 도, 휴", "how-hangul-works", "How Hangul Works"),
-             ("Final consonants", "syllables with batchim: 밥, 국, 맛, 꽃", "batchim", "Batchim"),
+             ("First syllables", "a consonant and a vowel, like 가, 나, 도 and 휴", "how-hangul-works", "How Hangul Works"),
+             ("Final consonants", "syllables with batchim, like 밥, 국, 맛 and 꽃", "batchim", "Batchim"),
              ("Reading words", "한국, 서울, 김치, 학교 and more, in romanization", "two-week-plan", "A Two-Week Plan to Learn Hangul"),
              ("Word meanings", "everyday words like 물, 집, 친구, 하늘", "", "All guides")]
 
@@ -820,7 +820,7 @@ def build_hangul_quiz():
   <div id="hq-app" class="hq-app"><div class="card"><noscript><p>This quiz needs JavaScript. You can still learn the letters with our <a href="/learn/">Learn Hangul guides</a>.</p></noscript></div></div>
   <div id="hq-static" class="hq-static">
     <div class="card"><h2>How to play</h2><ol>
-      <li>Each stage has 8 questions with four choices. Read the Korean and pick its sound, or hear the sound and pick the letter.</li>
+      <li>Each stage has 8 questions with four choices. Read the Korean and pick its sound (or, in the last stage, its meaning), or see a sound in romanization and pick the letter.</li>
       <li>Get at least 5 right to clear a stage and open the next one. All 8 right earns 3 stars.</li>
       <li>After every answer, a short note explains the sound. On a computer, use the keys 1 to 4 and Enter.</li></ol></div>
     <div class="card"><h2>The eight stages</h2><ol>{stages}</ol></div>

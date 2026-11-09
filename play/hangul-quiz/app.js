@@ -8,7 +8,7 @@
   var PER_STAGE = 8;
 
   /* ---------- data ---------- */
-  // Letters: k = the letter, r = its sound (as a choice), w = shown when asking for the letter (if different), n = note
+  // Letters: k = the letter, r = its romanization (as a choice), n = note
   var VOWELS = [
     { k: 'ㅏ', r: 'a' }, { k: 'ㅑ', r: 'ya' }, { k: 'ㅓ', r: 'eo' }, { k: 'ㅕ', r: 'yeo' }, { k: 'ㅗ', r: 'o' },
     { k: 'ㅛ', r: 'yo' }, { k: 'ㅜ', r: 'u' }, { k: 'ㅠ', r: 'yu' }, { k: 'ㅡ', r: 'eu' }, { k: 'ㅣ', r: 'i' },
@@ -38,9 +38,9 @@
   // plain letters used only as wrong choices in the tense stage
   var PLAIN = [{ k: 'ㄱ', r: 'g' }, { k: 'ㄷ', r: 'd' }, { k: 'ㅂ', r: 'b' }, { k: 'ㅅ', r: 's' }, { k: 'ㅈ', r: 'j' }];
   var COMPOUND = [
-    { k: 'ㅐ', r: 'ae' }, { k: 'ㅒ', r: 'yae' }, { k: 'ㅔ', r: 'e', n: 'ㅔ (e) and ㅐ (ae) sound almost the same in everyday Seoul Korean.' },
+    { k: 'ㅐ', r: 'ae' }, { k: 'ㅒ', r: 'yae' }, { k: 'ㅔ', r: 'e', n: 'ㅔ (e) and ㅐ (ae) sound the same for most speakers today, like the e in "bed".' },
     { k: 'ㅖ', r: 'ye' }, { k: 'ㅘ', r: 'wa', n: 'ㅘ is ㅗ + ㅏ said quickly together: wa.' }, { k: 'ㅙ', r: 'wae' },
-    { k: 'ㅚ', r: 'oe' }, { k: 'ㅝ', r: 'wo', n: 'ㅝ is ㅜ + ㅓ said quickly together: wo.' }, { k: 'ㅞ', r: 'we' },
+    { k: 'ㅚ', r: 'oe', n: 'ㅚ is romanized oe, but most speakers today say it like we, the same as ㅞ and ㅙ.' }, { k: 'ㅝ', r: 'wo', n: 'ㅝ is ㅜ + ㅓ said quickly together: wo.' }, { k: 'ㅞ', r: 'we' },
     { k: 'ㅟ', r: 'wi' }, { k: 'ㅢ', r: 'ui' },
   ];
   // Syllables and words: k = Korean, r = romanization, m = meaning (for the meaning stage), n = note
@@ -64,7 +64,7 @@
     { k: '한국', r: 'hanguk', m: 'Korea' }, { k: '서울', r: 'seoul', m: 'Seoul' },
     { k: '김치', r: 'gimchi', m: 'kimchi', n: 'The usual English spelling is kimchi; the official romanization is gimchi.' },
     { k: '사랑', r: 'sarang', m: 'love' }, { k: '친구', r: 'chingu', m: 'friend' },
-    { k: '학교', r: 'hakgyo', m: 'school' }, { k: '커피', r: 'keopi', m: 'coffee' }, { k: '바나나', r: 'banana', m: 'banana' },
+    { k: '학교', r: 'hakgyo', m: 'school', n: 'Romanization does not show it, but the ㄱ in 교 is said tense: 학교 sounds like 학꾜 (hakkyo).' }, { k: '커피', r: 'keopi', m: 'coffee' }, { k: '바나나', r: 'banana', m: 'banana' },
     { k: '우유', r: 'uyu', m: 'milk' }, { k: '가방', r: 'gabang', m: 'bag' }, { k: '부산', r: 'busan', m: 'Busan' },
     { k: '비빔밥', r: 'bibimbap', m: 'bibimbap' }, { k: '한글', r: 'hangeul', m: 'Hangul' }, { k: '노래', r: 'norae', m: 'song' },
     { k: '나무', r: 'namu', m: 'tree' }, { k: '고양이', r: 'goyangi', m: 'cat' }, { k: '사과', r: 'sagwa', m: 'apple' },
@@ -78,6 +78,9 @@
     { k: '손', m: 'hand' }, { k: '꽃', m: 'flower' }, { k: '의자', m: 'chair' }, { k: '빵', m: 'bread' },
     { k: '산', m: 'mountain' }, { k: '별', m: 'star' }, { k: '달', m: 'moon' }, { k: '이름', m: 'name' },
   ];
+
+  // Vowels that most speakers now pronounce the same: never offered as each other's wrong choice
+  var SAME = { 'ㅐ': 'e', 'ㅔ': 'e', 'ㅒ': 'ye', 'ㅖ': 'ye', 'ㅚ': 'we', 'ㅙ': 'we', 'ㅞ': 'we' };
 
   // kind: 'letter' (sound <-> letter), 'read' (Korean -> romanization), 'mean' (Korean -> meaning)
   var STAGES = [
@@ -143,6 +146,7 @@
       seen[key(item)] = true;
       var wrong = shuffle(pool.filter(function (x) {
         if (x.readOnly && write) return false;
+        if (SAME[x.k] && SAME[x.k] === SAME[item.k]) return false;
         var v = key(x);
         if (seen[v]) return false;
         seen[v] = true;
@@ -180,8 +184,10 @@
   }
 
   function prompt(q, st) {
-    if (q.write) return { ask: 'Which letter makes this sound?', big: q.item.r, latin: true };
-    if (st.kind === 'letter') return { ask: 'What sound does this letter make?', big: q.item.k };
+    // ㄱ, ㄷ, ㅂ sound like k, t, p at the end of a syllable, so consonant questions are about the start
+    var cons = st.items === CONSONANTS || st.items === TENSE;
+    if (q.write) return { ask: cons ? 'Which letter makes this sound at the start of a syllable?' : 'Which letter makes this sound?', big: q.item.r, latin: true };
+    if (st.kind === 'letter') return { ask: cons ? 'What sound does this letter make at the start of a syllable?' : 'What sound does this letter make?', big: q.item.k };
     if (st.kind === 'mean') return { ask: 'What does this word mean?', big: q.item.k, say: q.item.k };
     return { ask: 'How do you read this?', big: q.item.k, say: q.item.k };
   }
@@ -206,7 +212,7 @@
       var ok = S.picked === q.answer;
       var line = st.kind === 'mean' ? q.item.k + ' means "' + q.item.m + '".' :
         st.kind === 'read' ? q.item.k + ' is read ' + q.item.r + (st.items === WORDS ? ' (' + q.item.m + ').' : '.') :
-        q.item.k + ' sounds like ' + q.item.r + '.';
+        q.item.k + ' is romanized ' + q.item.r + '.';
       // a letter's note already says how it sounds, so it replaces the plain line
       var text = st.kind === 'letter' && q.item.n ? q.item.n : line + (q.item.n ? ' ' + q.item.n : '');
       fb = '<div class="hq-feedback ' + (ok ? 'ok' : 'bad') + '" id="hq-fb"><p class="verdict">' + (ok ? 'Correct!' : 'Not quite.') + '</p>' +

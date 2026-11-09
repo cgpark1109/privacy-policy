@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "d418c76141a4184dc61cd42a72d7a4c2d59f8234"
+  "hash": "3627174a746fbdcf6bed2195df4ae4425f8870af"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -417,7 +417,7 @@
  },
  "/ko/play/": {
   "date": "2026-11-09",
-  "hash": "f3fb0c6e1fc27ba5627b6c61e78901251b1dcfb0"
+  "hash": "38b927085bf270b2e20223b4cbfd282f6b896173"
  },
  "/ko/play/history-timeline/": {
   "date": "2026-11-09",
@@ -497,7 +497,7 @@
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "2d2dc18cdb798a18710755af059809752ce1b91e"
+  "hash": "0aa32d9b16069bf239b561c6703cd724c87ece29"
  },
  "/news/archive/": {
   "date": "2026-11-09",
@@ -509,7 +509,7 @@
  },
  "/play/capital-quiz/": {
   "date": "2026-11-09",
-  "hash": "01959793f90ed47c06c295bfbc8a75114f8cd18c"
+  "hash": "34ad53870eaf817b7ad9af41f284fb1e9a34d927"
  },
  "/play/capital-quiz/all-capitals.html": {
   "date": "2026-11-09",
@@ -517,7 +517,7 @@
  },
  "/play/flag-quiz/": {
   "date": "2026-11-09",
-  "hash": "941cdbdd1403f8a9001f12e145c8edc8ec699bc9"
+  "hash": "b928d5cdc7c5d4685ebb303689b23ef5c6a06971"
  },
  "/play/flag-quiz/all-flags.html": {
   "date": "2026-11-09",
@@ -525,7 +525,7 @@
  },
  "/play/hangul-quiz/": {
   "date": "2026-11-09",
-  "hash": "48954cd9cb6e59467b6c9c18b5b38ca91aea8f93"
+  "hash": "61d0ebca3a984719f4627f2e4658a254ab7205da"
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
