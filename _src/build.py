@@ -191,7 +191,8 @@ def privacy_url(lang):
 def web_href(w, lang):
     """Link to a browser-only game: site-page games have a page per language (unless English only), the others one
     page at /play/<slug>/."""
-    return url(lang, f"play/{w['slug']}/") if w.get("site_page") and not w.get("en_only") else f"/play/{w['slug']}/"
+    localized = (w.get("site_page") and not w.get("en_only")) or w.get("ko_page")
+    return url(lang, f"play/{w['slug']}/") if localized else f"/play/{w['slug']}/"
 
 
 def game_by_slug(slug):
@@ -839,11 +840,12 @@ def build_hangul_quiz():
     <div class="card"><h2>How to play</h2><ol>
       <li>Each stage has 8 questions with four choices. Read the Korean and pick its sound (or, in the last stage, its meaning), or see a sound in romanization and pick the letter.</li>
       <li>Get at least 5 right to clear a stage and open the next one. All 8 right earns 3 stars.</li>
+      <li>Tap the speaker to hear the sound. Letters are read inside a syllable, so ㄱ is heard as 가 and ㅓ as 어.</li>
       <li>After every answer, a short note explains the sound. On a computer, use the keys 1 to 4 and Enter.</li></ol></div>
     <div class="card"><h2>The eight stages</h2><ol>{stages}</ol></div>
     <section class="card"><h2>About Hangul Quiz</h2>
       <p>Hangul Quiz is a free browser game for people learning to read Korean. It follows the same path as our Learn Hangul guides: the basic vowels and consonants first, then the tense and aspirated consonants and the compound vowels, then whole syllables, final consonants and real words.</p>
-      <p>Answers use the Revised Romanization of Korean, the system you see on Korean road signs, so 김치 is written gimchi. Romanization only approximates Korean sounds; use the listen button on syllables and words to hear them, and the guides to learn how each sound is made.</p>
+      <p>Answers use the Revised Romanization of Korean, the system you see on Korean road signs, so 김치 is written gimchi. Romanization only approximates Korean sounds; use the listen button to hear them, and the guides to learn how each sound is made.</p>
       <p>Your stars are saved in this browser only. Nothing is sent to us.</p></section>
   </div>
 </section>
@@ -985,6 +987,8 @@ def main():
     for g in WEB_GAMES:
         if not g.get("site_page"):  # games with their own pages; site-page games are added by their builder
             urls += [f"/play/{g['slug']}/"] + [f"/play/{g['slug']}/{p}" for p in g.get("pages", [])]
+            if g.get("ko_page"):  # Korean copies written by _src/webgames/build.mjs
+                urls += [f"/ko/play/{g['slug']}/"] + [f"/ko/play/{g['slug']}/{p}" for p in g.get("pages", [])]
     build_learn()
     urls += build_history()
     urls += ["/learn/"] + [f"/learn/{a['slug']}/" for a in ARTICLES]

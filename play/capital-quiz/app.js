@@ -5,6 +5,9 @@
   'use strict';
 
   var G = window.GAME;
+  // The Korean page (/ko/play/<slug>/) uses the game's files from /play/<slug>/ (data-base) and is always Korean.
+  var BASE = document.documentElement.getAttribute('data-base') || '';
+  var FIXED = document.documentElement.getAttribute('data-fixed-lang');
   var DATA = window.COUNTRIES;
   var L = window.QuizLogic;
   var MODES = ['classic', 'reverse'];
@@ -40,6 +43,7 @@
       mode: MODES.indexOf(s.mode) >= 0 ? s.mode : 'classic',
     };
   })();
+  if (FIXED) settings.lang = FIXED;
   function saveSettings() { store.set('settings', settings); }
   var progress = L.normalizeProgress(store.get('progress'), MODES);
   function saveProgress() { store.set('progress', progress); }
@@ -121,7 +125,7 @@
   function nameIn(c) { return (settings.lang === 'en' && c.the ? 'the ' : '') + nameOf(c); }
   function capOf(c) { return c.cap ? c.cap[LI()] : ''; }
   function noteOf(c) { return c.note ? c.note[LI()] : ''; }
-  function flagSrc(c) { return 'flags/' + c.c.toLowerCase() + '.svg'; }
+  function flagSrc(c) { return BASE + 'flags/' + c.c.toLowerCase() + '.svg'; }
 
   /* Korean particles: 은/는, 이/가 depending on the final consonant of the last Hangul syllable. */
   function josa(word, withBatchim, without) {
@@ -185,6 +189,11 @@
     if (about && G.str[settings.lang].about_html) about.innerHTML = G.str[settings.lang].about_html;
   }
   function setLang(lang) {
+    // Each language has its own page (/play/<slug>/ and /ko/play/<slug>/): go to the other one, keeping the screen
+    if (FIXED && lang !== FIXED) {
+      var other = document.querySelector('[data-action="lang-toggle"]');
+      if (other) { location.href = other.getAttribute('href') + location.hash; return; }
+    }
     settings.lang = lang;
     saveSettings();
     applyLang();
@@ -241,7 +250,7 @@
   function preload(codes) {
     codes.forEach(function (code) {
       var img = new Image();
-      img.src = 'flags/' + code.toLowerCase() + '.svg';
+      img.src = BASE + 'flags/' + code.toLowerCase() + '.svg';
     });
   }
 
@@ -321,7 +330,7 @@
       '<div class="home">' +
       '<div class="side">' +
       '<section class="card">' +
-      '<div class="hero"><img src="favicon.svg" alt="" width="56" height="56"><h2 tabindex="-1" id="home-title">' + esc(t('mode')) + '</h2></div>' +
+      '<div class="hero"><img src="' + BASE + 'favicon.svg" alt="" width="56" height="56"><h2 tabindex="-1" id="home-title">' + esc(t('mode')) + '</h2></div>' +
       '<div class="modes" role="radiogroup" aria-label="' + esc(t('mode')) + '">' + modesHtml + '</div>' +
       '<div class="progress-box" aria-label="' + esc(t('progress')) + '">' +
       '<div class="bar-label"><span>' + esc(t('progress')) + '</span><span>' + esc(t('overall', { a: sum.stars, b: sum.maxStars })) + '</span></div>' +
@@ -668,7 +677,7 @@
       '<li><a href="' + (settings.lang === 'ko' ? '/ko/play/' : '/play/') + '">' + esc(t('games')) + ICON.chev + '</a></li>' +
       '<li><a href="' + (settings.lang === 'ko' ? '/ko/' : '/') + '">' + esc(t('studio')) + ICON.chev + '</a></li>' +
       '<li><a href="' + (settings.lang === 'ko' ? '/ko/privacy/' : '/privacy.html') + '">' + esc(t('privacy')) + ICON.chev + '</a></li>' +
-      '<li><a href="LICENSE-flags.txt">' + esc(t('flag_credit')) + ' (flag-icons, MIT)' + ICON.chev + '</a></li></ul>' +
+      '<li><a href="' + BASE + 'LICENSE-flags.txt">' + esc(t('flag_credit')) + ' (flag-icons, MIT)' + ICON.chev + '</a></li></ul>' +
       '<p class="credit">' + esc(t('saved_note')) + ' ' + esc(t('version')) + ' ' + esc(G.version) + '</p></section>' +
       '</div></div>' +
       '<dialog id="reset-dialog" aria-labelledby="reset-h"><h2 id="reset-h">' + esc(t('reset_title')) + '</h2><p>' + esc(t('reset_body')) + '</p>' +
