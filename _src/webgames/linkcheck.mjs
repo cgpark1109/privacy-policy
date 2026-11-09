@@ -18,8 +18,8 @@ const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn
   '/ko/', '/ko/play/', '/ko/privacy/', '/ko/#games', '/ko/history/', '/ko/news/', '/ko/about/', '/ko/support/', '/ko/terms/',
   '/assets/logo-256.png',
   // "More browser games" links to the other games and their icons
-  ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz', 'updraft', 'hilltop-roll', 'pass-or-splash', 'lantern-lights'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
-  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/', '/ko/play/hilltop-roll/', '/ko/play/pass-or-splash/', '/ko/play/lantern-lights/', '/play/lantern-lights/icon.png',
+  ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz', 'updraft', 'hilltop-roll', 'pass-or-splash', 'lantern-lights', 'pin-the-map'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
+  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/', '/ko/play/updraft/', '/ko/play/hilltop-roll/', '/ko/play/pass-or-splash/', '/ko/play/lantern-lights/', '/play/lantern-lights/icon.png', '/ko/play/pin-the-map/', '/play/pin-the-map/icon.png',
   '/play/updraft/icon.png', '/play/hilltop-roll/icon.png', '/play/pass-or-splash/icon.png']);
 const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);

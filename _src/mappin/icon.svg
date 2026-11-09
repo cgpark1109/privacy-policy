@@ -1,0 +1,13 @@
+<!-- Source of play/pin-the-map/icon.png, rendered at 192x192. -->
+<svg width="192" height="192" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" fill="#CFE5F6"/>
+  <g stroke="#fff" stroke-opacity=".6" stroke-width="2"><path d="M0 64H192M0 128H192M64 0V192M128 0V192"/></g>
+  <g fill="#FBF7EC" stroke="#8FB2D0" stroke-width="3" stroke-linejoin="round">
+    <path d="M14 46 Q30 30 58 34 Q78 38 74 58 Q70 74 56 80 Q50 96 60 112 Q66 128 56 140 Q46 150 40 138 Q34 120 30 104 Q22 94 18 78 Q8 64 14 46Z"/>
+    <path d="M96 40 Q120 26 150 32 Q178 38 182 58 Q186 76 166 84 Q150 90 144 104 Q138 122 120 126 Q104 128 100 112 Q98 98 106 88 Q94 80 92 66 Q90 50 96 40Z"/>
+    <path d="M136 146 Q150 138 166 144 Q176 152 168 162 Q154 170 140 164 Q130 156 136 146Z"/>
+  </g>
+  <ellipse cx="118" cy="104" rx="16" ry="5" fill="#2B3155" opacity=".2"/>
+  <path d="M118 104 L98 70 A26 26 0 1 1 138 70 Z" fill="#FF6B5B" stroke="#2B3155" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="118" cy="56" r="10" fill="#fff" stroke="#2B3155" stroke-width="4"/>
+</svg>
