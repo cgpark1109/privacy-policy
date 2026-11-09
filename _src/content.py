@@ -707,7 +707,7 @@ NEWS = [
         "date": "2026-11-09",
         "game": "history-timeline",
         "en": {"title": "New browser game: History Timeline",
-               "body": "Put 83 events from world and Korean history in order, from the Great Pyramid of Giza to the 2002 World Cup. Pick a deck, place each card on the timeline, and open a short reading about every event."},
+               "body": "Put 83 events from world and Korean history in order, from the Great Pyramid of Giza to the 2002 World Cup. Pick a deck, place each card on the timeline, and open a short reading (in Korean) about every event."},
         "ko": {"title": "새 브라우저 게임: 연표 맞추기",
                "body": "기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사와 한국사 사건 83개를 순서대로 연표에 놓아 보세요. 카드 묶음을 고르고, 사건마다 세계사 읽을거리로 바로 이동할 수 있어요."},
     },
@@ -2143,7 +2143,7 @@ PLAY_DETAILS = {
         "ko": "39개 레벨, 195개국 국기. 유명한 국기부터 차드와 루마니아 같은 닮은꼴까지, 국기를 보고 나라를 맞히거나 거꾸로 풀어 보세요.",
     },
     "history-timeline": {
-        "en": "83 events from the pyramids to 2002, in three decks: all of history, world history and Korean history. Three hearts, and a short reading for every event.",
+        "en": "83 events from the pyramids to 2002, in three decks: all of history, world history and Korean history. Three hearts, and a short reading (in Korean) for every event.",
         "ko": "피라미드부터 2002년까지 사건 83개, 역사 전체·세계사·한국사 세 가지 묶음. 하트 3개로 도전하고, 사건마다 읽을거리로 바로 갈 수 있어요.",
     },
     "capital-quiz": {

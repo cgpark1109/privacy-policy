@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-09",
-  "hash": "7eacd41a2ebf92a427704044affb7511be0e82cd"
+  "hash": "2a0becef89a8d7c08371aba45d00e3040d3d5e55"
  },
  "/about/": {
   "date": "2026-11-08",
@@ -489,7 +489,7 @@
  },
  "/news/": {
   "date": "2026-11-09",
-  "hash": "cace8b4ca0d997c41e7b5a5b032d0ee661a7066f"
+  "hash": "dbc3a829258372e74e87df7ad57d931a0e32db67"
  },
  "/news/archive/": {
   "date": "2026-11-09",
@@ -497,7 +497,7 @@
  },
  "/play/": {
   "date": "2026-11-09",
-  "hash": "559d367baf7c9b33a5ee263119751732c1f63ca1"
+  "hash": "689e5041a2c50543ec66591c937aa19ef712e32e"
  },
  "/play/capital-quiz/": {
   "date": "2026-11-07",
@@ -517,11 +517,11 @@
  },
  "/play/history-timeline/": {
   "date": "2026-11-09",
-  "hash": "c6339b4c5b75c5955772b5a49aef85811f2aba87"
+  "hash": "0e6328efeb856e4d6357e999ef77fafb439387e7"
  },
  "/play/history-timeline/all-events.html": {
   "date": "2026-11-09",
-  "hash": "4ccff8f82d111e2f777aa08b14446b9d8b9b8708"
+  "hash": "6194cfda729ed799b49e596937907c2903c1032e"
  },
  "/play/korean-word-quiz/": {
   "date": "2026-11-07",

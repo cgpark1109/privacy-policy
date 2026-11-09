@@ -19,7 +19,7 @@ ERA_EN = {"ancient": "Ancient", "medieval": "Medieval", "early-modern": "Early m
 TITLE = {"en": "History Timeline", "ko": "연표 맞추기"}
 DOC_TITLE = "History Timeline – Put world history events in order"
 DESC = ("Play History Timeline free in your browser: place {n} events from world and Korean history in order, "
-        "from the Great Pyramid to the 2002 World Cup. Three decks, three hearts, and a short reading for every event. "
+        "from the Great Pyramid to the 2002 World Cup. Three decks, three hearts, and a short reading (in Korean) for every event. "
         "In English and Korean.")
 OG_DESC = "Place {n} world history events in order, from the pyramids to 2002. Free in your browser, in English and Korean."
 LIST_TITLE = "All events – History Timeline"
@@ -46,8 +46,8 @@ ABOUT = {
            "<p>사건 {n}개는 세계사 읽을거리 연재에서 골랐어요. 기자의 대피라미드와 첫 고대 올림픽부터 베를린 장벽 붕괴와 "
            "2002년 한일 월드컵까지 담았어요. 카드를 놓은 뒤에는 그 사건을 다룬 글을 바로 읽을 수 있어요.</p>"
            "<ul><li>세 가지 카드 묶음: 역사 전체, 세계사, 한국사</li>"
-           "<li>하트 3개: 틀리면 하나가 줄고, 카드는 원래 자리로 옮겨져요</li>"
-           "<li>같은 해에 일어났거나 연도가 정확하지 않은 사건은 어느 순서로 놓아도 맞아요</li>"
+           "<li>하트 3개: 틀리면 하나가 줄고, 카드는 맞는 자리로 옮겨져요</li>"
+           "<li>같은 해에 일어났거나 연도가 정확하지 않아 시기가 겹치는 사건끼리는 어느 순서로 놓아도 맞아요</li>"
            "<li>게임이 끝나면 틀린 카드와 완성한 연표를 다시 볼 수 있어요</li>"
            "<li>영어·한국어, 라이트·다크 테마, 키보드 조작 지원</li></ul>"),
 }
