@@ -25,7 +25,7 @@ TEXT = {
         "title": "History Timeline",
         "lead": "Put world history in order, one event card at a time.",
         "description": "Play History Timeline free in your browser: place {n} events from world and Korean history in "
-                       "order, from the Great Pyramid to the 2002 World Cup. Three decks, three hearts, and a short "
+                       "order, from the Great Pyramid to the 2002 World Cup. A new daily challenge, three decks, three hearts, and a short "
                        "reading (in Korean) for every event.",
         "crumb_play": "Browser games",
         "noscript": "This game needs JavaScript. You can still browse all {n} events.",
@@ -44,7 +44,8 @@ TEXT = {
             "The {n} events come from our Korean world history reading series, from the Great Pyramid of Giza and the "
             "first Olympic Games to the fall of the Berlin Wall and the 2002 World Cup. After each card, you can open "
             "the article about that event."],
-        "about_list": ["Three decks: all of history, world history and Korean history",
+        "about_list": ["Today's timeline: the same 10 cards for everyone, new every day, with a result you can share",
+                       "Three decks: all of history, world history and Korean history",
                        "Three hearts: a wrong guess costs one, and the card moves to its correct place",
                        "Events from the same year, or whose uncertain dates overlap, can go either way round",
                        "Review your mistakes and your finished timeline at the end",
@@ -63,7 +64,7 @@ TEXT = {
         "title": "연표 맞추기",
         "lead": "세계사 사건 카드를 한 장씩, 일어난 순서대로 연표에 놓아 보세요.",
         "description": "브라우저에서 무료로 즐기는 연표 맞추기: 기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사와 "
-                       "한국사 사건 {n}개를 순서대로 놓아 보세요. 카드 묶음 세 가지, 하트 3개, 사건마다 읽을거리가 있어요.",
+                       "한국사 사건 {n}개를 순서대로 놓아 보세요. 매일 바뀌는 오늘의 연표와 카드 묶음 세 가지, 사건마다 읽을거리가 있어요.",
         "crumb_play": "브라우저 게임",
         "noscript": "이 게임은 자바스크립트가 필요해요. 전체 사건 {n}개는 따로 볼 수 있어요.",
         "how": "하는 방법",
@@ -80,7 +81,8 @@ TEXT = {
             "맞힐 때마다 1점을 얻고, 연표는 점점 길어져요.",
             "사건 {n}개는 세계사 읽을거리 연재에서 골랐어요. 기자의 대피라미드와 첫 고대 올림픽부터 베를린 장벽 붕괴와 "
             "2002년 한일 월드컵까지 담았어요. 카드를 놓은 뒤에는 그 사건을 다룬 글을 바로 읽을 수 있어요."],
-        "about_list": ["세 가지 카드 묶음: 역사 전체, 세계사, 한국사",
+        "about_list": ["오늘의 연표: 매일 바뀌는 카드 10장, 모두에게 같은 문제라 결과를 공유할 수 있어요",
+                       "세 가지 카드 묶음: 역사 전체, 세계사, 한국사",
                        "하트 3개: 틀리면 하나가 줄고, 카드는 맞는 자리로 옮겨져요",
                        "같은 해에 일어났거나 연도가 정확하지 않아 시기가 겹치는 사건끼리는 어느 순서로 놓아도 맞아요",
                        "게임이 끝나면 틀린 카드와 완성한 연표를 다시 볼 수 있어요",

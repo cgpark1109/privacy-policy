@@ -63,3 +63,10 @@ Saved in `localStorage` under `kys_flag_progress` / `kys_flag_settings` and `kys
 stars per level, as in the apps' `progress_service.dart`.
 
 Ads: none. The result screen has an empty, hidden `<div class="ad-slot" data-ad-slot="result" hidden>` hook for later.
+
+## Korean pages
+
+`build.mjs` also writes a Korean copy of each game's two pages to `ko/play/<slug>/` (index and list page). They
+load the same scripts, styles and flags from `play/<slug>/` (`data-base` on `<html>`), are always in Korean
+(`data-fixed-lang`), and the language button links to the other page instead of switching in place. Each page
+has `hreflang` links to its counterpart. Both copies are in the sitemap (`"ko_page": True` in `_src/content.py`).

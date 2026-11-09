@@ -8,7 +8,8 @@
   var TL = window.TL;
   var EVENTS = TL.events;
   var LIVES = 3;
-  var DECKS = ['all', 'world', 'korea'];
+  var DECKS = ['daily', 'all', 'world', 'korea'];
+  var DAILY_CARDS = 10;  // today's challenge: the same 10 cards for everyone, new every day
   var ARTICLE = '/ko/history/';
 
   /* ---------- storage (keys prefixed kys_timeline_; the site origin is shared by all games) ---------- */
@@ -22,7 +23,7 @@
   };
   var settings = store.get('settings') || {};
   settings.lang = document.documentElement.lang === 'ko' ? 'ko' : 'en';
-  if (DECKS.indexOf(settings.deck) < 0) settings.deck = 'all';
+  if (DECKS.indexOf(settings.deck) < 0) settings.deck = 'daily';
   var best = store.get('best') || {};
 
   /* ---------- text ---------- */
@@ -31,6 +32,8 @@
       deck: 'Choose a deck', deck_all: 'All of history', deck_all_desc: 'Every event, from the pyramids to 2002',
       deck_world: 'World history', deck_world_desc: 'Events from around the world',
       deck_korea: 'Korean history', deck_korea_desc: 'From Gojoseon to the 2002 World Cup',
+      deck_daily: "Today's timeline", deck_daily_desc: 'The same 10 cards for everyone, new every day',
+      daily_done: "Today's best: {n} of 9", share: 'Copy result', copied: 'Copied!', share_text: 'History Timeline, {d}: {n}/9 {h}',
       n_events: '{n} events', best: 'Best: {n}', start: 'Start',
       lives: 'Hearts', lives_left: '{n} of 3 hearts left', score: 'Score', cards_left: '{n} cards left', card_left: '1 card left',
       question: 'When did this happen?', place_hint: 'Choose a place on the timeline below.',
@@ -45,6 +48,8 @@
       deck: '카드 묶음 고르기', deck_all: '역사 전체', deck_all_desc: '피라미드부터 2002년까지 모든 사건',
       deck_world: '세계사', deck_world_desc: '세계 여러 지역의 사건',
       deck_korea: '한국사', deck_korea_desc: '고조선부터 2002년 월드컵까지',
+      deck_daily: '오늘의 연표', deck_daily_desc: '모두에게 같은 카드 10장, 매일 바뀌어요',
+      daily_done: '오늘의 최고 기록: 9장 중 {n}장', share: '결과 복사하기', copied: '복사했어요!', share_text: '연표 맞추기 {d}: {n}/9 {h}',
       n_events: '사건 {n}개', best: '최고 {n}점', start: '시작하기',
       lives: '하트', lives_left: '하트 3개 중 {n}개 남음', score: '점수', cards_left: '남은 카드 {n}장', card_left: '남은 카드 1장',
       question: '이 사건은 언제 일어났을까요?', place_hint: '아래 연표에서 들어갈 자리를 고르세요.',
@@ -67,7 +72,29 @@
   function label(ev) { return settings.lang === 'ko' ? ev.ko : ev.en; }
   function year(ev) { return settings.lang === 'ko' ? ev.ko_year : ev.en_year; }
   function mid(ev) { return (ev.lo + ev.hi) / 2; }
+  // Today's date in the visitor's time zone, and a random generator seeded with it
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function seeded(str) {
+    var h = 1779033703 ^ str.length;
+    for (var i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = h << 13 | h >>> 19; }
+    return function () {  // mulberry32
+      h = (h + 0x6D2B79F5) | 0;
+      var x = Math.imul(h ^ h >>> 15, 1 | h);
+      x = (x + Math.imul(x ^ x >>> 7, 61 | x)) ^ x;
+      return ((x ^ x >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function dailyEvents() {
+    var rnd = seeded('timeline-' + today()), a = EVENTS.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)); var x = a[i]; a[i] = a[j]; a[j] = x; }
+    return a.slice(0, DAILY_CARDS);
+  }
+  function bestKey(deck) { return deck === 'daily' ? 'daily-' + today() : deck; }
   function deckEvents(deck) {
+    if (deck === 'daily') return dailyEvents();
     return EVENTS.filter(function (ev) { return deck === 'all' || (deck === 'korea' ? ev.kr : !ev.kr); });
   }
   function shuffle(a) {
@@ -94,9 +121,9 @@
   /* ---------- state ---------- */
   var S = { screen: 'home' };
   function newGame() {
-    var deck = shuffle(deckEvents(settings.deck).slice());
-    S = { screen: 'play', deck: settings.deck, placed: [deck.shift()], queue: deck, current: null, lives: LIVES, score: 0,
-          mistakes: [], result: null, lastIndex: -1, newBest: false };
+    var deck = settings.deck === 'daily' ? dailyEvents() : shuffle(deckEvents(settings.deck).slice());
+    S = { screen: 'play', deck: settings.deck, day: today(), placed: [deck.shift()], queue: deck, current: null, lives: LIVES, score: 0,
+          mistakes: [], log: [], result: null, lastIndex: -1, newBest: false };
     S.current = S.queue.shift();
   }
   function place(i) {
@@ -107,6 +134,7 @@
     S.lastIndex = at;
     S.result = { ok: ok, ev: ev };
     if (ok) S.score++; else { S.lives--; S.mistakes.push(ev); }
+    S.log.push(ok);
     S.current = null;
     render();
     announce((ok ? t('correct') : t('wrong')) + ' ' + t('was_in', { x: label(ev), y: year(ev) }));
@@ -124,10 +152,16 @@
     var q = document.getElementById('question');
     if (q) q.focus();
   }
+  // keep only the last week of daily scores
+  function pruneDaily(b) {
+    var keys = Object.keys(b).filter(function (k) { return k.indexOf('daily-') === 0; }).sort();
+    keys.slice(0, Math.max(0, keys.length - 7)).forEach(function (k) { delete b[k]; });
+    return b;
+  }
   function finish() {
-    var prev = best[S.deck] || 0;
+    var key = S.deck === 'daily' ? 'daily-' + S.day : S.deck, prev = best[key] || 0;
     S.newBest = S.score > prev;
-    if (S.newBest) { best[S.deck] = S.score; store.set('best', best); }
+    if (S.newBest) { best[key] = S.score; store.set('best', pruneDaily(best)); }
     S.screen = 'end';
     render();
     var h = document.getElementById('end-title');
@@ -158,7 +192,7 @@
 
   function renderHome() {
     var decks = DECKS.map(function (d) {
-      var n = deckEvents(d).length, b = best[d];
+      var n = deckEvents(d).length, b = best[bestKey(d)];
       return '<button type="button" class="mode" role="radio" aria-checked="' + (settings.deck === d) + '" tabindex="' + (settings.deck === d ? 0 : -1) + '" data-deck="' + d + '">' +
         '<span class="dot"></span><span><span class="m-title">' + esc(t('deck_' + d)) + '</span><span class="m-desc">' +
         esc(t('deck_' + d + '_desc')) + ' · ' + esc(t('n_events', { n: n })) + '</span></span>' +
@@ -208,7 +242,8 @@
     return '<div class="tl-end"><div class="card result">' +
       '<h2 id="end-title" tabindex="-1">' + esc(win ? t('end_win') : t('end_title')) + '</h2>' +
       '<p class="big-score">' + S.score + '</p><p>' + esc(t(S.score === 1 ? 'end_score_1' : 'end_score', { n: S.score })) + '</p>' +
-      '<p>' + esc(S.newBest ? t('new_best') : t('best_is', { n: best[S.deck] || 0 })) + '</p>' +
+      '<p>' + esc(S.newBest ? t('new_best') : S.deck === 'daily' ? t('daily_done', { n: best['daily-' + S.day] || 0 }) : t('best_is', { n: best[S.deck] || 0 })) + '</p>' +
+      (S.deck === 'daily' && navigator.clipboard ? '<p><button type="button" class="btn ghost" data-action="share">' + esc(t('share')) + '</button></p>' : '') +
       '<div class="tl-actions"><button type="button" class="btn" data-action="start">' + esc(t('again')) + '</button>' +
       '<button type="button" class="btn ghost" data-action="home">' + esc(t('change_deck')) + '</button></div></div>' +
       '<div class="card"><h2>' + esc(t('mistakes')) + '</h2>' + mist + '</div>' +
@@ -250,6 +285,11 @@
     var act = el.getAttribute('data-action');
     if (act === 'start') { newGame(); render(); var q = document.getElementById('question'); if (q) q.focus(); scrollToApp(); }
     else if (act === 'next') next();
+    else if (act === 'share') {
+      var marks = S.log.map(function (ok) { return ok ? '🟩' : '🟥'; }).join('');
+      var text = t('share_text', { d: S.day, n: S.score, h: marks }) + '\n' + location.origin + location.pathname;
+      navigator.clipboard.writeText(text).then(function () { el.textContent = t('copied'); announce(t('copied')); }, function () {});
+    }
     else if (act === 'quit') finish();
     else if (act === 'home') { S = { screen: 'home' }; render(); var h = document.getElementById('deck-label'); if (h) h.focus(); scrollToApp(); }
   });

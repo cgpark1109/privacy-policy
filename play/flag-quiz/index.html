@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-game="flag">
+<html lang="en" data-game="flag" data-fixed-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,6 +7,9 @@
 <meta name="description" content="Play Flag Quiz free in your browser: guess the flags of all 195 countries across 39 levels, from famous flags to tricky look-alikes. Two quiz modes, stars to collect, in English and Korean.">
 <meta name="google-adsense-account" content="ca-pub-4148553154486992">
 <link rel="canonical" href="https://kysystemstudio.com/play/flag-quiz/">
+<link rel="alternate" hreflang="en" href="https://kysystemstudio.com/play/flag-quiz/">
+<link rel="alternate" hreflang="ko" href="https://kysystemstudio.com/ko/play/flag-quiz/">
+<link rel="alternate" hreflang="x-default" href="https://kysystemstudio.com/play/flag-quiz/">
 <meta name="theme-color" content="#1F5FC4">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
@@ -30,12 +33,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="style.css?v=bd2cfbac72">
-<script>(function(){try{var s=JSON.parse(localStorage.getItem('kys_flag_settings')||'{}');var d=document.documentElement;var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
 <script src="logic.js?v=c057f5aea6" defer></script>
 <script src="data.js?v=370c60b6e8" defer></script>
 <script src="game.js?v=afafdb5b6b" defer></script>
-<script src="app.js?v=307e4a0cc2" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Flag Quiz","url":"https://kysystemstudio.com/play/flag-quiz/","description":"Guess the flags of all 195 countries across 39 levels, from famous flags to tricky look-alikes. Free in your browser, in English and Korean.","applicationCategory":"GameApplication","operatingSystem":"Any","inLanguage":["en","ko"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"ggook's studio","url":"https://kysystemstudio.com/"}}</script>
+<script src="app.js?v=2c281a6276" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Flag Quiz","url":"https://kysystemstudio.com/play/flag-quiz/","description":"Guess the flags of all 195 countries across 39 levels, from famous flags to tricky look-alikes. Free in your browser, in English and Korean.","applicationCategory":"GameApplication","operatingSystem":"Any","inLanguage":"en","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"ggook's studio","url":"https://kysystemstudio.com/"}}</script>
 </head>
 <body data-page="game">
 <a class="skip-link" href="#main" data-t="skip">Skip to content</a>
@@ -43,7 +45,7 @@
   <div class="wrap">
     <a class="brand" href="/" data-href-ko="/ko/"><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
     <button class="menu-toggle" aria-label="Menu" data-t-attr="aria-label:menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-    <nav class="nav" id="nav"><a href="/#games" data-href-ko="/ko/#games" data-t="nav_games">Apps</a><a class="current" aria-current="page" href="/play/" data-href-ko="/ko/play/" data-t="nav_play">Browser games</a><a href="/learn/" data-t="nav_learn">Learn Hangul</a><a class="ko-only" href="/ko/history/" data-t="nav_history">세계사</a><a href="https://calc.kysystemstudio.com/" data-t="nav_calc">Calculators</a><a href="/news/" data-href-ko="/ko/news/" data-t="nav_news">News</a><a href="/about/" data-href-ko="/ko/about/" data-t="nav_about">About</a><a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a><button class="lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button></nav>
+    <nav class="nav" id="nav"><a href="/#games" data-href-ko="/ko/#games" data-t="nav_games">Apps</a><a class="current" aria-current="page" href="/play/" data-href-ko="/ko/play/" data-t="nav_play">Browser games</a><a href="/learn/" data-t="nav_learn">Learn Hangul</a><a class="ko-only" href="/ko/history/" data-t="nav_history">세계사</a><a href="https://calc.kysystemstudio.com/" data-t="nav_calc">Calculators</a><a href="/news/" data-href-ko="/ko/news/" data-t="nav_news">News</a><a href="/about/" data-href-ko="/ko/about/" data-t="nav_about">About</a><a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a><a class="lang" href="/ko/play/flag-quiz/" hreflang="ko" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></a></nav>
   </div>
 </header>
 <main id="main">
@@ -61,7 +63,7 @@
     </div></div>
   </div>
   <div class="wrap"><section id="about" class="card about"><h2>About Flag Quiz</h2><p>Flag Quiz is a free browser game for learning the flags of the world. It starts with 75 well-known flags in 15 levels and then tours the rest of the world, 39 levels and 195 countries in all, from familiar flags to rare ones.</p><p>Each level has 5 questions. Answer all 5 correctly for 3 stars; finishing a level unlocks the next one. In higher levels the wrong choices include flags that look alike, such as Chad and Romania or Indonesia and Monaco.</p><ul><li>Two modes: Flag → Country and Country → Flag, with separate progress</li><li>A 50:50 hint once per level</li><li>Review your mistakes after every level</li><li>Browse all flags with search and region filters</li><li>English and Korean, keyboard controls</li></ul></section></div>
-  <div class="wrap"><section class="card more-games"><div class="more-head"><h2 data-t="more_games">More browser games</h2><a href="/play/" data-href-ko="/ko/play/" data-t="all_games">All browser games</a></div><ul><li><a href="/play/hangul-quiz/"><img src="/play/hangul-quiz/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">Hangul Quiz</span><span class="lang-ko">한글 퀴즈 (영어)</span></b><small><span class="lang-en">Learn to read Korean, from single letters to whole words.</span><span class="lang-ko">한글 자모부터 단어 읽기까지, 외국인 학습자용 퀴즈예요.</span></small></span></a></li><li><a href="/play/history-timeline/" data-href-ko="/ko/play/history-timeline/"><img src="/play/history-timeline/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">History Timeline</span><span class="lang-ko">연표 맞추기</span></b><small><span class="lang-en">Put world history events in order, from the pyramids to 2002.</span><span class="lang-ko">피라미드부터 2002년까지, 세계사 사건을 순서대로 놓아 보세요.</span></small></span></a></li><li><a href="/play/capital-quiz/"><img src="/play/capital-quiz/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">Capital Quiz</span><span class="lang-ko">수도 퀴즈</span></b><small><span class="lang-en">Match 193 countries with their capital cities.</span><span class="lang-ko">193개국과 수도를 짝지어 보세요.</span></small></span></a></li></ul></section></div>
+  <div class="wrap"><section class="card more-games"><div class="more-head"><h2 data-t="more_games">More browser games</h2><a href="/play/" data-href-ko="/ko/play/" data-t="all_games">All browser games</a></div><ul><li><a href="/play/hangul-quiz/"><img src="/play/hangul-quiz/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">Hangul Quiz</span><span class="lang-ko">한글 퀴즈 (영어)</span></b><small><span class="lang-en">Learn to read Korean, from single letters to whole words.</span><span class="lang-ko">한글 자모부터 단어 읽기까지, 외국인 학습자용 퀴즈예요.</span></small></span></a></li><li><a href="/play/history-timeline/" data-href-ko="/ko/play/history-timeline/"><img src="/play/history-timeline/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">History Timeline</span><span class="lang-ko">연표 맞추기</span></b><small><span class="lang-en">Put world history events in order, from the pyramids to 2002.</span><span class="lang-ko">피라미드부터 2002년까지, 세계사 사건을 순서대로 놓아 보세요.</span></small></span></a></li><li><a href="/play/capital-quiz/" data-href-ko="/ko/play/capital-quiz/"><img src="/play/capital-quiz/apple-touch-icon.png" alt="" width="56" height="56" loading="lazy"><span><b><span class="lang-en">Capital Quiz</span><span class="lang-ko">수도 퀴즈</span></b><small><span class="lang-en">Match 193 countries with their capital cities.</span><span class="lang-ko">193개국과 수도를 짝지어 보세요.</span></small></span></a></li></ul></section></div>
 </main>
 <footer class="site-footer">
   <div class="wrap">

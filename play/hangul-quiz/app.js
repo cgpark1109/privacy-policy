@@ -130,6 +130,18 @@
     return h + '</span>';
   }
 
+  /* ---------- sounds ---------- */
+  // A single letter read aloud by speech synthesis gives its name (ㄱ: 기역), so letters are heard inside a
+  // syllable instead: a consonant with ㅏ (ㄱ: 가), a vowel after the silent ㅇ (ㅓ: 어).
+  var CHO = 'ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ', JUNG = 'ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ';
+  function syllable(c, v, end) { return String.fromCharCode(0xAC00 + (CHO.indexOf(c) * 21 + JUNG.indexOf(v)) * 28 + (end || 0)); }
+  function sample(letter) {
+    if (letter === 'ㅇ') return syllable('ㅇ', 'ㅏ') + ', ' + syllable('ㅇ', 'ㅏ', 21);  // 아, 앙: silent, then ng
+    if (CHO.indexOf(letter) >= 0) return syllable(letter, 'ㅏ');
+    if (JUNG.indexOf(letter) >= 0) return syllable('ㅇ', letter);
+    return letter;
+  }
+
   /* ---------- questions ---------- */
   function answerOf(stage, item) { return stage.kind === 'mean' ? item.m : item.r; }
   function makeQuestions(si) {
@@ -153,7 +165,7 @@
         return true;
       })).slice(0, 3);
       var choices = shuffle([item].concat(wrong)).map(key);
-      return { item: item, write: write, choices: choices, answer: key(item) };
+      return { item: item, write: write, choices: choices, answer: key(item), say: st.kind === 'letter' ? sample(item.k) : item.k };
     });
   }
 
@@ -186,8 +198,8 @@
   function prompt(q, st) {
     // ㄱ, ㄷ, ㅂ sound like k, t, p at the end of a syllable, so consonant questions are about the start
     var cons = st.items === CONSONANTS || st.items === TENSE;
-    if (q.write) return { ask: cons ? 'Which letter makes this sound at the start of a syllable?' : 'Which letter makes this sound?', big: q.item.r, latin: true };
-    if (st.kind === 'letter') return { ask: cons ? 'What sound does this letter make at the start of a syllable?' : 'What sound does this letter make?', big: q.item.k };
+    if (q.write) return { ask: cons ? 'Which letter makes this sound at the start of a syllable?' : 'Which letter makes this sound?', big: q.item.r, latin: true, say: q.say };
+    if (st.kind === 'letter') return { ask: cons ? 'What sound does this letter make at the start of a syllable?' : 'What sound does this letter make?', big: q.item.k, say: q.say };
     if (st.kind === 'mean') return { ask: 'What does this word mean?', big: q.item.k, say: q.item.k };
     return { ask: 'How do you read this?', big: q.item.k, say: q.item.k };
   }
@@ -215,6 +227,7 @@
         q.item.k + ' is romanized ' + q.item.r + '.';
       // a letter's note already says how it sounds, so it replaces the plain line
       var text = st.kind === 'letter' && q.item.n ? q.item.n : line + (q.item.n ? ' ' + q.item.n : '');
+      if (st.kind === 'letter') text += ' Hear it in ' + q.say + '.';
       fb = '<div class="hq-feedback ' + (ok ? 'ok' : 'bad') + '" id="hq-fb"><p class="verdict">' + (ok ? 'Correct!' : 'Not quite.') + '</p>' +
         '<p>' + esc(text) + '</p>' +
         '<button class="btn" id="hq-next" data-action="next">' + (S.i + 1 < S.qs.length ? 'Next' : 'See result') + '</button></div>';
@@ -286,7 +299,7 @@
     if (el.hasAttribute('data-choice')) return pick(+el.getAttribute('data-choice'));
     var a = el.getAttribute('data-action');
     if (a === 'next') next();
-    else if (a === 'say') speak(S.qs[S.i].item.k);
+    else if (a === 'say') speak(S.qs[S.i].say);
     else if (a === 'home') { S = { screen: 'home' }; render('hq-title'); scrollToApp(); }
   });
   document.addEventListener('keydown', function (e) {

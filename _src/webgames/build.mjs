@@ -140,20 +140,46 @@ const ICON_GEAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.14 1
 const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 const ICON_SEARCH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>';
 
+// The page being written: its language, and where its assets live. English pages use the game folder's files
+// by relative path; the Korean copies (/ko/play/<slug>/) point to the same files under /play/<slug>/.
+let PAGE = { lang: 'en', asset: '', other: '' };
+const pagePath = (game, lang, isList) => `${lang === 'ko' ? '/ko' : ''}/play/${game.slug}/${isList ? game.listPage : ''}`;
+// href attributes for a site link: Korean pages get the Korean address, and both are kept for app.js
+function hrefs(href, ko) {
+  if (!ko) return `href="${href}"`;
+  return PAGE.lang === 'ko' ? `href="${ko}" data-href-en="${href}" data-href-ko="${ko}"` : `href="${href}" data-href-ko="${ko}"`;
+}
+
+// Korean text for the site's header, footer and labels on the Korean pages (app.js uses the same words once it runs)
+const KO_LABELS = {
+  skip: '본문으로 건너뛰기', nav_games: '앱', nav_play: '브라우저 게임', nav_learn: '한글 가이드', nav_history: '세계사',
+  nav_calc: '계산기', nav_news: '소식', nav_about: '소개', nav_support: '지원', privacy: '개인정보처리방침', terms: '이용약관',
+  games: '브라우저 게임', calc_link: '계산만물상', contact: '문의', flag_credit: '국기 이미지', settings: '설정',
+  more_games: '다른 브라우저 게임', all_games: '브라우저 게임 전체 보기', search: '검색',
+};
+function localize(html) {
+  if (PAGE.lang !== 'ko') return html;
+  return html.replace(/(data-t="(\w+)"[^>]*>)([^<]*)</g, (m, open, key, text) => (KO_LABELS[key] ? `${open}${KO_LABELS[key]}<` : m))
+    .replace('aria-label="Menu"', 'aria-label="메뉴"');
+}
+
 function head(game, en, v, page) {
   const isList = page === 'list';
-  const url = `${SITE}/play/${game.slug}/${isList ? game.listPage : ''}`;
+  const url = SITE + pagePath(game, PAGE.lang, isList);
+  const A = PAGE.asset;
+  const alt = ['en', 'ko'].map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE}${pagePath(game, l, isList)}">`).join('\n') +
+    `\n<link rel="alternate" hreflang="x-default" href="${SITE}${pagePath(game, 'en', isList)}">`;
   const title = isList ? `${en.list_title} – ${en.title}` : en.doc_title;
   const desc = isList ? en.list_desc : en.description;
   const ogImage = `${SITE}/play/${game.slug}/og-image.png`;
   const ld = isList ? '' : `<script type="application/ld+json">${JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'WebApplication', name: en.title, url: `${SITE}/play/${game.slug}/`,
-    description: en.og_desc, applicationCategory: 'GameApplication', operatingSystem: 'Any', inLanguage: ['en', 'ko'],
+    '@context': 'https://schema.org', '@type': 'WebApplication', name: en.title, url,
+    description: en.og_desc, applicationCategory: 'GameApplication', operatingSystem: 'Any', inLanguage: PAGE.lang,
     isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     publisher: { '@type': 'Organization', name: "ggook's studio", url: `${SITE}/` },
   }).replace(/</g, '\\u003c')}</script>\n`;
   return `<!doctype html>
-<html lang="en" data-game="${game.id}">
+<html lang="${PAGE.lang}" data-game="${game.id}" data-fixed-lang="${PAGE.lang}"${A ? ` data-base="${A}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -161,6 +187,7 @@ function head(game, en, v, page) {
 <meta name="description" content="${esc(desc)}">
 <meta name="google-adsense-account" content="${ADSENSE}">
 <link rel="canonical" href="${url}">
+${alt}
 <meta name="theme-color" content="${game.themeColor}">
 <meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
@@ -172,23 +199,22 @@ function head(game, en, v, page) {
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${esc(en.title)}: ${esc(en.tagline)}">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale" content="${PAGE.lang === 'ko' ? 'ko_KR' : 'en_US'}">
+<meta property="og:locale:alternate" content="${PAGE.lang === 'ko' ? 'en_US' : 'ko_KR'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(isList ? en.list_desc : en.og_desc)}">
 <meta name="twitter:image" content="${ogImage}">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="${A}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${A}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Noto+Sans+KR:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=${v['style.css']}">
-<script>(function(){try{var s=JSON.parse(localStorage.getItem('${game.prefix}settings')||'{}');var d=document.documentElement;var l=s.lang||((navigator.languages&&navigator.languages[0])||navigator.language||'');if(String(l).toLowerCase().indexOf('ko')===0)d.lang='ko';}catch(e){}})();</script>
-<script src="logic.js?v=${v['logic.js']}" defer></script>
-<script src="data.js?v=${v['data.js']}" defer></script>
-<script src="game.js?v=${v['game.js']}" defer></script>
-<script src="app.js?v=${v['app.js']}" defer></script>
+<link rel="stylesheet" href="${A}style.css?v=${v['style.css']}">
+<script src="${A}logic.js?v=${v['logic.js']}" defer></script>
+<script src="${A}data.js?v=${v['data.js']}" defer></script>
+<script src="${A}game.js?v=${v['game.js']}" defer></script>
+<script src="${A}app.js?v=${v['app.js']}" defer></script>
 ${ld}</head>`;
 }
 
@@ -199,11 +225,12 @@ const LINKS = { calc: 'https://calc.kysystemstudio.com/', email: 'admin@kysystem
 const ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 function header() {
   const link = (href, ko, key, label, cls = '') =>
-    `<a${cls ? ` class="${cls}"` : ''}${cls === 'current' ? ' aria-current="page"' : ''} href="${href}"${ko ? ` data-href-ko="${ko}"` : ''} data-t="${key}">${label}</a>`;
+    `<a${cls ? ` class="${cls}"` : ''}${cls === 'current' ? ' aria-current="page"' : ''} ${hrefs(href, ko)} data-t="${key}">${label}</a>`;
+  const ko = PAGE.lang === 'ko';
   return `<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/" data-href-ko="/ko/"><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
+    <a class="brand" ${hrefs('/', '/ko/')}><img src="/assets/logo-256.png" alt="" width="34" height="34">ggook's studio</a>
     <button class="menu-toggle" aria-label="Menu" data-t-attr="aria-label:menu" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">${ICON_MENU}</button>
     <nav class="nav" id="nav">${[
       link('/#games', '/ko/#games', 'nav_games', 'Apps'),
@@ -214,7 +241,7 @@ function header() {
       link('/news/', '/ko/news/', 'nav_news', 'News'),
       link('/about/', '/ko/about/', 'nav_about', 'About'),
       link('/support/', '/ko/support/', 'nav_support', 'Support'),
-    ].join('')}<button class="lang" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="한국어로 보기"><span data-t="lang_switch">한국어</span></button></nav>
+    ].join('')}<a class="lang" href="${PAGE.other}" hreflang="${ko ? 'en' : 'ko'}" data-action="lang-toggle" data-t-attr="aria-label:lang_switch_label" aria-label="${ko ? 'View in English' : '한국어로 보기'}"><span data-t="lang_switch">${ko ? 'English' : '한국어'}</span></a></nav>
   </div>
 </header>`;
 }
@@ -223,17 +250,17 @@ function footer() {
   return `<footer class="site-footer">
   <div class="wrap">
     <nav aria-label="Site">
-      <a href="/privacy.html" data-href-ko="/ko/privacy/" data-t="privacy">Privacy Policy</a>
-      <a href="/terms/" data-href-ko="/ko/terms/" data-t="terms">Terms of Service</a>
-      <a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a>
+      <a ${hrefs('/privacy.html', '/ko/privacy/')} data-t="privacy">Privacy Policy</a>
+      <a ${hrefs('/terms/', '/ko/terms/')} data-t="terms">Terms of Service</a>
+      <a ${hrefs('/play/', '/ko/play/')} data-t="games">Browser games</a>
       <a href="${LINKS.calc}" data-t="calc_link">Calculators</a>
-      <a href="/support/" data-href-ko="/ko/support/" data-t="nav_support">Support</a>
+      <a ${hrefs('/support/', '/ko/support/')} data-t="nav_support">Support</a>
       <a href="mailto:${LINKS.email}" data-t="contact">Contact</a>
       <a href="${LINKS.youtube}" target="_blank" rel="noopener">YouTube</a>
       <a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram</a>
     </nav>
     <p>© 2026 ggook's studio. <span data-t="rights">All rights reserved.</span></p>
-    <p class="credit"><a href="LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a></p>
+    <p class="credit"><a href="${PAGE.asset}LICENSE-flags.txt"><span data-t="flag_credit">Flag images</span>: flag-icons (MIT)</a></p>
   </div>
 </footer>
 <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
@@ -247,18 +274,18 @@ const BROWSER_GAMES = [
   { slug: 'history-timeline', en: 'History Timeline', ko: '연표 맞추기', ko_href: '/ko/play/history-timeline/',
     icon: '/play/history-timeline/apple-touch-icon.png',
     desc_en: 'Put world history events in order, from the pyramids to 2002.', desc_ko: '피라미드부터 2002년까지, 세계사 사건을 순서대로 놓아 보세요.' },
-  { slug: 'flag-quiz', en: 'Flag Quiz', ko: '국기 퀴즈', icon: '/play/flag-quiz/apple-touch-icon.png',
+  { slug: 'flag-quiz', en: 'Flag Quiz', ko: '국기 퀴즈', ko_href: '/ko/play/flag-quiz/', icon: '/play/flag-quiz/apple-touch-icon.png',
     desc_en: 'Guess the flags of all 195 countries.', desc_ko: '세계 195개국 국기를 맞혀 보세요.' },
-  { slug: 'capital-quiz', en: 'Capital Quiz', ko: '수도 퀴즈', icon: '/play/capital-quiz/apple-touch-icon.png',
+  { slug: 'capital-quiz', en: 'Capital Quiz', ko: '수도 퀴즈', ko_href: '/ko/play/capital-quiz/', icon: '/play/capital-quiz/apple-touch-icon.png',
     desc_en: 'Match 193 countries with their capital cities.', desc_ko: '193개국과 수도를 짝지어 보세요.' },
 ];
 function moreGames(game) {
   const items = BROWSER_GAMES.filter((g) => g.slug !== game.slug).map((g) =>
-    `<li><a href="/play/${g.slug}/"${g.ko_href ? ` data-href-ko="${g.ko_href}"` : ''}><img src="${g.icon}" alt="" width="56" height="56" loading="lazy">` +
+    `<li><a ${hrefs(`/play/${g.slug}/`, g.ko_href)}><img src="${g.icon}" alt="" width="56" height="56" loading="lazy">` +
     `<span><b><span class="lang-en">${esc(g.en)}</span><span class="lang-ko">${esc(g.ko)}</span></b>` +
     `<small><span class="lang-en">${esc(g.desc_en)}</span><span class="lang-ko">${esc(g.desc_ko)}</span></small></span></a></li>`).join('');
   return `  <div class="wrap"><section class="card more-games"><div class="more-head"><h2 data-t="more_games">More browser games</h2>` +
-    `<a href="/play/" data-href-ko="/ko/play/" data-t="all_games">All browser games</a></div><ul>${items}</ul></section></div>`;
+    `<a ${hrefs('/play/', '/ko/play/')} data-t="all_games">All browser games</a></div><ul>${items}</ul></section></div>`;
 }
 
 function indexHtml(game, en, v) {
@@ -267,7 +294,7 @@ function indexHtml(game, en, v) {
 ${header()}
 <main id="main">
   <div class="wrap game-head">
-    <div class="game-bar"><nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><span data-t="title">${esc(en.title)}</span></nav>
+    <div class="game-bar"><nav class="crumbs" aria-label="Breadcrumb"><a ${hrefs('/play/', '/ko/play/')} data-t="games">Browser games</a><span aria-hidden="true">›</span><span data-t="title">${esc(en.title)}</span></nav>
     <a class="tool-link" href="#/settings">${ICON_GEAR}<span data-t="settings">Settings</span></a></div>
     <h1 data-t="title">${esc(en.title)}</h1>
     <p class="lead" data-t="tagline">${esc(en.tagline)}</p>
@@ -309,7 +336,7 @@ function listHtml(game, en, ko, entries, v) {
     }
     const lvl = e[game.levelField];
     return `<li id="${lc}" data-en="${esc(e.name.en)}" data-ko="${esc(e.name.ko)}" data-region="${e.region}" data-search="${esc(search.join(' '))}"><article class="entry">
-<div class="eflag"><img src="flags/${lc}.svg" alt="Flag of ${esc(e.name.en)}" loading="lazy" width="84" height="63"></div>
+<div class="eflag"><img src="${PAGE.asset}flags/${lc}.svg" alt="${PAGE.lang === 'ko' ? `${esc(e.name.ko)} 국기` : `Flag of ${esc(e.name.en)}`}" loading="lazy" width="84" height="63"></div>
 <div class="ebody"><h2><span class="n-en" lang="en">${esc(e.name.en)}</span><span class="n-ko" lang="ko">${esc(e.name.ko)}</span></h2>${extra}
 <p class="meta"><span class="lang-en">${r[1]} · Level ${lvl}</span><span class="lang-ko">${r[2]} · 레벨 ${lvl}</span></p></div>
 </article></li>`;
@@ -321,7 +348,7 @@ function listHtml(game, en, ko, entries, v) {
 ${header()}
 <main id="main">
   <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/play/" data-href-ko="/ko/play/" data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a ${hrefs('/play/', '/ko/play/')} data-t="games">Browser games</a><span aria-hidden="true">›</span><a href="./" data-t="title">${esc(en.title)}</a></nav>
     <div class="list-head">
       <h1 data-t="list_title">${esc(en.list_title)}</h1>
       <p class="lang-en">${esc(en.list_lead)}</p><p class="lang-ko">${esc(ko.list_lead)}</p>
@@ -386,8 +413,20 @@ for (const game of GAMES) {
   files['game.js'] = '/* Generated by _src/webgames/build.mjs (settings and text from games.mjs). Do not edit. */\nwindow.GAME=' + JSON.stringify(cfg, null, 1) + ';\n';
   for (const f of ['app.js', 'logic.js', 'style.css']) files[f] = fs.readFileSync(path.join(HERE, 'shared', f), 'utf8');
   const v = Object.fromEntries(Object.entries(files).map(([k, s]) => [k, hash(s)]));
-  files['index.html'] = indexHtml(game, str.en, v);
-  files[game.listPage] = listHtml(game, str.en, str.ko, entries, v);
+  // English pages (in the game folder) and Korean copies at /ko/play/<slug>/ (written below)
+  const pages = {};
+  for (const lang of ['en', 'ko']) {
+    for (const isList of [false, true]) {
+      PAGE = { lang, asset: lang === 'ko' ? `/play/${game.slug}/` : '', other: pagePath(game, lang === 'ko' ? 'en' : 'ko', isList) };
+      const f = isList ? game.listPage : 'index.html';
+      pages[lang + '/' + f] = localize(isList ? listHtml(game, str[lang], str.ko, entries, v) : indexHtml(game, str[lang], v));
+    }
+  }
+  files['index.html'] = pages['en/index.html'];
+  files[game.listPage] = pages['en/' + game.listPage];
+  const koDir = path.join(ROOT, 'ko', 'play', game.slug);
+  write(path.join(koDir, 'index.html'), pages['ko/index.html']);
+  write(path.join(koDir, game.listPage), pages['ko/' + game.listPage]);
   files['favicon.svg'] = favicon(game);
   files['LICENSE-flags.txt'] = FLAG_LICENSE;
   for (const [f, s] of Object.entries(files)) write(path.join(dir, f), s);

@@ -19,7 +19,7 @@ const ALLOWED_ROOT = new Set(['/', '/play/', '/privacy.html', '/#games', '/learn
   '/assets/logo-256.png',
   // "More browser games" links to the other games and their icons
   ...['hangul-quiz', 'history-timeline', 'flag-quiz', 'capital-quiz'].flatMap((g) => [`/play/${g}/`, `/play/${g}/apple-touch-icon.png`]),
-  '/ko/play/history-timeline/']);
+  '/ko/play/history-timeline/', '/ko/play/flag-quiz/', '/ko/play/capital-quiz/']);
 const ALLOWED_EXTERNAL = new Set(['https://calc.kysystemstudio.com/', 'https://www.youtube.com/@ggooksstudio',
   'https://www.instagram.com/ggooksstudio/']);
 const ADSENSE_TAG = '<meta name="google-adsense-account" content="ca-pub-4148553154486992">';
@@ -64,7 +64,8 @@ function jsRelPaths(js) {
 
 for (const [slug, listPage] of GAMES) {
   const gameBase = `${BASE}/play/${slug}/`;
-  const pages = ['', listPage];
+  // English pages in the game folder, Korean copies under /ko/play/<slug>/ that use the same files
+  const pages = ['', listPage, `ko:`, `ko:${listPage}`];
   const local = path.join(ROOT, 'play', slug);
   const ctx = { window: {} };
   vm.runInNewContext(fs.readFileSync(path.join(local, 'data.js'), 'utf8'), ctx);
@@ -72,18 +73,20 @@ for (const [slug, listPage] of GAMES) {
   const data = ctx.window.COUNTRIES;
   const assets = new Set();
   for (const page of pages) {
-    const url = gameBase + page;
+    const ko = page.startsWith('ko:');
+    const file = ko ? page.slice(3) : page;
+    const url = ko ? `${BASE}/ko/play/${slug}/${file}` : gameBase + page;
     const r = await mustGet(url, 'start');
     if (!r.body) continue;
     const html = r.body.toString('utf8');
-    const name = `${slug}/${page || 'index.html'}`;
+    const name = `${ko ? 'ko/' : ''}${slug}/${file || 'index.html'}`;
     // head checks
     const count = html.split(ADSENSE_TAG).length - 1;
     if (count !== 1) fail(`${name}: AdSense account tag found ${count} times`);
     if (/adsbygoogle|pagead2|googlesyndication/.test(html)) fail(`${name}: contains ad script code`);
     if (/<script[^>]+src="(https?:)?\/\//.test(html)) fail(`${name}: loads JS from another origin`);
     const canonical = (html.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
-    const expectCanon = `${SITE}/play/${slug}/${page}`;
+    const expectCanon = `${SITE}${ko ? '/ko' : ''}/play/${slug}/${file}`;
     if (canonical !== expectCanon) fail(`${name}: canonical ${canonical} (expected ${expectCanon})`);
     const og = (html.match(/<meta property="og:image" content="([^"]+)"/) || [])[1] || '';
     if (!og.startsWith(`${SITE}/play/${slug}/`)) fail(`${name}: og:image ${og}`);
@@ -92,22 +95,23 @@ for (const [slug, listPage] of GAMES) {
       if (!new RegExp(`(property|name)="${k}"`).test(html)) fail(`${name}: missing ${k}`);
     }
     if (!/<title>[^<]+<\/title>/.test(html) || !/<meta name="description" content="[^"]+">/.test(html)) fail(`${name}: title/description`);
-    if (!/<link rel="icon" href="favicon\.svg"/.test(html)) fail(`${name}: favicon`);
+    if (!new RegExp(`<link rel="icon" href="${ko ? `/play/${slug}/` : ""}favicon\\.svg"`).test(html)) fail(`${name}: favicon`);
     // references
     for (const ref of htmlRefs(html)) {
       if (/^https?:\/\//.test(ref)) {
         if (ref === canonical) { await mustGet(BASE + ref.slice(SITE.length), `${name} canonical`); continue; }
+        if (ref.startsWith(SITE + '/play/') || ref.startsWith(SITE + '/ko/play/')) { await mustGet(BASE + ref.slice(SITE.length), `${name} hreflang`); continue; }
         if (!ALLOWED_EXTERNAL.has(ref) && !/^https:\/\/fonts\.(googleapis|gstatic)\.com(\/|$)/.test(ref)) fail(`${name}: external reference ${ref}`);
         continue;
       }
       if (ref.startsWith('#') || ref.startsWith('mailto:')) continue;
       if (ref.startsWith('/')) {
-        if (!ALLOWED_ROOT.has(ref)) fail(`${name}: root-absolute path ${ref}`);
+        if (!ALLOWED_ROOT.has(ref) && !ref.startsWith(`/play/${slug}/`) && !ref.startsWith(`/ko/play/${slug}/`)) fail(`${name}: root-absolute path ${ref}`);
         await mustGet(BASE + ref, name);
         continue;
       }
       const abs = new URL(ref, url).href;
-      if (!abs.startsWith(gameBase)) fail(`${name}: relative path leaves the game folder: ${ref}`);
+      if (!abs.startsWith(gameBase) && !abs.startsWith(`${BASE}/ko/play/${slug}/`)) fail(`${name}: relative path leaves the game folder: ${ref}`);
       assets.add(abs.split('?')[0]);
       await mustGet(abs, name);
     }
