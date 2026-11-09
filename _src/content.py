@@ -514,6 +514,33 @@ WEB_GAMES = [
 # Newest first. Set "draft": True to keep an entry off the site until it's true.
 NEWS = [
     {
+        "date": "2027-01-27",
+        "game": None,
+        "link": {"href": "/learn/convenience-store/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: at a Korean convenience store",
+               "body": "Words on the shelves, 1+1 deals, heating food in the microwave, and the questions you'll hear at the counter about bags, receipts and points cards."},
+        "ko": {"title": "새 한글 가이드: 편의점에서",
+               "body": "편의점 진열대의 단어, 1+1 행사, 전자레인지 쓰기, 계산할 때 듣는 봉투·영수증·포인트 카드 질문을 정리했습니다."},
+    },
+    {
+        "date": "2027-01-24",
+        "game": None,
+        "link": {"href": "/learn/korean-counters/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: counting things in Korean",
+               "body": "The pattern noun + number + counter, the counters for things, people, animals, cups, bottles, books and tickets, counters with Sino-Korean numbers, and asking how many with 몇."},
+        "ko": {"title": "새 한글 가이드: 단위 명사(개, 명, 잔, 병)",
+               "body": "'명사 + 수 + 단위' 문형, 개·명·분·마리·잔·병·권·장·대·살, 한자어 수를 쓰는 단위, 몇으로 묻는 법을 정리했습니다."},
+    },
+    {
+        "date": "2027-01-21",
+        "game": None,
+        "link": {"href": "/learn/asking-for-help/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
+        "en": {"title": "New guide: asking someone to do something",
+               "body": "-아/어 주세요 for favors, -(으)세요 for instructions and invitations, softening with 좀, extra-polite -아/어 주시겠어요?, -지 마세요 and the casual -아/어 줘."},
+        "ko": {"title": "새 한글 가이드: 부탁하는 표현",
+               "body": "-아/어 주세요로 부탁하기, -(으)세요로 권하기, 좀, 더 공손한 -아/어 주시겠어요?, -지 마세요, 반말 -아/어 줘를 정리했습니다."},
+    },
+    {
         "date": "2027-01-18",
         "game": None,
         "link": {"href": "/learn/visiting-a-korean-home/", "en": "Read the guide", "ko": "가이드 보기 (영어)"},
