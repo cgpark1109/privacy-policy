@@ -599,6 +599,23 @@ def article_card(a, lang="en", base="/learn/", article_lang="en"):
   <span class="meta">{e(read_time.format(n=a['minutes']))}</span></a>"""
 
 
+# Guides that teach what a Hangul Quiz stage tests: guide slug -> stage numbers (1-based, see HQ_STAGES)
+QUIZ_STAGES = {"korean-vowels": [1, 4], "korean-consonants": [2], "plain-aspirated-tense": [3],
+               "how-hangul-works": [5], "batchim": [6], "two-week-plan": [7]}
+
+
+def quiz_cta(slug):
+    """'Test yourself' card under a Hangul guide, linking straight to the matching Hangul Quiz stage(s)."""
+    stages = QUIZ_STAGES.get(slug)
+    if not stages:
+        return ""
+    t = UI["en"]
+    buttons = "".join(f'<a class="btn" href="/play/hangul-quiz/#stage-{n}">{e(t["quiz_cta_stage"].format(n=n, name=HQ_STAGES[n - 1][0]))} →</a>'
+                      for n in stages)
+    return (f'<section class="section container"><div class="card prose guide quiz-cta"><h2>{e(t["quiz_cta_title"])}</h2>'
+            f'<p>{e(t["quiz_cta_text"])}</p><div class="hero-actions" style="margin-top:14px">{buttons}</div></div></section>\n')
+
+
 def learn_apps():
     """'Practice with our apps' links under the guides: the Hangul Quiz browser game and the two Korean learning apps."""
     t = UI["en"]
@@ -664,7 +681,7 @@ def build_learn():
 {a['body']}
 </article></section>
 <section class="section container"><nav class="pager">{pager}</nav></section>
-{related_section(t["related_learn"], chr(10).join(article_card(x) for x in related([x for x in ARTICLES if x["topic"] == a["topic"]], a)))}
+{quiz_cta(a["slug"])}{related_section(t["related_learn"], chr(10).join(article_card(x) for x in related([x for x in ARTICLES if x["topic"] == a["topic"]], a)))}
 <section class="section container">{learn_apps()}</section>"""
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"],
               "description": a["description"], "inLanguage": "en",
@@ -852,7 +869,14 @@ def build_404():
     t = UI["en"]
     body = f"""<section class="container" style="text-align:center"><h1 class="page-title">{e(t['not_found_title'])}</h1>
 <p class="page-lead">{e(t['not_found_text'])} / {e(UI['ko']['not_found_text'])}</p>
-<p style="margin-top:22px"><a class="btn light" href="/">{e(t['back_home'])}</a> <a class="btn light" href="/ko/">{e(UI['ko']['back_home'])}</a></p></section>"""
+<p style="margin-top:22px"><a class="btn light" href="/">{e(t['back_home'])}</a> <a class="btn light" href="/ko/">{e(UI['ko']['back_home'])}</a></p></section>
+<section class="section container"><div class="section-head"><h2>{e(t['not_found_try'])} · {e(UI['ko']['not_found_try'])}</h2></div>
+<div class="guide-list">
+  <a class="card guide-card" href="/play/"><span class="title">{e(t['play_title'])}</span><span class="desc">{e(t['not_found_play'])}</span></a>
+  <a class="card guide-card" href="/learn/"><span class="title">{e(t['nav_learn'])}</span><span class="desc">{e(t['not_found_learn'])}</span></a>
+  <a class="card guide-card" href="/ko/history/" lang="ko"><span class="title">{e(UI['ko']['history_title'])}</span><span class="desc">{e(UI['ko']['not_found_history'])}</span></a>
+  <a class="card guide-card" href="/ko/play/" lang="ko"><span class="title">{e(UI['ko']['play_title'])}</span><span class="desc">{e(UI['ko']['not_found_play'])}</span></a>
+</div></section>"""
     page("en", "404.html", t["not_found_title"], t["not_found_text"], body, translated=False)
 
 

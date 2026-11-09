@@ -295,5 +295,12 @@
     else if (e.key === 'Enter' && S.picked != null && !(e.target.closest && e.target.closest('button'))) { e.preventDefault(); next(); }
   });
 
-  render();
+  // Links from the guides open a stage directly: /play/hangul-quiz/#stage-3 (locked or not, for practice)
+  var m = /^#stage-([1-8])$/.exec(location.hash);
+  if (m) {
+    if (history.replaceState) history.replaceState(null, '', location.pathname);
+    start(+m[1] - 1);
+  } else {
+    render();
+  }
 })();

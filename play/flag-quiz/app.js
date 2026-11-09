@@ -47,7 +47,7 @@
   /* ---------- text ---------- */
   var COMMON = {
     en: {
-      skip: 'Skip to content', settings: 'Settings', studio: "ggook's studio", games: 'Play in your browser', privacy: 'Privacy Policy',
+      skip: 'Skip to content', settings: 'Settings', studio: "ggook's studio", games: 'Browser games', privacy: 'Privacy Policy',
       nav_games: 'Apps', nav_play: 'Browser games', nav_learn: 'Learn Hangul', nav_history: '세계사', nav_calc: 'Calculators', nav_news: 'News', nav_about: 'About', nav_support: 'Support',
       more_games: 'More browser games', all_games: 'All browser games', menu: 'Menu', terms: 'Terms of Service', calc_link: 'Calculators', contact: 'Contact', rights: 'All rights reserved.',
       flag_credit: 'Flag images', lang_switch: '한국어', lang_switch_label: '한국어로 보기',
@@ -74,7 +74,7 @@
       r_africa: 'Africa', 'r_asia': 'Asia', 'r_europe': 'Europe', 'r_north-america': 'North America', 'r_south-america': 'South America', r_oceania: 'Oceania',
     },
     ko: {
-      skip: '본문으로 건너뛰기', settings: '설정', studio: 'ggook\'s studio', games: '브라우저에서 바로 하기', privacy: '개인정보처리방침',
+      skip: '본문으로 건너뛰기', settings: '설정', studio: 'ggook\'s studio', games: '브라우저 게임', privacy: '개인정보처리방침',
       nav_games: '앱', nav_play: '브라우저 게임', nav_learn: '한글 가이드', nav_history: '세계사', nav_calc: '계산기', nav_news: '소식', nav_about: '소개', nav_support: '지원',
       more_games: '다른 브라우저 게임', all_games: '브라우저 게임 전체 보기', menu: '메뉴', terms: '이용약관', calc_link: '계산만물상', contact: '문의', rights: 'All rights reserved.',
       flag_credit: '국기 이미지', lang_switch: 'English', lang_switch_label: 'View in English',

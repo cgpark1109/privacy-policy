@@ -27,7 +27,7 @@ TEXT = {
         "description": "Play History Timeline free in your browser: place {n} events from world and Korean history in "
                        "order, from the Great Pyramid to the 2002 World Cup. Three decks, three hearts, and a short "
                        "reading (in Korean) for every event.",
-        "crumb_play": "Play in your browser",
+        "crumb_play": "Browser games",
         "noscript": "This game needs JavaScript. You can still browse all {n} events.",
         "how": "How to play",
         "how_steps": ["One event is already on the timeline. Each new card shows another event, without its date.",
@@ -64,7 +64,7 @@ TEXT = {
         "lead": "세계사 사건 카드를 한 장씩, 일어난 순서대로 연표에 놓아 보세요.",
         "description": "브라우저에서 무료로 즐기는 연표 맞추기: 기자의 대피라미드부터 2002년 한일 월드컵까지, 세계사와 "
                        "한국사 사건 {n}개를 순서대로 놓아 보세요. 카드 묶음 세 가지, 하트 3개, 사건마다 읽을거리가 있어요.",
-        "crumb_play": "브라우저에서 바로 하기",
+        "crumb_play": "브라우저 게임",
         "noscript": "이 게임은 자바스크립트가 필요해요. 전체 사건 {n}개는 따로 볼 수 있어요.",
         "how": "하는 방법",
         "how_steps": ["연표에 사건 하나가 먼저 놓여 있어요. 새 카드에는 연도 없이 다른 사건이 나와요.",
