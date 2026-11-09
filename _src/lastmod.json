@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-09",
-  "hash": "317256a0b711c080043ace4b3043a8471e5fc89a"
+  "date": "2026-11-10",
+  "hash": "8150b6046f99952dd7fe693787d123893825f178"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -408,12 +408,12 @@
   "hash": "d542ee6378ea3b358658cf1ad8a006aa0fc8bac6"
  },
  "/ko/news/": {
-  "date": "2026-11-09",
-  "hash": "53bf4039463de467413dff336b5bcd709f6fdcae"
+  "date": "2026-11-10",
+  "hash": "e484433c9a4e6bcaa9984465f1aa7cf109582164"
  },
  "/ko/news/archive/": {
-  "date": "2026-11-09",
-  "hash": "828db4e4cd3d4a5373bf634122502295d173a8c5"
+  "date": "2026-11-10",
+  "hash": "1563e2172914b0b453291f17b922abbca17d8ba9"
  },
  "/ko/play/": {
   "date": "2026-11-09",
@@ -476,8 +476,8 @@
   "hash": "5c883dd9e52c509889e5e31520caed0b9c313633"
  },
  "/learn/": {
-  "date": "2026-11-09",
-  "hash": "1c172817ae91d52925964028b09c673cf16450b0"
+  "date": "2026-11-10",
+  "hash": "3a2294a01df280c31a7d29636e540d31f1f370ac"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
@@ -486,6 +486,10 @@
  "/learn/days-and-dates/": {
   "date": "2026-11-09",
   "hash": "0e0fdeca66eb1d8228514e7a4fbd66ed2c0efcfd"
+ },
+ "/learn/getting-around/": {
+  "date": "2026-11-10",
+  "hash": "a5947c8ef72204e54733dfa919208a264b3abad1"
  },
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
@@ -500,8 +504,8 @@
   "hash": "5831a8c6e77f4824332ebebb4e04e46662e1f607"
  },
  "/learn/korean-greetings/": {
-  "date": "2026-11-09",
-  "hash": "10fc3b773b10a6c77ae76519082a8cd5cdd4a99b"
+  "date": "2026-11-10",
+  "hash": "ff30fa6ba2104193e3613e63a70c1d0aaabf0890"
  },
  "/learn/korean-numbers/": {
   "date": "2026-11-09",
@@ -516,8 +520,8 @@
   "hash": "fffebd02997d70661095fcb393e8ce48d591a6b6"
  },
  "/learn/ordering-at-a-restaurant/": {
-  "date": "2026-11-09",
-  "hash": "603f4f6c7d9564fc8a2a098fffef552e043f5ce8"
+  "date": "2026-11-10",
+  "hash": "b7850f962e2b7635da253c7fbe00eb614163a14a"
  },
  "/learn/plain-aspirated-tense/": {
   "date": "2026-11-09",
@@ -532,12 +536,12 @@
   "hash": "282a04d77b0b78b41f2112eefc3008b9967d0e66"
  },
  "/news/": {
-  "date": "2026-11-09",
-  "hash": "849fb78064c6ec713f294e2860703f34beaf43b0"
+  "date": "2026-11-10",
+  "hash": "1b0797e5e7ee7edb87e6ddcea0ee99d2a8591bd4"
  },
  "/news/archive/": {
-  "date": "2026-11-09",
-  "hash": "b0f4e5f2f3d2d63de2f9ae2b1a1eeeb2fbf672d8"
+  "date": "2026-11-10",
+  "hash": "ad9c628afca0677b422d754b0c38cf0b65458916"
  },
  "/play/": {
   "date": "2026-11-09",
