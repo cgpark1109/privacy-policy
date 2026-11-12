@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-10",
-  "hash": "8150b6046f99952dd7fe693787d123893825f178"
+  "date": "2026-11-13",
+  "hash": "e3560a287db036624a6b6c8ebc65f3621a4013a9"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -408,12 +408,12 @@
   "hash": "d542ee6378ea3b358658cf1ad8a006aa0fc8bac6"
  },
  "/ko/news/": {
-  "date": "2026-11-10",
-  "hash": "e484433c9a4e6bcaa9984465f1aa7cf109582164"
+  "date": "2026-11-13",
+  "hash": "60847c11378b08bcff1ef0d8194923c668425e08"
  },
  "/ko/news/archive/": {
-  "date": "2026-11-10",
-  "hash": "1563e2172914b0b453291f17b922abbca17d8ba9"
+  "date": "2026-11-13",
+  "hash": "4462167d026a9ee6cc0e078134293b035fdb6b7e"
  },
  "/ko/play/": {
   "date": "2026-11-09",
@@ -476,8 +476,8 @@
   "hash": "5c883dd9e52c509889e5e31520caed0b9c313633"
  },
  "/learn/": {
-  "date": "2026-11-10",
-  "hash": "3a2294a01df280c31a7d29636e540d31f1f370ac"
+  "date": "2026-11-13",
+  "hash": "844f8e270a3be49085bdc7c6f620f03705fe1eb9"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
@@ -488,8 +488,8 @@
   "hash": "0e0fdeca66eb1d8228514e7a4fbd66ed2c0efcfd"
  },
  "/learn/getting-around/": {
-  "date": "2026-11-10",
-  "hash": "a5947c8ef72204e54733dfa919208a264b3abad1"
+  "date": "2026-11-13",
+  "hash": "86db41366948e2bd7d60a3baaeb7a318321a69fe"
  },
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
@@ -512,8 +512,8 @@
   "hash": "793c6db78f3deddb598ac54d499e29d2f9624e55"
  },
  "/learn/korean-politeness/": {
-  "date": "2026-11-09",
-  "hash": "bb1554b5fc2e522ed4a999635259857d24862a97"
+  "date": "2026-11-13",
+  "hash": "06ecbeae78630f545710116514645c7ee10d4783"
  },
  "/learn/korean-vowels/": {
   "date": "2026-11-09",
@@ -527,21 +527,25 @@
   "date": "2026-11-09",
   "hash": "dc82b5cb3883e07052dfc4a69fdd1945718bd450"
  },
+ "/learn/polite-present-tense/": {
+  "date": "2026-11-13",
+  "hash": "cd33197e0e2a0edc142800aef394bd38ae62e926"
+ },
  "/learn/topic-and-subject-particles/": {
-  "date": "2026-11-09",
-  "hash": "4afb7aefa7ebd42d4277c397eda04218da1916e6"
+  "date": "2026-11-13",
+  "hash": "8903ed70cd1f54d038c7a95e72e6a4526e40bf5e"
  },
  "/learn/two-week-plan/": {
   "date": "2026-11-09",
   "hash": "282a04d77b0b78b41f2112eefc3008b9967d0e66"
  },
  "/news/": {
-  "date": "2026-11-10",
-  "hash": "1b0797e5e7ee7edb87e6ddcea0ee99d2a8591bd4"
+  "date": "2026-11-13",
+  "hash": "63260de0177e377027dfcb9c3528736840df1bcd"
  },
  "/news/archive/": {
-  "date": "2026-11-10",
-  "hash": "ad9c628afca0677b422d754b0c38cf0b65458916"
+  "date": "2026-11-13",
+  "hash": "1f8b3d15cae63c9b7f489bea8bb9966509645f21"
  },
  "/play/": {
   "date": "2026-11-09",
