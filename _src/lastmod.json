@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-19",
-  "hash": "d3113e932041ba9f78d4304178bd576ce092fd22"
+  "date": "2026-11-22",
+  "hash": "82f6a86543d049146ad7d722c5dc0637d49caec6"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -408,12 +408,12 @@
   "hash": "d542ee6378ea3b358658cf1ad8a006aa0fc8bac6"
  },
  "/ko/news/": {
-  "date": "2026-11-19",
-  "hash": "66fb9e7f2c1b3603d02686473c664bda34e4cc19"
+  "date": "2026-11-22",
+  "hash": "2a190b868374ffa84ccc5f44270285dce468e4b6"
  },
  "/ko/news/archive/": {
-  "date": "2026-11-19",
-  "hash": "aed088d204cfd4efa1a02348f863583229d4883a"
+  "date": "2026-11-22",
+  "hash": "d43a2d39e6662b0ffff383282dfcd3a17c4d12f2"
  },
  "/ko/play/": {
   "date": "2026-11-09",
@@ -476,16 +476,16 @@
   "hash": "5c883dd9e52c509889e5e31520caed0b9c313633"
  },
  "/learn/": {
-  "date": "2026-11-19",
-  "hash": "5c3e38b68f30cd6d477ab02eebc15d321ac4679e"
+  "date": "2026-11-22",
+  "hash": "474c721fec203f4795ff6dd3ca5a390efb783e97"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
   "hash": "0c74f946f755045236ba4505c5a89e9a95c9956c"
  },
  "/learn/days-and-dates/": {
-  "date": "2026-11-09",
-  "hash": "0e0fdeca66eb1d8228514e7a4fbd66ed2c0efcfd"
+  "date": "2026-11-22",
+  "hash": "8b4376b8a2e4865c5fc0317ce5d60343b3b57a6b"
  },
  "/learn/getting-around/": {
   "date": "2026-11-19",
@@ -500,16 +500,16 @@
   "hash": "fda6c23217035a8a0ab037f5da45560b567e67b4"
  },
  "/learn/korean-family-terms/": {
-  "date": "2026-11-09",
-  "hash": "5831a8c6e77f4824332ebebb4e04e46662e1f607"
+  "date": "2026-11-22",
+  "hash": "59a33b59787ab1ea5c3367bcd79f508643650834"
  },
  "/learn/korean-greetings/": {
   "date": "2026-11-19",
   "hash": "90f29831958aa5f2379a35ddd7c98d200e472e84"
  },
  "/learn/korean-numbers/": {
-  "date": "2026-11-09",
-  "hash": "793c6db78f3deddb598ac54d499e29d2f9624e55"
+  "date": "2026-11-22",
+  "hash": "4c479b93af53690e8ed17c95d09f4e3c5a0406dc"
  },
  "/learn/korean-politeness/": {
   "date": "2026-11-16",
@@ -536,8 +536,8 @@
   "hash": "1a664e98f9110a89640f024d7836b9a85fe81064"
  },
  "/learn/shopping-in-korean/": {
-  "date": "2026-11-19",
-  "hash": "84110158ca2acaab33e25ef55976ab487a258639"
+  "date": "2026-11-22",
+  "hash": "62c3af67fa9d2a29dc6814345d177fc63253b314"
  },
  "/learn/topic-and-subject-particles/": {
   "date": "2026-11-16",
@@ -547,13 +547,17 @@
   "date": "2026-11-09",
   "hash": "282a04d77b0b78b41f2112eefc3008b9967d0e66"
  },
+ "/learn/weather-and-seasons/": {
+  "date": "2026-11-22",
+  "hash": "76b100e5aa00d7c4148fe166f04366f3ace7a5e5"
+ },
  "/news/": {
-  "date": "2026-11-19",
-  "hash": "54c559492e00ff5d392103c2c58b9b41e19f3fbf"
+  "date": "2026-11-22",
+  "hash": "684bf8e9c217286fcbe949ff98c924ab189a680a"
  },
  "/news/archive/": {
-  "date": "2026-11-19",
-  "hash": "ea584911c37f207143ce4ce338afcfef9127959b"
+  "date": "2026-11-22",
+  "hash": "35aac943e405696aab4554499d42bcb8f219f65f"
  },
  "/play/": {
   "date": "2026-11-09",
