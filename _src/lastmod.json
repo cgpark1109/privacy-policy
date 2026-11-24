@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-22",
-  "hash": "82f6a86543d049146ad7d722c5dc0637d49caec6"
+  "date": "2026-11-25",
+  "hash": "f4cdaa05ed578678a8de5c5ab9ea66420a0b15bc"
  },
  "/about/": {
   "date": "2026-11-09",
@@ -408,12 +408,12 @@
   "hash": "d542ee6378ea3b358658cf1ad8a006aa0fc8bac6"
  },
  "/ko/news/": {
-  "date": "2026-11-22",
-  "hash": "2a190b868374ffa84ccc5f44270285dce468e4b6"
+  "date": "2026-11-25",
+  "hash": "f2fb972dda4403bbc9b9d816b3fd5b7c7d7430b6"
  },
  "/ko/news/archive/": {
-  "date": "2026-11-22",
-  "hash": "d43a2d39e6662b0ffff383282dfcd3a17c4d12f2"
+  "date": "2026-11-25",
+  "hash": "ad967d314db75c45c34dee499feeee50501e863f"
  },
  "/ko/play/": {
   "date": "2026-11-09",
@@ -476,8 +476,8 @@
   "hash": "5c883dd9e52c509889e5e31520caed0b9c313633"
  },
  "/learn/": {
-  "date": "2026-11-22",
-  "hash": "474c721fec203f4795ff6dd3ca5a390efb783e97"
+  "date": "2026-11-25",
+  "hash": "6c1837cf5a6c89f5eb7a97d20b9da849673cb610"
  },
  "/learn/batchim/": {
   "date": "2026-11-09",
@@ -494,6 +494,10 @@
  "/learn/how-hangul-works/": {
   "date": "2026-11-09",
   "hash": "64a874ab81c7d763002c88b511e2e374435ab2db"
+ },
+ "/learn/introducing-yourself/": {
+  "date": "2026-11-25",
+  "hash": "00521c8c84a17ba7fe395b27ab3ca795c1bc870a"
  },
  "/learn/korean-consonants/": {
   "date": "2026-11-09",
@@ -536,8 +540,8 @@
   "hash": "1a664e98f9110a89640f024d7836b9a85fe81064"
  },
  "/learn/shopping-in-korean/": {
-  "date": "2026-11-22",
-  "hash": "62c3af67fa9d2a29dc6814345d177fc63253b314"
+  "date": "2026-11-25",
+  "hash": "f575efb3c9b0b78ae3cdf275bf5587f2838f601c"
  },
  "/learn/topic-and-subject-particles/": {
   "date": "2026-11-16",
@@ -548,16 +552,16 @@
   "hash": "282a04d77b0b78b41f2112eefc3008b9967d0e66"
  },
  "/learn/weather-and-seasons/": {
-  "date": "2026-11-22",
-  "hash": "76b100e5aa00d7c4148fe166f04366f3ace7a5e5"
+  "date": "2026-11-25",
+  "hash": "703e8fecfcff8aa92b14c519f698a6e56527e8e9"
  },
  "/news/": {
-  "date": "2026-11-22",
-  "hash": "684bf8e9c217286fcbe949ff98c924ab189a680a"
+  "date": "2026-11-25",
+  "hash": "92693f8222c32351097c1caed620c843d7317efb"
  },
  "/news/archive/": {
-  "date": "2026-11-22",
-  "hash": "35aac943e405696aab4554499d42bcb8f219f65f"
+  "date": "2026-11-25",
+  "hash": "6d98294cce87b5394f8a97b33bc2b14a37b179cd"
  },
  "/play/": {
   "date": "2026-11-09",
