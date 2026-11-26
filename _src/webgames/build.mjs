@@ -229,6 +229,8 @@ ${ld}${crumbs}</head>`;
 
 // Header and footer: the same as the main site's (see page() in _src/build.py). The game switches language in
 // place, so every site link carries its Korean address in data-href-ko (app.js swaps them).
+// The calculators link is off while AdSense reviews the site (see "calc_linked" in _src/content.py).
+const CALC_LINKED = false;
 const LINKS = { calc: 'https://calc.kysystemstudio.com/', email: 'admin@kysystemstudio.com',
   youtube: 'https://www.youtube.com/@ggooksstudio', instagram: 'https://www.instagram.com/ggooksstudio/' };
 const ICON_MENU = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
@@ -246,7 +248,7 @@ function header() {
       link('/play/', '/ko/play/', 'nav_play', 'Browser games', 'current'),
       link('/learn/', '', 'nav_learn', 'Learn Hangul'),
       link('/ko/history/', '', 'nav_history', '세계사', 'ko-only'),
-      link(LINKS.calc, '', 'nav_calc', 'Calculators'),
+      ...(CALC_LINKED ? [link(LINKS.calc, '', 'nav_calc', 'Calculators')] : []),
       link('/news/', '/ko/news/', 'nav_news', 'News'),
       link('/about/', '/ko/about/', 'nav_about', 'About'),
       link('/support/', '/ko/support/', 'nav_support', 'Support'),
@@ -262,8 +264,7 @@ function footer() {
       <a ${hrefs('/privacy.html', '/ko/privacy/')} data-t="privacy">Privacy Policy</a>
       <a ${hrefs('/terms/', '/ko/terms/')} data-t="terms">Terms of Service</a>
       <a ${hrefs('/play/', '/ko/play/')} data-t="games">Browser games</a>
-      <a href="${LINKS.calc}" data-t="calc_link">Calculators</a>
-      <a ${hrefs('/support/', '/ko/support/')} data-t="nav_support">Support</a>
+${CALC_LINKED ? `      <a href="${LINKS.calc}" data-t="calc_link">Calculators</a>\n` : ''}      <a ${hrefs('/support/', '/ko/support/')} data-t="nav_support">Support</a>
       <a href="mailto:${LINKS.email}" data-t="contact">Contact</a>
       <a href="${LINKS.youtube}" target="_blank" rel="noopener">YouTube</a>
       <a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram</a>

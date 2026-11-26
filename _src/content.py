@@ -12,6 +12,10 @@ STUDIO = {
     "domain": "https://kysystemstudio.com",
     "adsense": "ca-pub-4148553154486992",  # AdSense site verification (same publisher as AdMob); ads.txt matches
     "calc": "https://calc.kysystemstudio.com/",  # 계산만물상 (Korean calculators), its own repo cgpark1109/calc
+    # Links to the calculators (header, footer, home teaser) are off while AdSense reviews this site: Search Console
+    # left the calculator pages "crawled, not indexed", and they carry noindex until their guides are filled out.
+    # Set True to link them again (and in _src/webgames/build.mjs, CALC_LINKED).
+    "calc_linked": False,
     "updated": "2026-11-07",  # shown in the footer as "Last updated"; change it when the site changes
 }
 
@@ -1790,7 +1794,7 @@ ABOUT = {
         ("What we make", [
             "Quick games you can play with one finger: Hilltop Roll and Updraft are arcade games about rolling and flying as far as you can, Pass or Splash is a puzzle game where you solve the question on a wall before it hits you, and Bust Below is an idle game where your cops keep working while you're away.",
             "Learning apps for people who want to study a little every day: Korean Word Quiz and Learn Korean – Hangul for learners of Korean, and World History Quiz for anyone who likes history.",
-            "Browser games you can play right here without installing anything, including Flag Quiz and Capital Quiz, and 계산만물상, a set of free calculators in Korean for take-home pay, severance, loans, units and dates.",
+            "Browser games you can play right here without installing anything, such as Pin the Map, Lantern Lights, Flag Quiz and Capital Quiz.",
         ]),
         ("How we make our learning content", [
             "A learning app is only useful if its answers are right, so we build our quiz content with care. Verbs and adjectives in Korean Word Quiz come with example sentences, and new words are reviewed before they are added: version 1.6.0 added 2,233 reviewed words, for 30,242 in total. Learn Korean – Hangul teaches every letter with audio and stroke order, then 2,400 basic words.",
@@ -1814,7 +1818,7 @@ ABOUT = {
         ("만드는 것", [
             "손가락 하나로 즐기는 짧은 게임: 언덕을 굴러 내려가는 Hilltop Roll과 종이비행기를 멀리 날리는 Updraft 같은 아케이드 게임, 다가오는 벽의 문제를 풀어 정답 구멍으로 빠져나가는 퍼즐 게임 Pass or Splash, 게임을 꺼 두어도 경찰들이 알아서 일하는 방치형 게임 Bust Below가 있습니다.",
             "매일 조금씩 공부하고 싶은 분들을 위한 학습 앱: 한국어를 배우는 분들을 위한 Korean Word Quiz와 Learn Korean – Hangul, 역사를 좋아하는 분들을 위한 World History Quiz가 있습니다.",
-            "설치 없이 이 사이트에서 바로 하는 국기 퀴즈, 수도 퀴즈 같은 브라우저 게임과, 연봉 실수령액, 퇴직금, 대출 이자, 단위 변환, 날짜를 계산하는 무료 계산기 모음 계산만물상도 운영합니다.",
+            "설치 없이 이 사이트에서 바로 하는 지도 핀 꽂기, 랜턴 잇기, 국기 퀴즈, 수도 퀴즈 같은 브라우저 게임도 운영합니다.",
         ]),
         ("학습 콘텐츠를 만드는 방식", [
             "학습 앱은 정답이 정확해야 의미가 있기 때문에 문제 하나하나를 신경 써서 만듭니다. Korean Word Quiz의 동사와 형용사에는 예문이 있고, 새 단어는 검수를 거친 뒤 추가합니다. 1.6.0 버전에서는 검수한 단어 2,233개를 더해 모두 30,242개가 되었습니다. Learn Korean – Hangul은 모든 글자를 발음과 획순으로 익힌 뒤 기본 단어 2,400개로 넘어가도록 구성했습니다.",

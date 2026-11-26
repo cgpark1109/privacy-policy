@@ -219,9 +219,11 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
     nav_items = [("play", t["nav_play"], url(lang, "play/")), ("games", t["nav_games"], url(lang) + "#games"),
                  ("learn", t["nav_learn"], "/learn/"),
                  *([("history", t["nav_history"], url(lang, "history/"))] if lang == "ko" else []),
-                 ("calc", t["nav_calc"], STUDIO["calc"]),
+                 *([("calc", t["nav_calc"], STUDIO["calc"])] if STUDIO["calc_linked"] else []),
                  ("news", t["nav_news"], url(lang, "news/")),
                  ("about", t["nav_about"], url(lang, "about/")), ("support", t["nav_support"], url(lang, "support/"))]
+    calc_footer = (f'      <a href="{STUDIO["calc"]}" hreflang="ko">{e(t["calc_link"])}</a>\n'
+                   if STUDIO["calc_linked"] else "")
     nav = "".join(f'<a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{e(label)}</a>'
                   for key, label, href in nav_items)
     updated = (f'    <p class="updated">{e(t["last_updated"])}: '
@@ -270,8 +272,7 @@ def page(lang, path, title, description, body, active=None, head_extra="", og_im
       <a href="{privacy_url(lang)}">{e(t['privacy'])}</a>
       <a href="{url(lang, 'terms/')}">{e(t['terms'])}</a>
       <a href="{url(lang, 'play/')}">{e(t['play_title'])}</a>
-      <a href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_link'])}</a>
-      <a href="{url(lang, 'support/')}">{e(t['support'])}</a>
+{calc_footer}      <a href="{url(lang, 'support/')}">{e(t['support'])}</a>
       <a href="mailto:{STUDIO['email']}">{e(t['contact'])}</a>
       <a href="{"/learn/feed.xml" if lang == "en" else url("ko", "history/feed.xml")}">RSS</a>
       <a href="{STUDIO['youtube']}" target="_blank" rel="noopener">YouTube</a>
@@ -325,11 +326,12 @@ def build_home(lang):
     news = "\n".join(news_item(lang, n) for n in [n for n in published_news() if n.get("game")][:2])
     # Teaser card under the game list: the 계산만물상 calculators site.
     teasers = []
-    teasers.append(f"""<div class="card play-teaser">
+    if STUDIO["calc_linked"]:
+        teasers.append(f"""<div class="card play-teaser">
   <p>{ICON_CALC} {e(t['calc_teaser'])}</p>
   <a class="btn light" href="{STUDIO['calc']}" hreflang="ko">{e(t['calc_teaser_cta'])} →</a>
 </div>""")
-    teaser_section = f'<section class="section container teasers">\n{chr(10).join(teasers)}\n</section>'
+    teaser_section = f'<section class="section container teasers">\n{chr(10).join(teasers)}\n</section>' if teasers else ""
     # What the site offers, with live counts, then the most recent guides.
     counts = {"games": len(GAMES), "guides": len(ARTICLES), "history": len(HISTORY),
               "web": sum(1 for g in GAMES if g.get("web")) + len(WEB_GAMES)}
